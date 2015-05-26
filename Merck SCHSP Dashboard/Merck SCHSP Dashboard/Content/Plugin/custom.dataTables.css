@@ -1,0 +1,9 @@
+﻿
+.table-striped>tbody>tr.odd > td.sorting_1 {
+    background-color: #eaeaea;
+}
+
+.table-striped>tbody>tr.even > td.sorting_1 {
+    background-color: #f9f9f9;
+}
+

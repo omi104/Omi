@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5683C479-DFAD-4AD8-A90E-D709DD23363C}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Merck_SCHSP_Dashboard</RootNamespace>
+    <AssemblyName>Merck SCHSP Dashboard</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Component.Chart.Fusion">
+      <HintPath>..\packages\IMS.Widget.FusionChart.1.1.1\lib\net45\Component.Chart.Fusion.dll</HintPath>
+    </Reference>
+    <Reference Include="Component.Node">
+      <HintPath>..\packages\Component.Node.1.5.2\lib\net45\Component.Node.dll</HintPath>
+    </Reference>
+    <Reference Include="Component.Node.Library">
+      <HintPath>..\packages\Component.Node.1.5.2\lib\net45\Component.Node.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="Component.Table">
+      <HintPath>..\packages\Component.Table.1.5.2\lib\net45\Component.Table.dll</HintPath>
+    </Reference>
+    <Reference Include="Component.Table.CubeData">
+      <HintPath>..\packages\Component.Table.1.5.2\lib\net45\Component.Table.CubeData.dll</HintPath>
+    </Reference>
+    <Reference Include="CubeFramework.Core">
+      <HintPath>..\packages\CubeFramework.Core.1.3.6\lib\net40\CubeFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CubeFramework.Model">
+      <HintPath>..\packages\CubeFramework.Model.1.3.6\lib\net40\CubeFramework.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="CubeFramework.ServiceModel">
+      <HintPath>..\packages\CubeFramework.ServiceModel.1.3.6\lib\net40\CubeFramework.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DashboardFramework.Configuration">
+      <HintPath>..\packages\DashboardFramework.4.6.2\lib\net45\DashboardFramework.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="DashboardFramework.Core">
+      <HintPath>..\packages\DashboardFramework.4.6.2\lib\net45\DashboardFramework.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DashboardFramework.Web">
+      <HintPath>..\packages\DashboardFramework.4.6.2\lib\net45\DashboardFramework.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\CubeFramework.Core.1.3.6\lib\net40\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="CommandTranslators\CommandTranslator.cs" />
+    <Compile Include="Configuration\MerckDashboardBuilder.cs" />
+    <Compile Include="Configuration\MerckDashboardConfiguration.cs" />
+    <Compile Include="Configuration\Filters\DummyRecordCountFilterConfiguration.cs" />
+    <Compile Include="Configuration\Navigations\DummyNavigationOneConfiguration.cs" />
+    <Compile Include="Configuration\Navigations\DummyNavigationTwoConfiguration.cs" />
+    <Compile Include="Configuration\Parameter.cs" />
+    <Compile Include="Configuration\Widgets\DummyWidgetConfiguration.cs" />
+    <Compile Include="Controllers\Account\AccountBaseController.cs" />
+    <Compile Include="Controllers\Account\ForgotPasswordController.cs" />
+    <Compile Include="Controllers\Account\LoginController.cs" />
+    <Compile Include="Controllers\Exports\DummyExportController.cs" />
+    <Compile Include="Controllers\Layouts\MerckDashboardLayoutController.cs" />
+    <Compile Include="Controllers\Layouts\DummyFilterLayoutController.cs" />
+    <Compile Include="Controllers\Layouts\DummyNavigationLayoutController.cs" />
+    <Compile Include="Controllers\Widgets\DummyWidgetController.cs" />
+    <Compile Include="DataComponents\DataSources\DummyDataSource.cs" />
+    <Compile Include="DataComponents\DataSources\RecordCountSource.cs" />
+    <Compile Include="DataComponents\Mergers\StringMerger.cs" />
+    <Compile Include="DataComponents\Transformers\DummyTransformer.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Config\MerckDashboardLayoutConfig.cs" />
+    <Compile Include="Models\Config\DummyFilterLayoutConfig.cs" />
+    <Compile Include="Models\Config\DummyNavigationLayoutConfig.cs" />
+    <Compile Include="Models\Config\DummyWidgetConfig.cs" />
+    <Compile Include="Models\Data\DummyWidgetData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\DummyWidgetViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\FusionChartsSWF\Area2D.swf" />
+    <Content Include="Content\FusionChartsSWF\Bar2D.swf" />
+    <Content Include="Content\FusionChartsSWF\Bubble.swf" />
+    <Content Include="Content\FusionChartsSWF\Column2D.swf" />
+    <Content Include="Content\FusionChartsSWF\Column3D.swf" />
+    <Content Include="Content\FusionChartsSWF\Doughnut2D.swf" />
+    <Content Include="Content\FusionChartsSWF\Doughnut3D.swf" />
+    <Content Include="Content\FusionChartsSWF\FCExporter.swf" />
+    <Content Include="Content\FusionChartsSWF\HBullet.swf" />
+    <Content Include="Content\FusionChartsSWF\HeatMap.swf" />
+    <Content Include="Content\FusionChartsSWF\Line.swf" />
+    <Content Include="Content\FusionChartsSWF\Marimekko.swf" />
+    <Content Include="Content\FusionChartsSWF\MSArea.swf" />
+    <Content Include="Content\FusionChartsSWF\MSBar2D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSBar3D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSColumn2D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSColumn3D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSColumn3DLineDY.swf" />
+    <Content Include="Content\FusionChartsSWF\MSColumnLine3D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSCombi2D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSCombi3D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSCombiDY2D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSLine.swf" />
+    <Content Include="Content\FusionChartsSWF\MSStackedColumn2D.swf" />
+    <Content Include="Content\FusionChartsSWF\MSStackedColumn2DLineDY.swf" />
+    <Content Include="Content\FusionChartsSWF\Pareto2D.swf" />
+    <Content Include="Content\FusionChartsSWF\Pareto3D.swf" />
+    <Content Include="Content\FusionChartsSWF\Pie2D.swf" />
+    <Content Include="Content\FusionChartsSWF\Pie3D.swf" />
+    <Content Include="Content\FusionChartsSWF\Scatter.swf" />
+    <Content Include="Content\FusionChartsSWF\ScrollArea2D.swf" />
+    <Content Include="Content\FusionChartsSWF\ScrollColumn2D.swf" />
+    <Content Include="Content\FusionChartsSWF\ScrollCombi2D.swf" />
+    <Content Include="Content\FusionChartsSWF\ScrollCombiDY2D.swf" />
+    <Content Include="Content\FusionChartsSWF\ScrollLine2D.swf" />
+    <Content Include="Content\FusionChartsSWF\ScrollStackedColumn2D.swf" />
+    <Content Include="Content\FusionChartsSWF\SSGrid.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedArea2D.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedBar2D.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedBar3D.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedColumn2D.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedColumn2DLine.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedColumn3D.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedColumn3DLine.swf" />
+    <Content Include="Content\FusionChartsSWF\StackedColumn3DLineDY.swf" />
+    <Content Include="Content\FusionChartsSWF\ZoomLine.swf" />
+    <Content Include="Content\Images\dashboard-loading.gif" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\Chart\FusionCharts.HC.Charts.js" />
+    <Content Include="Scripts\Chart\FusionCharts.HC.js" />
+    <Content Include="Scripts\Chart\FusionCharts.HC.PowerCharts.js" />
+    <Content Include="Scripts\Chart\FusionCharts.HC.Widgets.js" />
+    <Content Include="Scripts\Chart\FusionCharts.js" />
+    <Content Include="Scripts\IMSChart.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DummyWidget\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DummyNavigationLayout\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\DummyFilterLayout\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\MerckDashboardLayout\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>19749</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:19191/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

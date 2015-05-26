@@ -1,0 +1,56 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Reckitt Benckiser Dashboard </title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/login.css" rel="stylesheet" />
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Scripts/jquery-ui.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link rel='shortcut icon' type='image/x-icon' href='~/Content/Images/favicon.ico' />
+</head>
+    <body class="loginPage">
+        <div class="page-container">
+            <header>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="site-logo">
+                            <a href="~/" class="left-site-logo">
+                                <img src="~/Content/Images/logo.jpg" alt="Logo" /></a>
+                            <img class="dashboard-name img-responsive" src="~/Content/Images/header2.PNG" alt="Dashboard banner"/>
+                            <a href="~/" class="pull-right hidden-sm hidden-xs">
+                                <img src="~/Content/Images/power-of-1.jpg" alt="Logo" /></a>
+                        </div>
+                        <div class="header-nav">
+                        </div>
+                    </div>
+
+                    <div class="navbar">
+                    </div>
+                </div>
+            </header>
+            <div style="margin: 0 auto;width: 100%">
+                @RenderBody()
+            </div>
+        </div>
+        <div id="" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div id="" class="modal-content"></div>
+            </div>
+        </div>
+        <div class="modal" id="my-small-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-sm">
+                <div class="modal-content">
+                    <div class="modal-body" id="small-modal-content"></div>
+                    <div class="modal-footer">
+                        <button  type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
