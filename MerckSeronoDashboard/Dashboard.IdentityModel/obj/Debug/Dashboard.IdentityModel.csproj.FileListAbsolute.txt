@@ -71,3 +71,19 @@ D:\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Ident
 D:\MerckSeronoDashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.csprojResolveAssemblyReference.cache
 D:\MerckSeronoDashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.dll
 D:\MerckSeronoDashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.pdb
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Dashboard.IdentityModel.dll.config
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Dashboard.IdentityModel.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Dashboard.IdentityModel.pdb
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\EntityFramework.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\EntityFramework.SqlServer.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\IMS.Logger.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\log4net.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\EntityFramework.xml
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\EntityFramework.SqlServer.xml
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.csprojResolveAssemblyReference.cache
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.dll
+D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\MerckSeronoDashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.pdb
