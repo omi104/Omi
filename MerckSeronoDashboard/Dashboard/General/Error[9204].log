@@ -1,0 +1,363 @@
+-----------------------------------------------------------------
+                            2015-05-29 14:59:21,655 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=3
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 14:59:23,874 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=5
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 14:59:24,705 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=8
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@Channel_text,Value=All Channels
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 14:59:25,537 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=7
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@Channel_text,Value=All Channels
+key=@@PeriodType_text,Value=Monthly
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 14:59:26,372 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=4
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@Channel_text,Value=All Channels
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 14:59:27,226 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=6
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@Channel_text,Value=All Channels
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 14:59:28,053 [10] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=10
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[TOTAL ENA]
+key=RB_Geo_text,Value=TOTAL ENA
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@Channel_text,Value=All Channels
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@SubChannel_text,Value=All Sub Channels
+                            
+
+-----------------------------------------------------------------
+                            2015-05-29 15:00:14,692 [8] FATAL IMS.Logger.Logger [(null)] –                             
+                            Error in layout controller execution of : MerckSereno , Controller Name: MerckSerenoDashboardLayoutController  
+ Details: 
+System.ApplicationException: Error in expression evaluation type: DashboardFramework.Dashboard MerckSereno, Property=LayoutConfig, Error MessageParameter not found. Param Name:@@Period_text ---> DashboardFramework.DashboardFrameworkException: Parameter not found. Param Name:@@Period_text
+   at DashboardFramework.ParameterCollection.get_Item(String key)
+   at Dashboard.Configuration.MerckSerenoDashboardConfiguration.GetCurrentPeriod(IReadOnlyDictionary`2 parameters) in d:\MerckSeronoDashboard\Dashboard\Configuration\MerckSerenoDashboardConfiguration.cs:line 124
+   at DashboardFramework.Expr`1.Evaluate(IReadOnlyDictionary`2 parameters)
+   at DashboardFramework.DashboardObjectBase.EvaluateExpr[T](Expr`1 expression, String propertyName)
+   --- End of inner exception stack trace ---
+   at DashboardFramework.DashboardObjectBase.EvaluateExpr[T](Expr`1 expression, String propertyName)
+   at DashboardFramework.DashboardObjectBase.get_LayoutConfig()
+   at DashboardFramework.Web.CommandTranslation.Translators.Layout.LoadLayoutCommandTranslatorBase.GetHtml(IDashboardObject dashboardObject)                            
+
+DashboardFramework.DashboardFrameworkException: Error in layout controller execution of : MerckSereno , Controller Name: MerckSerenoDashboardLayoutController  
+ Details: 
+System.ApplicationException: Error in expression evaluation type: DashboardFramework.Dashboard MerckSereno, Property=LayoutConfig, Error MessageParameter not found. Param Name:@@Period_text ---> DashboardFramework.DashboardFrameworkException: Parameter not found. Param Name:@@Period_text
+   at DashboardFramework.ParameterCollection.get_Item(String key)
+   at Dashboard.Configuration.MerckSerenoDashboardConfiguration.GetCurrentPeriod(IReadOnlyDictionary`2 parameters) in d:\MerckSeronoDashboard\Dashboard\Configuration\MerckSerenoDashboardConfiguration.cs:line 124
+   at DashboardFramework.Expr`1.Evaluate(IReadOnlyDictionary`2 parameters)
+   at DashboardFramework.DashboardObjectBase.EvaluateExpr[T](Expr`1 expression, String propertyName)
+   --- End of inner exception stack trace ---
+   at DashboardFramework.DashboardObjectBase.EvaluateExpr[T](Expr`1 expression, String propertyName)
+   at DashboardFramework.DashboardObjectBase.get_LayoutConfig()
+   at DashboardFramework.Web.CommandTranslation.Translators.Layout.LoadLayoutCommandTranslatorBase.GetHtml(IDashboardObject dashboardObject)
+   at DashboardFramework.Web.CommandTranslation.Translators.Layout.LoadLayoutCommandTranslatorBase.GetHtml(IDashboardObject dashboardObject)
+   at DashboardFramework.Web.CommandTranslation.Translators.Layout.LoadLayoutCommandTranslatorBase.Translate(Command command)
+   at DashboardFramework.Web.Controllers.DashboardController.TranslateCommand(Command c)
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at DashboardFramework.Web.Controllers.DashboardController.GetCommandResults(IEnumerable`1 commands)
+   at DashboardFramework.Web.Controllers.DashboardController.HandleAction(HandleActionParams handleActionParams)

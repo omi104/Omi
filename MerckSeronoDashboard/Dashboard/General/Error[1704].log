@@ -1,0 +1,127 @@
+-----------------------------------------------------------------
+                            2015-04-01 12:13:59,392 [7] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=3
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=
+key=RB_Geo_text,Value=
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Absolute
+key=RB_TopCountComGlance,Value=5
+key=RB_TopCountBrandGlance,Value=5
+key=RB_TopCountSubBrandGlance,Value=5
+key=RB_TopCountSKUGlance,Value=5
+key=RB_TopCountMoleculeAtaGlance,Value=5
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+                            
+
+-----------------------------------------------------------------
+                            2015-04-01 12:14:01,422 [7] ERROR IMS.Logger.Logger [(null)] –                             
+                            Error executing the command. Please see the inner exception for details.
+Commnad Details:
+DbConnectionString:Data Source=DACSV0020\SQL2K12; Initial Catalog=IT_CUST_DEV_RB_DASHBOARD_DATA_DB
+CubeConnectionString:Data Source=162.44.25.28;Initial Catalog=RBAPACPo1DashboardCube;
+CommandText:3
+DataFormatFlat
+CommandType:ViewId
+Parameter(s):
+NavigationName=NavHome
+recordCount=5
+RB_Geo=
+RB_Geo_text=
+RB_MarketFilterParent=[Market].[Hierarchy].[All]
+RB_SubCategoryFilter=[Market].[Hierarchy].[All]
+RB_Segment=
+RB_Channel=[Channel].[Channel].[All]
+RB_SubChannel=
+RB_PeriodType=
+RB_Measure=
+RB_Market=[Market].[Hierarchy].[All]
+RB_Period=[Period].[Hierarchy].[Period].&[MTH01]
+uncheckedItems=TOTAL MARKET
+RB_Measure_Type=sales
+absoluteThousandConversion=Absolute
+RB_TopCountComGlance=5
+RB_TopCountBrandGlance=5
+RB_TopCountSubBrandGlance=5
+RB_TopCountSKUGlance=5
+RB_TopCountMoleculeAtaGlance=5
+RB_ComSnapshotTopCount=5
+RB_TopCountBrandSnapshot=5
+RB_TopCountSubBrandSnapshot=5
+RB_TopCountMoleculeSnapshot=5
+RB_TopCountSKUSnapshot=5
+RB_ComTrendTopCount=5
+RB_TopCountBrandTrend=5
+RB_TopCountSubBrandTrend=5
+RB_TopCountMoleculeTrend=5
+RB_TopCountSKUTrend=5
+RB_CategoryTrendTopCount=5
+CurrentNavigationId=navigation1
+Navigation_Label=Home
+GuideLevel=JJV-M
+EmailTemplate=
+IsIMSUser=false
+@@navigation=NavHome
+@@navigation_label=Home
+                            
+
+-----------------------------------------------------------------
+                            2015-04-01 12:14:01,460 [11] FATAL IMS.Logger.Logger [(null)] –                             
+                            Exception has been thrown by the target of an invocation.                            
+
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> DashboardFramework.FilterValueLoadException: Error in loading filter values. Filter name: MarketCategory
+Detail: 
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at Dashboard.DataComponents.Transformers.CubeDataToDictionaryTransformer.GetData() in d:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\RBPo1Dashboard\Dashboard\DataComponents\Transformers\CubeDataToDictionaryTransformer.cs:line 25
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at DashboardFramework.DataFlow.TransformerComponent.GetData(IReadOnlyDictionary`2 parameters, Object inputData)
+   at DashboardFramework.DataFlow.DataFlow`1.GetData(IReadOnlyDictionary`2 parameters)
+   at DashboardFramework.Filter`1.LoadValues()
+   at DashboardFramework.Filter`1.LoadValues()
+   at DashboardFramework.StateManagement.CommandGenerators.SingleFilterLoad.GetLoadValuesCommand()
+   at DashboardFramework.StateManagement.CommandGenerators.SingleFilterLoad.GetCommands()
+   at DashboardFramework.StateManagement.CommandGenerators.FilterAndWidgetContainerLoad.GetSingleFilterCommands(IFilter filter)
+   at System.Linq.Enumerable.<SelectManyIterator>d__14`2.MoveNext()
+   at System.Collections.Generic.List`1.InsertRange(Int32 index, IEnumerable`1 collection)
+   at System.Collections.Generic.List`1.AddRange(IEnumerable`1 collection)
+   at DashboardFramework.StateManagement.CommandGenerators.FilterAndWidgetContainerLoad.GetCommands()
+   at DashboardFramework.StateManagement.CommandGenerators.DashboardLoad.GetCommands()
+   at DashboardFramework.StateManagement.StateManager.LoadDashboard(Boolean fullLoad, String navName, Dictionary`2 parameters)
+   at DashboardFramework.StateManagement.StateManager.Init(DashboardState state)
+   at DashboardFramework.StateManagement.StateManager.Init(String stateString)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
+   at DashboardFramework.Web.Helpers.MethodInvokeInfo.Invoke(DashboardController dashboardController, StateManager stateManager, Object[] parameters)
+   at DashboardFramework.Web.Controllers.DashboardController.InvokeMethod(HandleActionParams handleActionParams)
+   at DashboardFramework.Web.Controllers.DashboardController.HandleAction(HandleActionParams handleActionParams)

@@ -1,0 +1,29 @@
+﻿@using Dashboard.DashboardComponent.Components
+@model Dashboard.Models.Config.RbPoDashboardLayoutConfig
+
+<aside id="sidebar" class="page-sidebar">
+    <div class="sidebar-inner">
+        <div class="toggle-sidebar">
+            <a id="toggle-menu-anchor" href="javascript:void(0)"><i class="fa fa-minus-circle"></i> </a>
+        </div>
+        <div class="option-buttons">
+            <div class="option-buttons-inner">
+                <i class="fa fa-calendar" title="Viewing: @Model.CurrentPeriod Data"></i><span id="view-period-title" >Viewing: @Model.CurrentPeriod Data</span>
+            </div>
+        </div>
+        <div class="slimScrollDiv">
+            <div class="sidebar-scrollarea">
+                <div class="side-nav">
+                    <ul id="sideNav" class="nav">
+                        <li><a href="#" id="navigation1" class="active" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavHome().Name','@NavigationItems.NavHome().Label');"><i class="fa fa-home"></i><span class="txt">Home</span></a>
+                        </li>
+                        
+                        <li><a href="#" id="navigation2" class="active" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavAllRegions().Name','@NavigationItems.NavAllRegions().Label');"><i class="fa fa-home"></i><span class="txt">All Regions</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</aside>

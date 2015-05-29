@@ -1,0 +1,15 @@
+﻿@using System.Xml
+@model Dashboard.Models.Data.TableChartConfig
+<div style="padding-bottom: 20px;">
+    <div id="TrendChart">
+        @Html.Raw(@Model.Chart.Chart)
+    </div>
+</div>
+
+<div class="trend-table-holder">
+    @{
+        var writer = XmlWriter.Create(Html.ViewContext.Writer);
+        Model.Table.Render(writer);
+        writer.Flush();
+    }
+</div>

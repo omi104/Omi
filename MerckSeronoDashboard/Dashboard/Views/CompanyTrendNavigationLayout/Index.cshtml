@@ -1,0 +1,39 @@
+﻿@model Dashboard.DashboardComponent.Models.NavigationItem
+<div class="row body-row">
+    <div class="col-md-12">
+        <div id="snapShotWidget">
+            <div style="width: 100%; display: inline-block; margin: 0;" class="row">
+                <div class="col-md-12">
+                    <div style="width: 100%;" class="WidgetHeading panel-heading">
+                        <h4 class="panel-title">This view displays RB's ranking in comparison to the competitors</h4>
+                        <div class="panel-controls" style="float: right">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 98%; display: inline-block; margin: 0; padding-right: 2%; margin-left: 1%;clear: both;font-weight: bold;font-size: 12px;" class="row recordCount ">
+                <div class="col-md-12">
+                    <div id="latest-period-type" style="float: left;  padding-top: 5px;">Latest&nbsp;13&nbsp;Months</div>
+@*                    <div style="float: left;width: 130px;padding-left:8px "  id="filter-@Model.Filters[0].Name-layout"></div>*@
+                    <div style="float:left;" class="col-md-12 radiofilter" id="filter-MeasureType-layout"></div>
+                    <div style="float:right;width: 100px;">
+                        <span><div id="switchNumberFormat" onclick="customTable.ShowAbsoluteThousand(this)">Switch&nbsp;To&nbsp;Absolute</div></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel-body">
+                        <div id="widget-@Model.Widgets[0].Name-view" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        RbHelper.GetAndSetLatestPeriodType();
+    });
+</script>

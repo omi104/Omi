@@ -1,0 +1,138 @@
+﻿@using System.Web.Optimization
+@using Dashboard.DashboardComponent.Components
+@{
+    ViewBag.Title = "Reckitt Benckiser Dashboard";
+}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <!-- Mobile specific metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 user-scalable=no">
+        @*<meta http-equiv="X-UA-Compatible" content="IE=8" >DONT DELETE*@
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel='shortcut icon' type='image/x-icon' href='~/Content/Images/favicon.ico' />
+        <title>@ViewBag.Title</title>
+        
+        @Styles.Render("~/Content/css")
+        @Styles.Render("~/Content/dataTable")
+        @Styles.Render("~/Content/dashboardCss")
+        @Styles.Render("~/Content/themeCss")
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
+        <!--[if lt IE 9]>
+          <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+          <script type="text/javascript" src="~/Scripts/respond.min.js"></script>
+        <![endif]-->
+        @Scripts.Render("~/bundles/layout")
+        @Scripts.Render("~/bundles/chartjs")
+        @Scripts.Render("~/bundles/dataTable")
+    </head>
+    <body>
+        <div class="page-container">
+            <header>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="site-logo">
+                            <a href="~/" class="left-site-logo">
+                                <img src="~/Content/Images/logo.jpg" alt="Logo" /></a>
+                            <img class="dashboard-name img-responsive" src="~/Content/Images/header2.PNG"/>
+                            <a href="~/" class="pull-right hidden-sm hidden-xs">
+                                <img src="~/Content/Images/power-of-1.jpg" alt="Logo" /></a>
+                        </div>
+                        <div class="header-nav">
+                            <div class="navbar-header">
+                                <button id="showNav" class="navbar-toggle" type="button">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <nav id="top-nav" class="navbar-no-collapse" role="navigation">
+                                <ul class="nav navbar-nav pull-right">
+                                    <li class="hidden-xs">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="true">
+                                            <i class="fa fa-sign-in"></i>
+                                            <span>Logged in as @HttpContext.Current.User.Identity.Name</span>
+                                        </a>
+                                        <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                            <li><a href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged('navigation35','@NavigationItems.YourAccount().Name');"><span class="txt">@NavigationItems.YourAccount().Label</span></a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="~/login/logout">
+                                            <i class="fa fa-power-off"></i>
+                                            <span class="">Logout</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+
+                    <div class="navbar">
+                    </div>
+                </div>
+            </header>
+            @RenderBody()
+        </div>
+        @RenderSection("scripts", required: false) 
+        <div class="modal fade" id="favouriteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Save report as favourite</h4>
+                    </div>
+                    <div class="modal-body form-horizontal">
+                        <div class="form-group">
+                            <label for="favouriteTitle" class="col-sm-2 control-label">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="favouriteTitle">
+                                <input type="hidden" id="favouriteNavigationName"/>
+                                <input type="hidden" id="favouriteUserName"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="radio" name="isCompanyFav" value="true" checked="checked" id="chkSaveCompanyFav">
+                                        Save as company favourite&nbsp;&nbsp;
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="isCompanyFav" value="false" id="chkSavePersonalFav">
+                                        Save as personal favourite
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button id="submitfavourite" type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                
+                $('#submitfavourite').click(function () {
+                    if ($('#favouriteTitle').val() === "") {
+                        //$('#favouriteTitle').next('.help-inline').show();
+                    } else {
+                        var isCompanyFav = $('input[name=isCompanyFav]:checked').val();
+                        Favourite.addToFavourite($('#favouriteNavigationName').val(), $('#favouriteUserName').val(), $('#favouriteTitle').val(), isCompanyFav, 'Favourite');
+                        $('#favouriteModal').modal('hide');
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

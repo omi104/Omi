@@ -1,0 +1,280 @@
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Dashboard.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Dashboard.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Aspose.Cells.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Aspose.Slides.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Component.Chart.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Component.Node.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Component.Node.Library.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Component.Table.CubeData.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Component.Table.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\CubeFramework.Core.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\CubeFramework.Model.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\CubeFramework.ServiceModel.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Dashboard.Export.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Dashboard.IdentityModel.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Configuration.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Core.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Web.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\EntityFramework.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\EntityFramework.SqlServer.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\ExportFramework.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\IMS.Logger.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\log4net.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.AnalysisServices.AdomdClient.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Owin.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Helpers.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Http.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Mvc.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Optimization.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Razor.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\WebGrease.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Dashboard.IdentityModel.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Antlr3.Runtime.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\EntityFramework.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\EntityFramework.SqlServer.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\ExportFramework.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Optimization.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Helpers.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Http.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Mvc.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.Razor.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.csprojResolveAssemblyReference.cache
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Aspose.Cells.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Aspose.Slides.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Component.Chart.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Component.Node.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Component.Node.Library.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Component.Table.CubeData.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Component.Table.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\CubeFramework.Core.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\CubeFramework.Model.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\CubeFramework.ServiceModel.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.Export.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.IdentityModel.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Configuration.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Core.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Web.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.SqlServer.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\ExportFramework.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\IMS.Logger.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\log4net.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AnalysisServices.AdomdClient.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Owin.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Helpers.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Mvc.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Optimization.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Razor.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\WebGrease.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.IdentityModel.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Antlr3.Runtime.pdb
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.SqlServer.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\ExportFramework.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Optimization.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Helpers.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Mvc.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Razor.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.csprojResolveAssemblyReference.cache
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.dll
+D:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\ENA\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.pdb
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Antlr3.Runtime.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Aspose.Cells.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Aspose.Slides.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Component.Chart.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Component.Node.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Component.Node.Library.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Component.Table.CubeData.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Component.Table.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\CubeFramework.Core.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\CubeFramework.Model.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\CubeFramework.ServiceModel.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.Export.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.IdentityModel.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Configuration.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Core.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\DashboardFramework.Web.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.SqlServer.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\ExportFramework.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\IMS.Logger.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\log4net.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AnalysisServices.AdomdClient.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Newtonsoft.Json.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Owin.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Helpers.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Mvc.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Optimization.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Razor.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\WebGrease.dll
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Dashboard.IdentityModel.pdb
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Antlr3.Runtime.pdb
+D:\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\EntityFramework.SqlServer.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\ExportFramework.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\Newtonsoft.Json.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Optimization.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Helpers.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Mvc.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.Razor.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+D:\ENA\RBPo1Dashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+D:\ENA\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.csprojResolveAssemblyReference.cache
+D:\ENA\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.dll
+D:\ENA\RBPo1Dashboard\Dashboard\obj\Debug\Dashboard.pdb
+D:\MerckSeronoDashboard\Dashboard\bin\Dashboard.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Dashboard.pdb
+D:\MerckSeronoDashboard\Dashboard\bin\Antlr3.Runtime.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Aspose.Cells.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Aspose.Slides.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Component.Chart.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Component.Node.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Component.Node.Library.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Component.Table.CubeData.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Component.Table.dll
+D:\MerckSeronoDashboard\Dashboard\bin\CubeFramework.Core.dll
+D:\MerckSeronoDashboard\Dashboard\bin\CubeFramework.Model.dll
+D:\MerckSeronoDashboard\Dashboard\bin\CubeFramework.ServiceModel.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Dashboard.Export.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Dashboard.IdentityModel.dll
+D:\MerckSeronoDashboard\Dashboard\bin\DashboardFramework.Configuration.dll
+D:\MerckSeronoDashboard\Dashboard\bin\DashboardFramework.Core.dll
+D:\MerckSeronoDashboard\Dashboard\bin\DashboardFramework.Web.dll
+D:\MerckSeronoDashboard\Dashboard\bin\EntityFramework.dll
+D:\MerckSeronoDashboard\Dashboard\bin\EntityFramework.SqlServer.dll
+D:\MerckSeronoDashboard\Dashboard\bin\ExportFramework.dll
+D:\MerckSeronoDashboard\Dashboard\bin\IMS.Logger.dll
+D:\MerckSeronoDashboard\Dashboard\bin\log4net.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.AnalysisServices.AdomdClient.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.Security.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Web.Infrastructure.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Newtonsoft.Json.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Owin.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Net.Http.Formatting.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Helpers.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Http.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Http.WebHost.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Mvc.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Optimization.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Razor.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.WebPages.Deployment.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.WebPages.dll
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.WebPages.Razor.dll
+D:\MerckSeronoDashboard\Dashboard\bin\WebGrease.dll
+D:\MerckSeronoDashboard\Dashboard\bin\Dashboard.IdentityModel.pdb
+D:\MerckSeronoDashboard\Dashboard\bin\Antlr3.Runtime.pdb
+D:\MerckSeronoDashboard\Dashboard\bin\EntityFramework.xml
+D:\MerckSeronoDashboard\Dashboard\bin\EntityFramework.SqlServer.xml
+D:\MerckSeronoDashboard\Dashboard\bin\ExportFramework.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.AspNet.Identity.Core.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.Security.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Microsoft.Owin.Security.Cookies.xml
+D:\MerckSeronoDashboard\Dashboard\bin\Newtonsoft.Json.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Optimization.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Net.Http.Formatting.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Helpers.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Http.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Http.WebHost.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Mvc.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.Razor.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.WebPages.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.WebPages.Deployment.xml
+D:\MerckSeronoDashboard\Dashboard\bin\System.Web.WebPages.Razor.xml
+D:\MerckSeronoDashboard\Dashboard\obj\Debug\Dashboard.csprojResolveAssemblyReference.cache
+D:\MerckSeronoDashboard\Dashboard\obj\Debug\Dashboard.dll
+D:\MerckSeronoDashboard\Dashboard\obj\Debug\Dashboard.pdb
