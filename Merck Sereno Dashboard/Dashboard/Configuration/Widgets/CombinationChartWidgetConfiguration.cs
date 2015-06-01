@@ -22,12 +22,9 @@ namespace Dashboard.Configuration.Widgets
             HasName(widgetItem.Name);
             View.HasConfig("")
                 .HasController<CombiHomeChartWidgetController>();
-            View.DataFlow.AddSource<CubeDataSourceBase>()
+            View.DataFlow.AddSource<DummyTableDataSource>()
                 .WithModule(widgetItem.ViewId)
-                .Transform().By<CombinationChartTransformer>()
-                .HasProperty(t => t.MeasureValue).WithValue(p => p["@@Measure_text"])
-                .HasProperty(t => t.CategoryString).WithValue(p => p["@@MarketCategory_text"])
-                .HasProperty(t => t.PeriodString).WithValue(p => p["@@Period_text"]);
+                .Transform().By<CombinationChartTransformer>();
 
             Export.HasController<HomeExportController>().HasConfig("HomeTrend")
                   .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)

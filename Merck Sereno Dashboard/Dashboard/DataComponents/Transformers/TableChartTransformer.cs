@@ -39,10 +39,10 @@ namespace Dashboard.DataComponents.Transformers
             var data = new TableChartConfig
                 {
                     Table = GetTableData(),
-                    Chart = new CombinationTrendChartTransformer(TrendChartControlId,Input,UncheckedItems)
-                    {
-                        AbsoluteTousandValue = AbsoluteTousandValue
-                    }.GetChart()
+                    //Chart = new CombinationTrendChartTransformer(TrendChartControlId,Input,UncheckedItems)
+                    //{
+                    //    AbsoluteTousandValue = AbsoluteTousandValue
+                    //}.GetChart()
                 };
             return data;
         }

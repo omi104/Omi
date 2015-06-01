@@ -15,55 +15,33 @@ namespace Dashboard.DataComponents.DataSources
         {
             var columns = new List<Column>();
             var rows = new List<Row>();
-            
-            var count = Int32.Parse(Parameters[ParameterList.RecordCount])+1;
 
-            //-------------------Multi source molecules
             columns = new List<Column>
             {
-                new Column("ItemNo", 0),
-                new Column("ItemColor", 1),
-                new Column("Item", 2),
-                new Column("Brand", 3),
-                new Column("MS", 4),
-                new Column("Change", 5),
-                new Column("Change1", 6),
-                new Column("Blank1",7),
-                new Column("MS2", 8),
-                new Column("MS3", 9),
-                new Column("Change2", 10),
-                new Column("Change3", 11),
-                new Column("Contribution", 12),
-                new Column("Contribution2", 13),
-                new Column("Blank2",14),
-                 new Column("MS4", 15),
-                new Column("Change4", 16),
-                new Column("Contribution3", 17),
+                new Column("Rank", 0),
+                new Column("Company", 1),
+                new Column("Mar 2014", 2),
+                new Column("Apr 2014", 3),
+                new Column("May 2014", 4),
+                new Column("Jun 2014", 5),
+                new Column("Jul 2014", 6),
+                new Column("Aug 2014",7),
+                new Column("Sep 2014", 8),
+                new Column("Oct 2014", 9),
+                new Column("Nov 2014", 10),
+                new Column("Dec 2014", 11),
+                new Column("Jan 2014", 12),
 
             };
 
             rows = new List<Row>
             {
-                new Row(new List<string>() {"","0","Selected Market","","100.0%", "100.0%","","","1.5","", "100.0%","","5.1","","","","",""}),
-                new Row(new List<string>() {"1","1","SANOFI","","10.8%", "11.0%","green","","3.8","green", "11.3%","yellow","7.2","green","","","",""}),
-                new Row(new List<string>() {"2","2","RECKITT BENCKISER","","10.5%", "10.2%","yellow","","-1.0","red", "10.13%","green","9.34%","green","","","",""}),
-                new Row(new List<string>() {"3","3","NOVARTIS","","7.2%","8.2%","yellow","","16.0","green", "8.3%","green","5.5","yellow","","","",""}),
-                new Row(new List<string>() {"4","4","BRISTOL-MYERS SQB","","7.3%", "6.9%","green","","-5.1","red", "6.5%","yellow","-1.0","red","","","",""}),
-                new Row(new List<string>() {"5","5","BAYER","","5.1%", "4.8%","yellow","","-5.2","red", "4.6%","yellow","0.8","yellow","","","",""}),
-                new Row(new List<string>() {"6","6","BOEHRINGER INGEL","","10.8%", "11.0%","green","","3.8","green", "11.3%","yellow","7.2","green","","","",""}),
-                new Row(new List<string>() {"7","7","TEVA","","10.5%", "10.2%","yellow","","-1.0","red", "10.13%","green","9.34%","green","","","",""}),
-                new Row(new List<string>() {"8","8","PFIZER","","7.2%","8.2%","yellow","","16.0","green", "8.3%","green","5.5","yellow","","","",""}),
-                new Row(new List<string>() {"9","9","JOHNSON & JONHSON","","7.3%", "6.9%","green","","-5.1","red", "6.5%","yellow","-1.0","red","","","",""}),
-                new Row(new List<string>() {"10","10","ANGELINI","","5.1%", "4.8%","yellow","","-5.2","red", "4.6%","yellow","0.8","yellow","","","",""}),
-                new Row(new List<string>() {"11","11","KLOSTERFRAU","","10.8%", "11.0%","green","","3.8","green", "11.3%","yellow","7.2","green","","","",""}),
-                new Row(new List<string>() {"12","12","MENARINI","","10.5%", "10.2%","yellow","","-1.0","red", "10.13%","green","9.34%","green","","","",""}),
-                new Row(new List<string>() {"13","13","STADA","","7.2%","8.2%","yellow","","16.0","green", "8.3%","green","5.5","yellow","","","",""}),
-                new Row(new List<string>() {"14","14","MYLAN","","7.3%", "6.9%","green","","-5.1","red", "6.5%","yellow","-1.0","red","","","",""}),
-                new Row(new List<string>() {"15","15","FERRAR","","5.1%", "4.8%","yellow","","-5.2","red", "4.6%","yellow","0.8","yellow","","","",""}),
-
+                new Row(new List<string>() {"0","Diclo","156031500.0","132166400.0","113088200.0","85627490.0","65000660.0","78615640.0","207704800.0","188400700.0","160960800.0","235871500.0","225401600.0"}),
+                new Row(new List<string>() {"1","Arcoxia","225401600.0","132166400.0","184434000.0","85627490.0","65000660.0","78615640.0","207704800.0","121534200.0","160960800.0","235871500.0","225401600.0"}),
+                new Row(new List<string>() {"2","Total","247214700.0","212504900.0","184434000.0","147909200.0","65000660.0","78615640.0","207704800.0","188400700.0","225401600.0","235871500.0","164307900.0"}),
             };
 
-            var variance = new CubeData(columns, rows.Take(count).ToList());
+            var variance = new CubeData(columns, rows);
             return variance;
         }
 

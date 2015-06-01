@@ -24,77 +24,42 @@ namespace Dashboard.DataComponents.Transformers
         public SingleChartModel GetData()
         {
             var model = new SingleChartModel();
-            model.Title = CategoryString+" vs. Reckitt Benckiser Sales Trend in GLOBAL - MTH - "+PeriodString;
+            model.Title = "Performance vs. Competitors (in Euros)";
             model.Chart = "";
-            string defaultAttributes = @"bgColor='FFFFFF' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0'";
+            string defaultAttributes = @"bgColor='FFFFFF' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
+
             chart = new MSCombiDY2D(defaultAttributes)
             {
                 Dataset = new List<DataSet>(),
             };
+            chart.Attributes.Add("pyAxisName", "PY axis Label");
+            chart.Attributes.Add("sYAXisName", "SY axis Label");
 
-            if (Input == null || Input.Rows.Count == 0)
-                return model;
-
-            var columnCount = Input.Columns.Count;
-            double currentValue = 0;
-
-            var totalMinValue = double.MaxValue;
-            foreach (var col in Input.Rows[0].Values.GetRange(1, columnCount - 1))
-            {
-                currentValue = double.Parse(col);
-                if (currentValue < totalMinValue)
-                    totalMinValue = currentValue;
-            }
-            totalMinValue = Math.Floor((totalMinValue - (totalMinValue * .05)));
-
-            var rbMinValue = double.MaxValue;
-            foreach (var col in Input.Rows[1].Values.GetRange(1, columnCount - 1))
-            {
-                currentValue = double.Parse(col);
-                if (currentValue < rbMinValue)
-                    rbMinValue = currentValue;
-            }
-            rbMinValue = Math.Floor((rbMinValue - (rbMinValue * .05)));
-            chart.Attributes.Add("pYAxisMinValue", "" + totalMinValue);
-            chart.Attributes.Add("sYAxisMinValue", "" + rbMinValue);
-
-            chart.Categories = new Categories();
-            chart.Categories.Category = new List<Category>();
-            chart.ControlId = "CatVsSalesTrendChart";
             AddStyles();
-            foreach(var col in Input.Columns.Skip(1))
+            foreach(var col in Input.Columns.Skip(2))
             {
                 var category = new Category();
                 category.Attributes.Add("label", col.Name);
                 chart.Categories.Category.Add(category);
             }
-            chart.Dataset.Add(AddFirstDataSet());
-            chart.Dataset.Add(AddTrendLineDataSet());
-            chart.Attributes.Add("pyAxisName", MeasureValue+" (Total)");
-            chart.Attributes.Add("sYAXisName", MeasureValue + " (RB)");
-            
-            model.Chart= chart.RenderWithScript("98%", "280");
+            chart.Dataset.Add(AddFirstDataSetForTotal());
+
+            for(int i=0; i<= Input.Rows.Count - 2;i++)
+            {
+                chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
+            }
+            model.Chart= chart.RenderWithScript("100%", "360");
             return model;
         }
 
-        
-        private DataSet AddFirstDataSet()
+        private DataSet AddFirstDataSetForTotal()
         {
-            //var dataSet = new DataSet("color='FF679A'");
-            //var dataSet = new DataSet("color='45b29d'");
-            //var dataSet = new DataSet("color='2a8fdd'");
-            //var dataSet = new DataSet("color='86a0ba'");
-            //var dataSet = new DataSet("color='42586d'");
-            //var dataSet = new DataSet("color='008EA0'");
-            //var dataSet = new DataSet("color='81b4c1'");
-            //var dataSet = new DataSet("color='b1e1eb'");
-            //var dataSet = new DataSet("color='0b6d99'");
-            var dataSet = new DataSet("color='4d9bbc'");
-            dataSet.Attributes.Add("seriesName", Input.Rows.First().Values.First());
+            var dataSet = new DataSet("color='4d9bbc' renderas= 'Area'");
+            dataSet.Attributes.Add("seriesName", Input.Rows.Last().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
             dataSet.Set = new List<Set>();
 
-            foreach (var val in Input.Rows.First().Values.Skip(1))
+            foreach (var val in Input.Rows.First().Values.Skip(2))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);
@@ -103,16 +68,14 @@ namespace Dashboard.DataComponents.Transformers
             return dataSet;
         }
 
-        private DataSet AddTrendLineDataSet()
+        private DataSet AddTrendLineDataSet(Row row)
         {
-            //var dataSet = new DataSet("renderas='Line' color='2C3F50'");
-            //var dataSet = new DataSet("renderas='Line' color='FF679A'");
-            var dataSet = new DataSet("renderas='Line' color='E42487'");
-            dataSet.Attributes.Add("seriesName", Input.Rows[1].Values.First());
+            var dataSet = new DataSet("renderas='Line'");
+            dataSet.Attributes.Add("seriesName", row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
 
-            foreach (var val in Input.Rows[1].Values.Skip(1))
+            foreach (var val in row.Values.Skip(2))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);
@@ -159,7 +122,6 @@ namespace Dashboard.DataComponents.Transformers
             var application = new Component.Chart.Fusion.Application { Apply = apply };
             chart.Styles.Application = new List<Component.Chart.Fusion.Application> { application };
         }
-
 
         public string GetEmbeddedRender(string width, string height)
         {

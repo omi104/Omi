@@ -28,8 +28,8 @@ namespace Dashboard.DashboardComponent.Components
         {
             return new NavigationItem()
             {
-                Name = "NavCategoriesTrend",
-                Label = "Trend",
+                Name = "NavAllRegions",
+                Label = "All Regions",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountCategoriesTrend(),

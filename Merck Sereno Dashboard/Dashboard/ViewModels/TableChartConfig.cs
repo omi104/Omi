@@ -10,6 +10,6 @@ namespace Dashboard.ViewModels
     public class TableChartConfig
     {
         public Table Table { get; set; }
-        public SingleChartModel Chart { get; set; }
+        //public SingleChartModel Chart { get; set; }
     }
 }
