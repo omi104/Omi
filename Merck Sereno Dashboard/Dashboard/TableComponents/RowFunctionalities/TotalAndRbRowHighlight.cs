@@ -13,10 +13,6 @@ namespace Dashboard.TableComponents.RowFunctionalities
 
         public void Apply(Row rowData, TableRow row)
         {
-            //if (rowData.Values[colIndex].ToUpper().Contains("RECKITT"))
-            //{
-            //    row.Classes.Add("highlight-row-reckitt-benckiser");
-            //}
             if (rowData.Values[colIndex].ToUpper().Contains("TOTAL"))
             {
                 row.Classes.Add("highlight-row-total");

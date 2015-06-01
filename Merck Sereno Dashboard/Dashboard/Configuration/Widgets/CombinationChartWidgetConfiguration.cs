@@ -24,7 +24,8 @@ namespace Dashboard.Configuration.Widgets
                 .HasController<CombiHomeChartWidgetController>();
             View.DataFlow.AddSource<DummyTableDataSource>()
                 .WithModule(widgetItem.ViewId)
-                .Transform().By<CombinationChartTransformer>();
+                .Transform().By<CombinationChartTransformer>()
+                .HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems]);
 
             Export.HasController<HomeExportController>().HasConfig("HomeTrend")
                   .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)

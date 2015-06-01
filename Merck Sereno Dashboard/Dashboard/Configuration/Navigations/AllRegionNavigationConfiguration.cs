@@ -26,7 +26,7 @@ namespace Dashboard.Configuration.Navigations
             HasFilter(new TopCountFilterConfiguration(navigationItem.Filters[0]));
             HasFilter(new MeasureTypeFilterConfiguration(navigationItem.Filters[1]));
 
-            HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.RbCatVsRbSalesTrendChart()));
+            HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.AllRegionCombinationChart()));
             HasWidget(new CompanyTrendTableChartWidgetConfiguration(navigationItem.Widgets[0]));
 
             this.HasExportController<NavExportController>();

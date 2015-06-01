@@ -17,6 +17,7 @@ namespace Dashboard.DataComponents.Transformers
     public class CombinationChartTransformer : ITransformer<CubeData, SingleChartModel>
     {
         public MSCombiDY2D chart { get; set; }
+        public string UncheckedItems { get; set; }
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
@@ -34,7 +35,7 @@ namespace Dashboard.DataComponents.Transformers
             };
             chart.Attributes.Add("pyAxisName", "PY axis Label");
             chart.Attributes.Add("sYAXisName", "SY axis Label");
-
+            chart.ControlId = "interactiveTrendChart";
             AddStyles();
             foreach(var col in Input.Columns.Skip(2))
             {
@@ -42,11 +43,14 @@ namespace Dashboard.DataComponents.Transformers
                 category.Attributes.Add("label", col.Name);
                 chart.Categories.Category.Add(category);
             }
-            chart.Dataset.Add(AddFirstDataSetForTotal());
+
+            if (!UncheckedItems.ToUpper().Contains("TOTAL")) 
+                chart.Dataset.Add(AddFirstDataSetForTotal());
 
             for(int i=0; i<= Input.Rows.Count - 2;i++)
             {
-                chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
+                if (!UncheckedItems.Contains(Input.Rows[i].Values[1])) 
+                    chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
             }
             model.Chart= chart.RenderWithScript("100%", "360");
             return model;
@@ -54,7 +58,7 @@ namespace Dashboard.DataComponents.Transformers
 
         private DataSet AddFirstDataSetForTotal()
         {
-            var dataSet = new DataSet("color='4d9bbc' renderas= 'Area'");
+            var dataSet = new DataSet("color='4d9bbc' renderas='Area'");
             dataSet.Attributes.Add("seriesName", Input.Rows.Last().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
             dataSet.Set = new List<Set>();

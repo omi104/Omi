@@ -24,15 +24,10 @@ namespace Dashboard.Configuration.Widgets
             View.HasConfig(p=>p)
                 .HasController<CompanyTrendTableChartWidgetController>();
 
-            View.DataFlow.AddSource<CubeDataSourceBase>()
+            View.DataFlow.AddSource<DummyTableDataSource>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<TableChartTransformer>()
-                .HasProperty(t => t.ShowFullLength).WithValue(widgetItem.Name == WidgetItems.SubBrandTrendTableChartWidget().Name || widgetItem.Name == WidgetItems.SKUTrendTableChartWidget().Name)
-                .HasProperty(t => t.NameColumHeaderText).WithValue(GetHeaderText)
-                .HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems])//UNChecked items could be a bug
-                .HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p[ParameterList.AbsoluteThousandFilter])
-                .HasProperty(t => t.MeasureType).WithValue(p => p[ParameterList.RbMeasureType])
-                .HasProperty(t => t.TopCountValue).WithValue(GetTopCount);
+                .HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems]);
 
             Export.HasController<TrendTableChartExportController>().HasConfig("CompanyTrend")
                   .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
