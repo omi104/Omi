@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Dashboard.ViewModels;
+using Component.Chart;
+using Dashboard.Models.Data;
 using DashboardFramework.Web.Controllers;
 
 namespace Dashboard.Controllers.Widgets
 {
-    public class CompanyTrendTableChartWidgetController : WidgetBaseController<IReadOnlyDictionary<string, string>, TableChartConfig>
+    public class CombiChartWidgetController : WidgetBaseController<string, SingleChartModel>
     {
         //
-        // GET: /CompanyTrendTableChartWidget/
-
+        // GET: /SimpleChartWidget/
         public override ViewResult Index()
         {
             return View(Data);
         }
-
     }
 }

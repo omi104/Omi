@@ -21,25 +21,25 @@ namespace Dashboard.Configuration.Widgets
         {
             HasName(widgetItem.Name);
             View.HasConfig("")
-                .HasController<CombiHomeChartWidgetController>();
+                .HasController<CombiChartWidgetController>();
             View.DataFlow.AddSource<DummyTableDataSource>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
                 .HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems]);
 
-            Export.HasController<HomeExportController>().HasConfig("HomeTrend")
-                  .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
-                  .Transform().By<CubeDataToXTableHomeTrendTransformer>()
-                  .Transform().By<ExportModelTransformer>()
-                  .HasProperty(t => t.NavigationNameString).WithValue(p => p["Navigation_Label"])
-                  .HasProperty(t => t.GeoMaptext).WithValue(p => p["RB_Geo_text"])
-                 .HasProperty(t => t.TimePeriodText).WithValue(p => p["@@Period_text"])
-                 .HasProperty(t => t.MeasureText).WithValue(p => p["@@Measure_text"])
-                 .HasProperty(t => t.CategoryText).WithValue(p => p["@@MarketCategory_text"])
-                 .HasProperty(t => t.SubCategoryText).WithValue(p => p["@@MarketSubCategory_text"])
-                 .HasProperty(t => t.SegementText).WithValue(p => p["@@Segment_text"])
-                 .HasProperty(t => t.ChannelText).WithValue(p => p["@@Channel_text"])
-                 .HasProperty(t => t.SubChannelText).WithValue(p => p["@@SubChannel_text"]);
+            //Export.HasController<HomeExportController>().HasConfig("HomeTrend")
+            //      .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
+            //      .Transform().By<CubeDataToXTableHomeTrendTransformer>()
+            //      .Transform().By<ExportModelTransformer>()
+            //      .HasProperty(t => t.NavigationNameString).WithValue(p => p["Navigation_Label"])
+            //      .HasProperty(t => t.GeoMaptext).WithValue(p => p["RB_Geo_text"])
+            //     .HasProperty(t => t.TimePeriodText).WithValue(p => p["@@Period_text"])
+            //     .HasProperty(t => t.MeasureText).WithValue(p => p["@@Measure_text"])
+            //     .HasProperty(t => t.CategoryText).WithValue(p => p["@@MarketCategory_text"])
+            //     .HasProperty(t => t.SubCategoryText).WithValue(p => p["@@MarketSubCategory_text"])
+            //     .HasProperty(t => t.SegementText).WithValue(p => p["@@Segment_text"])
+            //     .HasProperty(t => t.ChannelText).WithValue(p => p["@@Channel_text"])
+            //     .HasProperty(t => t.SubChannelText).WithValue(p => p["@@SubChannel_text"]);
 
             HasParameterDependency.On(widgetItem.HasParamDependency);
         }

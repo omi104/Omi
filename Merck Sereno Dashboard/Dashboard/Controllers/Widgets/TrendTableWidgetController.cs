@@ -6,16 +6,16 @@ using System.Web.Mvc;
 using Dashboard.ViewModels;
 using DashboardFramework.Web.Controllers;
 
-namespace Dashboard.Controllers.Filters
+namespace Dashboard.Controllers.Widgets
 {
-    public class MonthPickerFilterLayoutController :  LayoutBaseController<FilterItem>
+    public class TrendTableWidgetController : WidgetBaseController<IReadOnlyDictionary<string, string>, TableChartConfig>
     {
         //
-        // GET: /MonthPickerFilterLayout/
+        // GET: /CompanyTrendTableChartWidget/
 
         public override ViewResult Index()
         {
-            return View(Config);
+            return View(Data);
         }
 
     }

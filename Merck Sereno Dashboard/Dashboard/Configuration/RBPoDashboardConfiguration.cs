@@ -27,7 +27,6 @@ namespace Dashboard.Configuration
             HasDefaultNavigation(NavigationItems.NavHome().Name);
 
             ConfigureParameters();
-            AddUIStateParameters();
             ConfigureFilters();
             ConfigureNavigations();
      
@@ -48,13 +47,10 @@ namespace Dashboard.Configuration
             HasFilter(new CommonFilterConfiguration(FilterItems.MarketCategory()));
             HasFilter(new CommonFilterConfiguration(FilterItems.MarketSubCategory()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Segment()));
-            HasFilter(new HiddenMarketFilterConfiguration(FilterItems.HiddenMarketFilter()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Channel()));
             HasFilter(new CommonFilterConfiguration(FilterItems.SubChannel()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.PeriodType()));
-            HasFilter(new MonthPickerFilterConfiguration<MonthPickerDataSource>(FilterItems.Period()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.PeriodType()));  
             HasFilter(new CommonFilterConfiguration(FilterItems.Measure()));
-            HasWidget(new GeoMapWidgetConfiguration<CubeDataSourceBase>("GeoMapWidget", ParameterList.RbGeo, 1, 2));
         }
 
         private void ConfigureParameters()
@@ -73,9 +69,9 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.RbMeasure).WithValue("")
                 .Add(ParameterList.RbMarket).WithValue("[Market].[Hierarchy].[All]")
                 .Add(ParameterList.RbPeriod).WithValue(Constants.RbPeriod)
-                .Add(ParameterList.UncheckedItems).WithValue("TOTAL MARKET")
+                .Add(ParameterList.UncheckedItems).WithValue("")
                 .Add(ParameterList.RbMeasureType).WithValue(MeasureType.Sales)
-                .Add(ParameterList.AbsoluteThousandFilter).WithValue("Thousand")
+                .Add(ParameterList.AbsoluteThousandFilter).WithValue("Absolute")
 
                 .Add(ParameterList.TopCountCompanyAtAGlance).WithValue("10")
                 .Add(ParameterList.TopCountBrandAtAGlance).WithValue("10")
@@ -102,13 +98,6 @@ namespace Dashboard.Configuration
 
                 .Add(ParameterList.EmailTemplate).WithValue("")
                 .Add(ParameterList.IsIMSUser).WithValue("false");
-                
-                //.Add(ParameterList.HoverRowItem).WithValue("")
-        }
-
-        private void AddUIStateParameters()
-        {
-            //UIStateParameters.Add("").WithValue("");
         }
 
         private RbPoDashboardLayoutConfig GetCurrentPeriod(IReadOnlyDictionary<string, string> parameters)
@@ -136,7 +125,7 @@ namespace Dashboard.Configuration
                 GeoText = parameters["RB_Geo_text"],
                 ChannelText = parameters["@@Channel_text"],
                 SubChannelText = parameters["@@SubChannel_text"],
-                PeriodText = parameters["@@Period_text"],
+                //PeriodText = parameters["@@Period_text"],
                 MeasureText = parameters["@@Measure_text"],
                 Role = user != null && user.Role != null ? user.Role : "",
                 Org = user.Org ?? "",
