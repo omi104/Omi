@@ -146,8 +146,8 @@ textarea.uniform:focus {
 }
 .btn-info {
   color: #ffffff;
-  background-color: #e585b3;
-  border-color: #e585b3;
+  background-color: #52D0CB;
+  border-color: #00958f;
 }
 
 .btn-info:hover,
@@ -157,7 +157,7 @@ textarea.uniform:focus {
 .open .dropdown-toggle.btn-info {
   color: #ffffff;
   background-color: #00958f;
-  border-color: #e585b3;
+  border-color: #B6DEE0;
 }
 
 .btn-info:active,
@@ -182,7 +182,7 @@ fieldset[disabled] .btn-info:active,
 .btn-info[disabled].active,
 fieldset[disabled] .btn-info.active {
   background-color: #00958f;
-  border-color: #e585b3;
+  border-color: #B6DEE0;
 }
 
 button.close
