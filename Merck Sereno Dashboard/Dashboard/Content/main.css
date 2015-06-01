@@ -23,8 +23,8 @@ header
 .header-nav
 {
     height: 35px;
-    background: #e42487;
-    box-shadow: 0 4px 0 #c80198;
+    background: #00958f;
+    box-shadow: 0 4px 0 #B6DEE0;
     width: 100%;
 }
 
@@ -233,7 +233,7 @@ header
                     {
                         border-bottom-right-radius: 0;
                         border-top-right-radius: 3px;
-                        background-color: #e42487;
+                        background-color: #00958f;
                     }
 
                     .page-sidebar.collapse-sidebar .nav li.hover-li a.active:before
@@ -397,14 +397,14 @@ header
             .page-sidebar .side-nav .nav > li a:hover,
             .page-sidebar .side-nav .nav > li a.active
             {
-                background-color: #e42487;
+                background-color: #00958f;
             }
 
     .page-sidebar.collapse-sidebar .nav li.hover-li ul.sub li a.active,
     .page-sidebar.collapse-sidebar .side-nav .nav > li a:hover,
     .page-sidebar.collapse-sidebar .side-nav .nav > li a.active
     {
-        background-color: #e42487;
+        background-color: #00958f;
     }
 
     .page-sidebar.collapse-sidebar .side-nav .nav > li a
@@ -495,7 +495,7 @@ header
 
 .page-sidebar.collapse-sidebar .side-nav .nav > li ul.sub > li a:hover
 {
-    background-color: #e42487;
+    background-color: #00958f;
 }
 
 .page-sidebar .side-nav .nav > li ul.sub > li a:hover:before
@@ -532,7 +532,7 @@ header
         .page-sidebar .side-nav .nav > li ul.sub.show li a.active,
         .page-sidebar .side-nav .nav > li ul.sub.show li a:hover
         {
-            background-color: #e42487;
+            background-color: #00958f;
         }
 
     .page-sidebar .side-nav .nav > li ul.sub.show li.highlight-menu:last-child:after
@@ -1131,10 +1131,10 @@ header #top-nav .navbar-nav li a
     header #top-nav .navbar-nav li a:hover,
     header #top-nav .navbar-nav li a:focus
     {
-        background: #c80198;
+        background: #04B7D7;
     }
     header #top-nav .navbar-nav li .dropdown-menu {
-         background-color: #e42487;
+         background-color: #00958f;
         padding-top: 0;
     }
     header #top-nav .navbar-nav li .dropdown-menu li a {
@@ -1628,7 +1628,7 @@ header #top-nav .navbar-nav li a
 
 /*#sidebar .sidebar-inner .toggle-sidebar:hover
 {
-    background: #e42487;
+    background: #00958f;
 }*/
 
 #filter-container .panel-body .form-control
@@ -1652,8 +1652,8 @@ header #top-nav .navbar-nav li a
 {
     width: 100%;
     padding: 3px 7px 3px 7px;
-    border-bottom: 2px solid #f78db8;
-    border-top: 2px solid #f78db8;
+    border-bottom: 2px solid #00958f;
+    border-top: 2px solid #00958f;
     background-color: white;
 }
 /*---Calender Filter---*/

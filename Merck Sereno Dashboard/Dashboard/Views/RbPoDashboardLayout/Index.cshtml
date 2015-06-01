@@ -9,7 +9,7 @@
                 <i class="fa fa-filter"></i>
             </button>
             <div style="float: right" class="exportLink">
-                <a href="javascript:void(0)" onclick="RbHelper.FavouriteClick('@HttpContext.Current.User.Identity.Name')" title="Add to favourite">
+                @*<a href="javascript:void(0)" onclick="RbHelper.FavouriteClick('@HttpContext.Current.User.Identity.Name')" title="Add to favourite">
                     <span id="favourite-icon"></span></a>
 
                 <a href="javascript:void(0)" onclick="RbHelper.ExportClick('xlsx')" title="Export to excel">
@@ -20,7 +20,7 @@
                 </a>
                 <a href="javascript:void(0)" onclick="RbHelper.ExportClick('pdf')" title="Export to pdf">
                     <span id="pdf-icon"></span>
-                </a>
+                </a>*@
             </div>
 
         </div>
@@ -31,7 +31,7 @@
                     <span id="NumberFormatswitch" onclick="customTable.ShowAbsoluteThousand(this)" style="display: none">Switch&nbsp;To&nbsp;Absolute</span>
                 </div>
                 <div id="filter-container">
-                    <div class="panel panel-pink  plain">
+                    <div class="panel panel-teal  plain">
                         <div class="panel-heading">
                             <h5 class="panel-title">Select Your Market</h5>
                             <div class="panel-controls" style="float: right; margin-right: -10px;">
@@ -55,16 +55,6 @@
                         <div class="panel-body">
                             <div id="filter-Channel-layout"></div>
                             <div id="filter-SubChannel-layout"></div>
-                        </div>
-                    </div>
-                    <div class="panel panel-pink  plain">
-                        <div class="panel-heading">
-                            <h5 class="panel-title">Geo Map</h5>
-                            <div class="panel-controls" style="float: right; margin-right: -10px;">
-                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
-                            </div>
-                        </div>
-                        <div class="panel-body" id="widget-GeoMapWidget-view">
                         </div>
                     </div>
                     <div class="panel panel-teal  plain">

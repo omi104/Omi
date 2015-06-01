@@ -34,7 +34,7 @@ namespace Dashboard.DataComponents.Transformers
                 AutoCreateHeader = false,
                 RowFunctionalities = new List<IRowFunctionality<Row>>() 
                 { 
-                    new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#fecefe" },
+                    new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#B6DEE0" },
                     new LevelWiseRowColorFunctionaility(false),
                     new TotalRowHighlight(){colIndex = 1},
                     //new HighlightRowIfRb() {colIndex = _isRbIndex}

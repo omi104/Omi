@@ -56,14 +56,14 @@ table.trend-table td {
     table.trend-table th.trend-company, table.trend-table td.trend-company
     {
         padding-left: 3px;
-        border-right: 1px dotted #9D1D7C;
+        border-right: 1px dotted #18C5B1;
         width: 100px;
     }
     
     table.trend-table th.colData, td.colData
     {
         padding-right: 3px;
-        border-right: 1px dotted #9D1D7C;
+        border-right: 1px dotted #18C5B1;
         width: 50px;
     }
 
@@ -108,7 +108,7 @@ span.color-div
    }
 
    tr.highlight-row-total {
-       border: 1px solid #e32587 !important;
+       border: 2px solid #008080 !important;
        font-weight: bold;
        color:#777777
    }

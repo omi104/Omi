@@ -221,8 +221,8 @@
     <Compile Include="Configuration\Filters\TopCountFilterConfiguration.cs" />
     <Compile Include="Configuration\Navigations\HomeNavigationConfiguration.cs" />
     <Compile Include="Configuration\OtherConstant.cs" />
-    <Compile Include="Configuration\RbPoDashboardBuilder.cs" />
-    <Compile Include="Configuration\RBPoDashboardConfiguration.cs" />
+    <Compile Include="Configuration\MerckDashboardBuilder.cs" />
+    <Compile Include="Configuration\MerckDashboardConfiguration.cs" />
     <Compile Include="Configuration\Navigations\AllRegionNavigationConfiguration.cs" />
     <Compile Include="Configuration\ParameterList.cs" />
     <Compile Include="Configuration\Widgets\CombinationChartWidgetConfiguration.cs" />
@@ -961,16 +961,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\HomeNavigationLayout\Index.cshtml" />
-    <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
-    <Content Include="Views\BlankNavigationLayout\Index.cshtml" />
     <Content Include="Views\WelcomeTextnImageWidget\Index.cshtml" />
     <Content Include="Views\CombiChartWidget\Index.cshtml" />
-    <Content Include="Views\SnapshotChartWidget\Index.cshtml" />
     <Content Include="Views\SimpleTableWidget\Index.cshtml" />
-    <Content Include="Views\GeoMap\Index.cshtml" />
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\DropdownFilterLayout\Index.cshtml" />
-    <Content Include="Views\MonthPickerFilterLayout\Index.cshtml" />
     <Content Include="Views\TrendTableWidget\Index.cshtml" />
     <Content Include="Views\AllRegionNavigationLayout\Index.cshtml" />
     <Content Include="Views\Register\Index.cshtml" />
@@ -982,7 +977,6 @@
     <Content Include="Views\ForgotPassword\NewPassword.cshtml" />
     <Content Include="Views\Shared\_Arrow-definition.cshtml" />
     <Content Include="Views\YourAccountNavigationLayout\Index.cshtml" />
-    <Content Include="Views\ContactUsNavigationLayout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
@@ -992,9 +986,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\BlankWidget\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\DummyNavigationLayout\Index.cshtml" />

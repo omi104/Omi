@@ -24,7 +24,6 @@ namespace Dashboard.Configuration.Navigations
                 .HasController<AllRegionNavigationLayoutController>();
 
             HasFilter(new TopCountFilterConfiguration(navigationItem.Filters[0]));
-            //HasFilter(new MeasureTypeFilterConfiguration(navigationItem.Filters[1]));
 
             HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.AllRegionCombinationChart()));
             HasWidget(new TrendTableWidgetConfiguration(navigationItem.Widgets[0]));

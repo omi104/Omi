@@ -6,11 +6,11 @@ using DashboardFramework;
 
 namespace Dashboard.Configuration
 {
-    public class RbPoDashboardBuilder : IDashboardBuilder
+    public class MerckDashboardBuilder : IDashboardBuilder
     {
         public IDashboard Build()
         {
-            return new RbPoDashboardConfiguration().ObjectBeingConfigured;
+            return new MerckDashboardConfiguration().ObjectBeingConfigured;
         }
     }
 }

@@ -16,8 +16,8 @@
 }
 .pagination > .active > a
 {
-    background-color: #e42487;
-    border-color: #e42487;
+    background-color: #00958f;
+    border-color: #00958f;
 }
 .help-block {
     color: #a94442;
@@ -105,7 +105,7 @@ table.contact-us {
 }
 table.contact-us thead th
 {
-    background-color: #e42487;
+    background-color: #00958f;
     color: #fff;
 }
 

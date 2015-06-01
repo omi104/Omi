@@ -18,12 +18,12 @@ namespace Dashboard.Configuration
     using Dashboard.Configuration.Widgets;
     using Dashboard.DataComponents.DataSources;
 
-    public class RbPoDashboardConfiguration:DashboardConfiguration
+    public class MerckDashboardConfiguration:DashboardConfiguration
     {
-        public RbPoDashboardConfiguration()
+        public MerckDashboardConfiguration()
         {
-            HasName("ReckittBenckiserDashboard");
-            HasTitle("Reckitt Benckiser Dashboard");
+            HasName("MerckSerenoDashboard");
+            HasTitle("Merck Sereno CH Sales Performance Dashboard");
             HasDefaultNavigation(NavigationItems.NavHome().Name);
 
             ConfigureParameters();
@@ -116,7 +116,7 @@ namespace Dashboard.Configuration
             parameters.TryGetValue("CurrentNavigationId", out currentNavigationId);
             var config = new RbPoDashboardLayoutConfig
             {
-                Header = "Reckitt Benckiser Dashboard",
+                Header = "Merck Sereno CH Sales Performance Dashboard",
                 CopyRight = "Copyright IMS Dhaka 2015",
                 CurrentNavigation = currentNavigation,
                 CurrentPeriod = currentPeriod,

@@ -226,7 +226,7 @@ div.customButton {
     }
 
     .guide .selectedButton {
-        border-bottom: 5px solid #e42487;
+        border-bottom: 5px solid #00958f;
     }
 
 
@@ -341,7 +341,7 @@ table#MeasurementsTable td.col-14 {
 }
 
 #help-widget table .bg-gray {
-    background-color: #e42487;
+    background-color: #00958f;
 }
 
 #help-widget table .bg-blue {

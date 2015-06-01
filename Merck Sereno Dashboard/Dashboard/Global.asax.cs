@@ -31,7 +31,7 @@ namespace Dashboard
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            DashboardFrameworkConfig.RegisterBuilder<RbPoDashboardBuilder>();
+            DashboardFrameworkConfig.RegisterBuilder<MerckDashboardBuilder>();
             DashboardFrameworkConfig.CommandTranslators.Register<RbPo1LoadViewCommandTranslator>()
                                     .For(CommandType.LoadView)
                                     .WithOrder(-100);
