@@ -1,0 +1,115 @@
+@model Dashboard.Models.Config.RbPoDashboardLayoutConfig
+
+@Html.Partial("_Navigation", Model)
+<div id="content" class="page-content">
+    <div class="content-wrapper">
+        <div id="page-heading" class="page-header">
+            <h2>Home</h2>
+            <button type="button" class="btn" id="toggle-filter-bar" title="Dashboard filter">
+                <i class="fa fa-filter"></i>
+            </button>
+            <div style="float: right" class="exportLink">
+                <a href="javascript:void(0)" onclick="RbHelper.FavouriteClick('@HttpContext.Current.User.Identity.Name')" title="Add to favourite">
+                    <span id="favourite-icon"></span></a>
+
+                <a href="javascript:void(0)" onclick="RbHelper.ExportClick('xlsx')" title="Export to excel">
+                    <span id="xlsx-icon"></span>
+                </a>
+                <a href="javascript:void(0)" onclick="RbHelper.ExportClick('pptx')" title="Export to PPT">
+                    <span id="pptx-icon"></span>
+                </a>
+                <a href="javascript:void(0)" onclick="RbHelper.ExportClick('pdf')" title="Export to pdf">
+                    <span id="pdf-icon"></span>
+                </a>
+            </div>
+
+        </div>
+        <div class="content-inner">
+            <div class="row">
+                <div id="filters-info" class="col-md-12">
+                    <span id="category-text">@Model.CategoryText</span> in <span id="geo-text">@Model.GeoText</span>-<span id="channel-text">@Model.ChannelText</span>-<span id="sub-channel-text">@Model.SubChannelText</span>-<span id="period-text">@Model.PeriodText</span>-<span id="measure-text">@Model.MeasureText</span>
+                    <span id="NumberFormatswitch" onclick="customTable.ShowAbsoluteThousand(this)" style="display: none">Switch&nbsp;To&nbsp;Absolute</span>
+                </div>
+                <div id="filter-container">
+                    <div class="panel panel-pink  plain">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Select Your Market</h5>
+                            <div class="panel-controls" style="float: right; margin-right: -10px;">
+                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div id="filter-MarketCategory-layout"></div>
+                            <div id="filter-MarketSubCategory-layout"></div>
+                            <div id="filter-Segment-layout"></div>
+                            <div id="filter-HiddenMarket-layout" style="display: none"></div>
+                        </div>
+                    </div>
+                    <div class="panel panel-teal  plain">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Select Your Channel</h5>
+                            <div class="panel-controls" style="float: right; margin-right: -11px;">
+                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div id="filter-Channel-layout"></div>
+                            <div id="filter-SubChannel-layout"></div>
+                        </div>
+                    </div>
+                    <div class="panel panel-pink  plain">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Geo Map</h5>
+                            <div class="panel-controls" style="float: right; margin-right: -10px;">
+                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body" id="widget-GeoMapWidget-view">
+                        </div>
+                    </div>
+                    <div class="panel panel-teal  plain">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Select Your Criteria</h5>
+                            <div class="panel-controls" style="float: right; margin-right: -10px;">
+                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div id="filter-PeriodType-layout" style="padding-bottom: 4px;"></div>
+                            <div id="filter-Period-layout"></div>
+                            <div id="filter-Measure-layout" style="padding-top: 28px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="body-container">
+                    <div id="navigation-layout"></div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-9">
+                    <div id="footer">
+                        <img src="~/Content/Images/company-logo.png" alt="logo" />
+                        © 2015 IMS Health. All rights reserved. Developed & Designed by IMS Health CI & MR Services
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/project_js")
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#view-period-title').text('Viewing: '+'@Model.CurrentPeriod'+ ' Data');
+        RbHelper.resizeBodyWidth('@Model.CurrentNavigation');
+        RbHelper.highlightMenu('@Model.CurrentNavigationId', '');
+        RbHelper.ReloadIfPeriodHasChanged();
+        window.ExportDownload.prototype.execute = function () {
+            window.open(this.data.Url, '_blank', 'height=700,width=700,left=10,top=10,resizable=yes,scrollbars=yes,location=no, titlebar=no, status=no');
+        };
+    });
+</script>
+
+

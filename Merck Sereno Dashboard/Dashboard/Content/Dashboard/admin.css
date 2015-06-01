@@ -1,0 +1,38 @@
+﻿.DIV_TAB_CONTENT
+{
+    width: 100%;
+    padding: 3px;
+	border:solid 1px #C0C0C0;
+    border-top: 2px solid #f78db8;
+    background-color: white;
+}
+
+.roundedButton
+{
+	background-image:url('../Images/NavBgSelect.jpg');
+	font-size:12px;
+	height:32px;
+	border-left: solid 1px #C0C0C0;
+	border-right:solid 1px #C0C0C0;
+	color:#c71585;
+	font-weight:bold;
+	float:left;
+	width:121px;
+	text-align:center;
+	margin: 5px 5px 1px;
+    padding: 8px 10px 11px;
+	cursor:pointer;
+}
+.div-admin-tree
+{
+    background-image: url('../Images/plus.gif');
+    background-repeat:no-repeat;
+    background-position:center;
+    width:20px;
+    height:20px;
+    padding-left:8px;
+    padding-right:4px;
+}
+#divUserListForEmail {
+    font-size: 12px;
+}

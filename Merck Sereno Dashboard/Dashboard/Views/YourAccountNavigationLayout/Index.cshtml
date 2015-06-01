@@ -1,0 +1,122 @@
+﻿@{
+    var userName = HttpContext.Current.User.Identity.Name;
+}
+<div class="row body-row">
+    <div class="col-md-12">
+        <div class="panel panel-pink  plain">
+            <div class="panel-heading">
+                <h4 class="panel-title">Change your password</h4>
+            </div>
+            <div class="panel-body">
+                <form class="form-horizontal">
+                    <div class="validation-errors" style="display: none">
+                        <ul></ul>
+                    </div>
+                    <div class="form-group">
+                        <label for="CurrentPassword" class="col-sm-3 control-label">Current password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="CurrentPassword" placeholder="Current password">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="NewPassword" class="col-sm-3 control-label">New password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="NewPassword" placeholder="New password">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="ConfirmPassword" class="col-sm-3 control-label">Confirm password</label>
+                        <div class="col-sm-9">
+                            <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm password">
+                            <span class="help-block"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-3 col-sm-9">
+                            <button id="YourAccountForm" type="button" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#YourAccountForm").click(function () {
+            clearValidationMsg();
+            clearErrorClass();
+            if (stringIsEmpty($('#CurrentPassword').val())) {
+                $('#CurrentPassword').addClass('has-error');
+                $('#CurrentPassword').next('span').text('Enter current password');
+                return false;
+            }
+            if (stringIsEmpty($('#NewPassword').val())) {
+                $('#NewPassword').next('span').text('Enter new password');
+                $('#NewPassword').addClass('has-error');
+                return false;
+            }
+            if (stringIsEmpty($('#ConfirmPassword').val())) {
+                $('#ConfirmPassword').next('span').text('Enter confirm password');
+                $('#ConfirmPassword').addClass('has-error');
+                return false;
+            }
+            if ($('#NewPassword').val().length < 6) {
+                $('#NewPassword').next('span').text('Password length must be at least 6');
+                $('#NewPassword').addClass('has-error');
+                return false;
+            }
+            if ($('#NewPassword').val() == '123456') {
+                $('#NewPassword').next('span').text('Please provide other than the default password');
+                $('#NewPassword').addClass('has-error');
+                return false;
+            }
+            if ($('#ConfirmPassword').val() != $('#NewPassword').val()) {
+                $('#ConfirmPassword').next('span').text('Confirm password not matched');
+                $('#ConfirmPassword').addClass('has-error');
+                return false;
+            }
+            var model = {
+                UserName: '@userName',
+                CurrentPassword: $("#CurrentPassword").val(),
+                NewPassword: $("#NewPassword").val(),
+                ConfirmPassword: $("#ConfirmPassword").val()
+            };
+            $.ajax({
+                type: "POST",
+                url: 'YourAccountNavigationLayout/ChangePassword',
+                data: model,
+                success: function (data) {
+                    if (data) {
+                        $('.validation-errors').css('display', 'block');
+                        $('.validation-errors').children('ul').empty();
+                        $('.validation-errors').children('ul').append('<li>' + data + '</li>');
+                        $('.validation-errors').addClass('success');
+                    }
+                }
+            });
+
+            return false; 
+        });
+        function stringIsEmpty(value) {
+            return value ? value.trim().length == 0 : true;
+        }
+
+        function clearValidationMsg() {
+            $('.validation-errors').css('display', 'none');
+            $('#CurrentPassword').next('span').text('');
+            $('#NewPassword').next('span').text('');
+            $('#ConfirmPassword').next('span').text('');
+            $('.validation-errors').removeClass('success');
+        }
+
+        function clearErrorClass() {
+            $('#CurrentPassword').removeClass('has-error');
+            $('#NewPassword').removeClass('has-error');
+            $('#ConfirmPassword').removeClass('has-error');
+        }
+    });
+</script>

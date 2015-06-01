@@ -1,0 +1,41 @@
+﻿@model Dashboard.ViewModels.HierarchyTableConfig
+@using System.Xml
+@{
+    var isHover = ViewData["IsHover"];
+}
+
+<div id="snapshot-table">
+    @{        
+        var writer = XmlWriter.Create(Html.ViewContext.Writer);
+        Model.Table.Render(writer);
+        writer.Flush();
+    }
+</div>
+
+<div class="hover-data ui-helper-hidden" style="background-color: white">
+    
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        SnapshotOperation.SetHoverAction('@isHover');
+       @* var isHover = '@isHover';
+        if (isHover.indexOf('true') >= 0)
+            SnapshotOperation.SetHoverAction();*@
+    });
+    (function () {
+        setTimeout(function () {
+            $('.top-table').find('tr:gt(7)').hide();
+        }, 0);
+        if ($(window).width() < 1025) {
+            var tables = $('#navigation-layout').find('table');
+            $.each(tables, function (index, table) {
+                if (!$(table).parent().hasClass('table-responsive')) {
+                    $(table).parent().addClass('table-responsive');
+                }
+            });
+        }
+    })();
+
+
+</script>

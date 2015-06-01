@@ -1,0 +1,123 @@
+﻿#button-add-user i{
+    font-size: 20px;
+}
+#list {
+    font-size: 12px;
+    background-color: #FFFFFF;
+}
+#list.table thead tr th {
+    font-size: 12px;
+}
+#list.table tbody tr td {
+    padding: 3px;
+}
+.editor_remove i {
+    color: #900b1a;
+}
+.pagination > .active > a
+{
+    background-color: #e42487;
+    border-color: #e42487;
+}
+.help-block {
+    color: #a94442;
+}
+.has-error {
+    border-color: #a94442;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+}
+.validation-errors
+{
+    background-color: #F1EEE9;
+    color: #c66262;
+}
+.validation-errors.success
+{
+    background-color: #dff0d8;
+    color: green;
+}
+#content #filters-info {
+    padding-left: 16px;
+    padding-bottom: 10px;
+    color: #030303;
+    font-size: 15px;
+}
+#favourite-icon
+{
+    width: 20px;
+    height: 19px;
+    float: left;
+    background-image: url('Images/Save.png');
+    background-size: 100% 100%;
+    margin-right: 3px;
+}
+#favourite-icon:hover
+{
+    background-image: url('Images/save_invert.png');
+}
+.tabs-container
+{
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px 4px 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.tabs-container table {
+    font-size: 12px;
+}
+td.fav-rename{cursor: pointer;color: rgb(3, 118, 136);}
+td.fav-title{cursor: pointer; color: rgb(3, 118, 136);}
+.rename-text {
+    vertical-align: top;
+}
+.rename-favourites {
+    display: inline-block;
+    height: 20px; 
+    width: 20px; 
+    background-repeat: no-repeat; 
+    background-position: center center; 
+    cursor: pointer; 
+    border: 1px solid rgb(192, 192, 192); 
+    background-image: url('Images/arrow_g.gif');
+}
+.delete-favourites
+{
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-image: url('Images/Favorites-cross.jpg');
+    background-position: center center;
+    cursor: pointer;
+    border: 1px solid rgb(192, 192, 192);
+}
+#favorites-tab {
+    height: 43px;
+}
+#list.table.dataTable thead th, #list.table.dataTable thead td {
+    padding: 5px;
+}
+table.contact-us {
+    font-size: 13px;
+    background-color: #FFFFFF;
+}
+table.contact-us thead th
+{
+    background-color: #e42487;
+    color: #fff;
+}
+
+@media (min-width: 992px) {
+  .modal-custom {
+    width: 450px;
+  }
+}
+.ui-dialog.ui-widget{
+    font-family: inherit;
+    font-size: 0.9em;
+}
+.ui-dialog.ui-widget button {
+  font-family: inherit;  
+}

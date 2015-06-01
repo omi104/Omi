@@ -1,0 +1,18 @@
+﻿@model Dashboard.ViewModels.FilterVisibilityConfig
+@{
+    var disabled = "";
+    var textColor = "#000000";
+    if (Model.Disabled)
+    {
+        textColor = "#ABABAB";
+        disabled = "disabled";
+    }    
+}
+
+<div class="filterNameMundi" style="color: @textColor">
+    @Model.FilterItem.Label
+</div>
+<div class="dropdownMundi">
+    <select class="ddlMenu" id="@Model.FilterItem.ControlId" onchange="CommandCenter.filterChanged('@Model.FilterItem.Name',this.value)" @disabled>
+    </select>
+</div>

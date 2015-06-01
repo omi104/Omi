@@ -17,7 +17,7 @@ namespace Dashboard.Configuration.Widgets
             HasName(widgetItem.Name);
             View.HasConfig("")
                 .HasController<CombiChartWidgetController>();
-            View.DataFlow.AddSource<DummyDataSource>()//CubeDataSourceBase
+            View.DataFlow.AddSource<CubeDataSourceBase>()//CubeDataSourceBase
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>();
 

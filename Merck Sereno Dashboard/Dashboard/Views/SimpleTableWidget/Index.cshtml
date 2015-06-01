@@ -1,0 +1,12 @@
+﻿@using Component.Node
+@model Dashboard.Models.Data.SingleTableModel
+@{
+    var footer = ViewData["Footertext"] as string;
+}
+<div class="home-table-chart-title">
+    @Model.Title
+</div>
+<div id="top10CompaniesTable" style="background-color: white">
+    @Html.Raw(@Model._Table.RenderToHtmlString())
+</div>
+<div class="homeBottomChartFooter">@footer</div>

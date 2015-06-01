@@ -1,0 +1,19 @@
+﻿@using DashboardFramework.Web.Convensions
+@{
+    ViewBag.Title = "Index";
+    var navigation = ViewData["navigationName"];
+    var convention = new HtmlContainerIdConvention();
+    var controlId = convention.GetFilterControlId(Model.ParamName);
+}
+
+<div class="fusion-map">
+    @Html.Raw(@Model.MapFilterData)
+</div>
+
+<select class="form-control" title="@Model.Label" id="@controlId" onchange="GeoMap.geoMapParameterChanged('@navigation', '@Model.ParamName', this)">
+    @foreach (var r in Model.GeoFilterData.Rows)
+    {
+        var selected = r[1] == Model.SelectedGeo ? "selected" : "";
+        <option title="@r[0].Trim()" value="@r[1]" @selected>@r[0]</option>
+    }
+</select>

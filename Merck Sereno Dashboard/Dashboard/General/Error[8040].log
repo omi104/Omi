@@ -1,0 +1,962 @@
+-----------------------------------------------------------------
+                            2015-04-22 11:51:16,802 [11] FATAL IMS.Logger.Logger [(null)] –                             
+                            An error occurred while updating the entries. See the inner exception for details.                            
+
+System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---> System.Data.SqlClient.SqlException: Cannot insert the value NULL into column 'UserActivityId', table 'IT_CUST_DEV_RB_DASHBOARD_APAC_CONTENT_DB.dbo.UserActivities'; column does not allow nulls. INSERT fails.
+The statement has been terminated.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.<Reader>b__c(DbCommand t, DbCommandInterceptionContext`1 c)
+   at System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
+   at System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
+   at System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.<Update>b__2(UpdateTranslator ut)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
+   at System.Data.Entity.Core.Objects.ObjectContext.<SaveChangesToStore>b__35()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.<>c__DisplayClass2a.<SaveChangesInternal>b__27()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
+   at System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at Dashboard.Controllers.Account.LoginController.AddUserActivity(String userName) in d:\GIT REPOSITORIES\My Projects\RB_Po1_Dashboard\1. Development\Application\DvM\RBPo1Dashboard\Dashboard\Controllers\Account\LoginController.cs:line 76
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,275 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=3
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,369 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=8
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,376 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=7
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,382 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=4
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,387 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=10
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,396 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=5
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,402 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=6
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,411 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=9
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=false
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,814 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=1
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:20,822 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=2
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:21,060 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=103
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:21,126 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=101
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:21,201 [14] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=102
+key=NavigationName,Value=NavHome
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation1
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavHome
+key=@@navigation_label,Value=Home
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:26,117 [8] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=3
+key=NavigationName,Value=Favourites
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation28
+key=Navigation_Label,Value=Home
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=Favourites
+key=@@navigation_label,Value=Favourites
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:38,967 [11] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=3
+key=NavigationName,Value=NavSubBrandsAllLocationsAtGlance
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation32
+key=Navigation_Label,Value=SubBrands - All Locations at Glance
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavSubBrandsAllLocationsAtGlance
+key=@@navigation_label,Value=SubBrands - All Locations at Glance
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:51:39,033 [11] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=601
+key=NavigationName,Value=NavSubBrandsAllLocationsAtGlance
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation32
+key=Navigation_Label,Value=SubBrands - All Locations at Glance
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavSubBrandsAllLocationsAtGlance
+key=@@navigation_label,Value=SubBrands - All Locations at Glance
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+key=@@TopCountSubBrandAtaGlance_text,Value=Top 10
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:53:22,844 [13] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=3
+key=NavigationName,Value=NavSubBrandsTrend
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation34
+key=Navigation_Label,Value=SubBrands - Trend
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavSubBrandsTrend
+key=@@navigation_label,Value=
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+key=@@TopCountSubBrandAtaGlance_text,Value=Top 10
+                            
+
+-----------------------------------------------------------------
+                            2015-04-22 11:53:23,110 [13] INFO  IMS.Logger.Logger [(null)] –                             
+                            Parameter for Module=604
+key=NavigationName,Value=NavSubBrandsTrend
+key=recordCount,Value=5
+key=RB_Geo,Value=[Geo].[Hierarchy].[MARKET].&[DvM]
+key=RB_Geo_text,Value=DvM
+key=RB_MarketFilterParent,Value=[Market].[Hierarchy].[All]
+key=RB_SubCategoryFilter,Value=[Market].[Hierarchy].[All]
+key=RB_Segment,Value=[Market].[Hierarchy].[All]
+key=RB_Channel,Value=[Channel].[Channel].[All]
+key=RB_SubChannel,Value=[Channel].[SubChannel].[All]
+key=RB_PeriodType,Value=[Period].[PeriodTypeName].&[Monthly]
+key=RB_Measure,Value=Measures.LCDR
+key=RB_Market,Value=[Market].[Hierarchy].[All]
+key=RB_Period,Value=[Period].[Hierarchy].[Period].&[MTH01]
+key=uncheckedItems,Value=TOTAL MARKET
+key=RB_Measure_Type,Value=sales
+key=absoluteThousandConversion,Value=Thousand
+key=RB_TopCountComGlance,Value=10
+key=RB_TopCountBrandGlance,Value=10
+key=RB_TopCountSubBrandGlance,Value=10
+key=RB_TopCountSKUGlance,Value=10
+key=RB_TopCountMoleculeAtaGlance,Value=10
+key=RB_ComSnapshotTopCount,Value=5
+key=RB_TopCountBrandSnapshot,Value=5
+key=RB_TopCountSubBrandSnapshot,Value=5
+key=RB_TopCountMoleculeSnapshot,Value=5
+key=RB_TopCountSKUSnapshot,Value=5
+key=RB_ComTrendTopCount,Value=5
+key=RB_TopCountBrandTrend,Value=5
+key=RB_TopCountSubBrandTrend,Value=5
+key=RB_TopCountMoleculeTrend,Value=5
+key=RB_TopCountSKUTrend,Value=5
+key=RB_CategoryTrendTopCount,Value=5
+key=CurrentNavigationId,Value=navigation34
+key=Navigation_Label,Value=SubBrands - Trend
+key=GuideLevel,Value=JJV-M
+key=EmailTemplate,Value=
+key=IsIMSUser,Value=true
+key=@@navigation,Value=NavSubBrandsTrend
+key=@@navigation_label,Value=
+key=@@MarketCategory_text,Value=All RB Categories
+key=@@PeriodType_text,Value=Monthly
+key=@@Measure_text,Value=$ Value Retail
+key=@@MarketSubCategory_text,Value=-na-
+key=@@Segment_text,Value=-na-
+key=@@HiddenMarket_text,Value=[Market].[Hierarchy].[All]
+key=@@Channel_text,Value=All Channels
+key=@@SubChannel_text,Value=All Sub Channels
+key=@@Period_text,Value=Feb 2015
+key=@@TopCountSubBrandAtaGlance_text,Value=Top 10
+key=@@TopCountSubBrandTrend_text,Value=Top 5
+key=@@MeasureType_text,Value=Sales
+                            
+

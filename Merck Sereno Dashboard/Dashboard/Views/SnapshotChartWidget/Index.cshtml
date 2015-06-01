@@ -1,0 +1,10 @@
+﻿@model Dashboard.ViewModels.TableChartConfig
+@{
+
+    var showTrend = "block";
+}
+<div style="padding-bottom: 10px;">
+    <div id="PieChart" style="display: @showTrend">
+        @Html.Raw(Model.Chart)
+    </div>
+</div>
