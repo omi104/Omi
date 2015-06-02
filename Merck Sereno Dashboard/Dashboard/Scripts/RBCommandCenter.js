@@ -35,6 +35,6 @@
         RbHelper.highlightMenu(elementId, navigationLabel);
         RbHelper.resizeBodyWidth(navigationName);
         $('#NumberFormatswitch').text('Switch To Absolute');
-        window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'absoluteThousandConversion': 'Thousand' });
+        window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName});
     }
 };

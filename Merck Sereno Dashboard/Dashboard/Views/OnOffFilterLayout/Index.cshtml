@@ -1,0 +1,25 @@
+﻿@model Dashboard.DashboardComponent.Models.FilterItem
+
+
+@*<label>@Model.Label</label>*@
+<div class="filter-layout table-responsive" id="@Model.ControlId" title="@Model.Label" filter-name="@Model.Name">
+</div>
+
+
+<style type="text/css">
+    .on-off {
+        font-size: 12px;
+    }
+
+        .on-off td {
+            padding: 5px;
+            cursor: pointer;
+            color: #00958f;
+            border: 1px solid #18C5B1;
+        }
+
+        .on-off .selected {
+            color: white;
+            background-color: #18C5B1;
+        }
+</style>

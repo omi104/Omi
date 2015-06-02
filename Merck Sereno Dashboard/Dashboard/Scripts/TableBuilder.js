@@ -47,20 +47,20 @@ var customTable =
         }
     },
     
-    ShowAbsoluteThousand: function (obj) {
+    //ShowAbsoluteThousand: function (obj) {
 
-        var text = new String($(obj).text());
-        var parameter = {};
-        if (text.indexOf('Thousand')>=0) {
-            $(obj).text('Switch To Absolute');
-            parameter["absoluteThousandConversion"] = "Thousand";
-        } else {
-            $(obj).text('Switch To Thousand');
-            parameter["absoluteThousandConversion"] = "Absolute";
-        }
+    //    var text = new String($(obj).text());
+    //    var parameter = {};
+    //    if (text.indexOf('Thousand')>=0) {
+    //        $(obj).text('Switch To Absolute');
+    //        parameter["absoluteThousandConversion"] = "Thousand";
+    //    } else {
+    //        $(obj).text('Switch To Thousand');
+    //        parameter["absoluteThousandConversion"] = "Absolute";
+    //    }
 
-        CommandCenter.parametersChanged(parameter);
-    },
+    //    CommandCenter.parametersChanged(parameter);
+    //},
 
     ToggleDataTable: function (obj, targetDiv) {
         var image = $(obj).find('img:first');

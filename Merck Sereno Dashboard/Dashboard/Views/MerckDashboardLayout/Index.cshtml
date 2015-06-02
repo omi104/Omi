@@ -35,22 +35,11 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div id="filter-MarketCategory-layout"></div>
-                            <div id="filter-MarketSubCategory-layout"></div>
+                            <div id="filter-RegionOrCluster-layout"></div>
+                            <div id="filter-Country-layout"></div>
+                            <div id="filter-Products-layout"></div>
                             <div id="filter-Segment-layout"></div>
-                            <div id="filter-HiddenMarket-layout" style="display: none"></div>
-                        </div>
-                    </div>
-                    <div class="panel panel-teal  plain">
-                        <div class="panel-heading">
-                            <h5 class="panel-title">Select Your Channel</h5>
-                            <div class="panel-controls" style="float: right; margin-right: -11px;">
-                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
-                            </div>
-                        </div>
-                        <div class="panel-body">
-                            <div id="filter-Channel-layout"></div>
-                            <div id="filter-SubChannel-layout"></div>
+                            <div id="filter-Forms-layout"></div>
                         </div>
                     </div>
                     <div class="panel panel-teal  plain">
@@ -61,16 +50,29 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            <div id="filter-PeriodType-layout" style="padding-bottom: 4px;"></div>
-                            <div id="filter-Period-layout"></div>
-                            <div id="filter-Measure-layout" style="padding-top: 28px;"></div>
+                            <div id="filter-KPI-layout"></div>
+                            <div id="filter-UnitOrValue-layout"></div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="panel panel-teal  plain">
+                        <div class="panel-heading">
+                            <h5 class="panel-title">Select Time Period</h5>
+                            <div class="panel-controls" style="float: right; margin-right: -10px;">
+                                <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div id="filter-TimePeriod-layout"></div>
+                            <div id="filter-StartDate-layout"></div>
+                            <div id="filter-ToDate-layout"></div>
                         </div>
                     </div>
                 </div>
                 <div id="body-container">
                     <div id="navigation-layout"></div>
                 </div>
-
             </div>
 
             <div class="row">
@@ -88,6 +90,11 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        //$("#filter-FromDate-layout").datepicker({
+        //    format: "mm-yyyy",
+        //    startView: "months",
+        //    minViewMode: "months"
+        //});
         $('#view-period-title').text('Viewing: '+'@Model.CurrentPeriod'+ ' Data');
         RbHelper.resizeBodyWidth('@Model.CurrentNavigation');
         RbHelper.highlightMenu('@Model.CurrentNavigationId', '');

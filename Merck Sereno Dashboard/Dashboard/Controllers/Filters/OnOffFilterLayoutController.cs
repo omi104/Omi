@@ -1,10 +1,11 @@
 ﻿using System.Web.Mvc;
+using Dashboard.DashboardComponent.Models;
 using Dashboard.ViewModels;
 using DashboardFramework.Web.Controllers;
 
 namespace Dashboard.Controllers.Filters
 {
-    public class RadioFilterLayoutController : LayoutBaseController<FilterVisibilityConfig>
+    public class OnOffFilterLayoutController : LayoutBaseController<FilterItem>
     {
 
         public override ViewResult Index()

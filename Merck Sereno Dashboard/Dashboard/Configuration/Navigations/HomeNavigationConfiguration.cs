@@ -20,9 +20,6 @@ namespace Dashboard.Configuration.Navigations
             HasLabel(navItem.Label);
             Layout.HasController<HomeNavigationLayoutController>();
             HasWidget(new WelcomeTextnImageWidgetConfiguration(WidgetItems.WidgetWelcomeTextnImage()));
-            //HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.RbCatVsRbSalesTrendChart()));
-            //HasWidget(new Top10CompaniesTableConfiguration(WidgetItems.Top10CompanyTables()));
-            //HasWidget(new MsBar2DChartConfiguration(WidgetItems.CategoryVsRbMarketShare()));
 
             this.HasExportController<NavExportController>();
 

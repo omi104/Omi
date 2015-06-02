@@ -15,7 +15,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "WidgetWelcomeTextnImage",
                 ViewId = "not applicable",
-                HasParamDependency = new List<string>(){}
+                HasParamDependency = new List<string>(){ParameterList.RegionOrCluster}
             };
         }
 
@@ -25,7 +25,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "AllRegionCombinationChart",
                 ViewId = "103",
-                HasParamDependency = new List<string>() { ParameterList.UncheckedItems, ParameterList.RbGeo, ParameterList.RbMarket, ParameterList.RbChannel, ParameterList.RbSubChannel, ParameterList.RbPeriod, ParameterList.RbPeriodType }
+                HasParamDependency = new List<string>() { ParameterList.UncheckedItems}
             };
         }
 
@@ -35,7 +35,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CategoryTrendTableChartWidget",
                 ViewId = "505",
-                HasParamDependency = new List<string>() { ParameterList.UncheckedItems,ParameterList.RbGeo, ParameterList.RbMarket, ParameterList.RbChannel, ParameterList.RbSubChannel,  ParameterList.RbPeriodType, ParameterList.RbPeriod, ParameterList.RbMeasureType, ParameterList.TopCountCategoryTrend, ParameterList.AbsoluteThousandFilter }
+                HasParamDependency = new List<string>() { ParameterList.UncheckedItems}
             };
         } 
 

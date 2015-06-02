@@ -1,9 +1,0 @@
-@model Dashboard.Models.Config.DummyFilterLayoutConfig
-
-<div>
-    <label style="float:left;padding: 6px 12px 2px 12px;"><span>@Model.Label</span></label>
-    <div>
-        <select style="width:auto;font-size: 12px;height: 25px" id="@Model.ControlId" onchange="CommandCenter.filterChanged('RecordCount',this.value)">
-        </select>
-    </div>
-</div>

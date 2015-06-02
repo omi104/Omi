@@ -13,11 +13,6 @@ using Dashboard.Common;
 
 namespace Dashboard.Configuration
 {
-    using CubeFramework;
-
-    using Dashboard.Configuration.Widgets;
-    using Dashboard.DataComponents.DataSources;
-
     public class MerckDashboardConfiguration:DashboardConfiguration
     {
         public MerckDashboardConfiguration()
@@ -30,10 +25,7 @@ namespace Dashboard.Configuration
             ConfigureFilters();
             ConfigureNavigations();
      
-            Layout.HasConfig(GetCurrentPeriod).HasController<RbPoDashboardLayoutController>();
-            Reload.If(true);
-            HasParameterDependency.On(ParameterList.RbPeriodType)
-                .On(ParameterList.RbPeriod);
+            Layout.HasConfig(GetCurrentPeriod).HasController<MerckDashboardLayoutController>();
         }
 
         private void ConfigureNavigations()
@@ -44,59 +36,37 @@ namespace Dashboard.Configuration
 
         private void ConfigureFilters()
         {
-            HasFilter(new CommonFilterConfiguration(FilterItems.MarketCategory()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.MarketSubCategory()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.RegionOrCluster()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Country()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Products()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Segment()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.Channel()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.SubChannel()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.PeriodType()));  
-            HasFilter(new CommonFilterConfiguration(FilterItems.Measure()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Forms()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.KPI()));  
+            HasFilter(new CommonFilterConfiguration(FilterItems.UnitOrValue()));
+            HasFilter(new OnOffFilterConfiguration(FilterItems.TimePeriod()));
+            HasFilter(new DatePickerFilterConfiguration(FilterItems.StartDate()));
         }
 
         private void ConfigureParameters()
         {
             RegularParameters
                 .Add(ParameterList.NavigationName).WithValue(NavigationItems.NavHome().Name)
+                .Add(ParameterList.RegionOrCluster).WithValue("")
+                .Add(ParameterList.Country).WithValue("")
+                .Add(ParameterList.Products).WithValue("")
+                .Add(ParameterList.Segment).WithValue("")
+                .Add(ParameterList.Forms).WithValue("")
+                .Add(ParameterList.KPI).WithValue("")
+                .Add(ParameterList.UnitOrValue).WithValue("")
+                .Add(ParameterList.TimePeriod).WithValue("")
+                .Add(ParameterList.StartDate).WithValue("")
+
+
+
                 .Add(ParameterList.RecordCount).WithValue("5")
-                .Add(ParameterList.RbGeo).WithValue(Constants.RbGeo)
-                .Add(ParameterList.RbGeo_text).WithValue("TOTAL ENA")
-                .Add(ParameterList.RbMarketFilterParent).WithValue(Constants.RbMarketFilterParent)
-                .Add(ParameterList.RbSubCategoryFilter).WithValue(Constants.RbCategoryFilter)
-                .Add(ParameterList.RbSegment).WithValue("")
-                .Add(ParameterList.RbChannel).WithValue(Constants.RbChannel)
-                .Add(ParameterList.RbSubChannel).WithValue("")
-                .Add(ParameterList.RbPeriodType).WithValue("")
-                .Add(ParameterList.RbMeasure).WithValue("")
-                .Add(ParameterList.RbMarket).WithValue("[Market].[Hierarchy].[All]")
-                .Add(ParameterList.RbPeriod).WithValue(Constants.RbPeriod)
                 .Add(ParameterList.UncheckedItems).WithValue("")
-                .Add(ParameterList.RbMeasureType).WithValue(MeasureType.Sales)
-                .Add(ParameterList.AbsoluteThousandFilter).WithValue("Absolute")
-
-                .Add(ParameterList.TopCountCompanyAtAGlance).WithValue("10")
-                .Add(ParameterList.TopCountBrandAtAGlance).WithValue("10")
-                .Add(ParameterList.TopCountSubBrandAtAGlance).WithValue("10")
-                .Add(ParameterList.TopCountSKUAtAGlance).WithValue("10")
-                .Add(ParameterList.TopCountMoleculeAtaGlance).WithValue("5")
-
-                .Add(ParameterList.TopCountCompanySnapshot).WithValue("5")
-                .Add(ParameterList.TopCountBrandSnapshot).WithValue("5")
-                .Add(ParameterList.TopCountSubBrandSnapshot).WithValue("5")
-                .Add(ParameterList.TopCountMoleculeSnapshot).WithValue("5")
-                .Add(ParameterList.TopCountSKUSnapshot).WithValue("5")
-
-                .Add(ParameterList.TopCountCompanyTrend).WithValue("5")
-                .Add(ParameterList.TopCountBrandTrend).WithValue("5")
-                .Add(ParameterList.TopCountSubBrandTrend).WithValue("5")
-                .Add(ParameterList.TopCountMoleculeTrend).WithValue("5")
-                .Add(ParameterList.TopCountSKUTrend).WithValue("5")
-
-                .Add(ParameterList.TopCountCategoryTrend).WithValue("5")
                 .Add(ParameterList.CurrentNavigationId).WithValue("navigation1")
                 .Add(ParameterList.NavigationLabel).WithValue("Home")
-                .Add(ParameterList.GuideLevel).WithValue("JJV-M")
-
-                .Add(ParameterList.EmailTemplate).WithValue("")
                 .Add(ParameterList.IsIMSUser).WithValue("false");
         }
 
@@ -121,12 +91,6 @@ namespace Dashboard.Configuration
                 CurrentNavigation = currentNavigation,
                 CurrentPeriod = currentPeriod,
                 CurrentNavigationId = currentNavigationId,
-                CategoryText = parameters["@@MarketCategory_text"],
-                GeoText = parameters["RB_Geo_text"],
-                ChannelText = parameters["@@Channel_text"],
-                SubChannelText = parameters["@@SubChannel_text"],
-                //PeriodText = parameters["@@Period_text"],
-                MeasureText = parameters["@@Measure_text"],
                 Role = user != null && user.Role != null ? user.Role : "",
                 Org = user.Org ?? "",
             };

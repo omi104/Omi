@@ -1,4 +1,5 @@
-﻿using Dashboard.ViewModels;
+﻿using Dashboard.DashboardComponent.Models;
+using Dashboard.ViewModels;
 
 namespace Dashboard.ViewModels
 {

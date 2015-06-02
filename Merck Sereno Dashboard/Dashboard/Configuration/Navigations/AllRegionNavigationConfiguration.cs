@@ -23,10 +23,8 @@ namespace Dashboard.Configuration.Navigations
             Layout.HasConfig(navigationItem)
                 .HasController<AllRegionNavigationLayoutController>();
 
-            HasFilter(new TopCountFilterConfiguration(navigationItem.Filters[0]));
-
             HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.AllRegionCombinationChart()));
-            HasWidget(new TrendTableWidgetConfiguration(navigationItem.Widgets[0]));
+            HasWidget(new TrendTableWidgetConfiguration(navigationItem.Widgets.First()));
 
             this.HasExportController<NavExportController>();
 

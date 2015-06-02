@@ -138,7 +138,7 @@ namespace Dashboard.DataComponents.Transformers
         protected List<CellMap<Row>> GetMap(CubeData data)
         {
             var list = new List<CellMap<Row>>();
-            string absoluteTousandValue = DashboardContext.Current.DashboardInstance.Parameters[ParameterList.AbsoluteThousandFilter];
+            string absoluteTousandValue = "Absolute";
 
             if (data.Columns.Count == 15)
             {

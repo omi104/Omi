@@ -2,7 +2,7 @@
 
 namespace Dashboard.App_Start
 {
-     public class BundleConfig
+    public class BundleConfig
     {
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
@@ -12,7 +12,7 @@ namespace Dashboard.App_Start
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                        "~/Scripts/jquery-ui-{version}.js"));
-            
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
             "~/Scripts/jquery.unobtrusive*",
             "~/Scripts/jquery.validate*"));
@@ -50,7 +50,7 @@ namespace Dashboard.App_Start
             bundles.Add(new ScriptBundle("~/bundles/dataTable").
                Include("~/Scripts/DataTables-1.10.4/jquery.dataTables.min.js").
                Include("~/Scripts/DataTables-1.10.4/dataTables.bootstrap.js").
-               Include("~/Scripts/DataTables-1.10.4/dataTables.tableTools.min.js")              
+               Include("~/Scripts/DataTables-1.10.4/dataTables.tableTools.min.js")
                );
             bundles.Add(new ScriptBundle("~/bundles/chartjs")
                 .Include("~/Scripts/Chart/FusionCharts.js")
@@ -64,31 +64,32 @@ namespace Dashboard.App_Start
                 .Include("~/Scripts/TableBuilder.js")
              );
 
-           bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
-                "~/Content/override-bootstrap.css",
-                "~/Content/font-awesome/css/font-awesome.css",
-                //"~/Content/jquery.ui.all.css",
-                //"~/Content/jquery-ui.css",
-                "~/Content/main.css",
-                "~/Content/login.css",
-                 "~/Content/plugins.css",
-                 "~/Content/layout.css",
-                  "~/Content/jquery.cleditor.css"
-                ));
-
-           bundles.Add(new StyleBundle("~/Content/dashboardCss").Include(
-                "~/Content/Dashboard/*.css"
-                ));
-           bundles.Add(new StyleBundle("~/Content/themeCss").Include(
-               "~/Content/themes/base/*.css"
+            bundles.Add(new ScriptBundle("~/bundles/customFilters").Include(
+               "~/Scripts/CustomFilters/*.js"
                ));
-           bundles.Add(new StyleBundle("~/Content/dataTable").Include(
-               "~/Content/DataTables-1.10.4/css/jquery.dataTables.min.css",
-                "~/Content/DataTables-1.10.4/css/dataTables.bootstrap.css",
-                "~/Content/DataTables-1.10.4/css/dataTables.responsive.css",
-                "~/Content/Plugin/custom.dataTables.css"
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                 "~/Content/bootstrap.css",
+                 "~/Content/override-bootstrap.css",
+                 "~/Content/font-awesome/css/font-awesome.css",
+                 "~/Content/main.css",
+                 "~/Content/login.css",
+                  "~/Content/plugins.css",
+                  "~/Content/layout.css"
+                 ));
+
+            bundles.Add(new StyleBundle("~/Content/dashboardCss").Include(
+                 "~/Content/Dashboard/*.css"
+                 ));
+            bundles.Add(new StyleBundle("~/Content/themeCss").Include(
+                "~/Content/themes/base/*.css"
                 ));
+            bundles.Add(new StyleBundle("~/Content/dataTable").Include(
+                "~/Content/DataTables-1.10.4/css/jquery.dataTables.min.css",
+                 "~/Content/DataTables-1.10.4/css/dataTables.bootstrap.css",
+                 "~/Content/DataTables-1.10.4/css/dataTables.responsive.css",
+                 "~/Content/Plugin/custom.dataTables.css"
+                 ));
         }
     }
 }

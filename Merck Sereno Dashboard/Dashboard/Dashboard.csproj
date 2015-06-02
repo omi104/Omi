@@ -215,10 +215,15 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="CommandTranslators\RbPo1LoadViewCommandTranslator.cs" />
     <Compile Include="Common\Constants.cs" />
-    <Compile Include="Common\FilterItems.cs" />
+    <Compile Include="Configuration\Filters\DatePickerFilterConfiguration.cs" />
+    <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
+    <Compile Include="Controllers\Filters\DatePickerFilterController.cs" />
+    <Compile Include="Controllers\Filters\DatePickerFilterLayoutController.cs" />
+    <Compile Include="Controllers\Filters\OnOffFilterController.cs" />
+    <Compile Include="Controllers\Filters\OnOffFilterLayoutController.cs" />
+    <Compile Include="DashboardComponent\Components\FilterItems.cs" />
     <Compile Include="Configuration\Filters\CommonFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\FilterConfigurationBase.cs" />
-    <Compile Include="Configuration\Filters\TopCountFilterConfiguration.cs" />
     <Compile Include="Configuration\Navigations\HomeNavigationConfiguration.cs" />
     <Compile Include="Configuration\OtherConstant.cs" />
     <Compile Include="Configuration\MerckDashboardBuilder.cs" />
@@ -232,7 +237,6 @@
     <Compile Include="Controllers\Account\AccountBaseController.cs" />
     <Compile Include="Controllers\Account\ForgotPasswordController.cs" />
     <Compile Include="Controllers\Account\LoginController.cs" />
-    <Compile Include="Controllers\BusinessLogicController.cs" />
     <Compile Include="Controllers\Exports\DummyExportController.cs" />
     <Compile Include="Controllers\Exports\ExpandCollapseTableExportController.cs" />
     <Compile Include="Controllers\Exports\GuideExportController.cs" />
@@ -243,14 +247,11 @@
     <Compile Include="Controllers\Exports\UserAdminExportController.cs" />
     <Compile Include="Controllers\FavouriteOperationController.cs" />
     <Compile Include="Controllers\FileDownloadController.cs" />
-    <Compile Include="Controllers\Filters\DropDownFilterLayoutController.cs" />
     <Compile Include="Controllers\Layouts\FavouritesNavigationLayoutController.cs" />
     <Compile Include="Controllers\Filters\FilterLayoutController.cs" />
-    <Compile Include="Controllers\Filters\RadioFilterController.cs" />
     <Compile Include="Controllers\Layouts\AllRegionNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\DropdownFilterLayoutController.cs" />
-    <Compile Include="Controllers\Layouts\DummyDashboardLayoutController.cs" />
-    <Compile Include="Controllers\Layouts\DummyFilterLayoutController.cs" />
+    <Compile Include="Controllers\Layouts\MerckDashboardLayoutController.cs" />
     <Compile Include="Controllers\Layouts\HomeNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\UserAdminNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\YourAccountNavigationLayoutController.cs" />
@@ -266,14 +267,13 @@
     <Compile Include="DashboardComponent\Models\NavigationItem.cs" />
     <Compile Include="DashboardComponent\Models\WidgetItem.cs" />
     <Compile Include="DataComponents\DataSources\CategoryVsSalesChartDummyDataSource.cs" />
+    <Compile Include="DataComponents\DataSources\DateFilterDataSource.cs" />
     <Compile Include="DataComponents\DataSources\FixedDataSource.cs" />
-    <Compile Include="DataComponents\DataSources\HiddenMarketFilterDataSource.cs" />
-    <Compile Include="DataComponents\DataSources\MeasureTypeDataLabelSource.cs" />
     <Compile Include="DataComponents\DataSources\CubeDataSourceException.cs" />
     <Compile Include="DataComponents\DataSources\ColorListDataSource.cs" />
     <Compile Include="DataComponents\DataSources\CubeDataSourceBase.cs" />
     <Compile Include="DataComponents\DataSources\DummyTableDataSource.cs" />
-    <Compile Include="DataComponents\DataSources\MonthPickerDataSource.cs" />
+    <Compile Include="DataComponents\DataSources\PeriodTypeDataLabelSource.cs" />
     <Compile Include="DataComponents\DataSources\RecordCountSource.cs" />
     <Compile Include="DataComponents\DataSources\UserAdminDataSource.cs" />
     <Compile Include="DataComponents\Mergers\StringMerger.cs" />
@@ -316,8 +316,6 @@
     <Compile Include="Helper\Factory\TextCellFactory.cs" />
     <Compile Include="Helper\Factory\ValueIndicatingArrowFactory.cs" />
     <Compile Include="Helper\FusionComponents\FusionMaps.cs" />
-    <Compile Include="Helper\HoverDataEngine.cs" />
-    <Compile Include="Helper\MarketReportHelper.cs" />
     <Compile Include="Helper\ReportHelper.cs" />
     <Compile Include="Helper\RepositoryExtension.cs" />
     <Compile Include="Models\Config\ExportConfig.cs" />
@@ -404,7 +402,7 @@
     <Compile Include="ViewModels\ExportModel.cs" />
     <Compile Include="ViewModels\ExportSnapshptModel.cs" />
     <Compile Include="ViewModels\FavouriteViewModel.cs" />
-    <Compile Include="ViewModels\FilterItem.cs" />
+    <Compile Include="DashboardComponent\Models\FilterItem.cs" />
     <Compile Include="ViewModels\FilterVisibilityConfig.cs" />
     <Compile Include="ViewModels\HierarchyTableConfig.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
@@ -868,6 +866,8 @@
     <Content Include="Scripts\Chart\FusionCharts.HC.Maps.js" />
     <Content Include="Scripts\Chart\FusionCharts.HC.world.js" />
     <Content Include="Scripts\Chart\FusionMaps.js" />
+    <Content Include="Scripts\CustomFilters\DatePickerFilter.js" />
+    <Content Include="Scripts\CustomFilters\OnOffFilter.js" />
     <Content Include="Scripts\Favourite.js" />
     <Content Include="Scripts\guide-helper.js" />
     <Content Include="Scripts\DataTables-1.10.4\dataTables.autoFill.js" />
@@ -899,7 +899,8 @@
     <Content Include="Scripts\ForgetPassword.js" />
     <Content Include="Scripts\header-fridge.js" />
     <Content Include="Scripts\jquery-1.11.1.js" />
-    <Content Include="Scripts\jquery-ui-1.8.24.js" />
+    <Content Include="Scripts\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
     <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\app.js" />
@@ -972,11 +973,12 @@
     <Content Include="Views\UserAdmin\Index.cshtml" />
     <Content Include="Views\UserAdminNavigationLayout\Index.cshtml" />
     <Content Include="Views\FilterLayout\Index.cshtml" />
-    <Content Include="Views\RadioFilterLayout\Index.cshtml" />
     <Content Include="Views\ForgotPassword\_Request.cshtml" />
     <Content Include="Views\ForgotPassword\NewPassword.cshtml" />
     <Content Include="Views\Shared\_Arrow-definition.cshtml" />
     <Content Include="Views\YourAccountNavigationLayout\Index.cshtml" />
+    <Content Include="Views\OnOffFilterLayout\Index.cshtml" />
+    <Content Include="Views\DatePickerFilterLayout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
@@ -988,13 +990,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\DummyNavigationLayout\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\DummyFilterLayout\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\RbPoDashboardLayout\Index.cshtml" />
+    <Content Include="Views\MerckDashboardLayout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Dashboard.IdentityModel\Dashboard.IdentityModel.csproj">

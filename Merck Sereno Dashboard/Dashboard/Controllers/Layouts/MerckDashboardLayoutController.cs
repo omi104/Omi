@@ -5,7 +5,7 @@ using Dashboard.Models.Config;
 
 namespace Dashboard.Controllers.Layouts
 {
-    public class RbPoDashboardLayoutController : LayoutBaseController<RbPoDashboardLayoutConfig>
+    public class MerckDashboardLayoutController : LayoutBaseController<RbPoDashboardLayoutConfig>
     {
         //
         // GET: /NavigationLayout/

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Dashboard.Controllers.Filters;
 using Dashboard.DashboardComponent.Components;
+using Dashboard.DashboardComponent.Models;
 using Dashboard.DataComponents.DataSources;
 using Dashboard.DataComponents.Transformers;
 using Dashboard.ViewModels;

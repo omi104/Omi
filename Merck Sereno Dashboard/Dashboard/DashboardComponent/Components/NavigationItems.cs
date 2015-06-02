@@ -30,11 +30,6 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "NavAllRegions",
                 Label = "All Regions",
-                Filters = new List<FilterItem>()
-                {
-                    FilterItems.TopCountCategoriesTrend(),
-                    FilterItems.MeasureType()
-                },
                 Widgets = new List<WidgetItem>()
                 {
                     WidgetItems.CategoryTrendTableChartWidget()
