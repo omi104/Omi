@@ -73,7 +73,6 @@ D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Das
 D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\bin\Debug\EntityFramework.SqlServer.xml
 D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.csprojResolveAssemblyReference.cache
 D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.Migrations.InitializeDatabase.resources
 D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.Migrations.AddColumnGeoCode.resources
 D:\GIT REPOSITORIES\Merck_Serono_CH_Sales_Performance_Dashboard\Merck Sereno Dashboard\Dashboard.IdentityModel\obj\Debug\Dashboard.IdentityModel.Migrations.AddColumn.resources

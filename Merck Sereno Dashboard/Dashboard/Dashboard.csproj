@@ -902,7 +902,6 @@
     <Content Include="Scripts\jquery-ui-1.10.1.custom.min.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.min.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.map" />
     <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -913,11 +912,7 @@
     <Content Include="Scripts\Chart\GeoMap.js" />
     <Content Include="Scripts\Chart\IMSChart.js" />
     <Content Include="Scripts\IMSD3.js" />
-    <Content Include="Scripts\jquery-1.8.2.min.js" />
     <None Include="Properties\PublishProfiles\RBLocal.pubxml" />
-    <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Scripts\jquery-1.9.1.js" />
-    <Content Include="Scripts\jquery-1.9.1.min.js" />
     <Content Include="Scripts\jquery-migrate-1.2.1.js" />
     <Content Include="Scripts\jquery-migrate-1.2.1.min.js" />
     <Content Include="Scripts\jquery.appStart.js" />
