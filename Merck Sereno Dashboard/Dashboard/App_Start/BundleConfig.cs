@@ -24,7 +24,6 @@ namespace Dashboard.App_Start
                 "~/Scripts/bootstrap.min.js",
                 "~/Scripts/RBCommandCenter.js",
                 "~/Scripts/rb-helper.js",
-                "~/Scripts/guide-helper.js",
                 "~/Scripts/jquery-migrate-1.2.1.min.js",
                 "~/Scripts/DataTables-1.10.4/jquery.dataTables.js",
                 "~/Scripts/DataTables-1.10.4/dataTables.fixedColumns.js",
@@ -32,12 +31,8 @@ namespace Dashboard.App_Start
                 "~/Scripts/jquery.bgiframe.js",
                 "~/Scripts/LoadRadio.js",
                 "~/Scripts/Favourite.js",
-                "~/Scripts/AdminEmail.js",
-                "~/Scripts/SnapshotOperation.js",
                 "~/Scripts/SelectRadioValue.js",
                 "~/Scripts/RadioFilterOperation.js",
-                "~/Scripts/ExpandCollapseTableForCS.js",
-                "~/Scripts/ExpandCollapseTable.js",
                 "~/Scripts/Plugin/jquery.cleditor.js",
                 "~/Scripts/Plugin/jquery.cleditor.min.js"
                 ));
@@ -58,7 +53,6 @@ namespace Dashboard.App_Start
                 .Include("~/Scripts/Chart/FusionCharts.HC.Maps.js")
                 .Include("~/Scripts/Chart/FusionMaps.js")
                 .Include("~/Scripts/Chart/IMSChart.js")
-                .Include("~/Scripts/Chart/GeoMap.js")
                 .Include("~/Scripts/MonthPicker.js")
                 .Include("~/Scripts/column-fridge.js")
                 .Include("~/Scripts/TableBuilder.js")
