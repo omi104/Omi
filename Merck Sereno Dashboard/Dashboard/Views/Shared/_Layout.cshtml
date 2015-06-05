@@ -126,14 +126,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title">Please enter password to access KSA reports</h4>
+                    <h4 class="modal-title">Please enter userid and password to access KSA reports</h4>
                 </div>
                 <div class="modal-body form-horizontal">
                     <div class="form-group">
-                        <label for="favouriteTitle" class="col-sm-2 control-label">Password</label>
+                        <label for="KSAUserName" class="col-sm-2 control-label">User Id:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="KSAUserName">
+                        </div>
+                        <br><br/>
+                        <label for="KSAPassword" class="col-sm-2 control-label">Password:</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" id="KSAPassword">
-                            <input type="hidden" id="KSAUserName" />
                         </div>
                     </div>
                 </div>
@@ -152,6 +156,9 @@
         $(document).ready(function ()
         {
             $('#submitPassword').click(function () {
+                if ($('#KSAUserName').val() === "") {
+                    alert("Userid can not be empty");
+                }
                 if ($('#KSAPassword').val() === "") {
                     alert("Passoword can not be empty");
                 }

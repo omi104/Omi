@@ -17,7 +17,7 @@
 
     pub.KSAClick = function (userId) {
         $('#KSAPassword').val('');
-        $('#KSAUserName').val(userId);
+        $('#KSAUserName').val('');
         $('#KSA-Auth-Modal').modal('show');
     }
 
@@ -34,7 +34,7 @@
                 var item = element[0];
                 RBCommandCenter.navigationChanged(item, 'NavKSATerritoryLevel', 'KSA Territory Level');
             } else
-                alert("KSA Password mismatch.");
+                alert("KSA Userid or Password mismatch.");
         },
 
 

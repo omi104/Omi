@@ -89,6 +89,10 @@
     <Compile Include="Migrations\201506050929130_Create Merck Content DB.Designer.cs">
       <DependentUpon>201506050929130_Create Merck Content DB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201506051117348_updating KSA table.cs" />
+    <Compile Include="Migrations\201506051117348_updating KSA table.Designer.cs">
+      <DependentUpon>201506051117348_updating KSA table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -126,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201506050929130_Create Merck Content DB.resx">
       <DependentUpon>201506050929130_Create Merck Content DB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506051117348_updating KSA table.resx">
+      <DependentUpon>201506051117348_updating KSA table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
