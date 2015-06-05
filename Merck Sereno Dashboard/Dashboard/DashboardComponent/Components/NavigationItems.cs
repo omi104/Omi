@@ -24,7 +24,7 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
-        public static NavigationItem NavCategoriesTrend()
+        public static NavigationItem NavAllRegions()
         {
             return new NavigationItem()
             {
@@ -32,11 +32,25 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "All Regions",
                 Widgets = new List<WidgetItem>()
                 {
-                    WidgetItems.CategoryTrendTableChartWidget()
+                    WidgetItems.AllRegionCombinationChart(),
+                    WidgetItems.AllRegionTrendTableWidget()
                 }
             };
         }
 
+        public static NavigationItem NavKSATerritoryLevel()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavKSATerritoryLevel",
+                Label = "KSA Territory Level",
+                Widgets = new List<WidgetItem>()
+                {
+                    WidgetItems.KsaCombinationChart(),
+                    WidgetItems.KsaTrendTableWidget()
+                }
+            };
+        }
         public static NavigationItem YourAccount()
         {
             return new NavigationItem()

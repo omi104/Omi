@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using Dashboard.DashboardComponent.Components;
 using Dashboard.IdentityModel.Repositories;
@@ -9,7 +7,6 @@ using Dashboard.Configuration.Filters;
 using Dashboard.Configuration.Navigations;
 using Dashboard.Controllers.Layouts;
 using Dashboard.Models.Config;
-using Dashboard.Common;
 
 namespace Dashboard.Configuration
 {
@@ -31,7 +28,8 @@ namespace Dashboard.Configuration
         private void ConfigureNavigations()
         {
             HasNavigation(new HomeNavigationConfiguration(NavigationItems.NavHome()));
-            HasNavigation(new AllRegionNavigationConfiguration(NavigationItems.NavCategoriesTrend()));
+            HasNavigation(new AllRegionNavigationConfiguration(NavigationItems.NavAllRegions()));
+            HasNavigation(new KSANavigationConfiguration(NavigationItems.NavKSATerritoryLevel()));
         }
 
         private void ConfigureFilters()
@@ -64,7 +62,8 @@ namespace Dashboard.Configuration
 
 
                 .Add(ParameterList.RecordCount).WithValue("5")
-                .Add(ParameterList.UncheckedItems).WithValue("")
+                .Add(ParameterList.RegionUncheckedItems).WithValue("")
+                .Add(ParameterList.KsaUncheckedItems).WithValue("")
                 .Add(ParameterList.CurrentNavigationId).WithValue("navigation1")
                 .Add(ParameterList.NavigationLabel).WithValue("Home")
                 .Add(ParameterList.IsIMSUser).WithValue("false");

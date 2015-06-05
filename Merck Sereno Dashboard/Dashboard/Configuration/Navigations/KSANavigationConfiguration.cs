@@ -1,23 +1,16 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Dashboard.Common;
-using Dashboard.Configuration.Filters;
+﻿using System;
+using Dashboard.Configuration.Widgets;
 using Dashboard.Controllers;
-using Dashboard.DashboardComponent.Components;
+using Dashboard.Controllers.Layouts;
 using Dashboard.DashboardComponent.Models;
 using Dashboard.Export;
 using DashboardFramework.Configuration;
-using Dashboard.Configuration.Widgets;
-using Dashboard.Controllers.Layouts;
-using Dashboard.Models.Config;
 
 namespace Dashboard.Configuration.Navigations
 {
-    public class AllRegionNavigationConfiguration:NavigationConfiguration
+    public class KSANavigationConfiguration : NavigationConfiguration
     {
-        public AllRegionNavigationConfiguration(NavigationItem navigationItem)
+        public KSANavigationConfiguration(NavigationItem navigationItem)
         {
             HasName(navigationItem.Name);
             Layout.HasConfig(navigationItem)

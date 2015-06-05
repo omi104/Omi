@@ -27,7 +27,7 @@ namespace Dashboard.Configuration.Widgets
             View.DataFlow.AddSource<DummyTableDataSource>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<TableChartTransformer>()
-                .HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems]);
+                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionTrendTableWidget().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
             //Export.HasController<TrendTableChartExportController>().HasConfig("CompanyTrend")
             //      .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)

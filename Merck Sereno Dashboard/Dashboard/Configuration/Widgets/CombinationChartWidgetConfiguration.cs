@@ -6,6 +6,7 @@ using Component.Chart;
 using Component.Chart.Fusion;
 using Dashboard.Controllers.Exports;
 using Dashboard.Controllers.Widgets;
+using Dashboard.DashboardComponent.Components;
 using Dashboard.DashboardComponent.Models;
 using Dashboard.DataComponents.DataSources;
 using Dashboard.DataComponents.Transformers;
@@ -25,7 +26,7 @@ namespace Dashboard.Configuration.Widgets
             View.DataFlow.AddSource<DummyTableDataSource>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
-                .HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems]);
+                .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
             //Export.HasController<HomeExportController>().HasConfig("HomeTrend")
             //      .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)

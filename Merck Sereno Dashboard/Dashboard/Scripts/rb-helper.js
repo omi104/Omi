@@ -1,4 +1,4 @@
-﻿var RbHelper = function() {
+﻿var RbHelper = function () {
     var pub = this;
     pub.ReloadIfPeriodHasChanged = function () {
         if (isMonthChanged == '1') {
@@ -13,6 +13,29 @@
     pub.FavouriteClick = function (username) {
         Favourite.favouriteClick(CommandCenter.getNavigationName(), username);
     };
+
+
+    pub.KSAClick = function (userId) {
+        $('#KSAPassword').text('');
+        $('#KSAUserName').val(userId);
+        $('#KSA-Auth-Modal').modal('show');
+    }
+
+    pub.AuthorizeKSANavigation = function (navigationName, userid, password) {
+        var parameters = {
+            'userId': userid,
+            'password': password,
+        };
+        RbHelper.RBAjaxCall('Authorize/AuthorizeKsaNavigation', parameters, pub.Authorize_KSA_Success);
+    }
+    pub.Authorize_KSA_Success = function () {
+        var element = $('#navigation3');
+        var item = element[0];
+        RBCommandCenter.navigationChanged(item, 'NavKSATerritoryLevel', 'KSA Territory Level');
+    },
+
+
+
 
     pub.ExpandCollapseAll = function (element, parentLevel) {
         var image = $(element);
@@ -40,7 +63,7 @@
     pub.togglePanel = function (element) {
         if ($(element).hasClass('panel-minimize')) {
             $(element).removeClass('panel-minimize').addClass('panel-maximize');
-            $(element).children('i').removeClass('fa-minus').addClass('fa-plus');            
+            $(element).children('i').removeClass('fa-minus').addClass('fa-plus');
             $(element).closest('div.panel-heading').next('div.panel-body').css('display', 'none');
         }
         else if ($(element).hasClass('panel-maximize')) {
@@ -53,7 +76,7 @@
         }
     };
 
-    pub.resizeBodyWidth = function(navigation) {
+    pub.resizeBodyWidth = function (navigation) {
         if (navigation == 'UserManagement' || navigation == 'Guide' || navigation == "YourAccount" || navigation == "Email" || navigation == "Favourites" || navigation == "NavContactUs") {
             if (!$('#pptx-icon').parent('a').hasClass('display-none')) {
                 $('#pptx-icon').parent('a').addClass('display-none');
@@ -78,7 +101,7 @@
             if (navigation == "UserManagement") {
                 $('#xlsx-icon').parent('a').removeClass('display-none');
             }
-            
+
         } else {
             $('#pptx-icon').parent('a').removeClass('display-none');
             $('#pdf-icon').parent('a').removeClass('display-none');
@@ -87,11 +110,11 @@
             if ($('#filter-container').hasClass('display-none')) {
                 $('#body-container').removeClass('hidden-filter');
                 $('#filter-container').removeClass('display-none');
-                
+
                 $('#toggle-filter-bar').removeClass('display-none');
             }
             $('#filters-info').removeClass('display-none');
-            if(navigation == "NavHome")
+            if (navigation == "NavHome")
                 $('#filters-info').addClass('display-none');
         }
         pub.showHideSwitchNumberFormat(navigation);
@@ -103,7 +126,7 @@
         } else {
             $('#page-heading').find('h2').html($('#' + elementId).children("span:first").text());
         }
-        
+
         $('#sideNav li a.active').removeClass('active');
         $('#' + elementId).addClass('active');
         if ($('#' + elementId).parent('li').parent('ul').hasClass('sub')) {
@@ -139,7 +162,7 @@
             }
         }
     };
-    
+
     pub.RBAjaxCall = function (ajaxUrl, parameters, onSuccess) {
         $.ajax({
             url: ajaxUrl,
@@ -170,6 +193,6 @@
             $('#latest-period-type').text($('#filter-PeriodType-control option:selected').text());
         }
     };
-    
+
     return pub;
 }();

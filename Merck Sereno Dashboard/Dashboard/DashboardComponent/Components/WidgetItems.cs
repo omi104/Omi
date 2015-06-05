@@ -24,20 +24,42 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "AllRegionCombinationChart",
-                ViewId = "103",
-                HasParamDependency = new List<string>() { ParameterList.UncheckedItems}
+                ViewId = "",
+                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems}
             };
         }
 
-        public static WidgetItem CategoryTrendTableChartWidget()
+        public static WidgetItem AllRegionTrendTableWidget()
         {
             return new WidgetItem()
             {
-                Name = "CategoryTrendTableChartWidget",
-                ViewId = "505",
-                HasParamDependency = new List<string>() { ParameterList.UncheckedItems}
+                Name = "AllRegionTrendTableWidget",
+                ViewId = "",
+                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems }
+            };
+        }
+
+
+        public static WidgetItem KsaCombinationChart()
+        {
+            return new WidgetItem()
+            {
+                Name = "KsaCombinationChart",
+                ViewId = "",
+                HasParamDependency = new List<string>() { ParameterList.KsaUncheckedItems }
+            };
+        }
+
+        public static WidgetItem KsaTrendTableWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "KsaTrendTableWidget",
+                ViewId = "",
+                HasParamDependency = new List<string>() { ParameterList.KsaUncheckedItems }
             };
         } 
+
 
         /* User Management Navigation Widgets */
         public static WidgetItem UserList()

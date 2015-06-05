@@ -14,7 +14,8 @@ namespace Dashboard.Configuration
         public const string Forms = "Forms";
         public const string KPI = "KPI";
         public const string UnitOrValue = "UnitOrValue";
-        public const string UncheckedItems = "uncheckedItems";
+        public const string RegionUncheckedItems = "RegionUncheckedItems";
+        public const string KsaUncheckedItems = "KsaUncheckedItems";
         public const string TimePeriod = "TimePeriod";
         public const string StartDate = "StartDate";
 

@@ -4,11 +4,11 @@
 <aside id="sidebar" class="page-sidebar">
     <div class="sidebar-inner">
         <div class="toggle-sidebar">
-            <a id="toggle-menu-anchor" href="javascript:void(0)"><i class="fa fa-minus-circle"></i> </a>
+            <a id="toggle-menu-anchor" href="javascript:void(0)"><i class="fa fa-minus-circle"></i></a>
         </div>
         <div class="option-buttons">
             <div class="option-buttons-inner">
-                <i class="fa fa-calendar" title="Viewing: @Model.CurrentPeriod Data"></i><span id="view-period-title" >Viewing: @Model.CurrentPeriod Data</span>
+                <i class="fa fa-calendar" title="Viewing: @Model.CurrentPeriod Data"></i><span id="view-period-title">Viewing: @Model.CurrentPeriod Data</span>
             </div>
         </div>
         <div class="slimScrollDiv">
@@ -17,7 +17,9 @@
                     <ul id="sideNav" class="nav">
                         <li><a href="#" id="navigation1" class="active" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavHome().Name','@NavigationItems.NavHome().Label');"><i class="fa fa-home"></i><span class="txt">Home</span></a>
                         </li>
-                        <li><a href="#" id="navigation2" class="" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCategoriesTrend().Name','@NavigationItems.NavCategoriesTrend().Label');"><i class="fa fa-home"></i><span class="txt">@NavigationItems.NavCategoriesTrend().Label</span></a>
+                        <li><a href="#" id="navigation2" class="" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavAllRegions().Name','@NavigationItems.NavAllRegions().Label');"><i class="fa fa-home"></i><span class="txt">@NavigationItems.NavAllRegions().Label</span></a>
+                        </li>
+                        <li><a href="#" id="navigation3" class="" onclick="RbHelper.KSAClick('@HttpContext.Current.User.Identity.Name')"><i class="fa fa-home"></i><span class="txt">KSA Territory Level</span></a>
                         </li>
                     </ul>
                 </div>

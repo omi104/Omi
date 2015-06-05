@@ -217,10 +217,12 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Configuration\Filters\DatePickerFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
+    <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterController.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterLayoutController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterLayoutController.cs" />
+    <Compile Include="Controllers\AuthorizeController.cs" />
     <Compile Include="DashboardComponent\Components\FilterItems.cs" />
     <Compile Include="Configuration\Filters\CommonFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\FilterConfigurationBase.cs" />
