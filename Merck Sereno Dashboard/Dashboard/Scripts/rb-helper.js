@@ -16,25 +16,26 @@
 
 
     pub.KSAClick = function (userId) {
-        $('#KSAPassword').text('');
+        $('#KSAPassword').val('');
         $('#KSAUserName').val(userId);
         $('#KSA-Auth-Modal').modal('show');
     }
 
-    pub.AuthorizeKSANavigation = function (navigationName, userid, password) {
+    pub.AuthorizeKSANavigation = function (userid, password) {
         var parameters = {
             'userId': userid,
             'password': password,
         };
         RbHelper.RBAjaxCall('Authorize/AuthorizeKsaNavigation', parameters, pub.Authorize_KSA_Success);
     }
-    pub.Authorize_KSA_Success = function () {
-        var element = $('#navigation3');
-        var item = element[0];
-        RBCommandCenter.navigationChanged(item, 'NavKSATerritoryLevel', 'KSA Territory Level');
-    },
-
-
+    pub.Authorize_KSA_Success = function (data,parameter) {
+            if (data == "Success") {
+                var element = $('#navigation3');
+                var item = element[0];
+                RBCommandCenter.navigationChanged(item, 'NavKSATerritoryLevel', 'KSA Territory Level');
+            } else
+                alert("KSA Password mismatch.");
+        },
 
 
     pub.ExpandCollapseAll = function (element, parentLevel) {

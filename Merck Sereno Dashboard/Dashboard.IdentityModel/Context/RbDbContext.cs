@@ -14,7 +14,7 @@ namespace Dashboard.IdentityModel.Context
         }
 
         public DbSet<UserActivity> UserActivities { get; set; }
-        public DbSet<EmailTemplate> EmailsTemplates { get; set; }
+        public DbSet<KSAPassword> KSAPasswords { get; set; }
         public DbSet<Favourite> Favourites { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -27,7 +27,7 @@ namespace Dashboard.IdentityModel.Context
             modelBuilder.Entity<IdentityRole>().ToTable("Roles");
             modelBuilder.Entity<Favourite>().ToTable("Favourites");
             modelBuilder.Entity<UserActivity>().ToTable("UserActivities");
-            modelBuilder.Entity<EmailTemplate>().ToTable("EmailTemplates");
+            modelBuilder.Entity<KSAPassword>().ToTable("KSAPassword");
         }
 
         private static string GetDbConnectionString()

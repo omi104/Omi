@@ -63,11 +63,10 @@
     <Compile Include="Context\PortalDbContext.cs" />
     <Compile Include="Context\RbDbContext.cs" />
     <Compile Include="Entity\ApplicationUser.cs" />
-    <Compile Include="Entity\EmailTemplate.cs" />
+    <Compile Include="Entity\KSAPassword.cs" />
     <Compile Include="Entity\Favourite.cs" />
     <Compile Include="Entity\LatestDataAvailability.cs" />
     <Compile Include="Entity\ResetPassword.cs" />
-    <Compile Include="Entity\SendEmail.cs" />
     <Compile Include="Entity\UserActivity.cs" />
     <Compile Include="Entity\UserPreference.cs" />
     <Compile Include="Migrations\201502090338354_ InitializeDatabase.cs" />
@@ -85,6 +84,10 @@
     <Compile Include="Migrations\201503100654454_UpdateFavourite.cs" />
     <Compile Include="Migrations\201503100654454_UpdateFavourite.Designer.cs">
       <DependentUpon>201503100654454_UpdateFavourite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201506050929130_Create Merck Content DB.cs" />
+    <Compile Include="Migrations\201506050929130_Create Merck Content DB.Designer.cs">
+      <DependentUpon>201506050929130_Create Merck Content DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -120,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201503100654454_UpdateFavourite.resx">
       <DependentUpon>201503100654454_UpdateFavourite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201506050929130_Create Merck Content DB.resx">
+      <DependentUpon>201506050929130_Create Merck Content DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
