@@ -1,0 +1,64 @@
+﻿@using Dashboard.Models
+@model Dashboard.Controllers.Filters.MultiSelectFilterModel
+
+
+<div class="filter_container MultiSelectDropdown @Model.Config.Name" data-container-id="@Model.ContainerId" filter_name="@Model.Config.Name" data-value="@Model.SelectedValues">
+    <input type="text" class="ui-helper-hidden searchable-input" name="@Model.Config.Name" filter_name="@Model.Config.Name" />
+    <div class="btn-group">
+        <input type="text" id="@Model.SearchItemId" class="search-input-text form-control-input-custom ff-visible-element" value="@Model.SearchInputText" />
+        <button type="button" class="btn btn-default dropdown-toggle caret-container" data-toggle="dropdown" style="float: left "
+                id="@Model.PopOverActionBtn" onclick="MultiSelectDropdownHelper.TogglePopOver('@Model.ContainerId', '@Model.Config.ChangeOnSubmit', '@Model.Config.Name');">
+            <span class="caret"></span>
+        </button>
+    </div>
+    <div id="@Model.ContainerId" style="display: none;">
+        <div id="@Model.ContentId">
+            <ul class="multi-select-filter-items-container">
+                @foreach (var filterItem in Model.FilterItems)
+                {
+                    var checkedText = filterItem.IsSelected ? "checked=\"checked\"" : "";
+                    <li>
+                        <input type="checkbox" name="@Model.Config.Name" @checkedText data-value="@filterItem.FilterItem.Key" data-text="@filterItem.FilterItem.Value" /><span class="fn-title">@Html.Raw(filterItem.FilterItem.Value)</span>
+                    </li>
+                }
+
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('button#@Model.PopOverActionBtn').bind('click', function () { MultiSelectDropdownHelper.TogglePopOver('@Model.ContainerId', '@Model.Config.ChangeOnSubmit', '@Model.Config.Name'); });
+
+            $('#@Model.ContentId li input[type=checkbox]').bind('click', function () { MultiSelectDropdownHelper.CheckedItemsChanged(this, '@Model.Config.Name', '@Model.ContainerId'); });
+
+            MultiSelectDropdownHelper.EnableHideOnBodyClick('@Model.ContainerId', '@Model.Config.ChangeOnSubmit', '@Model.Config.Name');
+            MultiSelectDropdownHelper.RegisterSearchAction('@Model.SearchItemId', '@Model.ContainerId');
+        });
+    </script>
+</div>
+
+<style type="text/css">
+    .MultiSelectDropdown {
+        /*padding: 6px 12px;*/
+    }
+
+        .MultiSelectDropdown .btn-group {
+            width: 100%;
+        }
+
+            .MultiSelectDropdown .btn-group .search-input-text {
+                width: 80%;
+                height: 34px;
+                float: left;
+                padding-left: 5px;
+            }
+
+        .MultiSelectDropdown #filter-data-container-Country {
+            width: 75%;
+        }
+
+        .MultiSelectDropdown ul li {
+            padding-left: 5px;
+        }
+</style>

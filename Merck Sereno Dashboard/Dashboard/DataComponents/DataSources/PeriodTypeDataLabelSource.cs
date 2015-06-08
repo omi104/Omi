@@ -9,10 +9,10 @@ namespace Dashboard.DataComponents.DataSources
         {
             return new Dictionary<string, string>()
                 {
-                    {"MTH","Month"},
-                    {"QTR","QTR"},
-                    {"YTD","YTD"},
-                    {"MAT","MAT"},
+                    {"[Period].[PeriodTypeName].&[Monthly]","MTH"},
+                    {"[Period].[PeriodTypeName].&[Quarterly]","QTR"},
+                    {"[Period].[PeriodTypeName].&[Year To Date]","YTD"},
+                    {"[Period].[PeriodTypeName].&[Moving Annual Total]","MAT"},
                 };
         }
     }

@@ -32,9 +32,7 @@ namespace Dashboard.App_Start
                 "~/Scripts/LoadRadio.js",
                 "~/Scripts/Favourite.js",
                 "~/Scripts/SelectRadioValue.js",
-                "~/Scripts/RadioFilterOperation.js",
-                "~/Scripts/Plugin/jquery.cleditor.js",
-                "~/Scripts/Plugin/jquery.cleditor.min.js"
+                "~/Scripts/RadioFilterOperation.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/project_js").Include(
@@ -53,7 +51,6 @@ namespace Dashboard.App_Start
                 .Include("~/Scripts/Chart/FusionCharts.HC.Maps.js")
                 .Include("~/Scripts/Chart/FusionMaps.js")
                 .Include("~/Scripts/Chart/IMSChart.js")
-                .Include("~/Scripts/MonthPicker.js")
                 .Include("~/Scripts/column-fridge.js")
                 .Include("~/Scripts/TableBuilder.js")
              );
@@ -69,7 +66,8 @@ namespace Dashboard.App_Start
                  "~/Content/main.css",
                  "~/Content/login.css",
                   "~/Content/plugins.css",
-                  "~/Content/layout.css"
+                  "~/Content/layout.css",
+                  "~/Content/CustomFilter.css"
                  ));
 
             bundles.Add(new StyleBundle("~/Content/dashboardCss").Include(

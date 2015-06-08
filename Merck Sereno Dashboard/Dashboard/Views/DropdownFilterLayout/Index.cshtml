@@ -1,3 +1,4 @@
-﻿@model Dashboard.Models.Config.FilterLayoutConfig
+﻿@model Dashboard.DashboardComponent.Models.FilterItem
+<label>@Model.Label</label>
 <select class="form-control" id="@Model.ControlId" onchange="RBCommandCenter.filterChange('@Model.Name',this.value)">
 </select>

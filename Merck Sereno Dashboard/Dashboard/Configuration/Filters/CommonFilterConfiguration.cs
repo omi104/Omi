@@ -19,12 +19,12 @@ namespace Dashboard.Configuration.Filters
             HasName(filterItem.Name);
             HasLabel(filterItem.Label);
             Reload.If(true);
-            Layout.HasConfig(new FilterLayoutConfig { Name = filterItem.Name, ControlId = filterItem.ControlId })
+            Layout.HasConfig(filterItem)
                 .HasController<DropdownFilterLayoutController>();
 
-            DataFlow.AddSource<RecordCountSource>();
-                //.WithModule(filterItem.ViewId)
-                //.Transform().By<CubeDataToDictionaryTransformer>();
+            DataFlow.AddSource<CubeDataSourceBase>()//RecordCountSource
+                .WithModule(filterItem.ViewId)
+                .Transform().By<CubeDataToDictionaryTransformer>();
             ModifyParameter(filterItem.ModifyParam);
             if (filterItem.HasParamDependency != null && filterItem.HasParamDependency.Count != 0)
                 HasParameterDependency.On(filterItem.HasParamDependency);

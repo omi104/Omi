@@ -19,7 +19,7 @@ namespace Dashboard.DashboardComponent.Components
                 ControlId = "filter-RegionOrCluster-control",
                 ModifyParam = ParameterList.RegionOrCluster,
                 HasParamDependency = new List<string>() { ParameterList.NavigationName },
-                ViewId = ""
+                ViewId = "4"
             };
         }
 
@@ -32,7 +32,7 @@ namespace Dashboard.DashboardComponent.Components
                 ControlId = "filter-Country-control",
                 ModifyParam = ParameterList.Country,
                 HasParamDependency = new List<string>() { ParameterList.RegionOrCluster },
-                ViewId = ""
+                ViewId = "5"
             };
         }
 
@@ -40,12 +40,13 @@ namespace Dashboard.DashboardComponent.Components
         {
             return new FilterItem
             {
-                Name = "Products",
+                Name = ParameterList.Product,
                 Label = "Products",
                 ControlId = "filter-Products-control",
-                ModifyParam = ParameterList.Products,
-                HasParamDependency = new List<string>() { ParameterList.Country },
-                ViewId = ""
+                ModifyParam = ParameterList.Product,
+                ChangeOnSubmit = false,
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster,ParameterList.Country },
+                ViewId = "6"
             };
         }
 
@@ -57,8 +58,8 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Segment",
                 ControlId = "filter-Segment-control",
                 ModifyParam = ParameterList.Segment,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Products },
-                ViewId = ""
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product },
+                ViewId = "7"
             };
         }
 
@@ -69,9 +70,9 @@ namespace Dashboard.DashboardComponent.Components
                 Name = "Forms",
                 Label = "Forms",
                 ControlId = "filter-Forms-control",
-                ModifyParam = ParameterList.Forms,
-                HasParamDependency = new List<string>() { ParameterList.Segment },
-                ViewId = ""
+                ModifyParam = ParameterList.Form,
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product,ParameterList.Segment },
+                ViewId = "8"
             };
         }
 
@@ -84,7 +85,7 @@ namespace Dashboard.DashboardComponent.Components
                 ControlId = "filter-KPI-control",
                 ModifyParam = ParameterList.KPI,
                 HasParamDependency = new List<string>() {  },
-                ViewId = ""
+                ViewId = "9"
             };
         }
 
@@ -96,8 +97,8 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Unit/Value",
                 ControlId = "filter-UnitOrValue-control",
                 ModifyParam = ParameterList.UnitOrValue,
-                HasParamDependency = new List<string>() { },
-                ViewId = ""
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster},
+                ViewId = "1"
             };
         }
 
@@ -110,7 +111,7 @@ namespace Dashboard.DashboardComponent.Components
                 ControlId = "filter-TimePeriod-control",
                 ModifyParam = ParameterList.TimePeriod,
                 HasParamDependency = new List<string>() { },
-                ViewId = ""
+                ViewId = "2"
             };
         }
 
@@ -121,12 +122,24 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = ParameterList.StartDate,
                 Label = "Start Date",
-                ViewId = "",
                 ModifyParam = ParameterList.StartDate,
-                HasParamDependency = new List<string>() { }
+                HasParamDependency = new List<string>() {ParameterList.RegionOrCluster,ParameterList.Product,ParameterList.TimePeriod },
+                ViewId = "3",
             };
         }
 
+        public static FilterItem EndDate()
+        {
+
+            return new FilterItem
+            {
+                Name = ParameterList.EndDate,
+                Label = "End Date",
+                ModifyParam = ParameterList.EndDate,
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.TimePeriod },
+                ViewId = "3",
+            };
+        }
         #endregion
 
         

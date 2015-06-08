@@ -9,15 +9,16 @@ namespace Dashboard.Configuration
     {
         public const string RegionOrCluster = "RegionOrCluster";
         public const string Country = "Country";
-        public const string Products = "Products";
+        public const string Product = "Product";
         public const string Segment = "Segment";
-        public const string Forms = "Forms";
+        public const string Form = "Form";
         public const string KPI = "KPI";
         public const string UnitOrValue = "UnitOrValue";
         public const string RegionUncheckedItems = "RegionUncheckedItems";
         public const string KsaUncheckedItems = "KsaUncheckedItems";
         public const string TimePeriod = "TimePeriod";
         public const string StartDate = "StartDate";
+        public const string EndDate = "EndDate";
 
         public const string RecordCount = "recordCount";
         public const string NavigationName = "NavigationName";

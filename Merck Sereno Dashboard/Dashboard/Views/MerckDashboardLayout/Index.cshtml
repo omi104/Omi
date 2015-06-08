@@ -37,7 +37,7 @@
                         <div class="panel-body">
                             <div id="filter-RegionOrCluster-layout"></div>
                             <div id="filter-Country-layout"></div>
-                            <div id="filter-Products-layout"></div>
+                            <div id="filter-Product-layout"></div>
                             <div id="filter-Segment-layout"></div>
                             <div id="filter-Forms-layout"></div>
                         </div>
@@ -65,8 +65,8 @@
                         </div>
                         <div class="panel-body">
                             <div id="filter-TimePeriod-layout"></div>
-                            <div id="filter-StartDate-layout"></div>
-                            <div id="filter-ToDate-layout"></div>
+                            <div id="filter-StartDate-layout" style="width:45%;float: left;margin-right: 10px;margin-top: 10px;"></div>
+                            <div id="filter-EndDate-layout" style="width:45%;float: left;margin-top: 10px;"></div>
                         </div>
                     </div>
                 </div>
@@ -90,11 +90,6 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        //$("#filter-FromDate-layout").datepicker({
-        //    format: "mm-yyyy",
-        //    startView: "months",
-        //    minViewMode: "months"
-        //});
         $('#view-period-title').text('Viewing: '+'@Model.CurrentPeriod'+ ' Data');
         RbHelper.resizeBodyWidth('@Model.CurrentNavigation');
         RbHelper.highlightMenu('@Model.CurrentNavigationId', '');
