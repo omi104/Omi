@@ -24,7 +24,7 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "AllRegionCombinationChart",
-                ViewId = "",
+                ViewId = "10",
                 HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.KPI }
             };
         }

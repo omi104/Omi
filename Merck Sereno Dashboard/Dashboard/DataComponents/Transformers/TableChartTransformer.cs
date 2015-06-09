@@ -4,6 +4,7 @@ using Component.Node;
 using Component.Table;
 using Component.Table.Functionalities;
 using CubeFramework;
+using Dashboard.Configuration;
 using Dashboard.Helper;
 using Dashboard.Helper.Factory;
 using Dashboard.TableComponents.CellDataProvider;
@@ -60,7 +61,8 @@ namespace Dashboard.DataComponents.Transformers
                         {
                             Classes = new List<string>() {"checkBoxCol","trend-checkbox"},
                             TrendChartControlId = TrendChartControlId,
-                            UncheckedItem = UncheckedItems
+                            UncheckedItem = UncheckedItems,
+                            ParamName = ParameterList.RegionUncheckedItems
                         },
                     RowCellDataProvider = new CustomRowCellDataProvider(),
                     Columns = new List<string>() {"1"}

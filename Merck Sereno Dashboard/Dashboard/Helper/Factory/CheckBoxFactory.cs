@@ -9,6 +9,7 @@ namespace Dashboard.Helper.Factory
         public string TrendChartControlId { get; set; }
         public string StackChartControlId { get; set; }
         public string UncheckedItem { get; set; }
+        public string ParamName { get; set; }
 
         public CheckBoxFactory(string nodeName = "td")
         {
@@ -22,7 +23,13 @@ namespace Dashboard.Helper.Factory
             var cell = new ComplexNode(_nodeName);
             var checkBox = new SimpleNode("input", "")
                 {
-                    Attributes = new Dictionary<string, string>() { { "type", "checkbox" }, { "checked", "checked" }, { "series-name", data }, { "onClick", "customTable.ChartUpdate()" } }
+                    Attributes = new Dictionary<string, string>()
+                    {
+                        { "type", "checkbox" }, 
+                        { "checked", "checked" }, 
+                        { "series-name", data }, 
+                        { "onClick", "customTable.ChartUpdate('"+ParamName+"')" }
+                    }
                 };
             if (!string.IsNullOrEmpty(UncheckedItem) && UncheckedItem.ToUpper().Contains(data.ToUpper()))
             {

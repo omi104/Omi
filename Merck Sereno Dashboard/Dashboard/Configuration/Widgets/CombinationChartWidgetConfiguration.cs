@@ -23,7 +23,7 @@ namespace Dashboard.Configuration.Widgets
             HasName(widgetItem.Name);
             View.HasConfig("")
                 .HasController<CombiChartWidgetController>();
-            View.DataFlow.AddSource<DummyTableDataSource>()
+            View.DataFlow.AddSource<CubeDataSourceBase>()//DummyTableDataSource
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);

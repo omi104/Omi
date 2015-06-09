@@ -16,7 +16,7 @@ var customTable =
         });
     },
     
-    ChartUpdate: function () {
+    ChartUpdate: function (paramName) {
         //update unchecked parameter value
         var uncheckedItems = [];
         $('table.trend-table').find('td.checkBoxCol input').each(function (ix, element) {
@@ -28,7 +28,7 @@ var customTable =
             }
         });
         var parameter = {};
-        parameter["uncheckedItems"] = uncheckedItems.join();
+        parameter[paramName] = uncheckedItems.join();
         CommandCenter.parametersChanged(parameter);
         window.chartUpdateFunctionCounter = 'entered';
     },

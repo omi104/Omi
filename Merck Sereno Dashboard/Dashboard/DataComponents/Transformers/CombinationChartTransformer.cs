@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Component.Chart.Fusion;
 using CubeFramework;
+using Dashboard.DataComponents.DataSources;
 using Dashboard.Models.Data;
 using DashboardFramework.DataComponent;
 
@@ -16,23 +17,29 @@ namespace Dashboard.DataComponents.Transformers
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
+        private ColorListDataSource _colorList;
+        private const string ColorOfTotal = "4d9bbc";
 
+        public CombinationChartTransformer()
+        {
+            _colorList = new ColorListDataSource();
+        }
         public SingleChartModel GetData()
         {
             var model = new SingleChartModel();
             model.Title = "Performance vs. Competitors (in Euros)";
             model.Chart = "";
-            string defaultAttributes = @"bgColor='FFFFFF' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
+            string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
 
             chart = new MSCombiDY2D(defaultAttributes)
             {
                 Dataset = new List<DataSet>(),
             };
-            chart.Attributes.Add("pyAxisName", "PY axis Label");
-            chart.Attributes.Add("sYAXisName", "SY axis Label");
+            chart.Attributes.Add("pyAxisName", "In Euros 000");
+            chart.Attributes.Add("sYAXisName", "In %");
             chart.ControlId = "interactiveTrendChart";
             AddStyles();
-            foreach(var col in Input.Columns.Skip(2))
+            foreach(var col in Input.Columns.Skip(3))
             {
                 var category = new Category();
                 category.Attributes.Add("label", col.Name);
@@ -42,7 +49,7 @@ namespace Dashboard.DataComponents.Transformers
             if (!UncheckedItems.ToUpper().Contains("TOTAL")) 
                 chart.Dataset.Add(AddFirstDataSetForTotal());
 
-            for(int i=0; i<= Input.Rows.Count - 2;i++)
+            for(int i=1; i< Input.Rows.Count-1;i++)
             {
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1])) 
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
@@ -53,12 +60,13 @@ namespace Dashboard.DataComponents.Transformers
 
         private DataSet AddFirstDataSetForTotal()
         {
-            var dataSet = new DataSet("color='4d9bbc' renderas='Area'");
-            dataSet.Attributes.Add("seriesName", Input.Rows.Last().Values[1]);
+            var dataSet = new DataSet("color=" + ColorOfTotal);
+            dataSet.Attributes.Add("renderas", "Area");
+            dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
             dataSet.Set = new List<Set>();
 
-            foreach (var val in Input.Rows.First().Values.Skip(2))
+            foreach (var val in Input.Rows.First().Values.Skip(3))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);
@@ -70,14 +78,19 @@ namespace Dashboard.DataComponents.Transformers
         private DataSet AddTrendLineDataSet(Row row)
         {
             var dataSet = new DataSet("renderas='Line'");
+            //string name = row.Values[1].Replace("(", "SB").Replace(")", "EB").Replace("*","Star");
             dataSet.Attributes.Add("seriesName", row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
+            string color = _colorList.GetNextColor();
+            dataSet.Attributes.Add("color", "#" + color);
+            dataSet.Attributes.Add("anchorBgColor", "#" + color);
 
-            foreach (var val in row.Values.Skip(2))
+            foreach (var val in row.Values.Skip(3))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);
+
                 dataSet.Set.Add(set1);
             }
             return dataSet;
