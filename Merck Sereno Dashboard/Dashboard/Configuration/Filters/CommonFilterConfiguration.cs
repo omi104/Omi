@@ -39,6 +39,8 @@ namespace Dashboard.Configuration.Filters
                 {
                     filterItem.IsVisible = false;
                 }
+                else
+                    filterItem.IsVisible = true;
             }
             return filterItem;
         }
