@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Web;
 using Dashboard.DashboardComponent.Components;
-using Dashboard.DataComponents.DataSources;
 using Dashboard.IdentityModel.Repositories;
 using DashboardFramework.Configuration;
 using Dashboard.Configuration.Filters;
@@ -37,7 +36,7 @@ namespace Dashboard.Configuration
         {
             HasFilter(new CommonFilterConfiguration(FilterItems.RegionOrCluster()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Country()));
-            HasFilter(new SearchableDropdownFilterConfiguration(FilterItems.Products()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Products()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Segment()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Forms()));
             HasFilter(new CommonFilterConfiguration(FilterItems.KPI()));  
@@ -45,7 +44,6 @@ namespace Dashboard.Configuration
             HasFilter(new OnOffFilterConfiguration(FilterItems.TimePeriod()));
             HasFilter(new CommonFilterConfiguration(FilterItems.StartDate()));
             HasFilter(new CommonFilterConfiguration(FilterItems.EndDate()));
-            //HasFilter(new CommonFilterConfiguration(FilterItems.Country()));
         }
 
         private void ConfigureParameters()
@@ -55,7 +53,6 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.RegionOrCluster).WithValue("")
                 .Add(ParameterList.Country).WithValue("")
                 .Add(ParameterList.Product).WithValue("")
-                //.Add("@@" + ParameterList.Product + "_text").WithValue("")
                 .Add(ParameterList.Segment).WithValue("")
                 .Add(ParameterList.Form).WithValue("")
                 .Add(ParameterList.KPI).WithValue("")
@@ -63,7 +60,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.TimePeriod).WithValue("")
                 .Add(ParameterList.StartDate).WithValue("")
                 .Add(ParameterList.EndDate).WithValue("")
-                
+
 
                 .Add(ParameterList.RecordCount).WithValue("5")
                 .Add(ParameterList.RegionUncheckedItems).WithValue("")

@@ -22,9 +22,9 @@ namespace Dashboard.Configuration.Filters
             Layout.HasConfig(filterItem)
                 .HasController<DropdownFilterLayoutController>();
 
-            DataFlow.AddSource<CubeDataSourceBase>()//RecordCountSource
-                .WithModule(filterItem.ViewId)
-                .Transform().By<CubeDataToDictionaryTransformer>();
+            DataFlow.AddSource<CubeDataSourceBase>()
+            .WithModule(filterItem.ViewId)
+            .Transform().By<CubeDataToDictionaryTransformer>();
             ModifyParameter(filterItem.ModifyParam);
             if (filterItem.HasParamDependency != null && filterItem.HasParamDependency.Count != 0)
                 HasParameterDependency.On(filterItem.HasParamDependency);

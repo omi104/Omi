@@ -8,7 +8,7 @@ namespace Dashboard.DashboardComponent.Components
     public class FilterItems
     {
 
-        #region Common FIlter 
+        #region Common FIlter
 
         public static FilterItem RegionOrCluster()
         {
@@ -42,10 +42,9 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = ParameterList.Product,
                 Label = "Products",
-                ControlId = "filter-Products-control",
+                ControlId = "filter-Product-control",
                 ModifyParam = ParameterList.Product,
-                ChangeOnSubmit = false,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster,ParameterList.Country },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country },
                 ViewId = "6"
             };
         }
@@ -71,7 +70,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Forms",
                 ControlId = "filter-Forms-control",
                 ModifyParam = ParameterList.Form,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product,ParameterList.Segment },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Segment },
                 ViewId = "8"
             };
         }
@@ -84,7 +83,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "KPI",
                 ControlId = "filter-KPI-control",
                 ModifyParam = ParameterList.KPI,
-                HasParamDependency = new List<string>() {  },
+                HasParamDependency = new List<string>() { },
                 ViewId = "9"
             };
         }
@@ -97,7 +96,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Unit/Value",
                 ControlId = "filter-UnitOrValue-control",
                 ModifyParam = ParameterList.UnitOrValue,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster},
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster },
                 ViewId = "1"
             };
         }
@@ -123,7 +122,7 @@ namespace Dashboard.DashboardComponent.Components
                 Name = ParameterList.StartDate,
                 Label = "Start Date",
                 ModifyParam = ParameterList.StartDate,
-                HasParamDependency = new List<string>() {ParameterList.RegionOrCluster,ParameterList.Product,ParameterList.TimePeriod },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.TimePeriod },
                 ViewId = "3",
             };
         }
@@ -142,6 +141,6 @@ namespace Dashboard.DashboardComponent.Components
         }
         #endregion
 
-        
+
     }
 }

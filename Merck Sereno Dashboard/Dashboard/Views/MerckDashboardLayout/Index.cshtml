@@ -90,7 +90,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $('#view-period-title').text('Viewing: '+'@Model.CurrentPeriod'+ ' Data');
+        $('#view-period-title').text('Viewing: ' + '@Model.CurrentPeriod' + ' Data');
         RbHelper.resizeBodyWidth('@Model.CurrentNavigation');
         RbHelper.highlightMenu('@Model.CurrentNavigationId', '');
         RbHelper.ReloadIfPeriodHasChanged();

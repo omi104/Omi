@@ -79,7 +79,7 @@ namespace Dashboard.DataComponents.Transformers
                 }
             };
 
-            for (int i = 2; i < columns.Count; i++)
+            for (int i = 3; i < columns.Count; i++)
             {
                 cellMaps.Add(new CellMap<Row>()
                 {
@@ -115,9 +115,11 @@ namespace Dashboard.DataComponents.Transformers
             row.Cells.Add(new SimpleNode("th", "Rank") { Classes = new List<string>() { "trend-rank" } });
             for (int i = 1; i < Input.Columns.Count(); i++)
             {
-                if (Input.Columns[i].Name.ToUpper().Contains("COMPANY"))
+                if (Input.Columns[i].Name.ToUpper().Contains("IS_MERCK"))
+                    continue;
+                if (Input.Columns[i].Name.ToUpper().Contains("NAME"))
                 {
-                    row.Cells.Add(new SimpleNode("th", "COMPANY") { Classes = new List<string>() { "trend-company" } });
+                    row.Cells.Add(new SimpleNode("th", "Product") { Classes = new List<string>() { "trend-company" } });
                 }
                 else
                 {

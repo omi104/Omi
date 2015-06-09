@@ -157,7 +157,7 @@ div.company-expand-collapse
 {
     width: 100%;
     margin-top: -19px;
-    border-top: 2px solid #1bbc9b;
+    border-top: 2px solid #f78db8;
 }
 
 table.cat-all-category-by-loc tr.Level2, table.cat-all-category-by-loc tr.Level3
@@ -184,7 +184,7 @@ div#hoverDiv table.latest-data-hover {
     div#hoverDiv table.latest-data-hover th {
         padding: 5px;
         text-align: left;
-        border-bottom: 1px solid #1bbc9b;
+        border-bottom: 1px solid #f78db8;
         font-weight: bold;
     }
 

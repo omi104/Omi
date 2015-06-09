@@ -25,7 +25,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "AllRegionCombinationChart",
                 ViewId = "",
-                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems}
+                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.KPI }
             };
         }
 
@@ -34,8 +34,8 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "AllRegionTrendTableWidget",
-                ViewId = "",
-                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems }
+                ViewId = "10",
+                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.KPI }
             };
         }
 
