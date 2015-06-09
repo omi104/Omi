@@ -13,6 +13,7 @@ namespace Dashboard.DashboardComponent.Models
         public string ViewId { get; set; }
         public string ModifyParam { get; set; }
         public List<string> HasParamDependency { get; set; }
+        public bool IsVisible { get; set; }
 
         private string _controlId;
         public string ControlId
@@ -26,6 +27,11 @@ namespace Dashboard.DashboardComponent.Models
                 return _controlId;
             }
             set { _controlId = value; }
+        }
+
+        public FilterItem()
+        {
+            IsVisible = true;
         }
     }
 }

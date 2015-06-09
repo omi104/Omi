@@ -19,7 +19,7 @@ namespace Dashboard.Configuration.Filters
             HasName(filterItem.Name);
             HasLabel(filterItem.Label);
             Reload.If(true);
-            Layout.HasConfig(filterItem)
+            Layout.HasConfig(p=>IsVisible(p,filterItem))
                 .HasController<DropdownFilterLayoutController>();
 
             DataFlow.AddSource<CubeDataSourceBase>()
@@ -29,5 +29,18 @@ namespace Dashboard.Configuration.Filters
             if (filterItem.HasParamDependency != null && filterItem.HasParamDependency.Count != 0)
                 HasParameterDependency.On(filterItem.HasParamDependency);
 		}
+
+        private object IsVisible(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
+        {
+            if (filterItem.Name == FilterItems.StartDate().Name)
+            {
+                if ((param["@@" + ParameterList.TimePeriod + "_text"]  == "MTH" ||
+                param["@@" + ParameterList.TimePeriod + "_text"] == "QTR") && param["@@" + ParameterList.KPI + "_text"] == "GROWTH")
+                {
+                    filterItem.IsVisible = false;
+                }
+            }
+            return filterItem;
+        }
     }
 }

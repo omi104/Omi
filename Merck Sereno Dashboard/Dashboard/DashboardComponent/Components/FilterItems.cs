@@ -122,7 +122,7 @@ namespace Dashboard.DashboardComponent.Components
                 Name = ParameterList.StartDate,
                 Label = "Start Date",
                 ModifyParam = ParameterList.StartDate,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.TimePeriod },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.TimePeriod , ParameterList.KPI},
                 ViewId = "3",
             };
         }

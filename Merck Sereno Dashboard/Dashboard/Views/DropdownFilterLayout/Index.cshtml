@@ -1,4 +1,16 @@
 ﻿@model Dashboard.DashboardComponent.Models.FilterItem
-<label>@Model.Label</label>
-<select class="form-control" id="@Model.ControlId" onchange="RBCommandCenter.filterChange('@Model.Name',this.value)">
+
+@{
+    var style = "";
+    if (Model.IsVisible == false)
+    {
+        style = "none";
+    }
+    else
+    {
+  
+    }
+    }
+<label style="display: @style">@Model.Label</label>
+<select class="form-control" id="@Model.ControlId" onchange="RBCommandCenter.filterChange('@Model.Name',this.value)" style="display: @style">
 </select>
