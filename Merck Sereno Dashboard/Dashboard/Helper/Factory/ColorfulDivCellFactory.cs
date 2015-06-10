@@ -11,6 +11,7 @@ namespace Dashboard.Helper.Factory
     public class ColorfulDivCellFactory : NodeFactoryBase<object, NodeBase>
     {
         private ColorListDataSource _colorSource;
+        public string UncheckedItem { get; set; }
 
         public ColorfulDivCellFactory()
         {
@@ -21,31 +22,22 @@ namespace Dashboard.Helper.Factory
         protected override NodeBase CreateInternal(object data)
         {
             var values = data as List<string>;
-            string colorValue = "";
-
-            if (values[0]==null || values[0] == string.Empty)
-            {
-                colorValue = "fecefe";
-            }
-            else if (values != null && values[1]=="RECKITT BENCKISER")
-            {
-                colorValue = "de2588";
-            }
-            else
-            {
-                colorValue = _colorSource.GetNextColor();
-            }
 
             var complexNode = new ComplexNode("td");
-            complexNode.ChildNodes.Add(new SimpleNode("span", values!=null?Convert.ToString(values[0]):"") { Classes = new List<string>() { "rank-div" } });
-            complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
+            complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(values[0]) : "") { Classes = new List<string>() { "rank-div" } });
+            if (!UncheckedItem.ToUpper().Contains(values[1].ToUpper()))
             {
-                Classes = new List<string>() { "color-div" },
-                Styles = new Dictionary<string, string>()
+                string colorValue = _colorSource.GetNextColor();
+                complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
                 {
-                    {"background-color","#"+colorValue}
-                }
-            });
+                    Classes = new List<string>() { "color-div" },
+                    Styles = new Dictionary<string, string>()
+                    {
+                        {"background-color","#"+colorValue}
+                    }
+                });
+            }
+
 
             return complexNode;
         }

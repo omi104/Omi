@@ -9,9 +9,14 @@ namespace Dashboard.DataComponents.Transformers
 {
     public class CubeDataToDictionaryTransformer : ITransformer<CubeData, Dictionary<string, string>>
     {
+        public bool isReverse { get; set; }
+
+        public CubeDataToDictionaryTransformer()
+        {
+            isReverse = false;
+        }
         public Dictionary<string, string> GetData()
         {
-
             int valueColumnIndex = 0;
             int keyColumnIndex = 1;
 
@@ -21,8 +26,11 @@ namespace Dashboard.DataComponents.Transformers
                 valueColumnIndex = Input.Columns.Find(c => c.Name.Equals(ValueColumn, StringComparison.OrdinalIgnoreCase)).Position;
 
             var ret = new Dictionary<string, string>();
-
-                foreach (var r in Input.Rows)
+            if (isReverse)
+            {
+                Input.Rows.Reverse();
+            }
+            foreach (var r in Input.Rows)
             {
                 if (!ret.ContainsKey(r[keyColumnIndex]))
                     ret.Add(r[keyColumnIndex], r[valueColumnIndex]);

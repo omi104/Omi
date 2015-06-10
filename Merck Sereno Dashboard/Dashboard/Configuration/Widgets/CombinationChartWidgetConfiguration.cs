@@ -26,6 +26,7 @@ namespace Dashboard.Configuration.Widgets
             View.DataFlow.AddSource<CubeDataSourceBase>()//DummyTableDataSource
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
+                .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
             //Export.HasController<HomeExportController>().HasConfig("HomeTrend")

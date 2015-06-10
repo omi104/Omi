@@ -288,6 +288,7 @@
     <Compile Include="DataComponents\Transformers\ExportSnapshotModelTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportTableSplitTrasformerForPPT.cs" />
     <Compile Include="DataComponents\Transformers\HoverDataTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\MSCombinationChart.cs" />
     <Compile Include="DataComponents\Transformers\SingleTableTransformer.cs" />
     <Compile Include="DataComponents\Transformers\TableChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\TransformerBase.cs" />
@@ -428,6 +429,8 @@
     <Content Include="Content\Dashboard\company.css" />
     <Content Include="Content\Dashboard\help.css" />
     <Content Include="Content\Dashboard\HomeNavigation.css" />
+    <Content Include="Content\FusionChartsSWF\HBullet.swf" />
+    <Content Include="Content\FusionChartsSWF\HeatMap.swf" />
     <Content Include="Content\FusionMapsSWF\Country\Argentina.swf" />
     <Content Include="Content\FusionMapsSWF\Country\Australia.swf" />
     <Content Include="Content\FusionMapsSWF\Country\Austria.swf" />

@@ -69,7 +69,7 @@ namespace Dashboard.DataComponents.Transformers
                 },
                 new CellMap<Row>
                 {
-                    CellFactory = new ColorfulDivCellFactory() {Classes = new List<string>() {"trend-rank"}},
+                    CellFactory = new ColorfulDivCellFactory() {Classes = new List<string>() {"trend-rank"},UncheckedItem = UncheckedItems,},
                     RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),
                     Columns = new List<string> {Input.Columns[0].Name,Input.Columns[1].Name}
                 },

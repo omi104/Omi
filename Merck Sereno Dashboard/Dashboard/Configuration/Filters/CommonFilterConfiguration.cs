@@ -24,11 +24,21 @@ namespace Dashboard.Configuration.Filters
 
             DataFlow.AddSource<CubeDataSourceBase>()
             .WithModule(filterItem.ViewId)
-            .Transform().By<CubeDataToDictionaryTransformer>();
+            .Transform().By<CubeDataToDictionaryTransformer>()
+            .HasProperty(t=>t.isReverse).WithValue(p=>IsReverse(p,filterItem));
             ModifyParameter(filterItem.ModifyParam);
             if (filterItem.HasParamDependency != null && filterItem.HasParamDependency.Count != 0)
                 HasParameterDependency.On(filterItem.HasParamDependency);
 		}
+
+        private bool IsReverse(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
+        {
+            if (filterItem.Name == FilterItems.StartDate().Name)
+            {
+                return true;
+            }
+            return false;
+        }
 
         private object IsVisible(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
         {
