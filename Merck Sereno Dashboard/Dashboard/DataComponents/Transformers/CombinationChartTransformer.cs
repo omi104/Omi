@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Component.Chart.Fusion;
+using Component.Chart.Fusion.Implementation;
 using CubeFramework;
 using Dashboard.DataComponents.DataSources;
 using Dashboard.Models.Data;
@@ -28,7 +29,6 @@ namespace Dashboard.DataComponents.Transformers
             var model = new SingleChartModel();
             model.Title = "Performance vs. Competitors (in Euros)";
             model.Chart = "";
-            //string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
 
             if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
@@ -42,7 +42,22 @@ namespace Dashboard.DataComponents.Transformers
                     MeasureValue = MeasureValue,
                 }.GetChart();
             }
-           
+            else if (KPI.ToUpper() == "MARKET SHARE")
+            {
+                model.Chart = new MsMerckLineChart()
+                {
+                    Input = Input,
+                    UncheckedItems = UncheckedItems,
+                    KPI = KPI,
+                    CategoryString = CategoryString,
+                    PeriodString = PeriodString,
+                    MeasureValue = MeasureValue,
+                }.GetChart();
+            }
+            else//bubble chart
+            {
+                
+            }
             return model;
         }
         public CubeData Input { set; private get; }
