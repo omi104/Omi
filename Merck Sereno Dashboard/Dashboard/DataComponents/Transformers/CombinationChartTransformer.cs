@@ -26,10 +26,14 @@ namespace Dashboard.DataComponents.Transformers
         }
         public SingleChartModel GetData()
         {
-            var model = new SingleChartModel {Title = "Performance vs. Competitors (in Euros)", Chart = ""};
+            var model = new SingleChartModel { Chart = ""};
 
             if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
+                if (KPI.ToUpper() == "SALES")
+                    model.Title = "Sales (in Euros)";
+                if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
+                    model.Title = "Performance vs. Competitors (in Euros)";
                 model.Chart = new MsCombinationChart()
                 {
                     Input = Input,
@@ -42,6 +46,8 @@ namespace Dashboard.DataComponents.Transformers
             }
             else if (KPI.ToUpper() == "MARKET SHARE")
             {
+                if (KPI.ToUpper() == "MARKET SHARE")
+                    model.Title = "Market Share % (Euros)";
                 model.Chart = new MsMerckLineChart()
                 {
                     Input = Input,
@@ -54,6 +60,10 @@ namespace Dashboard.DataComponents.Transformers
             }
             else//bubble chart
             {
+                if (KPI.ToUpper() == "GROWTH")
+                    model.Title = "Growth % (Euros)";
+                if (KPI.ToUpper() == "EVOLUTION INDEX")
+                    model.Title = "Evolution Index (Euros)";
                 model.Chart = new MsBubbleChart()
                 {
                     Input = Input,

@@ -847,6 +847,7 @@
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
     <None Include="Properties\PublishProfiles\40RbPo1Dashboard.pubxml" />
     <None Include="Properties\PublishProfiles\Local RbPo1Dashboard.pubxml" />
+    <None Include="Properties\PublishProfiles\Merck.pubxml" />
     <None Include="Properties\PublishProfiles\RB 40 Test.pubxml" />
     <None Include="Properties\PublishProfiles\RB Po1 40 Dev.pubxml" />
     <Content Include="Scripts\AdminEmail.js" />
