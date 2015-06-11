@@ -270,6 +270,7 @@
     <Compile Include="DashboardComponent\Models\WidgetItem.cs" />
     <Compile Include="DataComponents\DataSources\CategoryVsSalesChartDummyDataSource.cs" />
     <Compile Include="DataComponents\DataSources\DateFilterDataSource.cs" />
+    <Compile Include="DataComponents\DataSources\DummyBubbleChartData.cs" />
     <Compile Include="DataComponents\DataSources\FixedDataSource.cs" />
     <Compile Include="DataComponents\DataSources\CubeDataSourceException.cs" />
     <Compile Include="DataComponents\DataSources\ColorListDataSource.cs" />
@@ -288,6 +289,7 @@
     <Compile Include="DataComponents\Transformers\ExportSnapshotModelTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportTableSplitTrasformerForPPT.cs" />
     <Compile Include="DataComponents\Transformers\HoverDataTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\MsBubbleChart.cs" />
     <Compile Include="DataComponents\Transformers\MSCombinationChart.cs" />
     <Compile Include="DataComponents\Transformers\MSMerckLineChart.cs" />
     <Compile Include="DataComponents\Transformers\SingleTableTransformer.cs" />
@@ -936,7 +938,6 @@
     <Content Include="Scripts\LoadRadio.js" />
     <Content Include="Scripts\md5.js" />
     <Content Include="Scripts\modernizr.custom.js" />
-    <Content Include="Scripts\MonthPicker.js" />
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\Plugin\jquery.cleditor.js" />
     <Content Include="Scripts\Plugin\jquery.cleditor.min.js" />

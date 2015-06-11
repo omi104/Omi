@@ -26,9 +26,7 @@ namespace Dashboard.DataComponents.Transformers
         }
         public SingleChartModel GetData()
         {
-            var model = new SingleChartModel();
-            model.Title = "Performance vs. Competitors (in Euros)";
-            model.Chart = "";
+            var model = new SingleChartModel {Title = "Performance vs. Competitors (in Euros)", Chart = ""};
 
             if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
@@ -56,7 +54,15 @@ namespace Dashboard.DataComponents.Transformers
             }
             else//bubble chart
             {
-                
+                model.Chart = new MsBubbleChart()
+                {
+                    Input = Input,
+                    UncheckedItems = UncheckedItems,
+                    KPI = KPI,
+                    CategoryString = CategoryString,
+                    PeriodString = PeriodString,
+                    MeasureValue = MeasureValue,
+                }.GetChart();
             }
             return model;
         }

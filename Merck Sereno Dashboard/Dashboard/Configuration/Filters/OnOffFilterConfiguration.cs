@@ -2,6 +2,7 @@
 using Dashboard.Controllers.Filters;
 using Dashboard.DashboardComponent.Models;
 using Dashboard.DataComponents.DataSources;
+using Dashboard.DataComponents.Transformers;
 using Dashboard.ViewModels;
 using DashboardFramework.Configuration;
 
@@ -21,8 +22,9 @@ namespace Dashboard.Configuration.Filters
             Layout.HasConfig(filterItem);
 
 
-            DataFlow.AddSource<TimePeriodDataSource>()
-                .WithModule(filterItem.ViewId);
+            DataFlow.AddSource<CubeDataSourceBase>()
+                .WithModule(filterItem.ViewId)
+                .Transform().By<CubeDataToDictionaryTransformer>();
 
             ModifyParameter(filterItem.ModifyParam);
 
