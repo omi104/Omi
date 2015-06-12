@@ -40,7 +40,6 @@ namespace Dashboard.DataComponents.Transformers
         }
 
         public CubeData Input { set; private get; }
-
         public string KeyColumn { get; set; }
         public string ValueColumn { get; set; }
     }

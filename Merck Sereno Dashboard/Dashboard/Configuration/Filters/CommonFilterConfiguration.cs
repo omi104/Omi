@@ -42,6 +42,14 @@ namespace Dashboard.Configuration.Filters
 
         private object IsVisible(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
         {
+            if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItems.RegionOrCluster().Name)
+            {
+                filterItem.Label = "Area/Region";
+            }
+            if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItems.Country().Name)
+            {
+                filterItem.Label = "Territory";
+            }
             if (filterItem.Name == FilterItems.StartDate().Name)
             {
                 if ((param["@@" + ParameterList.TimePeriod + "_text"]  == "MTH" ||
@@ -52,6 +60,24 @@ namespace Dashboard.Configuration.Filters
                 else
                     filterItem.IsVisible = true;
             }
+            if (filterItem.Name == FilterItems.EndDate().Name)
+            {
+                if ((param["@@" + ParameterList.TimePeriod + "_text"] == "MTH" ||
+                     param["@@" + ParameterList.TimePeriod + "_text"] == "QTR") &&
+                    param["@@" + ParameterList.KPI + "_text"] == "GROWTH")
+                {
+                    filterItem.Label = "Date";
+                }
+
+                if (param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                {
+                    filterItem.IsVisible = false;
+                }
+                else
+                    filterItem.IsVisible = true;
+            }
+
+
             return filterItem;
         }
     }

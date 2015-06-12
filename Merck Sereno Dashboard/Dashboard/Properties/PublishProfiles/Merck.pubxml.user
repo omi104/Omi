@@ -58,19 +58,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>06/11/2015 18:59:06</publishTime>
+      <publishTime>06/12/2015 15:21:57</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.dll">
-      <publishTime>06/11/2015 18:59:04</publishTime>
+      <publishTime>06/12/2015 15:21:56</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.pdb">
-      <publishTime>06/11/2015 18:59:04</publishTime>
+      <publishTime>06/12/2015 15:21:56</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>06/11/2015 18:59:06</publishTime>
+      <publishTime>06/12/2015 15:21:57</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1711,7 +1711,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Scripts/TableBuilder.js">
-      <publishTime>06/09/2015 17:12:29</publishTime>
+      <publishTime>06/12/2015 12:00:00</publishTime>
     </File>
     <File Include="Scripts/TableChartInteractive.js">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1750,10 +1750,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Views/MerckDashboardLayout/Index.cshtml">
-      <publishTime>06/09/2015 13:57:53</publishTime>
+      <publishTime>06/12/2015 11:27:57</publishTime>
     </File>
     <File Include="Views/OnOffFilterLayout/Index.cshtml">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/12/2015 11:12:12</publishTime>
     </File>
     <File Include="Views/Register/Index.cshtml">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1795,7 +1795,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/11/2015 19:13:17</publishTime>
+      <publishTime>06/12/2015 15:22:11</publishTime>
     </File>
   </ItemGroup>
 </Project>
