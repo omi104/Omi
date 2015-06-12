@@ -45,8 +45,8 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "KsaCombinationChart",
-                ViewId = "",
-                HasParamDependency = new List<string>() { ParameterList.KsaUncheckedItems }
+                ViewId = "10",
+                HasParamDependency = new List<string>() { ParameterList.KsaUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.KPI }
             };
         }
 
@@ -55,8 +55,8 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "KsaTrendTableWidget",
-                ViewId = "",
-                HasParamDependency = new List<string>() { ParameterList.KsaUncheckedItems }
+                ViewId = "10",
+                HasParamDependency = new List<string>() { ParameterList.KsaUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.KPI }
             };
         } 
 
