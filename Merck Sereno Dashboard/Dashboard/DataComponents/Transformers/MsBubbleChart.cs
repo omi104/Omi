@@ -70,9 +70,17 @@ namespace Dashboard.DataComponents.Transformers
             chart.Attributes.Add("xaxismaxvalue", (xMax + 15).ToString());
             chart.Attributes.Add("yaxisminvalue", (yMin - 1000).ToString());
             chart.Attributes.Add("yaxismaxvalue", (yMax + 1000).ToString());
-            chart.Attributes.Add("xaxisname", "xaxisname");
-            chart.Attributes.Add("yaxisname", "yaxisname");
-            //AddStyles();
+            if (KPI.ToUpper() == "GROWTH")
+            {
+                chart.Attributes.Add("xaxisname", "Long-Term (Feb-15 - Feb-14)");
+                chart.Attributes.Add("yaxisname", "Short-Term(Feb15-Nov14)");
+            }
+            else
+            {
+                chart.Attributes.Add("xaxisname", "");
+                chart.Attributes.Add("yaxisname", "Index in 000");    
+            }
+            
             var diffBetXInterval = Convert.ToInt16(Math.Floor((xMax - xMin)/5));
 
             for (var i = 0; i < xMax; i += diffBetXInterval)
@@ -101,7 +109,7 @@ namespace Dashboard.DataComponents.Transformers
                 dataset.Add(set);
             }                       
             chart.Dataset.Add(dataset);
-            return chart.RenderWithScript("100%", "360");
+            return chart.RenderWithScript("100%", "420");
         }
 
         private float GetMax(string value, float max)
@@ -128,45 +136,6 @@ namespace Dashboard.DataComponents.Transformers
                 }
             }
             return min;
-        }
-
-        protected void AddStyles()
-        {
-            chart.Styles = new Styles { Definition = new List<Definition>() };
-            var style = new Style();
-
-            style.Attributes.Add("name", "Shadow_1");
-            style.Attributes.Add("type", "Shadow");
-            style.Attributes.Add("Angle", "270");
-            style.Attributes.Add("Color", "#CCCCCC");
-            style.Attributes.Add("Alpha", "100");
-            style.Attributes.Add("blurX", "0");
-            style.Attributes.Add("blurY", "0");
-            style.Attributes.Add("Strength", "2");
-            style.Attributes.Add("distance", "1");
-            var definition = new Definition { Style = style };
-            chart.Styles.Definition.Add(definition);
-
-            style = new Style();
-            style.Attributes.Add("name", "Shadow_2");
-            style.Attributes.Add("type", "Shadow");
-            style.Attributes.Add("Angle", "90");
-            style.Attributes.Add("Color", "#CCCCCC");
-            style.Attributes.Add("Alpha", "100");
-            style.Attributes.Add("blurX", "0");
-            style.Attributes.Add("blurY", "0");
-            style.Attributes.Add("Strength", "2");
-            style.Attributes.Add("distance", "1");
-
-            definition = new Definition { Style = style };
-            chart.Styles.Definition.Add(definition);
-
-            var apply = new Apply();
-            apply.Attributes.Add("toObject", "CANVAS");
-            apply.Attributes.Add("styles", "Shadow_1,Shadow_2");
-
-            var application = new Component.Chart.Fusion.Application { Apply = apply };
-            chart.Styles.Application = new List<Component.Chart.Fusion.Application> { application };
         }
     }
 

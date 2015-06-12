@@ -129,12 +129,12 @@ var customTable =
         }
     },
     
-    CheckUncheckAll: function (obj) {
+    CheckUncheckAll: function (obj, paramName) {
         var checkAll = $(obj);
         var parameter = {};
 
         if (checkAll.is(":checked"))
-            parameter["uncheckedItems"] = "";
+            parameter[paramName] = "";
         else {
             var uncheckedItems = [];
             $('table.trend-table td.checkBoxCol input').each(function (ix, element) {
@@ -142,7 +142,7 @@ var customTable =
                 var seriesName = item.attr('series-name');
                 uncheckedItems.push(seriesName);
             });
-            parameter["uncheckedItems"] = uncheckedItems.join();
+            parameter[paramName] = uncheckedItems.join();
         }
         CommandCenter.parametersChanged(parameter);
     },

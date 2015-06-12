@@ -18,6 +18,7 @@ namespace Dashboard.DataComponents.Transformers
     public class TableChartTransformer : ITransformer<CubeData, TableChartConfig>
     {
         public string UncheckedItems { get; set; }
+        public string ParamName { get; set; }
         public string MeasureType { get; set; }
         private const string TrendChartControlId = "interactiveTrendChart";
 
@@ -107,7 +108,7 @@ namespace Dashboard.DataComponents.Transformers
             };
             var checkBox = new SimpleNode("input", "")
             {
-                Attributes = new Dictionary<string, string>() { { "type", "checkbox" }, { "checked", "checked" }, { "series-name", "checkUncheck" }, { "title", "Check/Uncheck All" }, { "onClick", "customTable.CheckUncheckAll(this)" } },
+                Attributes = new Dictionary<string, string>() { { "type", "checkbox" }, { "checked", "checked" }, { "series-name", "checkUncheck" }, { "title", "Check/Uncheck All" }, { "onClick", "customTable.CheckUncheckAll(this,'"+ParamName+"')" } },
             };
             if (!string.IsNullOrEmpty(UncheckedItems))
                 checkBox.Attributes.Remove("checked");
