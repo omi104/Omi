@@ -1,10 +1,10 @@
 ﻿var RbHelper = function () {
     var pub = this;
     pub.ReloadIfPeriodHasChanged = function () {
-        if (isMonthChanged == '1') {
-            isMonthChanged = '0';
-            location.reload();
-        }
+        //if (isMonthChanged == '1') {
+        //    isMonthChanged = '0';
+        //    location.reload();
+        //}
     };
     pub.ExportClick = function (exportType) {
         CommandCenter.navigationExportClicked(exportType, CommandCenter.getNavigationName());

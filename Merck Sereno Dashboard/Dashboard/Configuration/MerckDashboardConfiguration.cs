@@ -37,6 +37,7 @@ namespace Dashboard.Configuration
             HasFilter(new CommonFilterConfiguration(FilterItems.RegionOrCluster()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Country()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Products()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.SubProducts()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Segment()));
             HasFilter(new CommonFilterConfiguration(FilterItems.Forms()));
             HasFilter(new CommonFilterConfiguration(FilterItems.KPI()));  
@@ -53,6 +54,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.RegionOrCluster).WithValue("")
                 .Add(ParameterList.Country).WithValue("")
                 .Add(ParameterList.Product).WithValue("")
+                 .Add(ParameterList.Subproduct).WithValue("")
                 .Add(ParameterList.Segment).WithValue("")
                 .Add(ParameterList.Form).WithValue("")
                 .Add(ParameterList.KPI).WithValue("")

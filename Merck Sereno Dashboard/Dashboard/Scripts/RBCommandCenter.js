@@ -15,9 +15,9 @@
         if (filterName == "PeriodType") {
             if ($('#filter-PeriodType-control option:selected').text() == "Monthly") {
                 $('#latest-period-type').text('Latest 13 Months');
-                isMonthChanged = '1';
+                //isMonthChanged = '1';
             } else {
-                isMonthChanged = '1';
+                //isMonthChanged = '1';
                 $('#latest-period-type').text($('#filter-PeriodType-control option:selected').text());
             }
         }

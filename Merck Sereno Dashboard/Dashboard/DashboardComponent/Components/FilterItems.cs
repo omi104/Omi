@@ -49,6 +49,19 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        public static FilterItem SubProducts()
+        {
+            return new FilterItem
+            {
+                Name = ParameterList.Subproduct,
+                Label = "Subproducts",
+                ControlId = "filter-Subproduct-control",
+                ModifyParam = ParameterList.Subproduct,
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product },
+                ViewId = "11"
+            };
+        }
+
         public static FilterItem Segment()
         {
             return new FilterItem

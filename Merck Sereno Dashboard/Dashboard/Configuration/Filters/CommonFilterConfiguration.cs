@@ -76,7 +76,15 @@ namespace Dashboard.Configuration.Filters
                 else
                     filterItem.IsVisible = true;
             }
-
+            if (filterItem.Name == FilterItems.SubProducts().Name)
+            {
+                if (param["@@" + ParameterList.Product + "_text"] == "FEMIBION")
+                {
+                    filterItem.IsVisible = true;
+                }
+                else
+                    filterItem.IsVisible = false;
+            }
 
             return filterItem;
         }
