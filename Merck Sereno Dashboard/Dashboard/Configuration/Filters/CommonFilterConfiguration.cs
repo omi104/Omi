@@ -9,6 +9,7 @@ using Dashboard.Models.Config;
 using Dashboard.ViewModels;
 using DashboardFramework;
 using DashboardFramework.Configuration;
+using DashboardFramework.Web;
 
 namespace Dashboard.Configuration.Filters
 {
@@ -81,9 +82,13 @@ namespace Dashboard.Configuration.Filters
                 if (param["@@" + ParameterList.Product + "_text"] == "FEMIBION")
                 {
                     filterItem.IsVisible = true;
+                    DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "true");
                 }
                 else
+                {
                     filterItem.IsVisible = false;
+                    DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "false");
+                }    
             }
 
             return filterItem;

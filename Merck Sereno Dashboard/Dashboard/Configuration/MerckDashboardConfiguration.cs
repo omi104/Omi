@@ -55,6 +55,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.Country).WithValue("")
                 .Add(ParameterList.Product).WithValue("")
                  .Add(ParameterList.Subproduct).WithValue("")
+                 .Add(ParameterList.SubProductFlag).WithValue("false")
                 .Add(ParameterList.Segment).WithValue("")
                 .Add(ParameterList.Form).WithValue("")
                 .Add(ParameterList.KPI).WithValue("")
