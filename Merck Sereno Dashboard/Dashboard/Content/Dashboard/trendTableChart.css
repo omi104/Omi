@@ -6,7 +6,7 @@
 
 table.trend-table
 {
-    width: 1124px;
+    /*width: 1124px;*/
     font-size: 12px;
     padding: 3px;
 }
@@ -49,22 +49,21 @@ table.trend-table td {
 
     table.trend-table th.trend-rank, table.trend-table td.trend-rank
     {
-        width: 40px;
-        padding-left: 6px;
+        width: 27px;
     }
 
     table.trend-table th.trend-company, table.trend-table td.trend-company
     {
         padding-left: 3px;
         border-right: 1px dotted #18C5B1;
-        width: 100px;
+        width: 150px !important;
     }
     
     table.trend-table th.colData, td.colData
     {
         padding-right: 3px;
         border-right: 1px dotted #18C5B1;
-        width: 50px;
+        width: 65px !important;
     }
 
     table.trend-table td.trend-rank div

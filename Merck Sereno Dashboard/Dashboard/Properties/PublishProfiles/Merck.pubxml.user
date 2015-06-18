@@ -58,19 +58,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>06/17/2015 17:47:00</publishTime>
+      <publishTime>06/18/2015 18:29:14</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.dll">
-      <publishTime>06/17/2015 17:46:57</publishTime>
+      <publishTime>06/18/2015 18:29:12</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.pdb">
-      <publishTime>06/17/2015 17:46:57</publishTime>
+      <publishTime>06/18/2015 18:29:12</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>06/17/2015 17:47:00</publishTime>
+      <publishTime>06/18/2015 18:29:14</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -199,7 +199,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Content/Dashboard/trendTableChart.css">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/18/2015 18:08:47</publishTime>
     </File>
     <File Include="Content/DataTables-1.10.0/css/dataTables.autoFill.css">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1183,7 +1183,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Content/Images/favicon.ico">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/18/2015 16:12:49</publishTime>
     </File>
     <File Include="Content/Images/Favorites-cross.jpg">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1201,7 +1201,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Content/Images/header2.PNG">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/18/2015 16:04:36</publishTime>
     </File>
     <File Include="Content/Images/help/category_definition.PNG">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1234,7 +1234,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Content/Images/logo.jpg">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/18/2015 16:10:38</publishTime>
     </File>
     <File Include="Content/Images/minus.gif">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1327,7 +1327,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Content/main.css">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/18/2015 16:16:48</publishTime>
     </File>
     <File Include="Content/override-bootstrap.css">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1774,7 +1774,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Views/TrendTableWidget/Index.cshtml">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>06/18/2015 18:27:30</publishTime>
     </File>
     <File Include="Views/UserAdmin/Index.cshtml">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1795,7 +1795,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/17/2015 17:47:16</publishTime>
+      <publishTime>06/18/2015 18:29:21</publishTime>
     </File>
   </ItemGroup>
 </Project>

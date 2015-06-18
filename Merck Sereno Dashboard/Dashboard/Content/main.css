@@ -6,8 +6,8 @@ body
 
 .page-container
 {
-    max-width: 1152px;
-    /*width: 100%;*/
+    /*max-width: 1152px;*/
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     background-color: #f2f1ef;
@@ -38,7 +38,7 @@ header
 
     .site-logo a
     {
-        padding: 5px 20px 0 30px;
+        /*padding: 5px 20px 0 30px;*/
         /*border-right: 1px solid #e6e6e6;*/
         display: inline-block;
         height: inherit;
@@ -47,7 +47,7 @@ header
 .dashboard-name
 {
     float: left;
-    margin-left: 5em;
+    margin-left: 10em;
     padding-top: 30px;
 }
 

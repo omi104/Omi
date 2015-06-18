@@ -37,18 +37,8 @@ namespace Dashboard.Helper.Factory
             if (_textFormat != null)
                 data = _textFormat.Format(data);
            
-            if (IsMakeTextShort && data.Split('#').Length > 2)
-            {
-                var splitData = data.Split('#');
-                return new SimpleNode("td", splitData[2])
-                {
-                    Attributes = new Dictionary<string, string>()
-                    {
-                        {"title",splitData[0] + "-" + splitData[1]},
-                    }
-                };
-            }
-            else if (IsMakeTextShort && !data.ToUpper().Contains("RECKITT") && data.Length > NameCollength)
+
+            if (IsMakeTextShort && data.Length > NameCollength)
             {
                 return new SimpleNode("td", data.Substring(0, NameCollength-1) + "...")
                 {

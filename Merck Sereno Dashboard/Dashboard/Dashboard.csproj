@@ -696,11 +696,6 @@
     <Content Include="Content\FusionChartsSWF\StackedColumn3DLine.swf" />
     <Content Include="Content\FusionChartsSWF\StackedColumn3DLineDY.swf" />
     <Content Include="Content\FusionChartsSWF\ZoomLine.swf" />
-    <Content Include="Content\Images\1.jpg" />
-    <Content Include="Content\Images\2.jpg" />
-    <Content Include="Content\Images\3.jpg" />
-    <Content Include="Content\Images\4.jpg" />
-    <Content Include="Content\Images\5.jpg" />
     <Content Include="Content\Images\bg-login.png" />
     <Content Include="Content\Images\body_bg.jpg" />
     <Content Include="Content\Images\cleditor\buttons.gif" />
@@ -710,7 +705,6 @@
     <Content Include="Content\Images\expand.gif" />
     <Content Include="Content\Images\green.gif" />
     <Content Include="Content\Images\green.gif" />
-    <Content Include="Content\Images\header.PNG" />
     <Content Include="Content\Images\header1.PNG" />
     <Content Include="Content\Images\header2.PNG" />
     <Content Include="Content\Images\help\category_definition.PNG" />
@@ -727,7 +721,6 @@
     <Content Include="Content\Images\navigation\SubNavBgSelect.gif" />
     <Content Include="Content\Images\pdf.png" />
     <Content Include="Content\Images\pdf_invert.png" />
-    <Content Include="Content\Images\power-of-1.jpg" />
     <Content Include="Content\Images\pptx.png" />
     <Content Include="Content\Images\pptx_invert.png" />
     <Content Include="Content\Images\red.gif" />
@@ -737,13 +730,8 @@
     <Content Include="Content\Images\toggle-sidebar-hover.jpg" />
     <Content Include="Content\Images\backtop.png" />
     <Content Include="Content\Images\dashboard-loading.gif" />
-    <Content Include="Content\Images\durex.jpg" />
-    <Content Include="Content\Images\gaviscon.jpg" />
     <Content Include="Content\Images\logo-small-ims.gif" />
     <Content Include="Content\Images\logo.jpg" />
-    <Content Include="Content\Images\nurofen.jpg" />
-    <Content Include="Content\Images\scholl.jpg" />
-    <Content Include="Content\Images\strepsils.jpg" />
     <Content Include="Content\Images\xlsx.png" />
     <Content Include="Content\Images\xlsx_invert.png" />
     <Content Include="Content\Images\yellow.gif" />

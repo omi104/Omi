@@ -14,7 +14,7 @@ namespace Dashboard.DataComponents.Transformers
     {
         //string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='WRAP' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
         //string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0'";
-        string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0'";
+        string defaultAttributes = @"chartLeftMargin='0' chartRightMargin='0' chartBottomMargin='0' bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' legendPosition='right' canvasBorderThickness='0' adjustDiv='0'";
         public MSCombiDY2D chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
@@ -34,8 +34,12 @@ namespace Dashboard.DataComponents.Transformers
             {
                 Dataset = new List<DataSet>(),
             };
-            chart.Attributes.Add("pyAxisName", "In Euros 000");
-            chart.Attributes.Add("sYAXisName", "In %");
+            if (KPI.ToUpper() == "SALES")
+            {
+                chart.Attributes.Add("pyAxisName", "In Euros 000");
+                chart.Attributes.Add("sYAXisName", "In %");
+            }
+            
             chart.ControlId = "interactiveTrendChart";
 
             if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
@@ -43,6 +47,7 @@ namespace Dashboard.DataComponents.Transformers
                 chart.Attributes.Add("pyAxisName", "");
                 chart.Attributes.Add("sYAXisName", "In Euros 000");
             }
+
             AddStyles();
             foreach (var col in Input.Columns.Skip(3))
             {
