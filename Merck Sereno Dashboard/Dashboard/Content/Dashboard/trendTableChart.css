@@ -1,7 +1,7 @@
 ﻿div.trend-table-holder
 {
     overflow-x: auto;
-    border-top: 2px solid #1bbc9b;
+    /*border-top: 2px solid #1bbc9b;*/
 }
 
 table.trend-table
@@ -9,6 +9,7 @@ table.trend-table
     /*width: 1124px;*/
     font-size: 12px;
     padding: 3px;
+    border-top: 2px solid #1bbc9b
 }
 .table-responsive table.trend-table td {
     padding-top: 2px;

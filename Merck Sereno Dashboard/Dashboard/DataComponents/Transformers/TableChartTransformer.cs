@@ -27,7 +27,7 @@ namespace Dashboard.DataComponents.Transformers
         {
             var data = new TableChartConfig{Table = GetTableData()};
             int numberOfColData = Input.Columns.Count - 3;
-            data.TableWidth = 20 + 27 + 150 + (65 * numberOfColData) + (4 * Input.Columns.Count); // 50 for all padding
+            data.TableWidth = 20 + 45 + 150 + (65 * numberOfColData) + (4 * Input.Columns.Count); // 50 for all padding
             return data;
         }
 
