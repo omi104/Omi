@@ -90,7 +90,13 @@ namespace Dashboard.Configuration.Filters
                     DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "false");
                 }    
             }
-
+            if (param["@@" + ParameterList.TimePeriod + "_text"] == "MAT" ||
+                param["@@" + ParameterList.TimePeriod + "_text"] == "YTD")
+            {
+                DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "true");
+            }
+            else
+                DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "false");
             return filterItem;
         }
     }

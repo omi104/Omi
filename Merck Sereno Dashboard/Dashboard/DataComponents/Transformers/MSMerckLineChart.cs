@@ -40,7 +40,7 @@ namespace Dashboard.DataComponents.Transformers
             foreach (var col in Input.Columns.Skip(3))
             {
                 var category = new Category();
-                category.Attributes.Add("label", col.Name);
+                category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
                 chart.Categories.Category.Add(category);
             }
 

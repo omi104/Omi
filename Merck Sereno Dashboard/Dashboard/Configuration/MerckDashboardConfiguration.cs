@@ -56,6 +56,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.Product).WithValue("")
                  .Add(ParameterList.Subproduct).WithValue("")
                  .Add(ParameterList.SubProductFlag).WithValue("false")
+                 .Add(ParameterList.PeriodTypeFlag).WithValue("false")
                 .Add(ParameterList.Segment).WithValue("")
                 .Add(ParameterList.Form).WithValue("")
                 .Add(ParameterList.KPI).WithValue("")

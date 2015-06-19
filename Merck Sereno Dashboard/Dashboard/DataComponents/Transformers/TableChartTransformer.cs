@@ -125,6 +125,7 @@ namespace Dashboard.DataComponents.Transformers
             row.Cells.Add(checkBoxHeadercell);
 
             row.Cells.Add(new SimpleNode("th", "Rank") { Classes = new List<string>() { "trend-rank" } });
+            
             for (int i = 1; i < Input.Columns.Count(); i++)
             {
                 if (Input.Columns[i].Name.ToUpper().Contains("IS_MERCK"))
@@ -135,7 +136,8 @@ namespace Dashboard.DataComponents.Transformers
                 }
                 else
                 {
-                    row.Cells.Add(new SimpleNode("th", Input.Columns[i].Name) { Classes = new List<string>() { "colData","col-"+i }});
+                    string[] headers = Input.Columns[i].Name.Split('_').ToArray();
+                    row.Cells.Add(new SimpleNode("th", headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
                 }
             }
             return row;
