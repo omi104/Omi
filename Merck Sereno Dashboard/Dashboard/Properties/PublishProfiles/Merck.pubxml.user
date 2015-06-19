@@ -58,19 +58,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>06/19/2015 10:21:41</publishTime>
+      <publishTime>06/19/2015 10:48:38</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.dll">
-      <publishTime>06/19/2015 10:21:39</publishTime>
+      <publishTime>06/19/2015 10:48:35</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.pdb">
-      <publishTime>06/19/2015 10:21:39</publishTime>
+      <publishTime>06/19/2015 10:48:35</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>06/19/2015 10:21:41</publishTime>
+      <publishTime>06/19/2015 10:48:38</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1795,7 +1795,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/19/2015 10:31:13</publishTime>
+      <publishTime>06/19/2015 10:56:01</publishTime>
     </File>
   </ItemGroup>
 </Project>

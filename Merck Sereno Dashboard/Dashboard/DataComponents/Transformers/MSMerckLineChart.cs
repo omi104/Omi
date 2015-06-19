@@ -12,7 +12,7 @@ namespace Dashboard.DataComponents.Transformers
 {
     public class MsMerckLineChart
     {
-        string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
+        string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' legendPosition='right' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
         public MSLineChart chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
@@ -49,7 +49,7 @@ namespace Dashboard.DataComponents.Transformers
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
             }
-            return chart.RenderWithScript("100%", "480");
+            return chart.RenderWithScript("98%", "280", isForceHtmlRender: true);
         }
 
         protected void AddStyles()

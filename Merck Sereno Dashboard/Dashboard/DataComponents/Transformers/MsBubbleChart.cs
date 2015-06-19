@@ -109,7 +109,7 @@ namespace Dashboard.DataComponents.Transformers
                 dataset.Add(set);
             }                       
             chart.Dataset.Add(dataset);
-            return chart.RenderWithScript("100%", "420");
+            return chart.RenderWithScript("98%", "280");
         }
 
         private float GetMax(string value, float max)

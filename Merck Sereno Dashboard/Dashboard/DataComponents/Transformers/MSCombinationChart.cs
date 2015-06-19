@@ -62,7 +62,7 @@ namespace Dashboard.DataComponents.Transformers
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
             }
-            return chart.RenderWithScript("100%", "360",isForceHtmlRender:true);
+            return chart.RenderWithScript("98%", "280",isForceHtmlRender:true);
         }
 
         private DataSet AddFirstDataSet()
