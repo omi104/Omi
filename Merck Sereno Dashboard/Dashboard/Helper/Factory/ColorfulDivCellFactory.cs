@@ -25,9 +25,20 @@ namespace Dashboard.Helper.Factory
 
             var complexNode = new ComplexNode("td");
             complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(values[0]) : "") { Classes = new List<string>() { "rank-div" } });
+            
             if (!UncheckedItem.ToUpper().Contains(values[1].ToUpper()))
             {
-                string colorValue = _colorSource.GetNextColor();
+                string colorValue = "";
+                if (values[1].ToUpper().Contains("TOTAL"))
+                {
+                    colorValue = "91C3D5";
+                }
+                else if (values[2] == "1") //IS_MERCK is 1
+                {
+                    colorValue = "#4BACC6";
+                }
+                else
+                    colorValue = _colorSource.GetNextColor();
                 complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
                 {
                     Classes = new List<string>() { "color-div" },

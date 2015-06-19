@@ -21,6 +21,7 @@ namespace Dashboard.DataComponents.Transformers
         public string ParamName { get; set; }
         public string MeasureType { get; set; }
         private const string TrendChartControlId = "interactiveTrendChart";
+        private int _isMerckIndex = -1;
 
         public TableChartConfig GetData()
         {
@@ -29,8 +30,14 @@ namespace Dashboard.DataComponents.Transformers
             data.TableWidth = 20 + 27 + 150 + (65 * numberOfColData) + (4 * Input.Columns.Count); // 50 for all padding
             return data;
         }
+
         public Table GetTableData()
         {
+            foreach (var col in Input.Columns.Where(col => col.Name.Contains("IS_MERCK")))
+            {
+                _isMerckIndex = col.Position;
+            }
+
             var tableFactory = new CubeTableFactory
             {
                 CellMaps = GetCellMap(Input.Columns),
@@ -38,10 +45,10 @@ namespace Dashboard.DataComponents.Transformers
                 AutoCreateHeader = false,
                 RowFunctionalities = new List<IRowFunctionality<Row>>() 
                 { 
-                    new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#B6DEE0" },
+                    new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#E1F5F5" },
                     new LevelWiseRowColorFunctionaility(false),
-                    new TotalRowHighlight(){colIndex = 1},
-                    //new HighlightRowIfRb() {colIndex = _isRbIndex}
+                    //new TotalRowHighlight(){colIndex = 1},
+                    new HighlightRowIfMerck() {colIndex = _isMerckIndex}
                 }
             };
             var header = new TableHeader();
@@ -74,7 +81,7 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     CellFactory = new ColorfulDivCellFactory() {Classes = new List<string>() {"trend-rank"},UncheckedItem = UncheckedItems,},
                     RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),
-                    Columns = new List<string> {Input.Columns[0].Name,Input.Columns[1].Name}
+                    Columns = new List<string> {Input.Columns[0].Name,Input.Columns[1].Name,Input.Columns[_isMerckIndex].Name}
                 },
                 new CellMap<Row>()
                 {

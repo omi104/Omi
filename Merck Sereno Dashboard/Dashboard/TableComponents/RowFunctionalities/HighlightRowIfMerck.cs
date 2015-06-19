@@ -7,15 +7,15 @@ using CubeFramework;
 
 namespace Dashboard.TableComponents.RowFunctionalities
 {
-    public class HighlightRowIfRb : IRowFunctionality<Row>
+    public class HighlightRowIfMerck : IRowFunctionality<Row>
     {
         public int colIndex { get; set; }
 
         public void Apply(Row rowData, TableRow row)
         {
-            if (colIndex>=0 && rowData.Values[colIndex] == "1")
+            if (colIndex >=0 && rowData.Values[colIndex] == "1")
             {
-                row.Classes.Add("highlight-row-reckitt-benckiser");
+                row.Classes.Add("highlight-row-merck");
             }
         }
     }

@@ -29,7 +29,7 @@ namespace Dashboard.Helper
             }
             else if (!string.IsNullOrEmpty(rowData.Values[0]) && _isTopTable && rowData.Values[1] == "RECKITT BENCKISER")
             {
-                node.Classes.Add("highlight-row-reckitt-benckiser");
+                node.Classes.Add("highlight-row-merck");
             }
 
         }

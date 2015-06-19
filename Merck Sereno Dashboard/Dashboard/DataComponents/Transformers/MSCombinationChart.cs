@@ -55,11 +55,9 @@ namespace Dashboard.DataComponents.Transformers
                 category.Attributes.Add("label", col.Name);
                 chart.Categories.Category.Add(category);
             }
+            chart.Dataset.Add(AddFirstDataSet());
 
-            if (!UncheckedItems.ToUpper().Contains("TOTAL"))
-                chart.Dataset.Add(AddFirstDataSetForTotal());
-
-            for (int i = 1; i < Input.Rows.Count - 1; i++)
+            for (var i=1; i < Input.Rows.Count - 1; i++)
             {
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
@@ -67,13 +65,24 @@ namespace Dashboard.DataComponents.Transformers
             return chart.RenderWithScript("100%", "360");
         }
 
-        private DataSet AddFirstDataSetForTotal()
+        private DataSet AddFirstDataSet()
         {
-            var dataSet = new DataSet("color=" + _colorList.GetNextColor());
+            var dataSet = new DataSet();
             if (KPI == "SALES PERFORMANCE vs COMPETITORS")
                 dataSet.Attributes.Add("renderas", "Area");
+
+
             dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
+
+            if (!UncheckedItems.ToUpper().Contains("TOTAL"))
+            {
+                dataSet.Attributes.Add("color", "#91C3D5");
+            }
+            else if (Input.Rows.First().Values[2] == "1") // First row is merck
+            {
+                dataSet.Attributes.Add("color", "#4BACC6");
+            }
             dataSet.Set = new List<Set>();
 
             foreach (var val in Input.Rows.First().Values.Skip(3))

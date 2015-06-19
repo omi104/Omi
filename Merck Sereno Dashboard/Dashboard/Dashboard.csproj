@@ -398,7 +398,7 @@
     <Compile Include="TableComponents\Nodes\NumericCellFactoryTypeD.cs" />
     <Compile Include="TableComponents\Nodes\NumericCellFactoryTypeE.cs" />
     <Compile Include="TableComponents\RowFunctionalities\ExpandCollTableAlternateColorFunctionality.cs" />
-    <Compile Include="TableComponents\RowFunctionalities\HighlightRowIfRB.cs" />
+    <Compile Include="TableComponents\RowFunctionalities\HighlightRowIfMerck.cs" />
     <Compile Include="TableComponents\RowFunctionalities\HoverValueAddRowFunctionality.cs" />
     <Compile Include="TableComponents\RowFunctionalities\RbRowHighlight.cs" />
     <Compile Include="TableComponents\RowFunctionalities\RowSpecificRankLevelFunctionality.cs" />
