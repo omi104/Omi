@@ -23,7 +23,7 @@ table.trend-table td {
     table.trend-table th
     {
         text-align: center;
-        color: #666666;
+        color: white;
         padding-top: 5px;
         padding-bottom: 5px;
     }
@@ -39,6 +39,8 @@ table.trend-table td {
     table.trend-table thead tr
     {
         font-weight: bold;
+        background-color: #008080;
+        color: white;
     }
 
     table.trend-table th.trend-checkbox, table.trend-table td.trend-checkbox
@@ -50,21 +52,21 @@ table.trend-table td {
 
     table.trend-table th.trend-rank, table.trend-table td.trend-rank
     {
-        width: 27px;
+        width: 35px;
     }
 
     table.trend-table th.trend-company, table.trend-table td.trend-company
     {
         padding-left: 3px;
         border-right: 1px dotted #18C5B1;
-        width: 150px !important;
+        width: 250px !important;
     }
     
     table.trend-table th.colData, td.colData
     {
         padding-right: 3px;
         border-right: 1px dotted #18C5B1;
-        width: 65px !important;
+        width: 75px !important;
     }
 
     table.trend-table td.trend-rank div
@@ -108,9 +110,7 @@ span.color-div
    }
 
    tr.highlight-row-total {
-       border: 2px solid #008080 !important;
-       font-weight: bold;
-       color:#777777
+       background-color: #D8E4BC !important;
    }
 table.LargeNameColTable td.trend-company {
     width: 160px !important;

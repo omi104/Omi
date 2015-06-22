@@ -54,7 +54,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.RegionOrCluster).WithValue("")
                 .Add(ParameterList.Country).WithValue("")
                 .Add(ParameterList.Product).WithValue("")
-                 .Add(ParameterList.Subproduct).WithValue("")
+                 .Add(ParameterList.Subproduct).WithValue("")//[Product].[Hierarchy].[PRD].&[FEMIBION].&[FEMIBION]
                  .Add(ParameterList.SubProductFlag).WithValue("false")
                  .Add(ParameterList.PeriodTypeFlag).WithValue("false")
                 .Add(ParameterList.Segment).WithValue("")

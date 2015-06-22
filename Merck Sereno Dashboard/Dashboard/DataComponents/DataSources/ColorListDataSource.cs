@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using DashboardFramework.DataComponent;
@@ -10,7 +11,8 @@ namespace Dashboard.DataComponents.DataSources
     {
         private int _colorCounter;
         private List<string> _colorList;
-
+        public const string ColorOfTotal = "#91C3D5";
+        public const string ColorOfMerck = "#4BACC6";
 
         public ColorListDataSource()
         {

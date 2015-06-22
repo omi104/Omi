@@ -27,7 +27,7 @@ namespace Dashboard.DataComponents.Transformers
         {
             var data = new TableChartConfig{Table = GetTableData()};
             int numberOfColData = Input.Columns.Count - 3;
-            data.TableWidth = 20 + 45 + 150 + (65 * numberOfColData) + (4 * Input.Columns.Count); // 50 for all padding
+            data.TableWidth = 20 + 55 + 250 + (75 * numberOfColData) + (4 * Input.Columns.Count); 
             return data;
         }
 
@@ -47,7 +47,7 @@ namespace Dashboard.DataComponents.Transformers
                 { 
                     new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#E1F5F5" },
                     new LevelWiseRowColorFunctionaility(false),
-                    //new TotalRowHighlight(){colIndex = 1},
+                    new TotalRowHighlight(){colIndex = 1},
                     new HighlightRowIfMerck() {colIndex = _isMerckIndex}
                 }
             };
@@ -85,7 +85,7 @@ namespace Dashboard.DataComponents.Transformers
                 },
                 new CellMap<Row>()
                 {
-                    CellFactory = new TextCellFactory() {NameCollength = 21,IsMakeTextShort = true,Classes = new List<string>() {"trend-company"}},
+                    CellFactory = new TextCellFactory() {NameCollength = 21,IsMakeTextShort = false,Classes = new List<string>() {"trend-company"}},
                     RowCellDataProvider = new CustomRowCellDataProvider(),
                     Columns = new List<string>() {"1"}
                 }

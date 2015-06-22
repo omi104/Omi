@@ -62,7 +62,7 @@ namespace Dashboard.DataComponents.Transformers
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
             }
-            return chart.RenderWithScript("98%", "280",isForceHtmlRender:true);
+            return chart.RenderWithScript("98%", "360",isForceHtmlRender:true);
         }
 
         private DataSet AddFirstDataSet()
@@ -77,11 +77,11 @@ namespace Dashboard.DataComponents.Transformers
 
             if (!UncheckedItems.ToUpper().Contains("TOTAL"))
             {
-                dataSet.Attributes.Add("color", "#91C3D5");
+                dataSet.Attributes.Add("color", ColorListDataSource.ColorOfTotal);
             }
             else if (Input.Rows.First().Values[2] == "1") // First row is merck
             {
-                dataSet.Attributes.Add("color", "#4BACC6");
+                dataSet.Attributes.Add("color", ColorListDataSource.ColorOfMerck);
             }
             dataSet.Set = new List<Set>();
 

@@ -58,7 +58,7 @@ namespace Dashboard.DashboardComponent.Components
                 ControlId = "filter-Subproduct-control",
                 ModifyParam = ParameterList.Subproduct,
                 HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product },
-                ViewId = "11"
+                ViewId = "12"
             };
         }
 

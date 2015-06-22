@@ -44,10 +44,12 @@ namespace Dashboard.DataComponents.Transformers
                     MeasureValue = MeasureValue,
                 }.GetChart();
             }
-            else if (KPI.ToUpper() == "MARKET SHARE")
+            else if (KPI.ToUpper() == "MARKET SHARE" || KPI.ToUpper() == "EVOLUTION INDEX")
             {
                 if (KPI.ToUpper() == "MARKET SHARE")
                     model.Title = "Market Share % (Euros)";
+                if (KPI.ToUpper() == "EVOLUTION INDEX")
+                    model.Title = "Evolution Index (Euros)";
                 model.Chart = new MsMerckLineChart()
                 {
                     Input = Input,
@@ -62,8 +64,6 @@ namespace Dashboard.DataComponents.Transformers
             {
                 if (KPI.ToUpper() == "GROWTH")
                     model.Title = "Growth % (Euros)";
-                if (KPI.ToUpper() == "EVOLUTION INDEX")
-                    model.Title = "Evolution Index (Euros)";
                 model.Chart = new MsBubbleChart()
                 {
                     Input = Input,

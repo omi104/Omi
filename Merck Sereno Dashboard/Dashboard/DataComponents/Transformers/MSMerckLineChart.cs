@@ -33,8 +33,10 @@ namespace Dashboard.DataComponents.Transformers
             {
                 Dataset = new List<DataSet>()
             };
-
-            chart.Attributes.Add("yAxisName", "In %");
+            if (KPI.ToUpper() == "MARKET SHARE")
+                chart.Attributes.Add("yAxisName", "In %");
+            if (KPI.ToUpper() == "EVOLUTION INDEX")
+                chart.Attributes.Add("yAxisName", "Index in 000");
             chart.ControlId = "interactiveTrendChart";
             AddStyles();
             foreach (var col in Input.Columns.Skip(3))
@@ -49,7 +51,7 @@ namespace Dashboard.DataComponents.Transformers
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
             }
-            return chart.RenderWithScript("98%", "280", isForceHtmlRender: true);
+            return chart.RenderWithScript("98%", "360", isForceHtmlRender: true);
         }
 
         protected void AddStyles()
