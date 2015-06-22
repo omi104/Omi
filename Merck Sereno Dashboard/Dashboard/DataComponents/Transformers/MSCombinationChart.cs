@@ -58,7 +58,7 @@ namespace Dashboard.DataComponents.Transformers
             }
             chart.Dataset.Add(AddFirstDataSet());
 
-            for (var i=1; i < Input.Rows.Count - 1; i++)
+            for (var i=1; i < Input.Rows.Count; i++)
             {
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
@@ -98,6 +98,8 @@ namespace Dashboard.DataComponents.Transformers
         private DataSet AddTrendLineDataSet(Row row)
         {
             var dataSet = new DataSet("renderas='Line'");
+            if (row.Values[1] == "--")
+                row.Values[1] = "%PPG";
             dataSet.Attributes.Add("seriesName", row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
@@ -109,7 +111,6 @@ namespace Dashboard.DataComponents.Transformers
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);
-
                 dataSet.Set.Add(set1);
             }
             return dataSet;

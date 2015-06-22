@@ -47,7 +47,7 @@ namespace Dashboard.DataComponents.Transformers
                 chart.Categories.Category.Add(category);
             }
 
-            for (int i = 0; i < Input.Rows.Count - 1; i++)
+            for (int i = 0; i < Input.Rows.Count; i++)
             {
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));

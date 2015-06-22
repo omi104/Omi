@@ -12,6 +12,8 @@ namespace Dashboard.Helper.Factory
     {
         private ColorListDataSource _colorSource;
         public string UncheckedItem { get; set; }
+        public string KPI { get; set; }
+        public int RecordCount = 1;
 
         public ColorfulDivCellFactory()
         {
@@ -24,31 +26,51 @@ namespace Dashboard.Helper.Factory
             var values = data as List<string>;
 
             var complexNode = new ComplexNode("td");
-            complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(values[0]) : "") { Classes = new List<string>() { "rank-div" } });
-            
-            if (!UncheckedItem.ToUpper().Contains(values[1].ToUpper()))
+            if (KPI == "Sales")
             {
-                string colorValue = "";
-                if (values[1].ToUpper().Contains("TOTAL"))
+                complexNode.ChildNodes.Add(new SimpleNode("span", RecordCount.ToString()) { Classes = new List<string>() { "rank-div" } });
+                if (!UncheckedItem.ToUpper().Contains(values[1].ToUpper()))
                 {
-                    colorValue = ColorListDataSource.ColorOfTotal.Replace("#", "");
-                }
-                //else if (values[2] == "1") //IS_MERCK is 1
-                //{
-                //    colorValue = ColorListDataSource.ColorOfMerck;
-                //}
-                else
-                    colorValue = _colorSource.GetNextColor();
-                complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
-                {
-                    Classes = new List<string>() { "color-div" },
-                    Styles = new Dictionary<string, string>()
+                    string colorValue = "";
+                    if (RecordCount == 1)
                     {
-                        {"background-color","#"+colorValue}
+                        colorValue = ColorListDataSource.ColorOfTotal.Replace("#", "");
                     }
-                });
+                    else
+                        colorValue = _colorSource.GetNextColor();
+                    complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
+                    {
+                        Classes = new List<string>() { "color-div" },
+                        Styles = new Dictionary<string, string>()
+                        {
+                            {"background-color","#"+colorValue}
+                        }
+                    });
+                }
             }
-
+            else
+            {
+                complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(values[0]) : "") { Classes = new List<string>() { "rank-div" } });
+                if (!UncheckedItem.ToUpper().Contains(values[1].ToUpper()))
+                {
+                    string colorValue = "";
+                    if (values[1].ToUpper().Contains("TOTAL"))
+                    {
+                        colorValue = ColorListDataSource.ColorOfTotal.Replace("#", "");
+                    }
+                    else
+                        colorValue = _colorSource.GetNextColor();
+                    complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
+                    {
+                        Classes = new List<string>() { "color-div" },
+                        Styles = new Dictionary<string, string>()
+                        {
+                            {"background-color","#"+colorValue}
+                        }
+                    });
+                }
+            }
+            RecordCount++;
 
             return complexNode;
         }

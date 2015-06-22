@@ -36,8 +36,9 @@ namespace Dashboard.Helper.Factory
                 
             if (_textFormat != null)
                 data = _textFormat.Format(data);
-           
 
+            if (data == "--")
+                data = "%PPG";
             if (IsMakeTextShort && data.Length > NameCollength)
             {
                 return new SimpleNode("td", data.Substring(0, NameCollength-1) + "...")

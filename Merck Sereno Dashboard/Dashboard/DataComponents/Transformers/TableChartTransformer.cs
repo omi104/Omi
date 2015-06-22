@@ -11,6 +11,7 @@ using Dashboard.TableComponents.CellDataProvider;
 using Dashboard.TableComponents.RowFunctionalities;
 using Dashboard.ViewModels;
 using DashboardFramework.DataComponent;
+using Microsoft.AnalysisServices.AdomdClient;
 using TextCellFactory = Dashboard.Helper.Factory.TextCellFactory;
 
 namespace Dashboard.DataComponents.Transformers
@@ -20,6 +21,7 @@ namespace Dashboard.DataComponents.Transformers
         public string UncheckedItems { get; set; }
         public string ParamName { get; set; }
         public string MeasureType { get; set; }
+        public string KPI { get; set; }
         private const string TrendChartControlId = "interactiveTrendChart";
         private int _isMerckIndex = -1;
 
@@ -31,11 +33,6 @@ namespace Dashboard.DataComponents.Transformers
             return data;
         }
 
-        //public Table GetSalesTableData()
-        //{
-
-        //}
-
         public Table GetTableData()
         {
             foreach (var col in Input.Columns.Where(col => col.Name.Contains("IS_MERCK")))
@@ -45,7 +42,7 @@ namespace Dashboard.DataComponents.Transformers
 
             var tableFactory = new CubeTableFactory
             {
-                CellMaps = GetCellMap(Input.Columns),
+                CellMaps = GetCellMap(Input.Columns, KPI == "Sales"),
                 AutoCreateCellMaps = false,
                 AutoCreateHeader = false,
                 RowFunctionalities = new List<IRowFunctionality<Row>>() 
@@ -65,7 +62,7 @@ namespace Dashboard.DataComponents.Transformers
             return table;
         }
 
-        public List<CellMap<Row>> GetCellMap(List<Column> columns)
+        public List<CellMap<Row>> GetCellMap(List<Column> columns, bool isSales)
         {
             var cellMaps = new List<CellMap<Row>>
             {
@@ -84,9 +81,9 @@ namespace Dashboard.DataComponents.Transformers
                 },
                 new CellMap<Row>
                 {
-                    CellFactory = new ColorfulDivCellFactory() {Classes = new List<string>() {"trend-rank"},UncheckedItem = UncheckedItems,},
+                    CellFactory = new ColorfulDivCellFactory() {Classes = new List<string>() {"trend-rank"},UncheckedItem = UncheckedItems,KPI = KPI},
                     RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),
-                    Columns = new List<string> {Input.Columns[0].Name,Input.Columns[1].Name,Input.Columns[_isMerckIndex].Name}
+                    Columns = new List<string> {Input.Columns[0].Name,Input.Columns[1].Name}
                 },
                 new CellMap<Row>()
                 {
@@ -95,8 +92,10 @@ namespace Dashboard.DataComponents.Transformers
                     Columns = new List<string>() {"1"}
                 }
             };
-
-            for (int i = 3; i < columns.Count; i++)
+            int i = 3;
+            if (KPI == "Sales")
+                i = 2;
+            for (; i < columns.Count; i++)
             {
                 cellMaps.Add(new CellMap<Row>()
                 {
