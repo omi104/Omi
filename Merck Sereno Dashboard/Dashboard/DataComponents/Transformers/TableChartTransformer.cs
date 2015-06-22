@@ -31,6 +31,11 @@ namespace Dashboard.DataComponents.Transformers
             return data;
         }
 
+        //public Table GetSalesTableData()
+        //{
+
+        //}
+
         public Table GetTableData()
         {
             foreach (var col in Input.Columns.Where(col => col.Name.Contains("IS_MERCK")))

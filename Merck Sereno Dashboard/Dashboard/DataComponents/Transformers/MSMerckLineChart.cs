@@ -16,6 +16,7 @@ namespace Dashboard.DataComponents.Transformers
         public MSLineChart chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public string UnitValue { get; set; }
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
@@ -51,6 +52,7 @@ namespace Dashboard.DataComponents.Transformers
                 if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
                     chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
             }
+            
             return chart.RenderWithScript("98%", "360", isForceHtmlRender: true);
         }
 
@@ -99,6 +101,7 @@ namespace Dashboard.DataComponents.Transformers
             dataSet.Attributes.Add("seriesName", row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
+
             string color = _colorList.GetNextColor();
             dataSet.Attributes.Add("color", "#" + color);
             dataSet.Attributes.Add("anchorBgColor", "#" + color);

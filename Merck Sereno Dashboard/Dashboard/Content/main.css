@@ -1114,7 +1114,7 @@ header #top-nav .navbar-nav li a
     transition: all;
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
-    font-size: 12px;
+    font-size: 14px;
 }
 
     header #top-nav .navbar-nav li a > i
@@ -1635,12 +1635,12 @@ header #top-nav .navbar-nav li a
 {
     margin-bottom: 5px;
     height: 32px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .footer
 {
-    font-size: 11px;
+    font-size: 12px;
 }
 
     .footer img

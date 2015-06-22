@@ -31,12 +31,12 @@ namespace Dashboard.Helper.Factory
                 string colorValue = "";
                 if (values[1].ToUpper().Contains("TOTAL"))
                 {
-                    colorValue = "91C3D5";
+                    colorValue = ColorListDataSource.ColorOfTotal.Replace("#", "");
                 }
-                else if (values[2] == "1") //IS_MERCK is 1
-                {
-                    colorValue = "#4BACC6";
-                }
+                //else if (values[2] == "1") //IS_MERCK is 1
+                //{
+                //    colorValue = ColorListDataSource.ColorOfMerck;
+                //}
                 else
                     colorValue = _colorSource.GetNextColor();
                 complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)

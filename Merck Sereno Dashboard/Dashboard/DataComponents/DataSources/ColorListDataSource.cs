@@ -12,7 +12,7 @@ namespace Dashboard.DataComponents.DataSources
         private int _colorCounter;
         private List<string> _colorList;
         public const string ColorOfTotal = "#91C3D5";
-        public const string ColorOfMerck = "#4BACC6";
+        //public const string ColorOfMerck = "#4BACC6";
 
         public ColorListDataSource()
         {

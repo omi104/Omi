@@ -2,6 +2,8 @@
 using CubeFramework;
 using CubeFramework.ServiceModel;
 using Dashboard.Configuration;
+using Dashboard.DashboardComponent.Components;
+using DashboardFramework;
 using DashboardFramework.DataComponent;
 using System;
 using System.Collections.Generic;
@@ -21,6 +23,7 @@ namespace Dashboard.DataComponents.DataSources
 
         public virtual CubeData GetData()
         {
+            KPIConstrainedViewID();
             if (string.IsNullOrWhiteSpace(ModuleName)) throw new ArgumentException("No view id is provided");
 
             int viewId;
@@ -46,6 +49,14 @@ namespace Dashboard.DataComponents.DataSources
                 Logger.Error(ex.Message);
             }
             return data;
+        }
+
+        private void KPIConstrainedViewID()
+        {
+            if (Parameters[ParameterList.KPI] == "Sales" && ModuleName == "10")
+            {
+                ModuleName = "11";
+            }
         }
 
         protected virtual void SetProxy()

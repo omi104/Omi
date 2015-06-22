@@ -18,6 +18,7 @@ namespace Dashboard.DataComponents.Transformers
         public MSCombiDY2D chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public string UnitValue { get; set; }
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
@@ -36,7 +37,7 @@ namespace Dashboard.DataComponents.Transformers
             };
             if (KPI.ToUpper() == "SALES")
             {
-                chart.Attributes.Add("pyAxisName", "In Euros 000");
+                chart.Attributes.Add("pyAxisName", "In " + UnitValue + " 000");
                 chart.Attributes.Add("sYAXisName", "In %");
             }
             
@@ -45,7 +46,7 @@ namespace Dashboard.DataComponents.Transformers
             if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
                 chart.Attributes.Add("pyAxisName", "");
-                chart.Attributes.Add("sYAXisName", "In Euros 000");
+                chart.Attributes.Add("sYAXisName", "In " + UnitValue + " 000");
             }
 
             AddStyles();
@@ -79,10 +80,10 @@ namespace Dashboard.DataComponents.Transformers
             {
                 dataSet.Attributes.Add("color", ColorListDataSource.ColorOfTotal);
             }
-            else if (Input.Rows.First().Values[2] == "1") // First row is merck
-            {
-                dataSet.Attributes.Add("color", ColorListDataSource.ColorOfMerck);
-            }
+            //else if (Input.Rows.First().Values[2] == "1") // First row is merck
+            //{
+            //    dataSet.Attributes.Add("color", ColorListDataSource.ColorOfMerck);
+            //}
             dataSet.Set = new List<Set>();
 
             foreach (var val in Input.Rows.First().Values.Skip(3))

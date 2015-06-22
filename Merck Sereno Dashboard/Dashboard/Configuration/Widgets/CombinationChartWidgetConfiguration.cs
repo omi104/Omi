@@ -24,10 +24,13 @@ namespace Dashboard.Configuration.Widgets
             View.HasConfig("")
                 .HasController<CombiChartWidgetController>();
             
-            View.DataFlow.AddSource<CubeDataSourceBase>()//DummyTableDataSource
+            View.DataFlow.AddSource<CubeDataSourceBase>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
+                .HasProperty(t => t.UnitValue).WithValue(p => p["@@"+ParameterList.UnitOrValue+"_text"])
+                .HasProperty(t => t.StartDate).WithValue(p => p["@@" + ParameterList.StartDate + "_text"])
+                .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
             //Export.HasController<HomeExportController>().HasConfig("HomeTrend")

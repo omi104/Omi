@@ -15,6 +15,9 @@ namespace Dashboard.DataComponents.Transformers
     {
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public string UnitValue { get; set; }
+        public string StartDate { get; set; }
+        public string EndDate { get; set; }
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
@@ -31,14 +34,15 @@ namespace Dashboard.DataComponents.Transformers
             if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
                 if (KPI.ToUpper() == "SALES")
-                    model.Title = "Sales (in Euros)";
+                    model.Title = "Sales (in " + UnitValue + ")";
                 if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
-                    model.Title = "Performance vs. Competitors (in Euros)";
+                    model.Title = "Performance vs. Competitors (in " + UnitValue + ")";
                 model.Chart = new MsCombinationChart()
                 {
                     Input = Input,
                     UncheckedItems = UncheckedItems,
                     KPI = KPI,
+                    UnitValue = UnitValue,
                     CategoryString = CategoryString,
                     PeriodString = PeriodString,
                     MeasureValue = MeasureValue,
@@ -47,9 +51,9 @@ namespace Dashboard.DataComponents.Transformers
             else if (KPI.ToUpper() == "MARKET SHARE" || KPI.ToUpper() == "EVOLUTION INDEX")
             {
                 if (KPI.ToUpper() == "MARKET SHARE")
-                    model.Title = "Market Share % (Euros)";
+                    model.Title = "Market Share % (" + UnitValue +")";
                 if (KPI.ToUpper() == "EVOLUTION INDEX")
-                    model.Title = "Evolution Index (Euros)";
+                    model.Title = "Evolution Index (" + UnitValue + ")";
                 model.Chart = new MsMerckLineChart()
                 {
                     Input = Input,
@@ -63,7 +67,7 @@ namespace Dashboard.DataComponents.Transformers
             else//bubble chart
             {
                 if (KPI.ToUpper() == "GROWTH")
-                    model.Title = "Growth % (Euros)";
+                    model.Title = "Growth % (" + UnitValue + ")";
                 model.Chart = new MsBubbleChart()
                 {
                     Input = Input,
