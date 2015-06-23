@@ -109,7 +109,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Unit/Value",
                 ControlId = "filter-UnitOrValue-control",
                 ModifyParam = ParameterList.UnitOrValue,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country },
                 ViewId = "1"
             };
         }
@@ -135,7 +135,7 @@ namespace Dashboard.DashboardComponent.Components
                 Name = ParameterList.StartDate,
                 Label = "Start Date",
                 ModifyParam = ParameterList.StartDate,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.TimePeriod , ParameterList.KPI},
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.TimePeriod, ParameterList.KPI },
                 ViewId = "3",
             };
         }
@@ -148,7 +148,7 @@ namespace Dashboard.DashboardComponent.Components
                 Name = ParameterList.EndDate,
                 Label = "End Date",
                 ModifyParam = ParameterList.EndDate,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Product, ParameterList.TimePeriod },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.TimePeriod, ParameterList.KPI },
                 ViewId = "3",
             };
         }

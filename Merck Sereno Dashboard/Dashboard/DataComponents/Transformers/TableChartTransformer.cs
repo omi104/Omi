@@ -144,7 +144,12 @@ namespace Dashboard.DataComponents.Transformers
                 else
                 {
                     string[] headers = Input.Columns[i].Name.Split('_').ToArray();
-                    row.Cells.Add(new SimpleNode("th", headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
+                    if (KPI == "Growth")
+                    {
+                        row.Cells.Add(new SimpleNode("th", headers[1]) { Classes = new List<string>() { "colData", "col-" + i } });
+                    }
+                    else
+                        row.Cells.Add(new SimpleNode("th", headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
                 }
             }
             return row;

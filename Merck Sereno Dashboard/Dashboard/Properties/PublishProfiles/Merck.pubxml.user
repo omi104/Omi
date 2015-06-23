@@ -58,19 +58,19 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>06/23/2015 12:33:42</publishTime>
+      <publishTime>06/23/2015 15:49:13</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.dll">
-      <publishTime>06/23/2015 11:24:52</publishTime>
+      <publishTime>06/23/2015 15:49:10</publishTime>
     </File>
     <File Include="bin/Dashboard.IdentityModel.pdb">
-      <publishTime>06/23/2015 11:24:52</publishTime>
+      <publishTime>06/23/2015 15:49:10</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>06/23/2015 12:33:42</publishTime>
+      <publishTime>06/23/2015 15:49:13</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1699,7 +1699,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/17/2015 13:50:11</publishTime>
     </File>
     <File Include="Scripts/RBCommandCenter.js">
-      <publishTime>06/23/2015 10:21:58</publishTime>
+      <publishTime>06/23/2015 14:44:13</publishTime>
     </File>
     <File Include="Scripts/respond.min.js">
       <publishTime>06/05/2015 17:27:54</publishTime>
@@ -1795,7 +1795,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>06/23/2015 12:44:24</publishTime>
+      <publishTime>06/23/2015 15:49:22</publishTime>
     </File>
   </ItemGroup>
 </Project>

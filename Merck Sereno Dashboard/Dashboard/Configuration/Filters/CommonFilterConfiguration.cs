@@ -51,32 +51,6 @@ namespace Dashboard.Configuration.Filters
             {
                 filterItem.Label = "Territory";
             }
-            if (filterItem.Name == FilterItems.StartDate().Name)
-            {
-                if ((param["@@" + ParameterList.TimePeriod + "_text"]  == "MTH" ||
-                param["@@" + ParameterList.TimePeriod + "_text"] == "QTR") && param["@@" + ParameterList.KPI + "_text"] == "GROWTH")
-                {
-                    filterItem.IsVisible = false;
-                }
-                else
-                    filterItem.IsVisible = true;
-            }
-            if (filterItem.Name == FilterItems.EndDate().Name)
-            {
-                if ((param["@@" + ParameterList.TimePeriod + "_text"] == "MTH" ||
-                     param["@@" + ParameterList.TimePeriod + "_text"] == "QTR") &&
-                    param["@@" + ParameterList.KPI + "_text"] == "GROWTH")
-                {
-                    filterItem.Label = "Date";
-                }
-
-                if (param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
-                {
-                    filterItem.IsVisible = false;
-                }
-                else
-                    filterItem.IsVisible = true;
-            }
             if (filterItem.Name == FilterItems.SubProducts().Name)
             {
                 if (param["@@" + ParameterList.Product + "_text"] == "FEMIBION")
@@ -88,15 +62,31 @@ namespace Dashboard.Configuration.Filters
                 {
                     filterItem.IsVisible = false;
                     DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "false");
-                }    
+                }
             }
-            if (param["@@" + ParameterList.TimePeriod + "_text"] == "MAT" ||
-                param["@@" + ParameterList.TimePeriod + "_text"] == "YTD")
-            {
+            if (param["@@" + ParameterList.TimePeriod + "_text"] == "MAT" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD")
                 DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "true");
-            }
             else
                 DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "false");
+
+            /*For growth or MAT or YTD startdate will be invisible, Enddate will work*/
+            if (filterItem.Name == FilterItems.StartDate().Name)
+            {
+                if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                {
+                    filterItem.IsVisible = false;
+                }
+                else
+                    filterItem.IsVisible = true;
+            }
+            if (filterItem.Name == FilterItems.EndDate().Name)
+            {
+                if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                {
+                    filterItem.Label = "Date";
+                }
+            }
+            
             return filterItem;
         }
     }

@@ -11,7 +11,7 @@ namespace Dashboard.DataComponents.Transformers
 {
     public class MsBubbleChart
     {
-        string defaultAttributes = @"showToolTip='1' xAxisLabelMode='auto' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#000000' canvasBorderThickness='0' adjustDiv='0' bgColor='FFFFFF' numdivlines='0' showvalues='1' showtrendlinelabels='0' theme='fint'";
+        string defaultAttributes = @"showToolTip='1' palette='1' plotFillHoverColor='#4BACC6' numberSuffix='%' showXAxisValues='1' xAxisLabelMode='auto' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#000000' canvasBorderThickness='1' adjustDiv='0' bgColor='FFFFFF' numdivlines='0' showvalues='1' showtrendlinelabels='0' theme='fint'";
         public BubbleChartData chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
@@ -47,8 +47,8 @@ namespace Dashboard.DataComponents.Transformers
 
             chart.Attributes.Add("xaxisminvalue", (xMin - 15).ToString());
             chart.Attributes.Add("xaxismaxvalue", (xMax + 15).ToString());
-            chart.Attributes.Add("yaxisminvalue", (yMin - 15).ToString());
-            chart.Attributes.Add("yaxismaxvalue", (yMax + 15).ToString());
+            chart.Attributes.Add("yaxisminvalue", (yMin - 50).ToString());
+            chart.Attributes.Add("yaxismaxvalue", (yMax + 50).ToString());
             if (KPI.ToUpper() == "GROWTH")
             {
                 chart.Attributes.Add("xaxisname", "Long-Term (Feb-15 - Feb-14)");
@@ -66,7 +66,8 @@ namespace Dashboard.DataComponents.Transformers
             {
                 var category = new Category();
                 category.Attributes.Add("label", i.ToString());
-                //category.Attributes.Add("showverticalline", "1");
+                if(i > 0)
+                    category.Attributes.Add("showverticalline", "1");
                 chart.Categories.Category.Add(category);
             }
 
@@ -109,6 +110,30 @@ namespace Dashboard.DataComponents.Transformers
                 dataset.Add(set);
             }
             chart.Dataset.Add(dataset);
+
+            double yAxisDiff = (yMax - yMin)/3;
+            chart.TrendLines.Add(new Line()
+            {
+                Attributes = new Dictionary<string, string>()
+                {
+                    {"startValue",(yMax + 50 - yAxisDiff).ToString()},
+                    {"endValue",(yMax + 50).ToString()},
+                    {"isTrendZone","1"},
+                    {"color","#aaaaaa"},
+                    {"alpha","14"},
+                }
+            });
+            chart.TrendLines.Add(new Line()
+            {
+                Attributes = new Dictionary<string, string>()
+                {
+                    {"startValue",(yMin - 50 + yAxisDiff).ToString()},
+                    {"endValue",(yMin - 50 + 2*yAxisDiff).ToString()},
+                    {"isTrendZone","1"},
+                    {"color","#aaaaaa"},
+                    {"alpha","14"},
+                }
+            });
             return chart.RenderWithScript("98%", "360");
         }
 

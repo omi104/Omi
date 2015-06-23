@@ -57,7 +57,7 @@ namespace Dashboard.Configuration
                  .Add(ParameterList.Subproduct).WithValue("")//[Product].[Hierarchy].[PRD].&[FEMIBION].&[FEMIBION]
                  .Add(ParameterList.SubProductFlag).WithValue("false")
                  .Add(ParameterList.PeriodTypeFlag).WithValue("false")
-                 .Add(ParameterList.Is_KSA).WithValue("true")//wrong boolean logic
+                 .Add(ParameterList.Is_KSA).WithValue("false")//wrong boolean logic
                 .Add(ParameterList.Segment).WithValue("")
                 .Add(ParameterList.Form).WithValue("")
                 .Add(ParameterList.KPI).WithValue("")
