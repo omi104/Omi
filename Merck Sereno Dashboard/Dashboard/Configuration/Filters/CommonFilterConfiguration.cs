@@ -93,10 +93,10 @@ namespace Dashboard.Configuration.Filters
             if (param["@@" + ParameterList.TimePeriod + "_text"] == "MAT" ||
                 param["@@" + ParameterList.TimePeriod + "_text"] == "YTD")
             {
-                DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "true");
+                DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "true");
             }
             else
-                DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "false");
+                DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "false");
             return filterItem;
         }
     }
