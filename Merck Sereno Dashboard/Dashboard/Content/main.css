@@ -1822,3 +1822,7 @@ div.loading
 #pdf-icon:hover {
     background-image: url('Images/pdf_invert.png')
 }
+
+div.modal-content {
+    width: 600px;
+}

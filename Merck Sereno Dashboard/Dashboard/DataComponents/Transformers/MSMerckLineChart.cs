@@ -40,6 +40,7 @@ namespace Dashboard.DataComponents.Transformers
                 chart.Attributes.Add("yAxisName", "Index in 000");
             chart.ControlId = "interactiveTrendChart";
             AddStyles();
+
             foreach (var col in Input.Columns.Skip(3))
             {
                 var category = new Category();
@@ -102,9 +103,18 @@ namespace Dashboard.DataComponents.Transformers
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
 
-            string color = _colorList.GetNextColor();
-            dataSet.Attributes.Add("color", "#" + color);
-            dataSet.Attributes.Add("anchorBgColor", "#" + color);
+            if (row.Values[1].ToUpper().Contains("TOTAL"))
+            {
+                dataSet.Attributes.Add("color", ColorListDataSource.ColorOfTotal);
+                dataSet.Attributes.Add("anchorBgColor", ColorListDataSource.ColorOfTotal);
+            }
+            else
+            {
+                string color = _colorList.GetNextColor();
+                dataSet.Attributes.Add("color", "#" + color);
+                dataSet.Attributes.Add("anchorBgColor", "#" + color);
+            }
+            
 
             foreach (var val in row.Values.Skip(3))
             {
