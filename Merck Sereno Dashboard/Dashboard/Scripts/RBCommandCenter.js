@@ -34,7 +34,11 @@
         }
         RbHelper.highlightMenu(elementId, navigationLabel);
         RbHelper.resizeBodyWidth(navigationName);
-        $('#NumberFormatswitch').text('Switch To Absolute');
-        window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName});
+        //$('#NumberFormatswitch').text('Switch To Absolute');
+        if (navigationName == 'NavKSATerritoryLevel') {
+            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'false' });
+        }
+        else
+            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'true' });
     }
 };

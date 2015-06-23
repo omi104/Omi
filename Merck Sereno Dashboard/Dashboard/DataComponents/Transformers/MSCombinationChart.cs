@@ -56,7 +56,8 @@ namespace Dashboard.DataComponents.Transformers
                 category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
                 chart.Categories.Category.Add(category);
             }
-            chart.Dataset.Add(AddFirstDataSet());
+            if (!UncheckedItems.Contains(Input.Rows[0].Values[1]))
+                chart.Dataset.Add(AddFirstDataSet());
 
             for (var i=1; i < Input.Rows.Count; i++)
             {

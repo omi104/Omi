@@ -18,7 +18,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Region/Cluster",
                 ControlId = "filter-RegionOrCluster-control",
                 ModifyParam = ParameterList.RegionOrCluster,
-                HasParamDependency = new List<string>() { ParameterList.NavigationName },
+                HasParamDependency = new List<string>() { ParameterList.NavigationName,ParameterList.Is_KSA },
                 ViewId = "4"
             };
         }

@@ -13,6 +13,7 @@ namespace Dashboard.Configuration
         public const string Subproduct = "Subproduct";
         public const string SubProductFlag = "SubProductFlag";
         public const string PeriodTypeFlag = "PeriodTypeFlag";
+        public const string Is_KSA = "Is_KSA";
         public const string Segment = "Segment";
         public const string Form = "Form";
         public const string KPI = "KPI";

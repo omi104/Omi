@@ -101,11 +101,14 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     CellFactory = new NumberDecimalCellFactory()
                     {
+                        isSales = KPI == "Sales",
                         TextFormat = new TextFormat() { FormatString = "#,#0" },
                         Classes = new List<string>() { "colData", "col-" + i }
                     },
-                    RowCellDataProvider = new CustomRowCellDataProvider(),
-                    Columns = new List<string>() { i.ToString() }
+                    RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),
+                    Columns = new List<string> { Input.Columns[0].Name, Input.Columns[i].Name }
+                    //RowCellDataProvider = new CustomRowCellDataProvider(),
+                    //Columns = new List<string>() { i.ToString() }
                 });
             }
             
