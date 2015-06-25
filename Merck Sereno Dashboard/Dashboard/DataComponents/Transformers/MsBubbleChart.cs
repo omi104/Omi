@@ -66,8 +66,8 @@ namespace Dashboard.DataComponents.Transformers
             {
                 var category = new Category();
                 category.Attributes.Add("label", i.ToString());
-                if(i > 0)
-                    category.Attributes.Add("showverticalline", "1");
+                //if(i > 0)
+                //    category.Attributes.Add("showverticalline", "1");
                 chart.Categories.Category.Add(category);
             }
 
@@ -75,27 +75,9 @@ namespace Dashboard.DataComponents.Transformers
             foreach (var row in Input.Rows)
             {
                 string toolText = "Series-" + row.Values[1] + ", Point: " + row.Values[3] + ", (" + row.Values[3] + "%," + row.Values[4] + "%), Size: " + row.Values[5];
-                var set = new Set();
-                if (row.Values[1].ToUpper().Contains("TOTAL"))
+                Set set = new Set()
                 {
-                    set = new Set()
-                    {
-                        Attributes = new Dictionary<string, string>()
-                        {
-                            { "x", row.Values[3] }, 
-                            { "y", row.Values[4] }, 
-                            { "z", row.Values[5] }, 
-                            { "name", row.Values[1] },
-                            { "color", ColorListDataSource.ColorOfTotal},
-                            {"tooltext",toolText}
-                        }
-                    };
-                }
-                else
-                {
-                    set = new Set()
-                    {
-                        Attributes = new Dictionary<string, string>()
+                    Attributes = new Dictionary<string, string>()
                         {
                             { "x", row.Values[3] }, 
                             { "y", row.Values[4] }, 
@@ -104,8 +86,37 @@ namespace Dashboard.DataComponents.Transformers
                             { "color", _colorList.GetNextColor()},
                             {"tooltext",toolText}
                         }
-                    };
-                }
+                };
+                //if (row.Values[1].ToUpper().Contains("TOTAL"))
+                //{
+                //    set = new Set()
+                //    {
+                //        Attributes = new Dictionary<string, string>()
+                //        {
+                //            { "x", row.Values[3] }, 
+                //            { "y", row.Values[4] }, 
+                //            { "z", row.Values[5] }, 
+                //            { "name", row.Values[1] },
+                //            { "color", ColorListDataSource.ColorOfTotal},
+                //            {"tooltext",toolText}
+                //        }
+                //    };
+                //}
+                //else
+                //{
+                //    set = new Set()
+                //    {
+                //        Attributes = new Dictionary<string, string>()
+                //        {
+                //            { "x", row.Values[3] }, 
+                //            { "y", row.Values[4] }, 
+                //            { "z", row.Values[5] }, 
+                //            { "name", row.Values[1] },
+                //            { "color", _colorList.GetNextColor()},
+                //            {"tooltext",toolText}
+                //        }
+                //    };
+                //}
 
                 dataset.Add(set);
             }

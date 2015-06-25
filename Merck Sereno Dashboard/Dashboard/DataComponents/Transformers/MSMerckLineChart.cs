@@ -16,6 +16,7 @@ namespace Dashboard.DataComponents.Transformers
         public MSLineChart chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
@@ -41,18 +42,50 @@ namespace Dashboard.DataComponents.Transformers
             chart.ControlId = "interactiveTrendChart";
             AddStyles();
 
-            foreach (var col in Input.Columns.Skip(3))
+            if (RevertAxis && (KPI == "EVOLUTION INDEX" || KPI == "MARKET SHARE"))
             {
-                var category = new Category();
-                category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
-                chart.Categories.Category.Add(category);
-            }
+                foreach (Row t in Input.Rows)
+                {
+                    var category = new Category();
+                    category.Attributes.Add("label", t.Values[1]);
+                    chart.Categories.Category.Add(category);
+                }
+                foreach (var col in Input.Columns.Skip(3))
+                {
+                    var dataSet = new DataSet("renderas='Line'");
+                    dataSet.Attributes.Add("seriesName", col.Name.Split('_').ToArray()[0]);
+                    dataSet.Attributes.Add("parentyaxis", "S");
+                    dataSet.Set = new List<Set>();
 
-            for (int i = 0; i < Input.Rows.Count; i++)
-            {
-                if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
-                    chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
+                    string color = _colorList.GetNextColor();
+                    dataSet.Attributes.Add("color", "#" + color);
+                    dataSet.Attributes.Add("anchorBgColor", "#" + color);
+
+                    foreach (var row in Input.Rows)
+                    {
+                        var set1 = new Set();
+                        set1.Attributes.Add("value", row[col.Position]);
+                        dataSet.Set.Add(set1);
+                    }
+                    chart.Dataset.Add(dataSet);
+                }
             }
+            else
+            {
+                foreach (var col in Input.Columns.Skip(3))
+                {
+                    var category = new Category();
+                    category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
+                    chart.Categories.Category.Add(category);
+                }
+
+                for (int i = 0; i < Input.Rows.Count; i++)
+                {
+                    if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
+                        chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
+                }
+            }
+            
             
             return chart.RenderWithScript("98%", "360", isForceHtmlRender: true);
         }

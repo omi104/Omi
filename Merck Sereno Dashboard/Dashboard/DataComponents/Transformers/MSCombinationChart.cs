@@ -12,12 +12,11 @@ namespace Dashboard.DataComponents.Transformers
 {
     public class MsCombinationChart
     {
-        //string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='WRAP' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0' setadaptiveymin='1' setadaptivesymin='1'";
-        //string defaultAttributes = @"bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' canvasBorderThickness='0' adjustDiv='0'";
         string defaultAttributes = @"chartLeftMargin='0' chartRightMargin='0' chartBottomMargin='0' bgColor='FFFFFF' legendNumColumns='2' labelDisplay='Rotate' slantLabels='1' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' showValues='0' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#FFFFFF' legendPosition='right' canvasBorderThickness='0' adjustDiv='0'";
         public MSCombiDY2D chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
         public string CategoryString { get; set; }
         public string PeriodString { get; set; }
@@ -50,20 +49,54 @@ namespace Dashboard.DataComponents.Transformers
             }
 
             AddStyles();
-            foreach (var col in Input.Columns.Skip(3))
-            {
-                var category = new Category();
-                category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
-                chart.Categories.Category.Add(category);
-            }
-            if (!UncheckedItems.Contains(Input.Rows[0].Values[1]))
-                chart.Dataset.Add(AddFirstDataSet());
 
-            for (var i=1; i < Input.Rows.Count; i++)
+            if (RevertAxis && (KPI == "SALES PERFORMANCE vs COMPETITORS"))
             {
-                if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
-                    chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
+                foreach (Row t in Input.Rows)
+                {
+                    var category = new Category();
+                    category.Attributes.Add("label", t.Values[1]);
+                    chart.Categories.Category.Add(category);
+                }
+
+                foreach (var col in KPI == "SALES" ? Input.Columns.Skip(2) : Input.Columns.Skip(3))
+                {
+                    var dataSet = new DataSet("renderas='Line'");
+                    dataSet.Attributes.Add("seriesName", col.Name.Split('_').ToArray()[0]);
+                    dataSet.Attributes.Add("parentyaxis", "S");
+                    dataSet.Set = new List<Set>();
+                    string color = _colorList.GetNextColor();
+                    dataSet.Attributes.Add("color", "#" + color);
+                    dataSet.Attributes.Add("anchorBgColor", "#" + color);
+
+                    foreach (var row in Input.Rows)
+                    {
+                        var set1 = new Set();
+                        set1.Attributes.Add("value", row[col.Position]);
+                        dataSet.Set.Add(set1);
+                    }
+                    chart.Dataset.Add(dataSet);
+                }
+                
             }
+            else
+            {
+                foreach (var col in KPI == "SALES" ? Input.Columns.Skip(2) : Input.Columns.Skip(3))
+                {
+                    var category = new Category();
+                    category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
+                    chart.Categories.Category.Add(category);
+                }
+                if (!UncheckedItems.Contains(Input.Rows[0].Values[1]))
+                    chart.Dataset.Add(AddFirstDataSet());
+
+                for (var i = 1; i < Input.Rows.Count; i++)
+                {
+                    if (!UncheckedItems.Contains(Input.Rows[i].Values[1]))
+                        chart.Dataset.Add(AddTrendLineDataSet(Input.Rows[i]));
+                }
+            }
+            
             return chart.RenderWithScript("98%", "360",isForceHtmlRender:true);
         }
 
@@ -81,13 +114,9 @@ namespace Dashboard.DataComponents.Transformers
             {
                 dataSet.Attributes.Add("color", ColorListDataSource.ColorOfTotal);
             }
-            //else if (Input.Rows.First().Values[2] == "1") // First row is merck
-            //{
-            //    dataSet.Attributes.Add("color", ColorListDataSource.ColorOfMerck);
-            //}
             dataSet.Set = new List<Set>();
 
-            foreach (var val in Input.Rows.First().Values.Skip(3))
+            foreach (var val in KPI == "SALES" ? Input.Rows.First().Values.Skip(2) : Input.Rows.First().Values.Skip(3))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);
@@ -108,7 +137,7 @@ namespace Dashboard.DataComponents.Transformers
             dataSet.Attributes.Add("color", "#" + color);
             dataSet.Attributes.Add("anchorBgColor", "#" + color);
 
-            foreach (var val in row.Values.Skip(3))
+            foreach (var val in KPI == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val);

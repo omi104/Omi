@@ -15,6 +15,7 @@ namespace Dashboard.DataComponents.Transformers
     {
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
@@ -42,6 +43,7 @@ namespace Dashboard.DataComponents.Transformers
                     Input = Input,
                     UncheckedItems = UncheckedItems,
                     KPI = KPI,
+                    RevertAxis=RevertAxis,
                     UnitValue = UnitValue,
                     CategoryString = CategoryString,
                     PeriodString = PeriodString,
@@ -59,6 +61,7 @@ namespace Dashboard.DataComponents.Transformers
                     Input = Input,
                     UncheckedItems = UncheckedItems,
                     KPI = KPI,
+                    RevertAxis = RevertAxis,
                     CategoryString = CategoryString,
                     PeriodString = PeriodString,
                     MeasureValue = MeasureValue,
