@@ -64,7 +64,7 @@ namespace Dashboard.DataComponents.Transformers
                     foreach (var row in Input.Rows)
                     {
                         var set1 = new Set();
-                        set1.Attributes.Add("value", row[col.Position]);
+                        set1.Attributes.Add("value", row[col.Position] == "--" ? "0" : row[col.Position]);
                         dataSet.Set.Add(set1);
                     }
                     chart.Dataset.Add(dataSet);
@@ -152,8 +152,7 @@ namespace Dashboard.DataComponents.Transformers
             foreach (var val in row.Values.Skip(3))
             {
                 var set1 = new Set();
-                set1.Attributes.Add("value", val);
-
+                set1.Attributes.Add("value", val == "--" ? "0" : val);
                 dataSet.Set.Add(set1);
             }
             return dataSet;

@@ -38,10 +38,10 @@ namespace Dashboard.DataComponents.Transformers
             {
                 if (Input.Rows[i].Values[3] != null || Input.Rows[i].Values[5] != null)
                 {
-                    xMax = GetMax(Input.Rows[i].Values[3], xMax);
-                    xMin = GetMin(Input.Rows[i].Values[3], xMin);
-                    yMax = GetMax(Input.Rows[i].Values[4], yMax);
-                    yMin = GetMin(Input.Rows[i].Values[4], yMin);
+                    xMax = GetMax(Input.Rows[i].Values[3] != "--" ? Input.Rows[i].Values[3]:"0", xMax);
+                    xMin = GetMin(Input.Rows[i].Values[3] != "--" ? Input.Rows[i].Values[3] : "0", xMin);
+                    yMax = GetMax(Input.Rows[i].Values[4] != "--" ? Input.Rows[i].Values[4] : "0", yMax);
+                    yMin = GetMin(Input.Rows[i].Values[4] != "--" ? Input.Rows[i].Values[4] : "0", yMin);
                 }
             }
 
@@ -66,22 +66,20 @@ namespace Dashboard.DataComponents.Transformers
             {
                 var category = new Category();
                 category.Attributes.Add("label", i.ToString());
-                //if(i > 0)
-                //    category.Attributes.Add("showverticalline", "1");
                 chart.Categories.Category.Add(category);
             }
 
             var dataset = new DataSet();
             foreach (var row in Input.Rows)
             {
-                string toolText = "Series-" + row.Values[1] + ", Point: " + row.Values[3] + ", (" + row.Values[3] + "%," + row.Values[4] + "%), Size: " + row.Values[5];
+                string toolText = "Series-" + row.Values[1] + ", Point: " + row.Values[3] != "--" ? row.Values[3] : "0" + ", (" + row.Values[3] != "--" ? row.Values[3] : "0" + "%," + row.Values[4] != "--" ? row.Values[4] : "0" + "%), Size: " + row.Values[5] != "--" ? row.Values[5] : "0";
                 Set set = new Set()
                 {
                     Attributes = new Dictionary<string, string>()
                         {
-                            { "x", row.Values[3] }, 
-                            { "y", row.Values[4] }, 
-                            { "z", row.Values[5] }, 
+                            { "x", row.Values[3] != "--" ? row.Values[3]:"0" }, 
+                            { "y", row.Values[4] != "--" ? row.Values[4]:"0"}, 
+                            { "z", row.Values[5] != "--" ? row.Values[5]:"0"}, 
                             { "name", row.Values[1] },
                             { "color", _colorList.GetNextColor()},
                             {"tooltext",toolText}
