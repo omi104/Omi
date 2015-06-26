@@ -111,10 +111,7 @@ namespace Dashboard.DataComponents.Transformers
             var dataSet = new DataSet();
             if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
                 dataSet.Attributes.Add("renderas", "Area");
-            //if(PeriodType == "MAT" || PeriodType == "YTD")
-            //    dataSet.Attributes.Add("seriesName", PeriodType+" "+Input.Rows.First().Values[1]);
-            //else
-                dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
+            dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
 
             if (!UncheckedItems.ToUpper().Contains("TOTAL"))
@@ -137,10 +134,7 @@ namespace Dashboard.DataComponents.Transformers
             var dataSet = new DataSet("renderas='Line'");
             if (row.Values[1] == "--")
                 row.Values[1] = "%PPG";
-            //if (PeriodType == "MAT" || PeriodType == "YTD")
-            //    dataSet.Attributes.Add("seriesName", PeriodType +" "+ row.Values[1]);
-            //else
-                dataSet.Attributes.Add("seriesName", row.Values[1]);
+            dataSet.Attributes.Add("seriesName", row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
             string color = _colorList.GetNextColor();

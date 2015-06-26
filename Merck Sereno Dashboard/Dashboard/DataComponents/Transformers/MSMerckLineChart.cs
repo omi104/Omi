@@ -42,7 +42,7 @@ namespace Dashboard.DataComponents.Transformers
             chart.ControlId = "interactiveTrendChart";
             AddStyles();
 
-            if (RevertAxis && (KPI == "EVOLUTION INDEX" || KPI == "MARKET SHARE"))
+            if (RevertAxis && (KPI.ToUpper() == "EVOLUTION INDEX" || KPI.ToUpper() == "MARKET SHARE"))
             {
                 foreach (Row t in Input.Rows)
                 {
