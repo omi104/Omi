@@ -19,7 +19,7 @@ namespace Dashboard.DataComponents.Transformers
         public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
         public string CategoryString { get; set; }
-        public string PeriodString { get; set; }
+        public string PeriodType { get; set; }
         public string MeasureValue { get; set; }
         private ColorListDataSource _colorList;
         public CubeData Input { set; private get; }
@@ -53,7 +53,10 @@ namespace Dashboard.DataComponents.Transformers
                 foreach (var col in Input.Columns.Skip(3))
                 {
                     var dataSet = new DataSet("renderas='Line'");
-                    dataSet.Attributes.Add("seriesName", col.Name.Split('_').ToArray()[0]);
+                    if(PeriodType == "MAT" || PeriodType == "YTD")
+                        dataSet.Attributes.Add("seriesName", PeriodType+" "+col.Name.Split('_').ToArray()[0]);
+                    else
+                        dataSet.Attributes.Add("seriesName", col.Name.Split('_').ToArray()[0]);
                     dataSet.Attributes.Add("parentyaxis", "S");
                     dataSet.Set = new List<Set>();
 

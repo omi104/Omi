@@ -16,10 +16,10 @@ namespace Dashboard.DataComponents.Transformers
         public MSCombiDY2D chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
+        public string PeriodType { get; set; }
         public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
         public string CategoryString { get; set; }
-        public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
         private ColorListDataSource _colorList;
         public CubeData Input { set; private get; }
@@ -50,7 +50,7 @@ namespace Dashboard.DataComponents.Transformers
 
             AddStyles();
 
-            if (RevertAxis && (KPI == "SALES PERFORMANCE vs COMPETITORS"))
+            if (RevertAxis && KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
                 foreach (Row t in Input.Rows)
                 {
@@ -59,10 +59,13 @@ namespace Dashboard.DataComponents.Transformers
                     chart.Categories.Category.Add(category);
                 }
 
-                foreach (var col in KPI == "SALES" ? Input.Columns.Skip(2) : Input.Columns.Skip(3))
+                foreach (var col in Input.Columns.Skip(3))
                 {
                     var dataSet = new DataSet("renderas='Line'");
-                    dataSet.Attributes.Add("seriesName", col.Name.Split('_').ToArray()[0]);
+                    if(PeriodType == "MAT" || PeriodType == "YTD")
+                        dataSet.Attributes.Add("seriesName", PeriodType+" "+col.Name.Split('_').ToArray()[0]);
+                    else
+                        dataSet.Attributes.Add("seriesName", col.Name.Split('_').ToArray()[0]);
                     dataSet.Attributes.Add("parentyaxis", "S");
                     dataSet.Set = new List<Set>();
                     string color = _colorList.GetNextColor();
@@ -81,10 +84,13 @@ namespace Dashboard.DataComponents.Transformers
             }
             else
             {
-                foreach (var col in KPI == "SALES" ? Input.Columns.Skip(2) : Input.Columns.Skip(3))
+                foreach (var col in KPI.ToUpper() == "SALES" ? Input.Columns.Skip(2) : Input.Columns.Skip(3))
                 {
                     var category = new Category();
-                    category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
+                    if(PeriodType == "MAT" || PeriodType == "YTD")
+                        category.Attributes.Add("label", PeriodType+" "+col.Name.Split('_').ToArray()[0]);
+                    else
+                        category.Attributes.Add("label", col.Name.Split('_').ToArray()[0]);
                     chart.Categories.Category.Add(category);
                 }
                 if (!UncheckedItems.Contains(Input.Rows[0].Values[1]))
@@ -103,11 +109,12 @@ namespace Dashboard.DataComponents.Transformers
         private DataSet AddFirstDataSet()
         {
             var dataSet = new DataSet();
-            if (KPI == "SALES PERFORMANCE vs COMPETITORS")
+            if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
                 dataSet.Attributes.Add("renderas", "Area");
-
-
-            dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
+            //if(PeriodType == "MAT" || PeriodType == "YTD")
+            //    dataSet.Attributes.Add("seriesName", PeriodType+" "+Input.Rows.First().Values[1]);
+            //else
+                dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
 
             if (!UncheckedItems.ToUpper().Contains("TOTAL"))
@@ -116,7 +123,7 @@ namespace Dashboard.DataComponents.Transformers
             }
             dataSet.Set = new List<Set>();
 
-            foreach (var val in KPI == "SALES" ? Input.Rows.First().Values.Skip(2) : Input.Rows.First().Values.Skip(3))
+            foreach (var val in KPI.ToUpper() == "SALES" ? Input.Rows.First().Values.Skip(2) : Input.Rows.First().Values.Skip(3))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val == "--" ? "0" : val);
@@ -130,7 +137,10 @@ namespace Dashboard.DataComponents.Transformers
             var dataSet = new DataSet("renderas='Line'");
             if (row.Values[1] == "--")
                 row.Values[1] = "%PPG";
-            dataSet.Attributes.Add("seriesName", row.Values[1]);
+            //if (PeriodType == "MAT" || PeriodType == "YTD")
+            //    dataSet.Attributes.Add("seriesName", PeriodType +" "+ row.Values[1]);
+            //else
+                dataSet.Attributes.Add("seriesName", row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
             string color = _colorList.GetNextColor();

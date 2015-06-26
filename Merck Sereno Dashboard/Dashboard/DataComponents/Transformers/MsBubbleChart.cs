@@ -16,7 +16,8 @@ namespace Dashboard.DataComponents.Transformers
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
         public string CategoryString { get; set; }
-        public string PeriodString { get; set; }
+        public string EndDate { get; set; }
+        public string PeriodType { get; set; }
         public string MeasureValue { get; set; }
         private ColorListDataSource _colorList;
         public CubeData Input { set; private get; }

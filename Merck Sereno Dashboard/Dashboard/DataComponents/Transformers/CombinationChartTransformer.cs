@@ -19,8 +19,8 @@ namespace Dashboard.DataComponents.Transformers
         public string UnitValue { get; set; }
         public string StartDate { get; set; }
         public string EndDate { get; set; }
+        public string PeriodType { get; set; }
         public string CategoryString { get; set; }
-        public string PeriodString { get; set; }
         public string MeasureValue { get; set; }
         private ColorListDataSource _colorList;
 
@@ -46,7 +46,7 @@ namespace Dashboard.DataComponents.Transformers
                     RevertAxis=RevertAxis,
                     UnitValue = UnitValue,
                     CategoryString = CategoryString,
-                    PeriodString = PeriodString,
+                    PeriodType = PeriodType,
                     MeasureValue = MeasureValue,
                 }.GetChart();
             }
@@ -63,7 +63,7 @@ namespace Dashboard.DataComponents.Transformers
                     KPI = KPI,
                     RevertAxis = RevertAxis,
                     CategoryString = CategoryString,
-                    PeriodString = PeriodString,
+                    PeriodType = PeriodType,
                     MeasureValue = MeasureValue,
                 }.GetChart();
             }
@@ -77,7 +77,8 @@ namespace Dashboard.DataComponents.Transformers
                     UncheckedItems = UncheckedItems,
                     KPI = KPI,
                     CategoryString = CategoryString,
-                    PeriodString = PeriodString,
+                    PeriodType = PeriodType,
+                    EndDate=EndDate,
                     MeasureValue = MeasureValue,
                 }.GetChart();
             }
