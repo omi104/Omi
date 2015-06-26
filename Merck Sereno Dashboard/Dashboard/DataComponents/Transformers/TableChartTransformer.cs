@@ -22,6 +22,8 @@ namespace Dashboard.DataComponents.Transformers
         public string ParamName { get; set; }
         public string MeasureType { get; set; }
         public string KPI { get; set; }
+        public string Date { get; set; }
+        public string PeriodType { get; set; }
         private const string TrendChartControlId = "interactiveTrendChart";
         private int _isMerckIndex = -1;
 
@@ -54,7 +56,13 @@ namespace Dashboard.DataComponents.Transformers
                 }
             };
             var header = new TableHeader();
-            header.Rows.Add(GetHeader());
+
+            if (KPI.ToUpper() == "GROWTH")
+                header.Rows.Add(GetHeaderForGrowth());
+            else if (PeriodType == "MAT" || PeriodType == "YTD")
+                header.Rows.Add(GetHeader(true));
+            else
+                header.Rows.Add(GetHeader(false));
             tableFactory.Header = header;
             Table table = tableFactory.Create(Input);
             table.Attributes.Add("id", TrendChartControlId);
@@ -114,8 +122,119 @@ namespace Dashboard.DataComponents.Transformers
             
             return cellMaps;
         }
-        
-        public TableRow GetHeader()
+
+        public TableRow GetHeaderForGrowth()
+        {
+            var row = new TableRow();
+            var checkBoxHeadercell = new ComplexNode("th")
+            {
+                Classes = new List<string>() { "transparentText", "trend-checkbox" },
+            };
+            var checkBox = new SimpleNode("input", "")
+            {
+                Attributes = new Dictionary<string, string>() { { "type", "checkbox" }, { "checked", "checked" }, { "series-name", "checkUncheck" }, { "title", "Check/Uncheck All" }, { "onClick", "customTable.CheckUncheckAll(this,'" + ParamName + "')" } },
+            };
+            if (!string.IsNullOrEmpty(UncheckedItems))
+                checkBox.Attributes.Remove("checked");
+            checkBoxHeadercell.ChildNodes.Add(checkBox);
+            row.Cells.Add(checkBoxHeadercell);
+
+            row.Cells.Add(new SimpleNode("th", "Rank") { Classes = new List<string>() { "trend-rank" } });
+
+            for (int i = 1; i < Input.Columns.Count(); i++)
+            {
+                if (Input.Columns[i].Name.ToUpper().Contains("IS_MERCK"))
+                    continue;
+                if (Input.Columns[i].Name.ToUpper().Contains("NAME"))
+                {
+                    row.Cells.Add(new SimpleNode("th", "Product") { Classes = new List<string>() { "trend-company" } });
+                }
+                else if (Input.Columns[i].Name.ToUpper().Contains("SALES"))
+                {
+                    row.Cells.Add(new SimpleNode("th", "Sales") { Classes = new List<string>() { "colData", "col-" + i } });
+                }
+                else
+                {
+                    string[] headers = Input.Columns[i].Name.Split('_').ToArray();
+                    if (PeriodType == "MAT" || PeriodType == "YTD")
+                    {
+                        row.Cells.Add(new SimpleNode("th", PeriodType + " " + headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
+                    }
+                    else
+                    {
+                        var monthDict = new Dictionary<string, int>()
+                        {
+                            {"Jan",1},
+                            {"Feb",2},
+                            {"Mar",3},
+                            {"Apr",4},
+                            {"May",5},
+                            {"Jun",6},
+                            {"Jul",7},
+                            {"Aug",8},
+                            {"Sep",9},
+                            {"Oct",10},
+                            {"Nov",11},
+                            {"Dec",12}
+                        };
+
+                        var qtrDict = new Dictionary<string, int>()
+                        {
+                            {"QTR 1",1},
+                            {"QTR 2",2},
+                            {"QTR 3",3},
+                            {"QTR 4",4}
+                        };
+                        
+                        if (i == 3)
+                        {
+                            if (PeriodType == "MTH")
+                            {
+                                int year;
+                                int.TryParse(Date.Split(' ')[1], out year);
+                                int prevYear = year - 1;
+                                row.Cells.Add(new SimpleNode("th", "Long-Term (" + Date + "-" + Date.Split(' ')[0] +" "+ prevYear + ")") { Classes = new List<string>() { "colData", "col-" + i } });
+                            }
+                            if (PeriodType == "QTR")
+                            {
+                                int year;
+                                int.TryParse(Date.Split(' ')[2], out year);
+                                int prevYear = year - 1;
+                                row.Cells.Add(new SimpleNode("th", "Long-Term (" + Date + "-" + Date.Split(' ')[0] + " " + Date.Split(' ')[1] + " " + prevYear + ")") { Classes = new List<string>() { "colData", "col-" + i } });
+                            }
+
+                        }
+                        if (i == 4)
+                        {
+                            if (PeriodType == "MTH")
+                            {
+                                int monthIndex = monthDict[Date.Split(' ')[0]];
+                                if (monthIndex > 3)
+                                    monthIndex = monthIndex - 3;
+                                else
+                                    monthIndex = 12 + (monthIndex - 3);
+                                string oldMonth = monthDict.FirstOrDefault(x => x.Value== monthIndex).Key;
+                                row.Cells.Add(new SimpleNode("th", "Short-Term (" + Date + "-" + oldMonth + " " + Date.Split(' ')[1]+ ")") { Classes = new List<string>() { "colData", "col-" + i } });
+                            }
+                            if (PeriodType == "QTR")
+                            {
+                                string concat = string.Concat(Date.Split(' ')[0]+" ", Date.Split(' ')[1]);
+                                int qtrIndex = qtrDict[concat];
+                                if (qtrIndex > 1)
+                                    qtrIndex = qtrIndex - 1;
+                                else
+                                    qtrIndex = 4 + (qtrIndex - 1);
+                                string oldQtr = qtrDict.FirstOrDefault(x => x.Value == qtrIndex).Key;
+                                row.Cells.Add(new SimpleNode("th", "Short-Term (" + Date + "-" + oldQtr + " " + Date.Split(' ')[2] + ")") { Classes = new List<string>() { "colData", "col-" + i } });
+                            }
+                        }
+                    }
+                }
+            }
+            return row;
+        }
+
+        public TableRow GetHeader(bool isYtdOrMat)
         {
             var row = new TableRow();
             var checkBoxHeadercell = new ComplexNode("th")
@@ -146,10 +265,10 @@ namespace Dashboard.DataComponents.Transformers
                     string[] headers = Input.Columns[i].Name.Split('_').ToArray();
                     if (KPI == "Growth")
                     {
-                        row.Cells.Add(new SimpleNode("th", headers[1]) { Classes = new List<string>() { "colData", "col-" + i } });
+                        row.Cells.Add(new SimpleNode("th", isYtdOrMat ? PeriodType + " " + headers[1] : headers[1]) { Classes = new List<string>() { "colData", "col-" + i } });
                     }
                     else
-                        row.Cells.Add(new SimpleNode("th", headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
+                        row.Cells.Add(new SimpleNode("th", isYtdOrMat ? PeriodType + " " + headers[0] : headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
                 }
             }
             return row;
