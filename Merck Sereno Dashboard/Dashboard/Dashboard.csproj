@@ -227,7 +227,6 @@
     <Compile Include="Configuration\Filters\CommonFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\FilterConfigurationBase.cs" />
     <Compile Include="Configuration\Navigations\HomeNavigationConfiguration.cs" />
-    <Compile Include="Configuration\OtherConstant.cs" />
     <Compile Include="Configuration\MerckDashboardBuilder.cs" />
     <Compile Include="Configuration\MerckDashboardConfiguration.cs" />
     <Compile Include="Configuration\Navigations\AllRegionNavigationConfiguration.cs" />

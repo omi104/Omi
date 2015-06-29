@@ -50,15 +50,70 @@ namespace Dashboard.DataComponents.Transformers
             chart.Attributes.Add("xaxismaxvalue", (xMax + 15).ToString());
             chart.Attributes.Add("yaxisminvalue", (yMin - 50).ToString());
             chart.Attributes.Add("yaxismaxvalue", (yMax + 50).ToString());
-            if (KPI.ToUpper() == "GROWTH")
+
+            if (PeriodType.ToUpper() == "YTD" || PeriodType.ToUpper() == "MAT")
             {
-                chart.Attributes.Add("xaxisname", "Long-Term (Feb-15 - Feb-14)");
-                chart.Attributes.Add("yaxisname", "Short-Term (Feb-15 - Nov-14)");
+                string[] headers = Input.Columns[3].Name.Split('_').ToArray();
+                chart.Attributes.Add("xaxisname", PeriodType + " " + headers[0]);
+                headers = Input.Columns[4].Name.Split('_').ToArray();
+                chart.Attributes.Add("yaxisname", PeriodType + " " + headers[0]);
             }
             else
             {
-                chart.Attributes.Add("xaxisname", "");
-                chart.Attributes.Add("yaxisname", "Index in 000");
+                var monthDict = new Dictionary<string, int>()
+                        {
+                            {"Jan",1},
+                            {"Feb",2},
+                            {"Mar",3},
+                            {"Apr",4},
+                            {"May",5},
+                            {"Jun",6},
+                            {"Jul",7},
+                            {"Aug",8},
+                            {"Sep",9},
+                            {"Oct",10},
+                            {"Nov",11},
+                            {"Dec",12}
+                        };
+
+                var qtrDict = new Dictionary<string, int>()
+                        {
+                            {"QTR 1",1},
+                            {"QTR 2",2},
+                            {"QTR 3",3},
+                            {"QTR 4",4}
+                        };
+
+                if (PeriodType == "MTH")
+                {
+                    int year;
+                    int.TryParse(EndDate.Split(' ')[1], out year);
+                    int prevYear = year - 1;
+                    chart.Attributes.Add("xaxisname", "Long-Term (" + EndDate + "-" + EndDate.Split(' ')[0] + " " + prevYear + ")");
+
+                    int monthIndex = monthDict[EndDate.Split(' ')[0]];
+                    if (monthIndex > 3)
+                        monthIndex = monthIndex - 3;
+                    else
+                        monthIndex = 12 + (monthIndex - 3);
+                    string oldMonth = monthDict.FirstOrDefault(x => x.Value == monthIndex).Key;
+                    chart.Attributes.Add("yaxisname", "Short-Term (" + EndDate + "-" + oldMonth + " " + EndDate.Split(' ')[1] + ")");
+                }
+                if (PeriodType == "QTR")
+                {
+                    int year;
+                    int.TryParse(EndDate.Split(' ')[2], out year);
+                    int prevYear = year - 1;
+                    chart.Attributes.Add("xaxisname", "Long-Term (" + EndDate + "-" + EndDate.Split(' ')[0] + " " + EndDate.Split(' ')[1] + " " + prevYear + ")");
+
+                    int monthIndex = monthDict[EndDate.Split(' ')[0]];
+                    if (monthIndex > 3)
+                        monthIndex = monthIndex - 3;
+                    else
+                        monthIndex = 12 + (monthIndex - 3);
+                    string oldMonth = monthDict.FirstOrDefault(x => x.Value == monthIndex).Key;
+                    chart.Attributes.Add("yaxisname", "Short-Term (" + EndDate + "-" + oldMonth + " " + EndDate.Split(' ')[1] + ")");
+                }
             }
 
             var diffBetXInterval = Convert.ToInt16(Math.Floor((xMax - xMin) / 5));
@@ -86,64 +141,34 @@ namespace Dashboard.DataComponents.Transformers
                             {"tooltext",toolText}
                         }
                 };
-                //if (row.Values[1].ToUpper().Contains("TOTAL"))
-                //{
-                //    set = new Set()
-                //    {
-                //        Attributes = new Dictionary<string, string>()
-                //        {
-                //            { "x", row.Values[3] }, 
-                //            { "y", row.Values[4] }, 
-                //            { "z", row.Values[5] }, 
-                //            { "name", row.Values[1] },
-                //            { "color", ColorListDataSource.ColorOfTotal},
-                //            {"tooltext",toolText}
-                //        }
-                //    };
-                //}
-                //else
-                //{
-                //    set = new Set()
-                //    {
-                //        Attributes = new Dictionary<string, string>()
-                //        {
-                //            { "x", row.Values[3] }, 
-                //            { "y", row.Values[4] }, 
-                //            { "z", row.Values[5] }, 
-                //            { "name", row.Values[1] },
-                //            { "color", _colorList.GetNextColor()},
-                //            {"tooltext",toolText}
-                //        }
-                //    };
-                //}
-
+                
                 dataset.Add(set);
             }
             chart.Dataset.Add(dataset);
 
-            double yAxisDiff = (yMax - yMin)/3;
-            chart.TrendLines.Add(new Line()
-            {
-                Attributes = new Dictionary<string, string>()
-                {
-                    {"startValue",(yMax + 50 - yAxisDiff).ToString()},
-                    {"endValue",(yMax + 50).ToString()},
-                    {"isTrendZone","1"},
-                    {"color","#aaaaaa"},
-                    {"alpha","14"},
-                }
-            });
-            chart.TrendLines.Add(new Line()
-            {
-                Attributes = new Dictionary<string, string>()
-                {
-                    {"startValue",(yMin - 50 + yAxisDiff).ToString()},
-                    {"endValue",(yMin - 50 + 2*yAxisDiff).ToString()},
-                    {"isTrendZone","1"},
-                    {"color","#aaaaaa"},
-                    {"alpha","14"},
-                }
-            });
+            //double yAxisDiff = (yMax - yMin)/3;
+            //chart.TrendLines.Add(new Line()
+            //{
+            //    Attributes = new Dictionary<string, string>()
+            //    {
+            //        {"startValue",(yMax + 50 - yAxisDiff).ToString()},
+            //        {"endValue",(yMax + 50).ToString()},
+            //        {"isTrendZone","1"},
+            //        {"color","#aaaaaa"},
+            //        {"alpha","14"},
+            //    }
+            //});
+            //chart.TrendLines.Add(new Line()
+            //{
+            //    Attributes = new Dictionary<string, string>()
+            //    {
+            //        {"startValue",(yMin - 50 + yAxisDiff).ToString()},
+            //        {"endValue",(yMin - 50 + 2*yAxisDiff).ToString()},
+            //        {"isTrendZone","1"},
+            //        {"color","#aaaaaa"},
+            //        {"alpha","14"},
+            //    }
+            //});
             return chart.RenderWithScript("98%", "360");
         }
 

@@ -9,51 +9,51 @@ namespace Dashboard.Helper
 {
     public class ParameterTextFormatter
     {
-        public static string FormatMonth(string value)
-        {
-            //return value;
-            var words = value.Split('_');
-            var monthList = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-            var qtrList = new List<string> { "1", "2", "3", "4" };
+        //public static string FormatMonth(string value)
+        //{
+        //    //return value;
+        //    var words = value.Split('_');
+        //    var monthList = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        //    var qtrList = new List<string> { "1", "2", "3", "4" };
 
-            try
-            {
-                if (words[0] == FixedData.Other.Qtr)
-                    value = string.Format("QTR {0} {1}", qtrList[Int32.Parse(words[2]) - 1], words[1]);
-                else
-                    value = string.Format("{0} {1}", monthList[Int32.Parse(words[2]) - 1], words[1]);
-                return value;
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                Logger.Warn(ex.Message, ex);
-                return value;
-            }
+        //    try
+        //    {
+        //        if (words[0] == FixedData.Other.Qtr)
+        //            value = string.Format("QTR {0} {1}", qtrList[Int32.Parse(words[2]) - 1], words[1]);
+        //        else
+        //            value = string.Format("{0} {1}", monthList[Int32.Parse(words[2]) - 1], words[1]);
+        //        return value;
+        //    }
+        //    catch (IndexOutOfRangeException ex)
+        //    {
+        //        Logger.Warn(ex.Message, ex);
+        //        return value;
+        //    }
 
-        }
+        //}
 
-        public static string FormatMonthDetail(string value)
-        {
-            //return value;
-            var words = value.Split('_');
-            var monthList = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
-            var qtrList = new List<string> { "1", "2", "3", "4" };
+        //public static string FormatMonthDetail(string value)
+        //{
+        //    //return value;
+        //    var words = value.Split('_');
+        //    var monthList = new List<string> { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        //    var qtrList = new List<string> { "1", "2", "3", "4" };
 
-            try
-            {
-                if (words[0] == FixedData.Other.Qtr)
-                    value = string.Format("QTR {0} {1}", qtrList[Int32.Parse(words[2]) - 1], words[1]);
-                else
-                    value = string.Format("{0} {1}", monthList[Int32.Parse(words[2]) - 1], words[1].Substring(2, 2));
-                return value;
-            }
-            catch (IndexOutOfRangeException ex)
-            {
-                Logger.Warn(ex.Message, ex);
-                return value;
-            }
+        //    try
+        //    {
+        //        if (words[0] == FixedData.Other.Qtr)
+        //            value = string.Format("QTR {0} {1}", qtrList[Int32.Parse(words[2]) - 1], words[1]);
+        //        else
+        //            value = string.Format("{0} {1}", monthList[Int32.Parse(words[2]) - 1], words[1].Substring(2, 2));
+        //        return value;
+        //    }
+        //    catch (IndexOutOfRangeException ex)
+        //    {
+        //        Logger.Warn(ex.Message, ex);
+        //        return value;
+        //    }
 
-        }
+        //}
 
         public static string FormatMonthForMonthPicker(string value)
         {
