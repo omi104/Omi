@@ -44,7 +44,7 @@ namespace Dashboard.DataComponents.Transformers
 
             var tableFactory = new CubeTableFactory
             {
-                CellMaps = GetCellMap(Input.Columns, KPI == "Sales"),
+                CellMaps = GetCellMap(Input.Columns, KPI.ToUpper() == "SALES"),
                 AutoCreateCellMaps = false,
                 AutoCreateHeader = false,
                 RowFunctionalities = new List<IRowFunctionality<Row>>() 
@@ -59,7 +59,7 @@ namespace Dashboard.DataComponents.Transformers
 
             if (KPI.ToUpper() == "GROWTH")
                 header.Rows.Add(GetHeaderForGrowth());
-            else if (PeriodType == "MAT" || PeriodType == "YTD")
+            else if (PeriodType.ToUpper() == "MAT" || PeriodType.ToUpper() == "YTD")
                 header.Rows.Add(GetHeader(true));
             else
                 header.Rows.Add(GetHeader(false));
@@ -101,7 +101,7 @@ namespace Dashboard.DataComponents.Transformers
                 }
             };
             int i = 3;
-            if (KPI == "Sales")
+            if (KPI.ToUpper() == "SALES")
                 i = 2;
             for (; i < columns.Count; i++)
             {
@@ -109,14 +109,12 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     CellFactory = new NumberDecimalCellFactory()
                     {
-                        isSales = KPI == "Sales",
-                        TextFormat = new TextFormat() { FormatString = "#,#0" },
+                        isSales = KPI.ToUpper() == "SALES",
+                        TextFormat = new TextFormat() { FormatString = KPI.ToUpper() == "MARKET SHARE" ? "#,#0.00" : "#,#0" },
                         Classes = new List<string>() { "colData", "col-" + i }
                     },
                     RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),
                     Columns = new List<string> { Input.Columns[0].Name, Input.Columns[i].Name }
-                    //RowCellDataProvider = new CustomRowCellDataProvider(),
-                    //Columns = new List<string>() { i.ToString() }
                 });
             }
             
@@ -156,7 +154,7 @@ namespace Dashboard.DataComponents.Transformers
                 else
                 {
                     string[] headers = Input.Columns[i].Name.Split('_').ToArray();
-                    if (PeriodType == "MAT" || PeriodType == "YTD")
+                    if (PeriodType.ToUpper() == "MAT" || PeriodType.ToUpper() == "YTD")
                     {
                         row.Cells.Add(new SimpleNode("th", PeriodType + " " + headers[0]) { Classes = new List<string>() { "colData", "col-" + i } });
                     }
@@ -188,14 +186,14 @@ namespace Dashboard.DataComponents.Transformers
                         
                         if (i == 3)
                         {
-                            if (PeriodType == "MTH")
+                            if (PeriodType.ToUpper() == "MTH")
                             {
                                 int year;
                                 int.TryParse(Date.Split(' ')[1], out year);
                                 int prevYear = year - 1;
                                 row.Cells.Add(new SimpleNode("th", "Long-Term (" + Date + "-" + Date.Split(' ')[0] +" "+ prevYear + ")") { Classes = new List<string>() { "colData", "col-" + i } });
                             }
-                            if (PeriodType == "QTR")
+                            if (PeriodType.ToUpper() == "QTR")
                             {
                                 int year;
                                 int.TryParse(Date.Split(' ')[2], out year);
@@ -206,7 +204,7 @@ namespace Dashboard.DataComponents.Transformers
                         }
                         if (i == 4)
                         {
-                            if (PeriodType == "MTH")
+                            if (PeriodType.ToUpper() == "MTH")
                             {
                                 int monthIndex = monthDict[Date.Split(' ')[0]];
                                 if (monthIndex > 3)
@@ -216,7 +214,7 @@ namespace Dashboard.DataComponents.Transformers
                                 string oldMonth = monthDict.FirstOrDefault(x => x.Value== monthIndex).Key;
                                 row.Cells.Add(new SimpleNode("th", "Short-Term (" + Date + "-" + oldMonth + " " + Date.Split(' ')[1]+ ")") { Classes = new List<string>() { "colData", "col-" + i } });
                             }
-                            if (PeriodType == "QTR")
+                            if (PeriodType.ToUpper() == "QTR")
                             {
                                 string concat = string.Concat(Date.Split(' ')[0]+" ", Date.Split(' ')[1]);
                                 int qtrIndex = qtrDict[concat];
@@ -263,7 +261,7 @@ namespace Dashboard.DataComponents.Transformers
                 else
                 {
                     string[] headers = Input.Columns[i].Name.Split('_').ToArray();
-                    if (KPI == "Growth")
+                    if (KPI.ToUpper() == "GROWTH")
                     {
                         row.Cells.Add(new SimpleNode("th", isYtdOrMat ? PeriodType + " " + headers[1] : headers[1]) { Classes = new List<string>() { "colData", "col-" + i } });
                     }

@@ -11,7 +11,7 @@ namespace Dashboard.DataComponents.Transformers
 {
     public class MsBubbleChart
     {
-        string defaultAttributes = @"showToolTip='1' palette='1' plotFillHoverColor='#4BACC6' numberSuffix='%' showXAxisValues='1' xAxisLabelMode='auto' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#000000' canvasBorderThickness='1' adjustDiv='0' bgColor='FFFFFF' numdivlines='0' showvalues='1' showtrendlinelabels='0' theme='fint'";
+        string defaultAttributes = @"showToolTip='1' palette='1' plotFillHoverColor='#4BACC6' numberSuffix='%' showXAxisValues='1' xAxisLabelMode='auto' plotGradientColor='' showAlternateHGridColor='0' showPlotBorder='0' divLineColor='5b95ad' legendShadow='0' legendBorderAlpha='0' showBorder='0' canvasBorderColor='#000000' canvasBorderThickness='1' adjustDiv='0' bgColor='FFFFFF' numdivlines='0' showvalues='0' showtrendlinelabels='0' theme='fint'";
         public BubbleChartData chart { get; set; }
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
@@ -128,17 +128,25 @@ namespace Dashboard.DataComponents.Transformers
             var dataset = new DataSet();
             foreach (var row in Input.Rows)
             {
-                string toolText = "Series-" + row.Values[1] + ", Point: " + row.Values[3] != "--" ? row.Values[3] : "0" + ", (" + row.Values[3] != "--" ? row.Values[3] : "0" + "%," + row.Values[4] != "--" ? row.Values[4] : "0" + "%), Size: " + row.Values[5] != "--" ? row.Values[5] : "0";
+                String.Format("{0:0.00}", row.Values[3] != "--" ? row.Values[3] : "0");
+                String.Format("{0:0.00}", row.Values[4] != "--" ? row.Values[4] : "0");
+                String.Format("{0:0.00}", row.Values[5] != "--" ? row.Values[5] : "0");
+                string toolText = "Series-" + row.Values[1] + ", Point: ";
+                toolText += row.Values[3];
+                toolText += ", (" + row.Values[3];
+                toolText += "%," + row.Values[4];
+                toolText += "%), Size: " + row.Values[5];
+
                 Set set = new Set()
                 {
                     Attributes = new Dictionary<string, string>()
                         {
-                            { "x", row.Values[3] != "--" ? row.Values[3]:"0" }, 
-                            { "y", row.Values[4] != "--" ? row.Values[4]:"0"}, 
-                            { "z", row.Values[5] != "--" ? row.Values[5]:"0"}, 
+                            { "x", row.Values[3] != "--" ? String.Format("{0:0.00}", row.Values[3]):"0" }, 
+                            { "y", row.Values[4] != "--" ? String.Format("{0:0.00}", row.Values[4]):"0"}, 
+                            { "z", row.Values[5] != "--" ? String.Format("{0:0.00}", row.Values[5]):"0"}, 
                             { "name", row.Values[1] },
                             { "color", _colorList.GetNextColor()},
-                            {"tooltext",toolText}
+                            {"toolText",toolText}
                         }
                 };
                 
@@ -146,29 +154,6 @@ namespace Dashboard.DataComponents.Transformers
             }
             chart.Dataset.Add(dataset);
 
-            //double yAxisDiff = (yMax - yMin)/3;
-            //chart.TrendLines.Add(new Line()
-            //{
-            //    Attributes = new Dictionary<string, string>()
-            //    {
-            //        {"startValue",(yMax + 50 - yAxisDiff).ToString()},
-            //        {"endValue",(yMax + 50).ToString()},
-            //        {"isTrendZone","1"},
-            //        {"color","#aaaaaa"},
-            //        {"alpha","14"},
-            //    }
-            //});
-            //chart.TrendLines.Add(new Line()
-            //{
-            //    Attributes = new Dictionary<string, string>()
-            //    {
-            //        {"startValue",(yMin - 50 + yAxisDiff).ToString()},
-            //        {"endValue",(yMin - 50 + 2*yAxisDiff).ToString()},
-            //        {"isTrendZone","1"},
-            //        {"color","#aaaaaa"},
-            //        {"alpha","14"},
-            //    }
-            //});
             return chart.RenderWithScript("98%", "360");
         }
 
