@@ -110,7 +110,11 @@ namespace Dashboard.DataComponents.Transformers
                     CellFactory = new NumberDecimalCellFactory()
                     {
                         isSales = KPI.ToUpper() == "SALES",
-                        TextFormat = new TextFormat() { FormatString = KPI.ToUpper() == "MARKET SHARE" ? "#,#0.00" : "#,#0" },
+                        TextFormat = new TextFormat()
+                        {
+                            FormatString = KPI.ToUpper() == "MARKET SHARE" || KPI.ToUpper() == "GROWTH" ? "0.00" : "#,#0"
+                        },
+                        suffix = KPI.ToUpper() == "MARKET SHARE" || (i < columns.Count - 1 && KPI.ToUpper() == "GROWTH") ? "%" : null,
                         Classes = new List<string>() { "colData", "col-" + i }
                     },
                     RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),

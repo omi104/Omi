@@ -52,7 +52,7 @@ namespace Dashboard.DataComponents.Transformers
 
             if (RevertAxis && KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
-                foreach (Row t in Input.Rows)
+                foreach (Row t in Input.Rows.Skip(1))
                 {
                     var category = new Category();
                     category.Attributes.Add("label", t.Values[1]);
@@ -72,7 +72,7 @@ namespace Dashboard.DataComponents.Transformers
                     dataSet.Attributes.Add("color", "#" + color);
                     dataSet.Attributes.Add("anchorBgColor", "#" + color);
 
-                    foreach (var row in Input.Rows)
+                    foreach (var row in Input.Rows.Skip(1))
                     {
                         var set1 = new Set();
                         set1.Attributes.Add("value", row[col.Position] == "--" ? "0" : row[col.Position]);

@@ -131,19 +131,15 @@ namespace Dashboard.DataComponents.Transformers
                 String.Format("{0:0.00}", row.Values[3] != "--" ? row.Values[3] : "0");
                 String.Format("{0:0.00}", row.Values[4] != "--" ? row.Values[4] : "0");
                 String.Format("{0:0.00}", row.Values[5] != "--" ? row.Values[5] : "0");
-                string toolText = "Series-" + row.Values[1] + ", Point: ";
-                toolText += row.Values[3];
-                toolText += ", (" + row.Values[3];
-                toolText += "%," + row.Values[4];
-                toolText += "%), Size: " + row.Values[5];
+                string toolText = "Series-" + row.Values[1] + ", Sales: " + row.Values[5];
 
                 Set set = new Set()
                 {
                     Attributes = new Dictionary<string, string>()
                         {
-                            { "x", row.Values[3] != "--" ? String.Format("{0:0.00}", row.Values[3]):"0" }, 
-                            { "y", row.Values[4] != "--" ? String.Format("{0:0.00}", row.Values[4]):"0"}, 
-                            { "z", row.Values[5] != "--" ? String.Format("{0:0.00}", row.Values[5]):"0"}, 
+                            { "x", row.Values[3]}, 
+                            { "y", row.Values[4]}, 
+                            { "z", row.Values[5]}, 
                             { "name", row.Values[1] },
                             { "color", _colorList.GetNextColor()},
                             {"toolText",toolText}
