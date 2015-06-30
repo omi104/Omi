@@ -23,31 +23,30 @@ namespace Dashboard.Configuration.Widgets
             HasName(widgetItem.Name);
             View.HasConfig("")
                 .HasController<CombiChartWidgetController>();
-            
+
             View.DataFlow.AddSource<CubeDataSourceBase>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.RevertAxis).WithValue(p => p["@@TimePeriod_text"] == "MAT" || p["@@TimePeriod_text"] == "YTD")
-                .HasProperty(t => t.UnitValue).WithValue(p => p["@@"+ParameterList.UnitOrValue+"_text"])
+                .HasProperty(t => t.UnitValue).WithValue(p => p["@@" + ParameterList.UnitOrValue + "_text"])
                 .HasProperty(t => t.StartDate).WithValue(p => p["@@" + ParameterList.StartDate + "_text"])
                 .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
-            //Export.HasController<HomeExportController>().HasConfig("HomeTrend")
-            //      .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
-            //      .Transform().By<CubeDataToXTableHomeTrendTransformer>()
-            //      .Transform().By<ExportModelTransformer>()
-            //      .HasProperty(t => t.NavigationNameString).WithValue(p => p["Navigation_Label"])
-            //      .HasProperty(t => t.GeoMaptext).WithValue(p => p["RB_Geo_text"])
-            //     .HasProperty(t => t.TimePeriodText).WithValue(p => p["@@Period_text"])
-            //     .HasProperty(t => t.MeasureText).WithValue(p => p["@@Measure_text"])
-            //     .HasProperty(t => t.CategoryText).WithValue(p => p["@@MarketCategory_text"])
-            //     .HasProperty(t => t.SubCategoryText).WithValue(p => p["@@MarketSubCategory_text"])
-            //     .HasProperty(t => t.SegementText).WithValue(p => p["@@Segment_text"])
-            //     .HasProperty(t => t.ChannelText).WithValue(p => p["@@Channel_text"])
-            //     .HasProperty(t => t.SubChannelText).WithValue(p => p["@@SubChannel_text"]);
+            Export.HasController<HomeExportController>()
+                  .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
+                  .Transform().By<CubeDataToXTableHomeTrendTransformer>()
+                  .Transform().By<ExportModelTransformer>()
+                  .HasProperty(t => t.NavigationNameString).WithValue(p => p.CurrentNavigationLabel())
+                .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
+                .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
+                .HasProperty(t => t.RevertAxis).WithValue(p => p["@@TimePeriod_text"] == "MAT" || p["@@TimePeriod_text"] == "YTD")
+                .HasProperty(t => t.UnitValue).WithValue(p => p["@@" + ParameterList.UnitOrValue + "_text"])
+                .HasProperty(t => t.StartDate).WithValue(p => p["@@" + ParameterList.StartDate + "_text"])
+                .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
+                .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
             HasParameterDependency.On(widgetItem.HasParamDependency);
         }
