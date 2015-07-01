@@ -35,7 +35,7 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
-            Export.HasConfig(p=>p["@@"+ParameterList.KPI+"_text"]).HasController<HomeExportController>()
+            Export.HasConfig(GetExportConfig).HasController<HomeExportController>()//p=>p["@@"+ParameterList.KPI+"_text"
                   .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
                   .Transform().By<CubeDataToXTableTrendTransformer>()
                   .Transform().By<ExportModelTransformer>()
@@ -50,5 +50,20 @@ namespace Dashboard.Configuration.Widgets
 
             HasParameterDependency.On(widgetItem.HasParamDependency);
         }
+
+        private CombinationChartExcelExport GetExportConfig(IReadOnlyDictionary<string, string> Param)
+        {
+            return new CombinationChartExcelExport()
+            {
+                KPI_Text = Param["@@" + ParameterList.KPI + "_text"],
+                TimePeriod_Text = Param["@@" + ParameterList.TimePeriod + "_text"]
+            };
+        }
+    }
+
+    public class CombinationChartExcelExport
+    {
+        public string KPI_Text { get; set; }
+        public string TimePeriod_Text { get; set; }
     }
 }
