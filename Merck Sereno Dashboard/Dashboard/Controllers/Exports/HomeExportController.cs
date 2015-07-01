@@ -78,7 +78,7 @@ namespace Dashboard.Controllers.Exports
                 sheet.DeleteRows(Data.DataTable.Rows.Count+29, 100);
                 sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count+2,100);
             }
-            else if (Config.ToUpper() == "SALES PERFORMANCE VS COMPETITORS" && Data.DataTable.Rows.Count > 1)
+            else if (Config.ToUpper() == "MARKET SHARE" || Config.ToUpper() == "EVOLUTION INDEX" || Config.ToUpper() == "SALES PERFORMANCE VS COMPETITORS" && Data.DataTable.Rows.Count > 1)
             {
                 var data = Data.DataTable.Rows[0].Cells[1].Data;
                 if (data != null && data.ToString().Contains("INTPRDRank"))
@@ -92,6 +92,10 @@ namespace Dashboard.Controllers.Exports
                 sheet.DeleteRows(Data.DataTable.Rows.Count + 29, 100);
                 sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count, 100);
             }
+            //else if ((Config.ToUpper() == "MARKET SHARE" || Config.ToUpper() == "EVOLUTION INDEX") && Data.DataTable.Rows.Count > 1)
+            //{
+
+            //}
             sheet.Name = "Sales chart";
             return workbook;
         }
