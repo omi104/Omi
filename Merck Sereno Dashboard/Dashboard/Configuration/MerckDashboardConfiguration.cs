@@ -14,8 +14,8 @@ namespace Dashboard.Configuration
     {
         public MerckDashboardConfiguration()
         {
-            HasName("MerckSerenoDashboard");
-            HasTitle("Merck Sereno CH Sales Performance Dashboard");
+            HasName("MerckSeronoDashboard");
+            HasTitle("Merck Serono CH Sales Performance Dashboard");
             HasDefaultNavigation(NavigationItems.NavHome().Name);
 
             ConfigureParameters();
@@ -91,7 +91,7 @@ namespace Dashboard.Configuration
             parameters.TryGetValue("CurrentNavigationId", out currentNavigationId);
             var config = new RbPoDashboardLayoutConfig
             {
-                Header = "Merck Sereno CH Sales Performance Dashboard",
+                Header = "Merck Serono CH Sales Performance Dashboard",
                 CopyRight = "Copyright IMS Dhaka 2015",
                 CurrentNavigation = currentNavigation,
                 CurrentPeriod = currentPeriod,

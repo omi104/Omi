@@ -51,10 +51,15 @@ namespace Dashboard.Controllers.Exports
         public Workbook GetExcelWorkbook(bool isPpt=false)
         {
             var path = Server.MapPath(@"~\Content\ExportTemplate\CombinationBarChart.xlsx");
+            if(Config.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
+                path = Server.MapPath(@"~\Content\ExportTemplate\CombinationAreaChart.xlsx");
+            if (Config.ToUpper() == "MARKET SHARE" || Config.ToUpper() == "EVOLUTION INDEX")
+                path = Server.MapPath(@"~\Content\ExportTemplate\MSLineChart.xlsx");
             var workbook = ExportHelper.GetWorkbook(path);
             var sheet = workbook.Worksheets["Sheet1"];
             sheet.Cells.MemorySetting = MemorySetting.MemoryPreference;
-            if (Data.DataTable.Rows.Count > 1)
+
+            if (Config.ToUpper() == "SALES" && Data.DataTable.Rows.Count > 1)
             {
                 for (int i=1; i<Data.DataTable.Rows.Count;i++)
                 {
@@ -72,6 +77,20 @@ namespace Dashboard.Controllers.Exports
                 sheet.WriteTable(Data.DataTable, "B29");
                 sheet.DeleteRows(Data.DataTable.Rows.Count+29, 100);
                 sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count+2,100);
+            }
+            else if (Config.ToUpper() == "SALES PERFORMANCE VS COMPETITORS" && Data.DataTable.Rows.Count > 1)
+            {
+                var data = Data.DataTable.Rows[0].Cells[1].Data;
+                if (data != null && data.ToString().Contains("INTPRDRank"))
+                    Data.DataTable.Rows[0].Cells[1].Data = "Rank";
+                data = Data.DataTable.Rows[0].Cells[2].Data;
+                if (data != null && data.ToString().Contains("INTPRDName"))
+                    Data.DataTable.Rows[0].Cells[2].Data = "Product";
+                for(int i=3;i<Data.DataTable.Rows[0].Cells.Count;i++)
+                    Data.DataTable.Rows[0].Cells[i].Data = Data.DataTable.Rows[0].Cells[i].Data.ToString().Split('_')[0];
+                sheet.WriteTable(Data.DataTable, "A29");
+                sheet.DeleteRows(Data.DataTable.Rows.Count + 29, 100);
+                sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count, 100);
             }
             sheet.Name = "Sales chart";
             return workbook;

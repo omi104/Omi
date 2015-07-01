@@ -35,9 +35,9 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 
-            Export.HasController<HomeExportController>()
+            Export.HasConfig(p=>p["@@"+ParameterList.KPI+"_text"]).HasController<HomeExportController>()
                   .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
-                  .Transform().By<CubeDataToXTableHomeTrendTransformer>()
+                  .Transform().By<CubeDataToXTableTrendTransformer>()
                   .Transform().By<ExportModelTransformer>()
                   .HasProperty(t => t.NavigationNameString).WithValue(p => p.CurrentNavigationLabel())
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])

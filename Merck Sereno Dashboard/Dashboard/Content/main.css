@@ -30,6 +30,7 @@ header
 
 .site-logo
 {
+    padding-top: 5px;
     background-color: #FFFFFF;
     height: 75px;
     border-bottom: 1px solid #e6e6e6;
@@ -1106,7 +1107,7 @@ header .navbar-toggle
 header #top-nav .navbar-nav li a
 {
     color: #ffffff;
-    padding: 5px 18px 2px;
+    padding: 3px 18px 2px;
     height: 35px;
     line-height: 35px;
     outline: none;

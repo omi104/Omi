@@ -529,6 +529,7 @@
     <Content Include="Content\Images\help\change-password.JPG" />
     <Content Include="Content\Images\help\forgotten-password.JPG" />
     <Content Include="Content\Images\help\save-login-details.JPG" />
+    <Content Include="Content\Images\logo.PNG" />
     <Content Include="Content\Images\minus.gif" />
     <Content Include="Content\Images\Favorites-cross.jpg" />
     <Content Include="Content\Images\plus.gif" />
@@ -825,7 +826,6 @@
     <Content Include="Content\ExportTemplate\UserManagement.xlsx" />
     <Content Include="Content\ExportTemplate\BubbleChart.xlsx" />
     <Content Include="Content\ExportTemplate\CombinationAreaChart.xlsx" />
-    <Content Include="Content\ExportTemplate\CombinationBarChart - Copy.xlsx" />
     <Content Include="Content\ExportTemplate\CombinationBarChart.xlsx" />
     <Content Include="Content\ExportTemplate\MSLineChart.xlsx" />
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
