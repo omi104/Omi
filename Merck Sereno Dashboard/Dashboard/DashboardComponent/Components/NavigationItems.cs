@@ -19,7 +19,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Home",
                 Widgets = new List<WidgetItem>()
                 {
-                    WidgetItems.WidgetWelcomeTextnImage(),
+                    WidgetItems.HomeTrendChart(),
                 }
             };
         }

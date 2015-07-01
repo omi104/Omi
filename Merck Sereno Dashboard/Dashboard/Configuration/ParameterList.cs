@@ -7,6 +7,26 @@ namespace Dashboard.Configuration
 {
     public static class ParameterList
     {
+        // copied from Rb
+        /*
+        public const string MGeo = "M_Geo";
+        public const string MGeo_text = "M_Geo_text";
+        public const string MMarket = "M_Market";
+        public const string MMarketFilterParent = "M_MarketFilterParent";
+        public const string MSubCategoryFilter = "M_SubCategoryFilter";
+        public const string MSegment = "M_Segment";
+        public const string MChannel = "M_Channel";
+        public const string MSubChannel = "M_SubChannel";
+        public const string MPeriodType = "M_PeriodType";
+        public const string MPeriod = "M_Period";
+        public const string MMeasure = "M_Measure";
+        public const string MMeasureType = "M_Measure_Type";
+
+        /// <summary>
+         * 
+         * */
+        
+
         public const string RegionOrCluster = "RegionOrCluster";
         public const string Country = "Country";
         public const string Product = "Product";

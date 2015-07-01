@@ -27,6 +27,7 @@ namespace Dashboard.Configuration.Widgets
             View.DataFlow.AddSource<CubeDataSourceBase>()
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
+                .HasProperty(t=>t.WidgetName).WithValue(widgetItem.Name)
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.RevertAxis).WithValue(p => p["@@TimePeriod_text"] == "MAT" || p["@@TimePeriod_text"] == "YTD")

@@ -19,7 +19,8 @@ namespace Dashboard.Configuration.Navigations
             HasName(navItem.Name);
             HasLabel(navItem.Label);
             Layout.HasController<HomeNavigationLayoutController>();
-            HasWidget(new WelcomeTextnImageWidgetConfiguration(WidgetItems.WidgetWelcomeTextnImage()));
+            //HasWidget(new WelcomeTextnImageWidgetConfiguration(WidgetItems.WidgetWelcomeTextnImage()));
+            HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.HomeTrendChart()));
 
             this.HasExportController<NavExportController>();
 

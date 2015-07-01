@@ -5,6 +5,7 @@ using System.Text;
 using Component.Chart.Fusion;
 using Component.Chart.Fusion.Implementation;
 using CubeFramework;
+using Dashboard.DashboardComponent.Components;
 using Dashboard.DataComponents.DataSources;
 using Dashboard.Models.Data;
 using DashboardFramework.DataComponent;
@@ -14,6 +15,7 @@ namespace Dashboard.DataComponents.Transformers
     public class CombinationChartTransformer : ITransformer<CubeData, SingleChartModel>
     {
         public string UncheckedItems { get; set; }
+        public string WidgetName { get; set; }
         public string KPI { get; set; }
         public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
@@ -31,8 +33,23 @@ namespace Dashboard.DataComponents.Transformers
         public SingleChartModel GetData()
         {
             var model = new SingleChartModel { Chart = ""};
-
-            if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
+            if (WidgetName == WidgetItems.HomeTrendChart().Name)
+            {
+                model.Title = "";
+                model.Chart = new MsCombinationChart()
+                {
+                    WidgetName = WidgetName,
+                    Input = Input,
+                    UncheckedItems = UncheckedItems,
+                    KPI = KPI,
+                    RevertAxis = RevertAxis,
+                    UnitValue = UnitValue,
+                    CategoryString = CategoryString,
+                    PeriodType = PeriodType,
+                    MeasureValue = MeasureValue,
+                }.GetChart();
+            }
+            else if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
                 if (KPI.ToUpper() == "SALES")
                     model.Title = "Sales (in " + UnitValue + ")";

@@ -29,6 +29,16 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        public static WidgetItem HomeTrendChart()
+        {
+            return new WidgetItem()
+            {
+                Name = "HomeTrendChart",
+                ViewId = "15",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+            };
+        }
+
         public static WidgetItem AllRegionTrendTableWidget()
         {
             return new WidgetItem()
