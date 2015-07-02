@@ -56,7 +56,8 @@ namespace Dashboard.Configuration.Widgets
             return new CombinationChartExcelExport()
             {
                 KPI_Text = Param["@@" + ParameterList.KPI + "_text"],
-                TimePeriod_Text = Param["@@" + ParameterList.TimePeriod + "_text"]
+                TimePeriod_Text = Param["@@" + ParameterList.TimePeriod + "_text"],
+                EndDate_Text = Param["@@" + ParameterList.EndDate + "_text"],
             };
         }
     }
@@ -65,5 +66,6 @@ namespace Dashboard.Configuration.Widgets
     {
         public string KPI_Text { get; set; }
         public string TimePeriod_Text { get; set; }
+        public string EndDate_Text { get; set; }
     }
 }
