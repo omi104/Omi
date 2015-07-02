@@ -71,7 +71,7 @@ namespace Dashboard.DashboardComponent.Components
                 ControlId = "filter-Segment-control",
                 ModifyParam = ParameterList.Segment,
                 HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product },
-                ViewId = "7"
+                ViewId = "22"
             };
         }
 

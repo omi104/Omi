@@ -30,8 +30,8 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
-                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionTrendTableWidget().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems])
-                 .HasProperty(t => t.ParamName).WithValue(p => widgetItem.Name == WidgetItems.AllRegionTrendTableWidget().Name ? ParameterList.RegionUncheckedItems : ParameterList.KsaUncheckedItems);
+                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.Top10IntPrdTable().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems])
+                 .HasProperty(t => t.ParamName).WithValue(p => widgetItem.Name == WidgetItems.Top10IntPrdTable().Name ? ParameterList.RegionUncheckedItems : ParameterList.KsaUncheckedItems);
 
             //Export.HasController<TrendTableChartExportController>().HasConfig("CompanyTrend")
             //      .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)

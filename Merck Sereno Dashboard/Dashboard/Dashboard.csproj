@@ -218,11 +218,14 @@
     <Compile Include="Configuration\Filters\DatePickerFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
     <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
+    <Compile Include="Configuration\Widgets\Top10CompaniesTableConfiguration.cs" />
+    <Compile Include="Configuration\Widgets\Top10IntPrdTableConfiguration.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterController.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterLayoutController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterLayoutController.cs" />
     <Compile Include="Controllers\AuthorizeController.cs" />
+    <Compile Include="Controllers\SimpleTableWidgetController.cs" />
     <Compile Include="DashboardComponent\Components\FilterItems.cs" />
     <Compile Include="Configuration\Filters\CommonFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\FilterConfigurationBase.cs" />
@@ -282,6 +285,7 @@
     <Compile Include="DataComponents\Transformers\CombinationTrendChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CombinationChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToDictionaryTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTopRankingTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTrendTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableTrendTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportModelTransformer.cs" />
