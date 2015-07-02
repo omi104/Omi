@@ -21,6 +21,8 @@ namespace Dashboard.Configuration.Navigations
             Layout.HasController<HomeNavigationLayoutController>();
             //HasWidget(new WelcomeTextnImageWidgetConfiguration(WidgetItems.WidgetWelcomeTextnImage()));
             HasWidget(new CombinationChartWidgetConfiguration(WidgetItems.HomeTrendChart()));
+            HasWidget(new Top10CompaniesTableConfiguration(WidgetItems.Top10CompanyTables()));
+            HasWidget(new Top10IntPrdTableConfiguration(WidgetItems.Top10IntPrdTable()));
 
             this.HasExportController<NavExportController>();
 

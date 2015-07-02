@@ -5,6 +5,7 @@ using System.Text;
 using Component.Chart.Fusion;
 using Component.Chart.Fusion.Implementation;
 using CubeFramework;
+using Dashboard.Configuration;
 using Dashboard.DashboardComponent.Components;
 using Dashboard.DataComponents.DataSources;
 using Dashboard.Models.Data;
@@ -24,6 +25,8 @@ namespace Dashboard.DataComponents.Transformers
         public string PeriodType { get; set; }
         public string CategoryString { get; set; }
         public string MeasureValue { get; set; }
+        public string country { get; set; }
+        public string RegionOrCluster { get; set; }
         private ColorListDataSource _colorList;
 
         public CombinationChartTransformer()
@@ -35,7 +38,26 @@ namespace Dashboard.DataComponents.Transformers
             var model = new SingleChartModel { Chart = ""};
             if (WidgetName == WidgetItems.HomeTrendChart().Name)
             {
-                model.Title = "";
+                if (RegionOrCluster == "-All-" && country == "-na-")
+                {
+                    model.Title = "Total Market vs Merck Sales trend in global" + "-" + PeriodType + "-" + StartDate +
+                                      "-" + EndDate;    
+                }
+                else if (country == "ALL COUNTRIES")
+                {
+                    model.Title = "Total Market vs Merck Sales trend in "+RegionOrCluster + "-" + PeriodType + "-" + StartDate +
+                                      "-" + EndDate; 
+
+                    
+                }
+                else if(RegionOrCluster != "-All-" && country != "ALL COUNTRIES")
+                {
+                    model.Title = "Total Market vs Merck Sales trend in "+country + RegionOrCluster + "-" + PeriodType + "-" + StartDate +
+                                      "-" + EndDate; 
+                    
+                }
+
+               
                 model.Chart = new MsCombinationChart()
                 {
                     WidgetName = WidgetName,

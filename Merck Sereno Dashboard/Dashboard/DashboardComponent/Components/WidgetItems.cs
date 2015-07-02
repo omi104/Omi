@@ -39,13 +39,23 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
-        public static WidgetItem AllRegionTrendTableWidget()
+        public static WidgetItem Top10CompanyTables()
         {
             return new WidgetItem()
             {
-                Name = "AllRegionTrendTableWidget",
-                ViewId = "10",
-                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
+                Name = "Top10CompanyTables",
+                ViewId = "13",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+            };
+        }
+
+        public static WidgetItem Top10IntPrdTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "Top10IntPrdTable",
+                ViewId = "14",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
             };
         }
 

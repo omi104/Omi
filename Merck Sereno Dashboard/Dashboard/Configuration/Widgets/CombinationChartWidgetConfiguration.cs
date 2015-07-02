@@ -28,6 +28,8 @@ namespace Dashboard.Configuration.Widgets
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<CombinationChartTransformer>()
                 .HasProperty(t=>t.WidgetName).WithValue(widgetItem.Name)
+                .HasProperty(t => t.RegionOrCluster).WithValue(p=>p["@@" + ParameterList.RegionOrCluster + "_text"])
+                .HasProperty(t => t.country).WithValue(p => p["@@" + ParameterList.Country + "_text"])
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.RevertAxis).WithValue(p => p["@@TimePeriod_text"] == "MAT" || p["@@TimePeriod_text"] == "YTD")

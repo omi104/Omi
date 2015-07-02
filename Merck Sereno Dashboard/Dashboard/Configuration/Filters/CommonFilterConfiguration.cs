@@ -47,6 +47,15 @@ namespace Dashboard.Configuration.Filters
             {
                 filterItem.Label = "Area/Region";
             }
+            // KPI is invisible
+            if (param.CurrentNavigationName() == NavigationItems.NavHome().Name && filterItem.Name == FilterItems.KPI().Name)
+            {
+                filterItem.IsVisible =false;
+            }
+            if (param.CurrentNavigationName() == NavigationItems.NavHome().Name && filterItem.Name == FilterItems.Products().Name)
+            {
+                filterItem.IsVisible = false;
+            }
             if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItems.Country().Name)
             {
                 filterItem.Label = "Territory";

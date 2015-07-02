@@ -33,7 +33,7 @@ namespace Dashboard.DashboardComponent.Components
                 Widgets = new List<WidgetItem>()
                 {
                     WidgetItems.AllRegionCombinationChart(),
-                    WidgetItems.AllRegionTrendTableWidget()
+                    WidgetItems.Top10IntPrdTable()
                 }
             };
         }

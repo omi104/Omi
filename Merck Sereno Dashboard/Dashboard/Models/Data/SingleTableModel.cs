@@ -10,5 +10,6 @@ namespace Dashboard.Models.Data
     {
         public string Title { get; set; }
         public Table _Table { get; set; }
+        
     }
 }
