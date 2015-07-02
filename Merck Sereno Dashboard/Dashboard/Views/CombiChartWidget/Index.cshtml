@@ -1,40 +1,9 @@
 ﻿@using Newtonsoft.Json
 @model Dashboard.Models.Data.SingleChartModel
 
-@*@{
-
-    var showOther = "";
-    var showBubble = "none";
-    if (Model.IsBubble)
-    {
-        showBubble = "block";
-        showOther = "none";
-    }
-
-    string data = JsonConvert.SerializeObject(Model.BubbleChartData);
-}*@
-
 <div class="category-vs-sales-trend">
     <div class="combi-chart-title">@Model.Title</div>
     <div>@Html.Raw(@Model.Chart)</div>
-    @*<div id="BubbleChart" style="display: @showBubble; width: 100%;height: 500px;">
-        <div id="d3-bubble-chart" class='with-3d-shadow with-transitions'>
-            <svg></svg>
-        </div>
-    </div>*@
+    
 </div>
 
-@*@if (@Model.IsBubble)
-{
-    <script type="text/javascript">
-        $(document).ready(function () {
-            
-            var chartData = '@data'.replace(/&quot;/g, '"');
-            console.log("Hello: " + chartData);
-            chartData = $.parseJSON(chartData);
-            DrawBubbleChart(chartData);
-        });
-
-    </script>
-
-}*@

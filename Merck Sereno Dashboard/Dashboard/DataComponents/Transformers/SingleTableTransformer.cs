@@ -16,12 +16,15 @@ namespace Dashboard.DataComponents.Transformers
     public class SingleTableTransformer : ITransformer<CubeData, SingleTableModel>
     {
         public string CategoryText { get; set; }
+        public string WidgetName { get; set; }
         public string GeoText { get; set; }
         public string PeriodTypeText { get; set;}
         public string Periodtext { get; set; }
+        public string EndDate { get; set; }
 
         public SingleTableModel GetData()
         {
+            //string WidgetName = WidgetName;
             var header = new TableHeader();
             //var footer = new TableFooter();
             var firstHeaderRow = new TableRow()
@@ -39,7 +42,7 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     Cells =
                         {
-                            new SimpleNode(name:"th",value:CategoryText+" "+GeoText+" - "+PeriodTypeText+" - "+Periodtext)
+                            new SimpleNode(name:"th",value:Periodtext+"-"+EndDate)
                                 {
                                     Attributes = new Dictionary<string, string>(){{"colspan","4"}}
                                 }
@@ -52,7 +55,7 @@ namespace Dashboard.DataComponents.Transformers
 
             var cellMaps = new List<ICellMap<Row>>
             {
-                new CubeCellMap() {Columns = new List<string>(){"CompanyRank"},CellFactory = new TextCellFactory(nodeName:"td"){Classes = new List<string>(){"Rank_Col"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
+                new CubeCellMap() {Columns = new List<string>(){"CorporationRank"},CellFactory = new TextCellFactory(nodeName:"td"){Classes = new List<string>(){"Rank_Col"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
                 new CubeCellMap() {Columns = new List<string>(){"Company"},CellFactory = new TextCellFactory(nodeName:"td"){Classes = new List<string>(){"Rank_Company"}}, RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
                 new CubeCellMap() {Columns = new List<string>(){"SALES"},CellFactory = new CustomNumberCellFactory(colId:3,nodeName:"td"){NumberFormatString = "#,##0,",Suffix = "k",Classes = new List<string>(){"Rank_Sales"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}, RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
                 new CubeCellMap() {Columns = new List<string>(){"MS%"},CellFactory = new CustomNumberCellFactory(colId:4,nodeName:"td"){NumberFormatString = "##0.0",Suffix = "%",Classes = new List<string>(){"Rank_MS"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}, RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
@@ -72,7 +75,7 @@ namespace Dashboard.DataComponents.Transformers
             var table = cubeTableFactory.Create(Input);
             var data = new SingleTableModel()
             {
-                Title = "Top 10 Companies by Sales",
+                Title = (WidgetName == "Top10IntPrdTable") ? "Top 10 Int Product" : "Top 10 Companies by Sales",
                 _Table = table
             };
             return data;

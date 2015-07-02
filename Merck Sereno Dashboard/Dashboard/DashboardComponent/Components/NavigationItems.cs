@@ -19,7 +19,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Home",
                 Widgets = new List<WidgetItem>()
                 {
-                    WidgetItems.WidgetWelcomeTextnImage(),
+                    WidgetItems.HomeTrendChart(),
                 }
             };
         }
@@ -33,7 +33,7 @@ namespace Dashboard.DashboardComponent.Components
                 Widgets = new List<WidgetItem>()
                 {
                     WidgetItems.AllRegionCombinationChart(),
-                    WidgetItems.AllRegionTrendTableWidget()
+                    WidgetItems.Top10IntPrdTable()
                 }
             };
         }
