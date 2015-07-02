@@ -5,6 +5,7 @@ using Dashboard.Configuration.Widgets;
 using Dashboard.Export;
 using Dashboard.ViewModels;
 using ExportFramework;
+using ExportFramework.Common;
 using ExportFramework.Excel;
 using ExportFramework.Powerpoint;
 
@@ -89,14 +90,20 @@ namespace Dashboard.Controllers.Exports
                     Data.DataTable.Rows[0].Cells[2].Data = "Product";
                 for(int i=3;i<Data.DataTable.Rows[0].Cells.Count;i++)
                     Data.DataTable.Rows[0].Cells[i].Data = Data.DataTable.Rows[0].Cells[i].Data.ToString().Split('_')[0];
-
+                if (Config.KPI_Text.ToUpper() == "MARKET SHARE" && Data.DataTable.Rows[1].Cells[2].Data.ToString().ToUpper().Contains("TOTAL"))
+                {
+                    Data.DataTable.Rows.RemoveAt(1);//Remove Total when market share
+                }
                 if (Config.TimePeriod_Text == "MAT" || Config.TimePeriod_Text == "YTD")
                 {
+                    foreach (XCell t in Data.DataTable.Rows[0].Cells)
+                    {
+                        t.Data = Config.TimePeriod_Text + " " +t.Data;
+                    }
                     sheet = workbook.Worksheets["Sheet2"];
                     sheet.Cells.MemorySetting = MemorySetting.MemoryPreference;
                     sheet.WriteTable(Data.DataTable, "A29");
                     sheet.DeleteRows(Data.DataTable.Rows.Count + 29, 100);
-                    //sheet.DeleteRows(29, 1);//Delete TOTAL
                     workbook.Worksheets.RemoveAt(0);
                 }
                 else
