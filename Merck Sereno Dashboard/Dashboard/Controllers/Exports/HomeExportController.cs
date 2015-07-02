@@ -105,9 +105,7 @@ namespace Dashboard.Controllers.Exports
 
                 data = Data.DataTable.Rows[0].Cells[5].Data;
                 if (data != null && data.ToString().Contains("Sales"))
-                    Data.DataTable.Rows[0].Cells[5].Data = "Sales";
-
-                for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count-1; i++)
+                    Data.DataTable.Rows[0].Cells[5].Data = "Sales";                for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count-1; i++)
                 {
                     var monthDict = new Dictionary<string, int>()
                         {
