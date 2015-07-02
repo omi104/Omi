@@ -89,19 +89,25 @@ namespace Dashboard.Controllers.Exports
             else if (Config.KPI_Text.ToUpper() == "GROWTH" && Data.DataTable.Rows.Count > 1)
             {
                 //draw 2 column table for IS_MERCK and Rank
+
+                var data = Data.DataTable.Rows[0].Cells[1].Data;
+                if (data != null && data.ToString().Contains("INTPRDRank"))
+                    Data.DataTable.Rows[0].Cells[1].Data = "Rank";
+
                 for (int i = 0; i < Data.DataTable.Rows.Count; i++)
                 {
                     int cellNo = i + 30;
                     sheet.WriteText(Data.DataTable.Rows[i].Cells[0].Data, "A" + cellNo);
                     sheet.WriteText(Data.DataTable.Rows[i].Cells[1].Data, "B" + cellNo);
                 }
-
-                var data = Data.DataTable.Rows[0].Cells[1].Data;
-                if (data != null && data.ToString().Contains("INTPRDRank"))
-                    Data.DataTable.Rows[0].Cells[1].Data = "Rank";
                 data = Data.DataTable.Rows[0].Cells[2].Data;
                 if (data != null && data.ToString().Contains("INTPRDName"))
                     Data.DataTable.Rows[0].Cells[2].Data = "Product";
+
+                data = Data.DataTable.Rows[0].Cells[5].Data;
+                if (data != null && data.ToString().ToUpper().Contains("SALES"))
+                    Data.DataTable.Rows[0].Cells[2].Data = "Sales";
+
                 for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count-1; i++)
                 {
                     var monthDict = new Dictionary<string, int>()
