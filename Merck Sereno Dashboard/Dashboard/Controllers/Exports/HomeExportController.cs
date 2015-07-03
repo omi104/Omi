@@ -21,7 +21,7 @@ namespace Dashboard.Controllers.Exports
         }
     }
 
-    public class HomeExportController : RbWidgetHomeTopTableBaseController<CombinationChartExcelExport, ExportModel>
+    public class HomeExportController : RbWidgetHomeTopTableBaseController<ExcelExportConfig, ExportModel>
     {
         private const int StartColumn = 2;
         private const int StartRow = 8;
