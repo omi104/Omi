@@ -105,10 +105,9 @@ namespace Dashboard.Controllers.Exports
 
                 data = Data.DataTable.Rows[0].Cells[5].Data;
                 if (data != null && data.ToString().Contains("Sales"))
-                    Data.DataTable.Rows[0].Cells[5].Data = "Sales";                
-                for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count-1; i++)
-                {
-                    var monthDict = new Dictionary<string, int>()
+                    Data.DataTable.Rows[0].Cells[5].Data = "Sales";
+
+                var monthDict = new Dictionary<string, int>()
                         {
                             {"Jan",1},
                             {"Feb",2},
@@ -124,7 +123,7 @@ namespace Dashboard.Controllers.Exports
                             {"Dec",12}
                         };
 
-                    var qtrDict = new Dictionary<string, int>()
+                var qtrDict = new Dictionary<string, int>()
                         {
                             {"QTR 1",1},
                             {"QTR 2",2},
@@ -132,6 +131,8 @@ namespace Dashboard.Controllers.Exports
                             {"QTR 4",4}
                         };
 
+                for (int i = 3; (Config.TimePeriod_Text.ToUpper() == "MTH" || Config.TimePeriod_Text.ToUpper() == "QTR") && i < Data.DataTable.Rows[0].Cells.Count-1; i++)
+                {
                     if (Config.TimePeriod_Text.ToUpper() == "MTH")
                     {
                         int year;
@@ -166,7 +167,14 @@ namespace Dashboard.Controllers.Exports
                     }
 
                 }
-
+                if (Config.TimePeriod_Text.ToUpper() == "MAT" || Config.TimePeriod_Text.ToUpper() == "YTD")
+                {
+                    for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count; i++)
+                    {
+                        string[] headers = Data.DataTable.Rows[0].Cells[i].Data.ToString().Split('_').ToArray();
+                        Data.DataTable.Rows[0].Cells[i].Data = Config.TimePeriod_Text.ToUpper() + " " + headers[0];
+                    }
+                }
                 for (int i = 0; i < Data.DataTable.Rows.Count; i++)
                 {
                     Data.DataTable.Rows[i].Cells.RemoveRange(0,2);

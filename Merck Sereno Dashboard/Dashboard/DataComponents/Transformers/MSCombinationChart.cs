@@ -141,7 +141,7 @@ namespace Dashboard.DataComponents.Transformers
             dataSet.Attributes.Add("color", "#" + color);
             dataSet.Attributes.Add("anchorBgColor", "#" + color);
 
-            foreach (var val in KPI == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
+            foreach (var val in KPI.ToUpper() == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
             {
                 var set1 = new Set();
                 set1.Attributes.Add("value", val == "--" ? "0" : val);
