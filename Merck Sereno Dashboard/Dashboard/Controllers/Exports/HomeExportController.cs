@@ -36,13 +36,12 @@ namespace Dashboard.Controllers.Exports
         [ExportType("pptx")]
         public byte[] PptExportRaw()
         {
-            var path = Server.MapPath(@"~\Content\ExportTemplate\pptxTemplateWithHeader.pptx");
+            var path = Server.MapPath(@"~\Content\ExportTemplate\pptxTemplate.pptx");
             var pptx = GetPresentation(path);
 
             var workbook = GetExcelWorkbook(true);
             workbook.Worksheets[0].SetMargin(0, 0, 0, 0);
-            pptx.Slides[0].EmbedExcelWorkbook(workbook, 0.3f, 0.9f, 9.2f, 9.0f);
-
+            pptx.Slides[0].EmbedExcelWorkbook(workbook, .25f, .20f, 9.5f, 9.5f);
             return pptx.GetPowerpointData();
         }
 
@@ -83,6 +82,8 @@ namespace Dashboard.Controllers.Exports
 
                 sheet.WriteTable(Data.DataTable, "B29");
                 sheet.DeleteRows(Data.DataTable.Rows.Count+29, 100);
+                if (isPpt)
+                    sheet.HideRows(29, Data.DataTable.Rows.Count);
                 sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count+2,100);
             }
 
@@ -183,7 +184,8 @@ namespace Dashboard.Controllers.Exports
                 sheet.Cells.MemorySetting = MemorySetting.MemoryPreference;
                 WriteBubbleChart(sheet.Charts[0],sheet,Data.DataTable,"C30");
 
-                
+                if (isPpt)
+                    sheet.HideRows(30, Data.DataTable.Rows.Count);
 
             }
 
@@ -223,6 +225,9 @@ namespace Dashboard.Controllers.Exports
                     sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count + 1, 100);
                     workbook.Worksheets.RemoveAt(1);
                 }
+
+                if (isPpt)
+                    sheet.HideRows(29, Data.DataTable.Rows.Count);
             }
             sheet.Name = "Sales chart";
             return workbook;

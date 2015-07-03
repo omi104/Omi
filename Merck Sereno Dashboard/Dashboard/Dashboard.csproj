@@ -525,7 +525,7 @@
     <Content Include="Content\Images\emailTemplate\toolbar.gif" />
     <Content Include="Content\Images\emailTemplate\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\Images\expandAll.png" />
-    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\favicon1.ico" />
     <Content Include="Content\Images\help\change-password.JPG" />
     <Content Include="Content\Images\help\forgotten-password.JPG" />
     <Content Include="Content\Images\help\save-login-details.JPG" />
