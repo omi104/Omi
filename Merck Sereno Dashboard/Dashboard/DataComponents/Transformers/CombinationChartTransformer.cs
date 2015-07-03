@@ -38,7 +38,7 @@ namespace Dashboard.DataComponents.Transformers
             var model = new SingleChartModel { Chart = ""};
             if (WidgetName == WidgetItems.HomeTrendChart().Name)
             {
-                if (RegionOrCluster == "-All-" && country == "-na-")
+                if (RegionOrCluster == "-ALL-" && country == "-na-")
                 {
                     model.Title = "Total Market vs Merck Sales trend in global" + "-" + PeriodType + "-" + StartDate +
                                       "-" + EndDate;    
@@ -50,9 +50,9 @@ namespace Dashboard.DataComponents.Transformers
 
                     
                 }
-                else if(RegionOrCluster != "-All-" && country != "ALL COUNTRIES")
+                else if(RegionOrCluster != "-ALL-" && country != "ALL COUNTRIES")
                 {
-                    model.Title = "Total Market vs Merck Sales trend in "+country + RegionOrCluster + "-" + PeriodType + "-" + StartDate +
+                    model.Title = "Total Market vs Merck Sales trend in "+country + "-" + PeriodType + "-" + StartDate +
                                       "-" + EndDate; 
                     
                 }

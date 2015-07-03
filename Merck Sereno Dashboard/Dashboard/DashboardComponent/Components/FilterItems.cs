@@ -44,7 +44,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Products",
                 ControlId = "filter-Product-control",
                 ModifyParam = ParameterList.Product,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country,ParameterList.NavigationName },
                 ViewId = "6"
             };
         }
@@ -70,7 +70,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Segment",
                 ControlId = "filter-Segment-control",
                 ModifyParam = ParameterList.Segment,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product,ParameterList.NavigationName },
                 ViewId = "22"
             };
         }
@@ -96,7 +96,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "KPI",
                 ControlId = "filter-KPI-control",
                 ModifyParam = ParameterList.KPI,
-                HasParamDependency = new List<string>() { },
+                HasParamDependency = new List<string>() {ParameterList.NavigationName },
                 ViewId = "9"
             };
         }

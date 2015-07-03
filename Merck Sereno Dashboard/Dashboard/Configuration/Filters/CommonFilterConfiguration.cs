@@ -47,15 +47,7 @@ namespace Dashboard.Configuration.Filters
             {
                 filterItem.Label = "Area/Region";
             }
-            // KPI is invisible
-            if (param.CurrentNavigationName() == NavigationItems.NavHome().Name && filterItem.Name == FilterItems.KPI().Name)
-            {
-                filterItem.IsVisible =false;
-            }
-            if (param.CurrentNavigationName() == NavigationItems.NavHome().Name && filterItem.Name == FilterItems.Products().Name)
-            {
-                filterItem.IsVisible = false;
-            }
+            
             if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItems.Country().Name)
             {
                 filterItem.Label = "Territory";
@@ -73,6 +65,57 @@ namespace Dashboard.Configuration.Filters
                     DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.SubProductFlag, "false");
                 }
             }
+
+            // KPI Filter is to be invisibled from Navigation Home
+
+            if (filterItem.Name == FilterItems.KPI().Name)
+            {
+                if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+                {
+                    filterItem.IsVisible = false;
+
+                }
+                else
+                {
+                    filterItem.IsVisible = true;
+
+                }
+                
+            }
+            
+        
+            // Product Filter is to be invisibled from Navigation Home
+
+            if (filterItem.Name == FilterItems.Products().Name)
+            {
+                if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+                {
+                    filterItem.IsVisible = false;
+
+                }
+                else
+                {
+                    filterItem.IsVisible = true;
+
+                }
+
+            }
+
+            // In home navigation, load segment from 22(ViewId), else load from 7
+            if (filterItem.Name == FilterItems.Segment().Name)
+            {
+                if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+                {
+                    filterItem.ViewId = "22";
+                }
+                else
+                {
+                    filterItem.ViewId = "7";
+                }
+
+            }
+            
+            
             if (param["@@" + ParameterList.TimePeriod + "_text"] == "MAT" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD")
                 DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "true");
             else
