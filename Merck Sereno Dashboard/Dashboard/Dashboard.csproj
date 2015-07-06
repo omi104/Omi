@@ -218,6 +218,7 @@
     <Compile Include="Configuration\Filters\DatePickerFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
     <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
+    <Compile Include="Controllers\Exports\TableExportController.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterController.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterLayoutController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterController.cs" />
@@ -828,6 +829,7 @@
     <Content Include="Content\ExportTemplate\CombinationAreaChart.xlsx" />
     <Content Include="Content\ExportTemplate\CombinationBarChart.xlsx" />
     <Content Include="Content\ExportTemplate\MSLineChart.xlsx" />
+    <Content Include="Content\ExportTemplate\SingleTableForPPT.xlsx" />
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
     <None Include="Properties\PublishProfiles\40RbPo1Dashboard.pubxml" />
     <None Include="Properties\PublishProfiles\Local RbPo1Dashboard.pubxml" />

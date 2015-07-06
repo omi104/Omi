@@ -19,33 +19,37 @@ namespace Dashboard.DataComponents.Transformers
             var splittedTable2 = new XTable() { Rows = new List<XRow>()};
             var splittedTable3 = new XTable() { Rows = new List<XRow>()};
 
-            for (int j=0; j<Input.DataTable.Rows.Count; j++)
+            for (int r=0; r<Input.DataTable.Rows.Count; r++)
             {
-                for (int i = 0; KPI.ToUpper() == "SALES" ? i < 2 : i < 3; i++)
+                var row1 = new XRow {Cells = new List<XCell>()};
+                var row2 = new XRow { Cells = new List<XCell>() };
+                var row3 = new XRow { Cells = new List<XCell>() };
+                for (int c = 0; KPI.ToUpper() == "SALES" ? c < 2 : c < 3; c++)
                 {
-                    splittedTable1.Rows[j] = new XRow(){Cells = new List<XCell>()};
-                    splittedTable1.Rows[j].Cells.Add(Input.DataTable.Rows[j].Cells[i]);
-                    splittedTable2.Rows[j] = new XRow() { Cells = new List<XCell>() };
-                    splittedTable2.Rows[j].Cells.Add(Input.DataTable.Rows[j].Cells[i]);
-                    splittedTable3.Rows[j] = new XRow() { Cells = new List<XCell>() };
-                    splittedTable3.Rows[j].Cells.Add(Input.DataTable.Rows[j].Cells[i]);
+                    row1.Cells.Add(Input.DataTable.Rows[r].Cells[c]);
+                    row2.Cells.Add(Input.DataTable.Rows[r].Cells[c]);
+                    row3.Cells.Add(Input.DataTable.Rows[r].Cells[c]);
                 }
+                splittedTable1.Rows.Add(row1);
+                splittedTable2.Rows.Add(row2);
+                splittedTable3.Rows.Add(row3);
             }
 
-            int k = KPI.ToUpper() == "SALES" ? 3 : 4;
-            for (int j = 0; j < Input.DataTable.Rows.Count; j++)
+            int cell = KPI.ToUpper() == "SALES" ? 2 : 3;
+            for (int r = 0; r < Input.DataTable.Rows.Count; r++)
             {
-                for (; k<Input.DataTable.Rows[0].Cells.Count && KPI.ToUpper() == "SALES" ? k < 15 : k < 16; k++)
+                cell = KPI.ToUpper() == "SALES" ? 2 : 3;
+                for (; cell<Input.DataTable.Rows[0].Cells.Count && KPI.ToUpper() == "SALES" ? cell < 15 : cell < 16; cell++)
                 {
-                    splittedTable1.Rows[j].Cells.Add(Input.DataTable.Rows[j].Cells[k]);
+                    splittedTable1.Rows[r].Cells.Add(Input.DataTable.Rows[r].Cells[cell]);
                 }
-                for (; k < Input.DataTable.Rows[0].Cells.Count && KPI.ToUpper() == "SALES" ? k < 27 : k < 28; k++)
+                for (; cell < Input.DataTable.Rows[0].Cells.Count && KPI.ToUpper() == "SALES" ? cell < 27 : cell < 28; cell++)
                 {
-                    splittedTable2.Rows[j].Cells.Add(Input.DataTable.Rows[j].Cells[k]);
+                    splittedTable2.Rows[r].Cells.Add(Input.DataTable.Rows[r].Cells[cell]);
                 }
-                for (; k < Input.DataTable.Rows[0].Cells.Count && KPI.ToUpper() == "SALES" ? k < 39 : k < 40; k++)
+                for (; cell < Input.DataTable.Rows[0].Cells.Count; cell++)
                 {
-                    splittedTable3.Rows[j].Cells.Add(Input.DataTable.Rows[j].Cells[k]);
+                    splittedTable3.Rows[r].Cells.Add(Input.DataTable.Rows[r].Cells[cell]);
                 }
             }
             
