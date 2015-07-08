@@ -43,10 +43,12 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     splittedTable1.Rows[r].Cells.Add(Input.DataTable.Rows[r].Cells[cell]);
                 }
+                cell--;
                 for (; cell < Input.DataTable.Rows[0].Cells.Count && KPI.ToUpper() == "SALES" ? cell < 27 : cell < 28; cell++)
                 {
                     splittedTable2.Rows[r].Cells.Add(Input.DataTable.Rows[r].Cells[cell]);
                 }
+                cell--;
                 for (; cell < Input.DataTable.Rows[0].Cells.Count; cell++)
                 {
                     splittedTable3.Rows[r].Cells.Add(Input.DataTable.Rows[r].Cells[cell]);

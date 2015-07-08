@@ -24,6 +24,12 @@ namespace Dashboard.Controllers.Exports
 
     public class TableExportController : MerckWidgetTableBaseController<ExcelExportConfig, ExportModel>
     {
+        [ExportType("xlsx")]
+        public byte[] ExcelExportRaw()
+        {
+            return null;
+        }
+
         [ExportType("pptx")]
         public byte[] PptExportRaw()
         {
