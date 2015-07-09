@@ -5,6 +5,8 @@ using System.Text;
 using Component.Chart.Fusion;
 using Component.Chart.Fusion.Implementation;
 using CubeFramework;
+using Dashboard.Configuration;
+using Dashboard.DashboardComponent.Components;
 using Dashboard.DataComponents.DataSources;
 using Dashboard.Models.Data;
 using DashboardFramework.DataComponent;
@@ -14,6 +16,7 @@ namespace Dashboard.DataComponents.Transformers
     public class CombinationChartTransformer : ITransformer<CubeData, SingleChartModel>
     {
         public string UncheckedItems { get; set; }
+        public string WidgetName { get; set; }
         public string KPI { get; set; }
         public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
@@ -22,6 +25,8 @@ namespace Dashboard.DataComponents.Transformers
         public string PeriodType { get; set; }
         public string CategoryString { get; set; }
         public string MeasureValue { get; set; }
+        public string country { get; set; }
+        public string RegionOrCluster { get; set; }
         private ColorListDataSource _colorList;
 
         public CombinationChartTransformer()
@@ -31,8 +36,42 @@ namespace Dashboard.DataComponents.Transformers
         public SingleChartModel GetData()
         {
             var model = new SingleChartModel { Chart = ""};
+            if (WidgetName == WidgetItems.HomeTrendChart().Name)
+            {
+                if (RegionOrCluster == "-ALL-" && country == "-na-")
+                {
+                    model.Title = "Total Market vs Merck Sales trend in global" + "-" + PeriodType + "-" + StartDate +
+                                      "-" + EndDate;    
+                }
+                else if (country == "ALL COUNTRIES")
+                {
+                    model.Title = "Total Market vs Merck Sales trend in "+RegionOrCluster + "-" + PeriodType + "-" + StartDate +
+                                      "-" + EndDate; 
 
-            if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
+                    
+                }
+                else if(RegionOrCluster != "-ALL-" && country != "ALL COUNTRIES")
+                {
+                    model.Title = "Total Market vs Merck Sales trend in "+country + "-" + PeriodType + "-" + StartDate +
+                                      "-" + EndDate; 
+                    
+                }
+
+               
+                model.Chart = new MsCombinationChart()
+                {
+                    WidgetName = WidgetName,
+                    Input = Input,
+                    UncheckedItems = UncheckedItems,
+                    KPI = KPI,
+                    RevertAxis = RevertAxis,
+                    UnitValue = UnitValue,
+                    CategoryString = CategoryString,
+                    PeriodType = PeriodType,
+                    MeasureValue = MeasureValue,
+                }.GetChart();
+            }
+            else if (KPI.ToUpper() == "SALES" || KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
             {
                 if (KPI.ToUpper() == "SALES")
                     model.Title = "Sales (in " + UnitValue + ")";

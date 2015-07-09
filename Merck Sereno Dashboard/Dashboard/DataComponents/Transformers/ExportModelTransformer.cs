@@ -16,6 +16,9 @@ namespace Dashboard.DataComponents.Transformers
         public string PeriodType { get; set; }
         public string CategoryString { get; set; }
         public string MeasureValue { get; set; }
+        public string Country { get; set; }
+        public string Product { get; set; }
+        public string RegionOrCluster { get; set; }
 
         public ExportModel GetData()
         {

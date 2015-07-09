@@ -17,6 +17,7 @@ namespace Dashboard.DataComponents.Transformers
         public string UncheckedItems { get; set; }
         public string KPI { get; set; }
         public string PeriodType { get; set; }
+        public string WidgetName { get; set; }
         public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
         public string CategoryString { get; set; }
@@ -111,7 +112,7 @@ namespace Dashboard.DataComponents.Transformers
             var dataSet = new DataSet();
             if (KPI.ToUpper() == "SALES PERFORMANCE VS COMPETITORS")
                 dataSet.Attributes.Add("renderas", "Area");
-            dataSet.Attributes.Add("seriesName", Input.Rows.First().Values[1]);
+            dataSet.Attributes.Add("seriesName", WidgetName=="HomeTrendChart"?Input.Rows.First().Values[0]:Input.Rows.First().Values[1]);
             dataSet.Attributes.Add("parentYAxis", "P");
 
             if (!UncheckedItems.ToUpper().Contains("TOTAL"))
@@ -134,19 +135,34 @@ namespace Dashboard.DataComponents.Transformers
             var dataSet = new DataSet("renderas='Line'");
             if (row.Values[1] == "--")
                 row.Values[1] = "%PPG";
-            dataSet.Attributes.Add("seriesName", row.Values[1]);
+            dataSet.Attributes.Add("seriesName", WidgetName=="HomeTrendChart"?row.Values[0]:row.Values[1]);
             dataSet.Attributes.Add("parentyaxis", "S");
             dataSet.Set = new List<Set>();
             string color = _colorList.GetNextColor();
             dataSet.Attributes.Add("color", "#" + color);
             dataSet.Attributes.Add("anchorBgColor", "#" + color);
-
-            foreach (var val in KPI.ToUpper() == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
+            if (WidgetName == "HomeTrendChart")
             {
-                var set1 = new Set();
-                set1.Attributes.Add("value", val == "--" ? "0" : val);
-                dataSet.Set.Add(set1);
+                //foreach (var val in KPI.ToUpper() == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
+                //{
+                    foreach (var val in row.Values.Skip(1))
+                    {
+                        var set1 = new Set();
+                        set1.Attributes.Add("value", val == "--" ? "0" : val);
+                        dataSet.Set.Add(set1);
+                    }
+                //}
             }
+            else
+            {
+                foreach (var val in KPI == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
+                {
+                    var set1 = new Set();
+                    set1.Attributes.Add("value", val == "--" ? "0" : val);
+                    dataSet.Set.Add(set1);
+                }
+            }
+
             return dataSet;
         }
 
