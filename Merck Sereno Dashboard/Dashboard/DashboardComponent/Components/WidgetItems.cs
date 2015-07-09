@@ -29,6 +29,16 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        public static WidgetItem AllRegionTrendTableWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "AllRegionTrendTableWidget",
+                ViewId = "10",
+                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
+            };
+        }
+
         public static WidgetItem HomeTrendChart()
         {
             return new WidgetItem()
