@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Dashboard.DashboardComponent.Components;
 using Dashboard.ViewModels;
 
 namespace Dashboard.DashboardComponent.Models

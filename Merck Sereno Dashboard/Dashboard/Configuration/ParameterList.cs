@@ -43,6 +43,14 @@ namespace Dashboard.Configuration
         public const string TimePeriod = "TimePeriod";
         public const string StartDate = "StartDate";
         public const string EndDate = "EndDate";
+        public const string TopCountCompanyAtAGlance = "TopCountCorporation";
+        public const string TopCountProductAtAGlance = "TopCountProductAtAGlance";
+        public const string TopCountCompanySnapshot = "RB_ComSnapshotTopCount";
+        public const string TopCountProductSnapshot = "TopCountProductSnapshot";
+        public const string TopCountCompanyTrend = "TopCountCompanyTrend";
+        public const string TopCountProductTrend = "TopCountProductTrend";
+
+
 
         public const string RecordCount = "recordCount";
         public const string NavigationName = "NavigationName";

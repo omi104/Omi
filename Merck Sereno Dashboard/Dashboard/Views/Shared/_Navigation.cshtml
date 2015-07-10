@@ -21,6 +21,26 @@
                         </li>
                         <li><a href="#" id="navigation3" class="" onclick="RbHelper.KSAClick('@HttpContext.Current.User.Identity.Name')"><i class="fa fa-university"></i><span class="txt">KSA Territory Level</span></a>
                         </li>
+
+                        <li class="hasSub">
+                            <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa fa-university"></i><span class="txt">Corporations</span></a>
+                            <ul class="sub">
+                                <li>
+                                    <a id="navigation15" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'NavCompaniesAllLocations','Companies - All Locations at Glance');"><span class="txt">All Locations at Glance</span></a>
+                                </li>
+                                <li>
+                                    <a id="navigation16" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'NavCompaniesSnapshot','Companies - Snapshot');"><span class="txt">Snapshot</span></a>
+                                </li>
+                                <li>
+                                    <a id="navigation17" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'NavCompaniesTrend','Companies - Trend');"><span class="txt">Trend</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+
+
                     </ul>
                 </div>
                 <div class="clearfix"></div>

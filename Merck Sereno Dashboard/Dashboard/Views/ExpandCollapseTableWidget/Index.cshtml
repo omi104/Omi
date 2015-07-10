@@ -1,0 +1,31 @@
+﻿@using Component.Node
+@model Dashboard.Models.Data.SingleTableModel
+
+<div class="company-expand-collapse" id="companies-all-locations-Table" style="background-color: white">
+    @Html.Raw(@Model._Table.RenderToHtmlString())
+</div>
+<div>@Html.Partial("_Arrow-definition")</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        CustomMultiTable.InitMultiTable('company-expand-collapse', '2', '100%');
+        if ($(window).width() < 1025) {
+            var tables = $('#navigation-layout').find('table');
+            $.each(tables, function (index, table) {
+                if (!$(table).hasClass('table')) {
+                    $(table).addClass('table');
+                }
+                if (!$(table).parent().hasClass('table-responsive')) {
+                    $(table).parent().addClass('table-responsive');
+                }
+            });
+        }
+        //var expr = new RegExp('>[ \t\r\n\v\f]*<', 'g');
+
+        //if ($('#companies-all-locations-Table table').length) {
+        //    var replacement = $('.#companies-all-locations-Table table').html().replace(expr, '><');
+        //    $('.#companies-all-locations-Table table').html(replacement);
+        //}
+
+    });
+</script>

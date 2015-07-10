@@ -109,7 +109,6 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     CellFactory = new NumberDecimalCellFactory()
                     {
-                        isSales = KPI.ToUpper() == "SALES",
                         TextFormat = new TextFormat()
                         {
                             FormatString = KPI.ToUpper() == "MARKET SHARE" || KPI.ToUpper() == "GROWTH" ? "0.00" : "#,#0"

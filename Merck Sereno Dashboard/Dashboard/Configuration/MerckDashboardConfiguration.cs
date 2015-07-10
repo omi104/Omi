@@ -28,23 +28,28 @@ namespace Dashboard.Configuration
         private void ConfigureNavigations()
         {
             HasNavigation(new HomeNavigationConfiguration(NavigationItems.NavHome()));
+
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavCompaniesAllLocationsAtGlance()));
+            HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavCompaniesSnapshot()));
+            //HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
+
             HasNavigation(new AllRegionNavigationConfiguration(NavigationItems.NavAllRegions()));
             HasNavigation(new KSANavigationConfiguration(NavigationItems.NavKSATerritoryLevel()));
         }
 
         private void ConfigureFilters()
         {
-            HasFilter(new CommonFilterConfiguration(FilterItems.RegionOrCluster()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.Country()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.Products()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.SubProducts()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.Segment()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.Forms()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.KPI()));  
-            HasFilter(new CommonFilterConfiguration(FilterItems.UnitOrValue()));
-            HasFilter(new OnOffFilterConfiguration(FilterItems.TimePeriod()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.StartDate()));
-            HasFilter(new CommonFilterConfiguration(FilterItems.EndDate()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.RegionOrCluster()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Country()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Products()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.SubProducts()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Segment()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Forms()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.KPI()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.UnitOrValue()));
+            HasFilter(new OnOffFilterConfiguration(FilterItemsForDashboard.TimePeriod()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.StartDate()));
+            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.EndDate()));
         }
 
         private void ConfigureParameters()
@@ -65,7 +70,13 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.TimePeriod).WithValue("")
                 .Add(ParameterList.StartDate).WithValue("")
                 .Add(ParameterList.EndDate).WithValue("")
-
+                //.Add("TopCountCorporation").WithValue("5")
+                .Add(ParameterList.TopCountProductSnapshot).WithValue("5")
+                .Add(ParameterList.TopCountCompanyAtAGlance).WithValue("5")
+                .Add(ParameterList.TopCountProductTrend).WithValue("5")
+                .Add(ParameterList.TopCountProductAtAGlance).WithValue("5")
+                 .Add(ParameterList.TopCountCompanySnapshot).WithValue("5")
+                 .Add(ParameterList.TopCountCompanyTrend).WithValue("5")
 
                 .Add(ParameterList.RecordCount).WithValue("5")
                 .Add(ParameterList.RegionUncheckedItems).WithValue("")

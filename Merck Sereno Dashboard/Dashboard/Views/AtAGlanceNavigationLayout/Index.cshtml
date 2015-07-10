@@ -1,0 +1,19 @@
+﻿
+@model Dashboard.DashboardComponent.Models.NavigationItem
+<div class="row body-row">
+    <div class="col-md-12">
+        @if (Model.Filters.Count > 0)
+        {
+            <div class="placeInsideTable" id="filter-@Model.Filters[0].Name-layout"></div>
+        }
+        else
+        {
+            <div class="placeInsideTable"></div>
+        }
+        <div>
+            <div id="widget-@Model.Widgets[0].Name-view">
+                <!-- this div is for WidgetExpandCollapseTable -->
+            </div>
+        </div>
+    </div>
+</div>

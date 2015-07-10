@@ -34,7 +34,7 @@ namespace Dashboard.Configuration.Filters
 
         private bool IsReverse(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
         {
-            if (filterItem.Name == FilterItems.StartDate().Name)
+            if (filterItem.Name == FilterItemsForDashboard.StartDate().Name)
             {
                 return true;
             }
@@ -43,16 +43,16 @@ namespace Dashboard.Configuration.Filters
 
         private object IsVisible(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
         {
-            if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItems.RegionOrCluster().Name)
+            if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItemsForDashboard.RegionOrCluster().Name)
             {
                 filterItem.Label = "Area/Region";
             }
             
-            if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItems.Country().Name)
+            if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name && filterItem.Name == FilterItemsForDashboard.Country().Name)
             {
                 filterItem.Label = "Territory";
             }
-            if (filterItem.Name == FilterItems.SubProducts().Name)
+            if (filterItem.Name == FilterItemsForDashboard.SubProducts().Name)
             {
                 if (param["@@" + ParameterList.Product + "_text"] == "FEMIBION")
                 {
@@ -68,7 +68,7 @@ namespace Dashboard.Configuration.Filters
 
             // KPI Filter is to be invisibled from Navigation Home
 
-            if (filterItem.Name == FilterItems.KPI().Name)
+            if (filterItem.Name == FilterItemsForDashboard.KPI().Name)
             {
                 if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
                 {
@@ -86,7 +86,7 @@ namespace Dashboard.Configuration.Filters
         
             // Product Filter is to be invisibled from Navigation Home
 
-            if (filterItem.Name == FilterItems.Products().Name)
+            if (filterItem.Name == FilterItemsForDashboard.Products().Name)
             {
                 if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
                 {
@@ -102,7 +102,7 @@ namespace Dashboard.Configuration.Filters
             }
 
             // In home navigation, load segment from 22(ViewId), else load from 7
-            if (filterItem.Name == FilterItems.Segment().Name)
+            if (filterItem.Name == FilterItemsForDashboard.Segment().Name)
             {
                 if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
                 {
@@ -122,7 +122,7 @@ namespace Dashboard.Configuration.Filters
                 DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "false");
 
             /*For growth or MAT or YTD startdate will be invisible, Enddate will work*/
-            if (filterItem.Name == FilterItems.StartDate().Name)
+            if (filterItem.Name == FilterItemsForDashboard.StartDate().Name)
             {
                 if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
                 {
@@ -131,7 +131,7 @@ namespace Dashboard.Configuration.Filters
                 else
                     filterItem.IsVisible = true;
             }
-            if (filterItem.Name == FilterItems.EndDate().Name)
+            if (filterItem.Name == FilterItemsForDashboard.EndDate().Name)
             {
                 if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
                 {

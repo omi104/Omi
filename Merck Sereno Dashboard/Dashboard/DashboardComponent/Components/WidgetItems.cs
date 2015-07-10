@@ -87,8 +87,70 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "UserManagement1",
-                HasParamDependency = new List<string>() {  },
+                HasParamDependency = new List<string>(),
                 ViewId = "1"
+            };
+        }
+
+        public static WidgetItem BottomCompanySnapshotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "BottomCompanySnapshotTable",
+                ViewId = "17",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanySnapshot }
+            };
+        }
+
+        public static WidgetItem CompanyTrendTableChartWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "CompanyTrendTableChartWidget",
+                ViewId = "18",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanyTrend }
+            };
+        }
+
+        public static WidgetItem CompanyExpCollapseTableWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "CompanyExpCollapseTableWidget",
+                ViewId = "16",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanyAtAGlance }
+            };
+        }
+
+
+        public static WidgetItem ProductsExpCollapseTableWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "ProductExpCollapseTableWidget",
+                ViewId = "19",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountProductAtAGlance }
+            };
+        }
+
+        public static WidgetItem BottomProductSnapshotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "ProductExpCollapseTableWidget",
+                ViewId = "20",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountProductSnapshot }
+            };
+        }
+
+       
+            public static WidgetItem ProductTrendTableChartWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "ProductExpCollapseTableWidget",
+                ViewId = "21",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountProductTrend }
             };
         }
 
