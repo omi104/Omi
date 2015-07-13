@@ -92,6 +92,16 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        public static WidgetItem TopCompanySnapShotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "TopCompanySnapShotTable",
+                ViewId = "23",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+            };
+        }
+
         public static WidgetItem BottomCompanySnapshotTable()
         {
             return new WidgetItem()

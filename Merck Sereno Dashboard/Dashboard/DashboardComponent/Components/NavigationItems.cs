@@ -87,6 +87,8 @@ namespace Dashboard.DashboardComponent.Components
                 },
                 Widgets = new List<WidgetItem>()
                 {
+                     WidgetItems.TopCompanySnapShotTable(),
+                     //WidgetItems.CompanySnapshotChart(),
                      
                      WidgetItems.BottomCompanySnapshotTable()
                 }

@@ -225,6 +225,7 @@
     <Compile Include="Configuration\Widgets\CompanyTrendTableChartWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\ExpandCollapseTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotBottomTableWidgetConfiguration.cs" />
+    <Compile Include="Configuration\Widgets\SnapShotTopTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10CompaniesTableConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10IntPrdTableConfiguration.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterController.cs" />

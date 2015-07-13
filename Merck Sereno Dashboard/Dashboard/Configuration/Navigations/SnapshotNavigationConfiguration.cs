@@ -23,8 +23,8 @@ namespace Dashboard.Configuration.Navigations
 
             HasFilter(new TopCountFilterConfiguration(navigationItem.Filters[0]));
 
-            
-            HasWidget(new SnapshotBottomTableWidgetConfiguration(navigationItem.Widgets[0]));
+            HasWidget(new SnapShotTopTableWidgetConfiguration(navigationItem.Widgets[0]));
+            HasWidget(new SnapshotBottomTableWidgetConfiguration(navigationItem.Widgets[1]));
 
             this.HasExportController<NavExportController>();
 

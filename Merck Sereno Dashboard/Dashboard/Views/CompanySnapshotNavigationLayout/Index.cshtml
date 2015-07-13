@@ -13,6 +13,25 @@
 
                 </div>
             </div>
+            <div style="width: 100%; display: inline-block; margin: 0;" class="row">
+                <div class="col-md-12">
+                    <div class="WidgetHeading panel-heading" style="width: 100%">
+                        <h4 class="panel-title">Dataview</h4>
+                        <div class="panel-controls" style="float: right">
+                            <a href="javascript:void(0)" onclick="javascript:RbHelper.togglePanel(this);" class="toggle panel-minimize"><i class="fa fa-minus"></i></a>
+                        </div>
+                    </div>
+                    <div class="panel-body panel-body-less-padding" style="width: 100%;">
+                        <div style="width: 100%;" id="widget-@Model.Widgets[0].Name-view"></div>
+                        <div class="top-table-expand row" style="font-size: 16px; text-align: center">
+                            <div class="col-md-12">
+                                <span><a style="cursor: pointer" onclick="customTable.ShowMoreLessRows(this)">Show&nbsp;More</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
 
             <div style="width: 100%; display: inline-block; margin: 0; margin-bottom: 10px" class="row">
                 <div style="width: 100%; display: inline-block; margin: 0;" class="row">
@@ -35,7 +54,7 @@
                         </div>
                     </div>
                     <div class="panel-body panel-body-less-padding" style="width: 100%;">
-                        <div style="width: 100%;" id="widget-@Model.Widgets[0].Name-view"></div>
+                        <div style="width: 100%;" id="widget-@Model.Widgets[1].Name-view"></div>
                         <div class="top-table-expand row" style="font-size: 16px; text-align: center">
                             <div class="col-md-12">
                                 <span><a style="cursor: pointer" onclick="customTable.ShowMoreLessRows(this)">Show&nbsp;More</a></span>
