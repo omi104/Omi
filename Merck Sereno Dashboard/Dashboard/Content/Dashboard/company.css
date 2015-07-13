@@ -60,7 +60,7 @@ table.cat-all-category-by-loc
 
         #companies-all-locations-Table table tbody tr.Level1
         {
-            background-color: #fecefe;
+            background-color: #B2DFDD;
         }
 
         #companies-all-locations-Table table tbody tr.Odd-Child
@@ -70,7 +70,7 @@ table.cat-all-category-by-loc
 
         #companies-all-locations-Table table tbody tr.Even-Child
         {
-            background-color: #FFEFF9;
+            background-color: #D8EFEE;
         }
 
 tr.highlight-row-merck
@@ -137,7 +137,7 @@ td.Company {
 div.placeInsideTable
 {
     position: relative;
-    top: 14px;
+    top: -6px;
     left: 30%;
     width: 10%;
     height: 20px;
@@ -162,11 +162,11 @@ div.company-expand-collapse
 
 table.cat-all-category-by-loc tr.Level2, table.cat-all-category-by-loc tr.Level3
 {
-    background-color: #fecefe;
+    background-color: #B2DFDD;
 }
 
 #widget-MoleculesExpCollapseTableWidget-view tr.Level2 {
-    background-color: #ffeff9;
+    background-color: #D8EFEE;
 }
 
 td.hoverable {

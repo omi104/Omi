@@ -48,7 +48,7 @@ namespace Dashboard.DataComponents.Transformers
                 {
                     new LevelWiseRowColorFunctionaility(IsTopTable),
                     new RowSpecificRankLevelFunctionality(),
-                    new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#fecefe" },
+                    new AlternateRowColorFunctionality<Row>() { EvenColor = "#ffffff;", OddColor = "#B2DFDD" },
                     new HighlightRowIfRb() {colIndex = _isRbIndex},
                     new HoverValueAddRowFunctionality(IsLowerTable){CompanyTextColIndex = _NameColIndex,CompanyValueColIndex = Input.Columns.Last().Position}
                 }

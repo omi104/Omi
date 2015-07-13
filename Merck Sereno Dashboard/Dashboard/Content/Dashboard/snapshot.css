@@ -185,7 +185,7 @@ td.snapshot-top-rank
 
 #snapshot-table tr.topRow
 {
-    background-color: #fecefe;
+    background-color: #B2DFDD;
     border: 1px solid #e32587 !important;
 }
 
@@ -209,7 +209,7 @@ td.snapshot-top-rank
 div.WidgetHeading
 {
     border: 1px solid #e32587;
-    background-color: #fecefe;
+    background-color: #B2DFDD;
 }
 
 

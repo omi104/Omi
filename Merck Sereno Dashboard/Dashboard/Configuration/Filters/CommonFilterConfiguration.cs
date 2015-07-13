@@ -86,16 +86,32 @@ namespace Dashboard.Configuration.Filters
         
             // Product Filter is to be invisibled from Navigation Home
 
+            //if (filterItem.Name == FilterItemsForDashboard.Products().Name)
+            //{
+            //    if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+            //    {
+            //        filterItem.IsVisible = false;
+
+            //    }
+            //    else
+            //    {
+            //        filterItem.IsVisible = true;
+
+            //    }
+
+            //}
+
+            // product filter will be visible only in navigation ksa and all region
             if (filterItem.Name == FilterItemsForDashboard.Products().Name)
             {
-                if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+                if (param.CurrentNavigationName() == NavigationItems.NavKSATerritoryLevel().Name || param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
                 {
-                    filterItem.IsVisible = false;
+                    filterItem.IsVisible = true;
 
                 }
                 else
                 {
-                    filterItem.IsVisible = true;
+                    filterItem.IsVisible = false;
 
                 }
 

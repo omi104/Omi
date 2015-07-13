@@ -29,7 +29,7 @@ namespace Dashboard.DataComponents.Transformers
                 Header = GetHeader(Input.Columns),
                 RowFunctionalities = new List<IRowFunctionality<Row>>()
                 {
-                    new AlternateRowColorFunctionality<Row>(){EvenColor = "#FFFFFF",OddColor = "#FFEFF9"}
+                    new AlternateRowColorFunctionality<Row>(){EvenColor = "#FFFFFF",OddColor = "#d8efee"}
                 },
                 AutoCreateHeader = false
             };

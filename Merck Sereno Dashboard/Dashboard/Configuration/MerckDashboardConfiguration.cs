@@ -58,7 +58,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.NavigationName).WithValue(NavigationItems.NavHome().Name)
                 .Add(ParameterList.RegionOrCluster).WithValue("")
                 .Add(ParameterList.Country).WithValue("")
-                .Add(ParameterList.Product).WithValue("[Product].[Hierarchy].[PRD].&[NEUROBION]")
+                .Add(ParameterList.Product).WithValue("[Product].[Hierarchy].[all]")
                  .Add(ParameterList.Subproduct).WithValue("")//[Product].[Hierarchy].[PRD].&[FEMIBION].&[FEMIBION]
                  .Add(ParameterList.SubProductFlag).WithValue("false")
                  .Add(ParameterList.PeriodTypeFlag).WithValue("false")

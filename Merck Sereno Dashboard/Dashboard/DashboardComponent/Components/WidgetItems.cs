@@ -102,6 +102,16 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        public static WidgetItem CompanySnapshotChart()
+        {
+            return new WidgetItem()
+            {
+                Name = "CompanySnapshotChart",
+                ViewId = "17",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountCompanySnapshot }
+            };
+        }
+
         public static WidgetItem BottomCompanySnapshotTable()
         {
             return new WidgetItem()

@@ -225,6 +225,7 @@
     <Compile Include="Configuration\Widgets\CompanyTrendTableChartWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\ExpandCollapseTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotBottomTableWidgetConfiguration.cs" />
+    <Compile Include="Configuration\Widgets\SnapshotChartWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapShotTopTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10CompaniesTableConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10IntPrdTableConfiguration.cs" />
@@ -237,6 +238,7 @@
     <Compile Include="Controllers\Layouts\CompanySnapshotNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\CompanyTrendNavigationLayoutController.cs" />
     <Compile Include="Controllers\SimpleTableWidgetController.cs" />
+    <Compile Include="Controllers\Widgets\CombiHomeChartWidgetController.cs" />
     <Compile Include="Controllers\Widgets\CompanyTrendTableChartWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ExpandCollapseTableWidgetController.cs" />
     <Compile Include="Controllers\Widgets\SnapshotTableWidgetController.cs" />
@@ -299,6 +301,7 @@
     <Compile Include="DataComponents\Mergers\StringMerger.cs" />
     <Compile Include="DataComponents\Transformers\CombinationTrendChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CombinationChartTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\CompanySnapshotChartDataTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToDictionaryTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTopRankingTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTrendTransformer.cs" />
@@ -995,6 +998,7 @@
     <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
     <Content Include="Views\CompanyTrendNavigationLayout\Index.cshtml" />
     <Content Include="Views\CompanyTrendTableChartWidget\Index.cshtml" />
+    <Content Include="Views\CombiHomeChartWidget\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
