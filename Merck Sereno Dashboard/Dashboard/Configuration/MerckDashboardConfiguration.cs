@@ -39,17 +39,17 @@ namespace Dashboard.Configuration
 
         private void ConfigureFilters()
         {
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.RegionOrCluster()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Country()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Products()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.SubProducts()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Segment()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.Forms()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.KPI()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.UnitOrValue()));
-            HasFilter(new OnOffFilterConfiguration(FilterItemsForDashboard.TimePeriod()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.StartDate()));
-            HasFilter(new CommonFilterConfiguration(FilterItemsForDashboard.EndDate()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.RegionOrCluster()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Country()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Products()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.SubProducts()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Segment()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.Forms()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.KPI()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.UnitOrValue()));
+            HasFilter(new OnOffFilterConfiguration(FilterItems.TimePeriod()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.StartDate()));
+            HasFilter(new CommonFilterConfiguration(FilterItems.EndDate()));
         }
 
         private void ConfigureParameters()

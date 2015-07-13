@@ -116,8 +116,8 @@ namespace Dashboard.DataComponents.Transformers
                         suffix = KPI.ToUpper() == "MARKET SHARE" || (i < columns.Count - 1 && KPI.ToUpper() == "GROWTH") ? "%" : null,
                         Classes = new List<string>() { "colData", "col-" + i }
                     },
-                    RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns),
-                    Columns = new List<string> { Input.Columns[0].Name, Input.Columns[i].Name }
+                    RowCellDataProvider = new CustomRowCellDataProvider(),
+                    Columns = new List<string> { i.ToString()}
                 });
             }
             
