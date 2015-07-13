@@ -41,6 +41,9 @@ namespace Dashboard.Configuration.Widgets
             Export.HasConfig(GetExportConfig).HasController<HomeExportController>()//p=>p["@@"+ParameterList.KPI+"_text"
                   .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
                   .Transform().By<CubeDataToXTableTrendTransformer>()
+                  .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
+                  .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
+                  .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                   .Transform().By<ExportModelTransformer>()
                   .HasProperty(t => t.NavigationNameString).WithValue(p => p.CurrentNavigationLabel())
                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
@@ -54,21 +57,23 @@ namespace Dashboard.Configuration.Widgets
             HasParameterDependency.On(widgetItem.HasParamDependency);
         }
 
-        private CombinationChartExcelExport GetExportConfig(IReadOnlyDictionary<string, string> Param)
+        private ExcelExportConfig GetExportConfig(IReadOnlyDictionary<string, string> Param)
         {
-            return new CombinationChartExcelExport()
+            return new ExcelExportConfig()
             {
                 KPI_Text = Param["@@" + ParameterList.KPI + "_text"],
                 TimePeriod_Text = Param["@@" + ParameterList.TimePeriod + "_text"],
                 EndDate_Text = Param["@@" + ParameterList.EndDate + "_text"],
+                IsTable = false
             };
         }
     }
 
-    public class CombinationChartExcelExport
+    public class ExcelExportConfig
     {
         public string KPI_Text { get; set; }
         public string TimePeriod_Text { get; set; }
         public string EndDate_Text { get; set; }
+        public bool IsTable { get; set; }
     }
 }

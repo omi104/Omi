@@ -143,12 +143,15 @@ namespace Dashboard.DataComponents.Transformers
             dataSet.Attributes.Add("anchorBgColor", "#" + color);
             if (WidgetName == "HomeTrendChart")
             {
-                foreach (var val in row.Values.Skip(1))
-                {
-                    var set1 = new Set();
-                    set1.Attributes.Add("value", val == "--" ? "0" : val);
-                    dataSet.Set.Add(set1);
-                }
+                //foreach (var val in KPI.ToUpper() == "SALES" ? row.Values.Skip(2) : row.Values.Skip(3))
+                //{
+                    foreach (var val in row.Values.Skip(1))
+                    {
+                        var set1 = new Set();
+                        set1.Attributes.Add("value", val == "--" ? "0" : val);
+                        dataSet.Set.Add(set1);
+                    }
+                //}
             }
             else
             {

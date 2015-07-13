@@ -38,13 +38,9 @@
         if (navigationName == 'NavKSATerritoryLevel') {
             window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'true'});
         }
-        else if (navigationName == 'NavAllRegions')
-        {
-            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'false' });
-        }
         else
         {
-            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'false', 'Product': '[Product].[Hierarchy].[all]' });
+            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'false' });
         }
     }
 };

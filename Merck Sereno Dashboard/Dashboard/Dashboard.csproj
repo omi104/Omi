@@ -226,6 +226,7 @@
     <Compile Include="Configuration\Widgets\ExpandCollapseTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotBottomTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotChartWidgetConfiguration.cs" />
+    <Compile Include="Controllers\Exports\TableExportController.cs" />
     <Compile Include="Configuration\Widgets\SnapShotTopTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10CompaniesTableConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10IntPrdTableConfiguration.cs" />
@@ -242,7 +243,7 @@
     <Compile Include="Controllers\Widgets\CompanyTrendTableChartWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ExpandCollapseTableWidgetController.cs" />
     <Compile Include="Controllers\Widgets\SnapshotTableWidgetController.cs" />
-    <Compile Include="DashboardComponent\Components\FilterItemsForDashboard.cs" />
+    <Compile Include="DashboardComponent\Components\FilterItems.cs" />
     <Compile Include="Configuration\Filters\CommonFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\FilterConfigurationBase.cs" />
     <Compile Include="Configuration\Navigations\HomeNavigationConfiguration.cs" />
@@ -282,8 +283,6 @@
     <Compile Include="Controllers\Widgets\UserAdminController.cs" />
     <Compile Include="Controllers\Widgets\WelcomeTextnImageWidgetController.cs" />
     <Compile Include="Controllers\Widgets\CombiChartWidgetController.cs" />
-    <Compile Include="DashboardComponent\Components\FilterItemsForNavigations.cs" />
-    <Compile Include="DashboardComponent\Components\NavigationItems.cs" />
     <Compile Include="DashboardComponent\Components\WidgetItems.cs" />
     <Compile Include="DashboardComponent\Models\NavigationItem.cs" />
     <Compile Include="DashboardComponent\Models\WidgetItem.cs" />
@@ -551,7 +550,7 @@
     <Content Include="Content\Images\emailTemplate\toolbar.gif" />
     <Content Include="Content\Images\emailTemplate\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\Images\expandAll.png" />
-    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\favicon1.ico" />
     <Content Include="Content\Images\help\change-password.JPG" />
     <Content Include="Content\Images\help\forgotten-password.JPG" />
     <Content Include="Content\Images\help\save-login-details.JPG" />
@@ -854,6 +853,7 @@
     <Content Include="Content\ExportTemplate\CombinationAreaChart.xlsx" />
     <Content Include="Content\ExportTemplate\CombinationBarChart.xlsx" />
     <Content Include="Content\ExportTemplate\MSLineChart.xlsx" />
+    <Content Include="Content\ExportTemplate\SingleTableForPPT.xlsx" />
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
     <None Include="Properties\PublishProfiles\40RbPo1Dashboard.pubxml" />
     <None Include="Properties\PublishProfiles\Local RbPo1Dashboard.pubxml" />
@@ -993,12 +993,12 @@
     <Content Include="Views\OnOffFilterLayout\Index.cshtml" />
     <Content Include="Views\DatePickerFilterLayout\Index.cshtml" />
     <Content Include="Views\AtAGlanceNavigationLayout\Index.cshtml" />
-    <Content Include="Views\ExpandCollapseTableWidget\Index.cshtml" />
     <Content Include="Views\CompanySnapshotNavigationLayout\Index.cshtml" />
-    <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
+    <Content Include="Views\ExpandCollapseTableWidget\Index.cshtml" />
     <Content Include="Views\CompanyTrendNavigationLayout\Index.cshtml" />
     <Content Include="Views\CompanyTrendTableChartWidget\Index.cshtml" />
     <Content Include="Views\CombiHomeChartWidget\Index.cshtml" />
+    <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
