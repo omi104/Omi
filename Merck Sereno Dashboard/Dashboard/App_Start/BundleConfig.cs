@@ -33,6 +33,7 @@ namespace Dashboard.App_Start
                 "~/Scripts/Favourite.js",
                 "~/Scripts/SelectRadioValue.js",
                 "~/Scripts/RadioFilterOperation.js",
+                "~/Scripts/ExpandCollapseTable.js",
                 "~/Scripts/Plugin/jquery.cleditor.js",
                 "~/Scripts/Plugin/jquery.cleditor.min.js"
                 ));

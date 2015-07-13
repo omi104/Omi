@@ -31,7 +31,7 @@ namespace Dashboard.Configuration
 
             HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavCompaniesAllLocationsAtGlance()));
             HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavCompaniesSnapshot()));
-            //HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
+            HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
 
             HasNavigation(new AllRegionNavigationConfiguration(NavigationItems.NavAllRegions()));
             HasNavigation(new KSANavigationConfiguration(NavigationItems.NavKSATerritoryLevel()));

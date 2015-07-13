@@ -221,6 +221,8 @@
     <Compile Include="Configuration\Navigations\AtAGlanceNavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\SnapshotNavigationConfiguration.cs" />
+    <Compile Include="Configuration\Navigations\TrendNavigationConfiguration.cs" />
+    <Compile Include="Configuration\Widgets\CompanyTrendTableChartWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\ExpandCollapseTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotBottomTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10CompaniesTableConfiguration.cs" />
@@ -232,7 +234,9 @@
     <Compile Include="Controllers\AuthorizeController.cs" />
     <Compile Include="Controllers\Layouts\AtAGlanceNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\CompanySnapshotNavigationLayoutController.cs" />
+    <Compile Include="Controllers\Layouts\CompanyTrendNavigationLayoutController.cs" />
     <Compile Include="Controllers\SimpleTableWidgetController.cs" />
+    <Compile Include="Controllers\Widgets\CompanyTrendTableChartWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ExpandCollapseTableWidgetController.cs" />
     <Compile Include="Controllers\Widgets\SnapshotTableWidgetController.cs" />
     <Compile Include="DashboardComponent\Components\FilterItemsForDashboard.cs" />
@@ -879,6 +883,8 @@
     <Content Include="Scripts\Chart\FusionMaps.js" />
     <Content Include="Scripts\CustomFilters\DatePickerFilter.js" />
     <Content Include="Scripts\CustomFilters\OnOffFilter.js" />
+    <Content Include="Scripts\ExpandCollapseTable.js" />
+    <Content Include="Scripts\ExpandCollapseTableForCS.js" />
     <Content Include="Scripts\Favourite.js" />
     <Content Include="Scripts\guide-helper.js" />
     <Content Include="Scripts\DataTables-1.10.4\dataTables.autoFill.js" />
@@ -986,6 +992,8 @@
     <Content Include="Views\ExpandCollapseTableWidget\Index.cshtml" />
     <Content Include="Views\CompanySnapshotNavigationLayout\Index.cshtml" />
     <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
+    <Content Include="Views\CompanyTrendNavigationLayout\Index.cshtml" />
+    <Content Include="Views\CompanyTrendTableChartWidget\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
