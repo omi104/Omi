@@ -21,7 +21,7 @@ namespace Dashboard.Controllers.Exports
         }
     }
 
-    public class HomeExportController : RbWidgetHomeTopTableBaseController<CombinationChartExcelExport, ExportModel>
+    public class HomeExportController : RbWidgetHomeTopTableBaseController<ExcelExportConfig, ExportModel>
     {
         private const int StartColumn = 2;
         private const int StartRow = 8;
@@ -36,13 +36,12 @@ namespace Dashboard.Controllers.Exports
         [ExportType("pptx")]
         public byte[] PptExportRaw()
         {
-            var path = Server.MapPath(@"~\Content\ExportTemplate\pptxTemplateWithHeader.pptx");
+            var path = Server.MapPath(@"~\Content\ExportTemplate\pptxTemplate.pptx");
             var pptx = GetPresentation(path);
 
             var workbook = GetExcelWorkbook(true);
             workbook.Worksheets[0].SetMargin(0, 0, 0, 0);
-            pptx.Slides[0].EmbedExcelWorkbook(workbook, 0.3f, 0.9f, 9.2f, 9.0f);
-
+            pptx.Slides[0].EmbedExcelWorkbook(workbook, .25f, .20f, 9.5f, 9.5f);
             return pptx.GetPowerpointData();
         }
 
@@ -83,34 +82,33 @@ namespace Dashboard.Controllers.Exports
 
                 sheet.WriteTable(Data.DataTable, "B29");
                 sheet.DeleteRows(Data.DataTable.Rows.Count+29, 100);
+                if (isPpt)
+                    sheet.HideRows(29, Data.DataTable.Rows.Count);
                 sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count+2,100);
             }
 
             else if (Config.KPI_Text.ToUpper() == "GROWTH" && Data.DataTable.Rows.Count > 1)
             {
                 //draw 2 column table for IS_MERCK and Rank
-
                 var data = Data.DataTable.Rows[0].Cells[1].Data;
                 if (data != null && data.ToString().Contains("INTPRDRank"))
                     Data.DataTable.Rows[0].Cells[1].Data = "Rank";
-
                 for (int i = 0; i < Data.DataTable.Rows.Count; i++)
                 {
                     int cellNo = i + 30;
                     sheet.WriteText(Data.DataTable.Rows[i].Cells[0].Data, "A" + cellNo);
                     sheet.WriteText(Data.DataTable.Rows[i].Cells[1].Data, "B" + cellNo);
                 }
+
                 data = Data.DataTable.Rows[0].Cells[2].Data;
                 if (data != null && data.ToString().Contains("INTPRDName"))
                     Data.DataTable.Rows[0].Cells[2].Data = "Product";
 
                 data = Data.DataTable.Rows[0].Cells[5].Data;
-                if (data != null && data.ToString().ToUpper().Contains("SALES"))
-                    Data.DataTable.Rows[0].Cells[2].Data = "Sales";
+                if (data != null && data.ToString().Contains("Sales"))
+                    Data.DataTable.Rows[0].Cells[5].Data = "Sales";
 
-                for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count-1; i++)
-                {
-                    var monthDict = new Dictionary<string, int>()
+                var monthDict = new Dictionary<string, int>()
                         {
                             {"Jan",1},
                             {"Feb",2},
@@ -126,7 +124,7 @@ namespace Dashboard.Controllers.Exports
                             {"Dec",12}
                         };
 
-                    var qtrDict = new Dictionary<string, int>()
+                var qtrDict = new Dictionary<string, int>()
                         {
                             {"QTR 1",1},
                             {"QTR 2",2},
@@ -134,6 +132,8 @@ namespace Dashboard.Controllers.Exports
                             {"QTR 4",4}
                         };
 
+                for (int i = 3; (Config.TimePeriod_Text.ToUpper() == "MTH" || Config.TimePeriod_Text.ToUpper() == "QTR") && i < Data.DataTable.Rows[0].Cells.Count-1; i++)
+                {
                     if (Config.TimePeriod_Text.ToUpper() == "MTH")
                     {
                         int year;
@@ -168,7 +168,14 @@ namespace Dashboard.Controllers.Exports
                     }
 
                 }
-
+                if (Config.TimePeriod_Text.ToUpper() == "MAT" || Config.TimePeriod_Text.ToUpper() == "YTD")
+                {
+                    for (int i = 3; i < Data.DataTable.Rows[0].Cells.Count; i++)
+                    {
+                        string[] headers = Data.DataTable.Rows[0].Cells[i].Data.ToString().Split('_').ToArray();
+                        Data.DataTable.Rows[0].Cells[i].Data = Config.TimePeriod_Text.ToUpper() + " " + headers[0];
+                    }
+                }
                 for (int i = 0; i < Data.DataTable.Rows.Count; i++)
                 {
                     Data.DataTable.Rows[i].Cells.RemoveRange(0,2);
@@ -177,7 +184,8 @@ namespace Dashboard.Controllers.Exports
                 sheet.Cells.MemorySetting = MemorySetting.MemoryPreference;
                 WriteBubbleChart(sheet.Charts[0],sheet,Data.DataTable,"C30");
 
-                
+                if (isPpt)
+                    sheet.HideRows(30, Data.DataTable.Rows.Count);
 
             }
 
@@ -217,6 +225,9 @@ namespace Dashboard.Controllers.Exports
                     sheet.DeleteColumns(Data.DataTable.Rows[0].Cells.Count + 1, 100);
                     workbook.Worksheets.RemoveAt(1);
                 }
+
+                if (isPpt)
+                    sheet.HideRows(29, Data.DataTable.Rows.Count);
             }
             sheet.Name = "Sales chart";
             return workbook;

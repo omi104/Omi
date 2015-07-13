@@ -217,12 +217,8 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Configuration\Filters\DatePickerFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
-    <Compile Include="Configuration\Filters\TopCountFilterConfiguration.cs" />
-    <Compile Include="Configuration\Navigations\AtAGlanceNavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
-    <Compile Include="Configuration\Navigations\SnapshotNavigationConfiguration.cs" />
-    <Compile Include="Configuration\Widgets\ExpandCollapseTableWidgetConfiguration.cs" />
-    <Compile Include="Configuration\Widgets\SnapshotBottomTableWidgetConfiguration.cs" />
+    <Compile Include="Controllers\Exports\TableExportController.cs" />
     <Compile Include="Configuration\Widgets\Top10CompaniesTableConfiguration.cs" />
     <Compile Include="Configuration\Widgets\Top10IntPrdTableConfiguration.cs" />
     <Compile Include="Controllers\Filters\DatePickerFilterController.cs" />
@@ -230,12 +226,8 @@
     <Compile Include="Controllers\Filters\OnOffFilterController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterLayoutController.cs" />
     <Compile Include="Controllers\AuthorizeController.cs" />
-    <Compile Include="Controllers\Layouts\AtAGlanceNavigationLayoutController.cs" />
-    <Compile Include="Controllers\Layouts\CompanySnapshotNavigationLayoutController.cs" />
     <Compile Include="Controllers\SimpleTableWidgetController.cs" />
-    <Compile Include="Controllers\Widgets\ExpandCollapseTableWidgetController.cs" />
-    <Compile Include="Controllers\Widgets\SnapshotTableWidgetController.cs" />
-    <Compile Include="DashboardComponent\Components\FilterItemsForDashboard.cs" />
+    <Compile Include="DashboardComponent\Components\FilterItems.cs" />
     <Compile Include="Configuration\Filters\CommonFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\FilterConfigurationBase.cs" />
     <Compile Include="Configuration\Navigations\HomeNavigationConfiguration.cs" />
@@ -275,7 +267,6 @@
     <Compile Include="Controllers\Widgets\UserAdminController.cs" />
     <Compile Include="Controllers\Widgets\WelcomeTextnImageWidgetController.cs" />
     <Compile Include="Controllers\Widgets\CombiChartWidgetController.cs" />
-    <Compile Include="DashboardComponent\Components\FilterItemsForNavigations.cs" />
     <Compile Include="DashboardComponent\Components\NavigationItems.cs" />
     <Compile Include="DashboardComponent\Components\WidgetItems.cs" />
     <Compile Include="DashboardComponent\Models\NavigationItem.cs" />
@@ -298,17 +289,14 @@
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTopRankingTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTrendTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableTrendTransformer.cs" />
-    <Compile Include="DataComponents\Transformers\ExpandCollapseTableTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportModelTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportSnapshotModelTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportTableSplitTrasformerForPPT.cs" />
-    <Compile Include="DataComponents\Transformers\HierarchyTableTransfomer.cs" />
     <Compile Include="DataComponents\Transformers\HoverDataTransformer.cs" />
     <Compile Include="DataComponents\Transformers\MsBubbleChart.cs" />
     <Compile Include="DataComponents\Transformers\MSCombinationChart.cs" />
     <Compile Include="DataComponents\Transformers\MSMerckLineChart.cs" />
     <Compile Include="DataComponents\Transformers\SingleTableTransformer.cs" />
-    <Compile Include="DataComponents\Transformers\SnapshotTableTransformer.cs" />
     <Compile Include="DataComponents\Transformers\TableChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\TransformerBase.cs" />
     <Compile Include="DataComponents\Transformers\UserAdminExportTransformer.cs" />
@@ -415,7 +403,6 @@
     <Compile Include="TableComponents\Nodes\NumericCellFactoryTypeE.cs" />
     <Compile Include="TableComponents\RowFunctionalities\ExpandCollTableAlternateColorFunctionality.cs" />
     <Compile Include="TableComponents\RowFunctionalities\HighlightRowIfMerck.cs" />
-    <Compile Include="TableComponents\RowFunctionalities\HighlightRowIfRb.cs" />
     <Compile Include="TableComponents\RowFunctionalities\HoverValueAddRowFunctionality.cs" />
     <Compile Include="TableComponents\RowFunctionalities\RbRowHighlight.cs" />
     <Compile Include="TableComponents\RowFunctionalities\RowSpecificRankLevelFunctionality.cs" />
@@ -543,7 +530,7 @@
     <Content Include="Content\Images\emailTemplate\toolbar.gif" />
     <Content Include="Content\Images\emailTemplate\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\Images\expandAll.png" />
-    <Content Include="Content\Images\favicon.ico" />
+    <Content Include="Content\Images\favicon1.ico" />
     <Content Include="Content\Images\help\change-password.JPG" />
     <Content Include="Content\Images\help\forgotten-password.JPG" />
     <Content Include="Content\Images\help\save-login-details.JPG" />
@@ -846,6 +833,7 @@
     <Content Include="Content\ExportTemplate\CombinationAreaChart.xlsx" />
     <Content Include="Content\ExportTemplate\CombinationBarChart.xlsx" />
     <Content Include="Content\ExportTemplate\MSLineChart.xlsx" />
+    <Content Include="Content\ExportTemplate\SingleTableForPPT.xlsx" />
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
     <None Include="Properties\PublishProfiles\40RbPo1Dashboard.pubxml" />
     <None Include="Properties\PublishProfiles\Local RbPo1Dashboard.pubxml" />
@@ -982,14 +970,9 @@
     <Content Include="Views\YourAccountNavigationLayout\Index.cshtml" />
     <Content Include="Views\OnOffFilterLayout\Index.cshtml" />
     <Content Include="Views\DatePickerFilterLayout\Index.cshtml" />
-    <Content Include="Views\AtAGlanceNavigationLayout\Index.cshtml" />
-    <Content Include="Views\ExpandCollapseTableWidget\Index.cshtml" />
-    <Content Include="Views\CompanySnapshotNavigationLayout\Index.cshtml" />
-    <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
-    <Folder Include="Controllers\Navigations\" />
     <Folder Include="Helper\Export\" />
     <Folder Include="Helper\Factory\Utility\" />
     <Folder Include="obj\" />

@@ -28,10 +28,6 @@ namespace Dashboard.DataComponents.Transformers
                 Header1 = NavigationNameString,
                 Header2 = "Abc",
                 Header3 = "Def"
-                //DataTable = Input,
-                //Header1 = NavigationNameString + " - " + GeoMaptext + " - " +TimePeriodText + " - " + MeasureText,
-                //Header2 = "Category = " + CategoryText + " | " + "Subcategory = " + SubCategoryText + " | " + " Segment = " + SegementText,
-                //Header3 = "Channel = " + ChannelText + " | " + "SubChannel = " + SubChannelText
             };
             return model;
         }
