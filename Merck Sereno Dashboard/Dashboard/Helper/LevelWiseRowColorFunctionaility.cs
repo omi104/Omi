@@ -17,20 +17,21 @@ namespace Dashboard.Helper
 
         public void Apply(Row rowData, TableRow node)
         {
-            if (!string.IsNullOrEmpty(rowData.Values[0]) && !_isTopTable && rowData.Values[1] == "RECKITT BENCKISER")
+            if (!string.IsNullOrEmpty(rowData.Values[0]) && !_isTopTable && rowData.Values[1] == "Merck CH")
             {
                 node.Classes.Add("RBRow");
             }
-
             else if (string.IsNullOrEmpty(rowData.Values[0]) && !string.IsNullOrEmpty(rowData.Values[2]))
             {
                 node.Classes.Add("topRow");
 
             }
-            else if (!string.IsNullOrEmpty(rowData.Values[0]) && _isTopTable && rowData.Values[1] == "RECKITT BENCKISER")
+            else if (!string.IsNullOrEmpty(rowData.Values[0]) && _isTopTable && rowData.Values[1] == "Merck CH")
             {
                 node.Classes.Add("highlight-row-merck");
             }
+
+            
 
         }
     }

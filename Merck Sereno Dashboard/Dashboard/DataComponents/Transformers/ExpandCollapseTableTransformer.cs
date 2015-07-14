@@ -68,7 +68,7 @@ namespace Dashboard.DataComponents.Transformers
                 new CubeCellMap() {Columns = new List<string>(){"Share Pts Chg","Share Pts Chg Arrow"},CellFactory = new IndicatorCellFactory() {TextFormat = new TextFormat(){FormatString = "#,#0.0"},Classes = new List<string>() { "SharePtsChg"} },RowCellDataProvider = new CubeMultipleColumnDataProvider(Input.Columns) },
             };
 
-            foreach (var col in Input.Columns.Where(col => col.Name == "IS_MERCK"))
+            foreach (var col in Input.Columns.Where(col => col.Name.ToUpper() == "IS_MERCK"))
             {
                 _isRbIndex = col.Position;
             }

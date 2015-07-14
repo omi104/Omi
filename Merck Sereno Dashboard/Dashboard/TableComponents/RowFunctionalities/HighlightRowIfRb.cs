@@ -15,7 +15,7 @@ namespace Dashboard.TableComponents.RowFunctionalities
         {
             if (colIndex >= 0 && rowData.Values[colIndex] == "1")
             {
-                row.Classes.Add("highlight-row-reckitt-benckiser");
+                row.Classes.Add("highlight-row-merck");
             }
         }
     }
