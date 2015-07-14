@@ -59,6 +59,8 @@ namespace Dashboard.DataComponents.DataSources
             }
             if (ModuleName == "22" && Parameters.CurrentNavigationName() != NavigationItems.NavHome().Name)
                 ModuleName = "7";
+            if(ModuleName == "10" && Parameters["@@"+ParameterList.KPI+"_text"].ToUpper()=="SALES")
+                ModuleName = "11";
         }
 
         protected virtual void SetProxy()
