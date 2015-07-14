@@ -34,7 +34,7 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.RevertAxis).WithValue(p => p["@@TimePeriod_text"] == "MAT" || p["@@TimePeriod_text"] == "YTD")
                 .HasProperty(t => t.UnitValue).WithValue(p => p["@@" + ParameterList.UnitOrValue + "_text"])
-                .HasProperty(t => t.StartDate).WithValue(p => p["@@" + ParameterList.StartDate + "_text"])
+                //.HasProperty(t => t.StartDate).WithValue(p => p["@@" + ParameterList.StartDate + "_text"])
                 .HasProperty(t => t.EndDate).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.AllRegionCombinationChart().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems]);
 

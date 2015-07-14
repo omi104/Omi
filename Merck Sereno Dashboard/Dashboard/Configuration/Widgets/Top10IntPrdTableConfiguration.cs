@@ -49,50 +49,20 @@ namespace Dashboard.Configuration.Widgets
         public string GetBarChartFooter(IReadOnlyDictionary<string, string> parameters)
         {
 
-            //var footerSubString = "";
-            //var categorytext = "";
-            //var subCategorytext = "";
-            //var segmentText = "";
+
             //var periodText = "";
             //var geoText = "";
-            //var periodTypeText = "";
-            //parameters.TryGetValue("@@MarketCategory_text", out categorytext);
-            //parameters.TryGetValue("@@MarketSubCategory_text", out subCategorytext);
-            //parameters.TryGetValue("@@Segment_text", out segmentText);
-            //parameters.TryGetValue("@@Period_text", out periodText);
-            //parameters.TryGetValue("@@PeriodType_text", out periodTypeText);
-            //parameters.TryGetValue("RB_Geo_text", out geoText);
-            //if (categorytext.Contains("All RB Categories"))
-            //{
-            //    footerSubString = categorytext;
-            //}
-            //else
-            //{
-            //    if (subCategorytext.Contains("All RB Sub-Categories"))
-            //        footerSubString = categorytext;
-            //    else if (!subCategorytext.Contains("All RB Sub-Categories") && segmentText.Contains("All RB Segments"))
-            //    {
-            //        footerSubString = categorytext + " - " + subCategorytext;
-            //    }
-            //    else
-            //    {
-            //        footerSubString = categorytext + " - " + subCategorytext + " - " + segmentText;
-            //    }
-            //}
-
-            //return footerSubString + "  " + geoText + " - " + periodTypeText + " - " + periodText;
-            var periodText = "";
-            var geoText = "";
             var periodTypeText = "";
             var EndDate = "";
 
-            parameters.TryGetValue("@@Period_text", out periodText);
-            parameters.TryGetValue("@@PeriodType_text", out periodTypeText);
+            // parameters.TryGetValue("@@Period_text", out periodText);
+            parameters.TryGetValue("@@" + ParameterList.TimePeriod + "_text", out periodTypeText);
             parameters.TryGetValue("@@EndDate_text", out EndDate);
 
 
-            return (periodTypeText + " - " + periodText + " - " + EndDate);
-            
+            return (periodTypeText + " - " + " - " + EndDate);
+
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace Dashboard.DataComponents.Transformers
         public string KPI { get; set; }
         public bool RevertAxis { get; set; }
         public string UnitValue { get; set; }
-        public string StartDate { get; set; }
+        //public string StartDate { get; set; }
         public string EndDate { get; set; }
         public string PeriodType { get; set; }
         public string CategoryString { get; set; }
@@ -40,19 +40,19 @@ namespace Dashboard.DataComponents.Transformers
             {
                 if (RegionOrCluster == "-ALL-" && country == "-na-")
                 {
-                    model.Title = "Total Market vs Merck Sales trend in global" + "-" + PeriodType + "-" + StartDate +
+                    model.Title = "Total Market vs Merck Sales trend in global" + "-" + PeriodType + "-" + //StartDate +
                                       "-" + EndDate;    
                 }
                 else if (country == "ALL COUNTRIES")
                 {
-                    model.Title = "Total Market vs Merck Sales trend in "+RegionOrCluster + "-" + PeriodType + "-" + StartDate +
+                    model.Title = "Total Market vs Merck Sales trend in "+RegionOrCluster + "-" + PeriodType + "-"  +// StartDate +
                                       "-" + EndDate; 
 
                     
                 }
                 else if(RegionOrCluster != "-ALL-" && country != "ALL COUNTRIES")
                 {
-                    model.Title = "Total Market vs Merck Sales trend in "+country + "-" + PeriodType + "-" + StartDate +
+                    model.Title = "Total Market vs Merck Sales trend in "+country + "-" + PeriodType + "-" + //StartDate +
                                       "-" + EndDate; 
                     
                 }

@@ -52,17 +52,17 @@ namespace Dashboard.Configuration.Widgets
         {
 
             
-            var periodText = "";
-            var geoText = "";
+            //var periodText = "";
+            //var geoText = "";
             var periodTypeText = "";
             var EndDate = "";
             
-            parameters.TryGetValue("@@Period_text", out periodText);
-            parameters.TryGetValue("@@PeriodType_text", out periodTypeText);
+           // parameters.TryGetValue("@@Period_text", out periodText);
+            parameters.TryGetValue("@@"+ParameterList.TimePeriod +"_text", out periodTypeText);
             parameters.TryGetValue("@@EndDate_text", out EndDate);
             
 
-            return  (periodTypeText + " - " + periodText+" - "+EndDate);
+            return  (periodTypeText + " - "+" - "+EndDate);
             
             
         }

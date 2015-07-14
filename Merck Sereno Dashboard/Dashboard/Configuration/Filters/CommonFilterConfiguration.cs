@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Dashboard.Common;
 using Dashboard.Controllers.Layouts;
 using Dashboard.DashboardComponent.Components;
@@ -85,6 +86,37 @@ namespace Dashboard.Configuration.Filters
                 
             }
             
+            // startdate is needed to be invisibled from all navigations
+
+            if (filterItem.Name == FilterItems.StartDate().Name)
+            {
+                filterItem.IsVisible = false;
+            }
+
+            // enddate navigations are needed to be invisibled from navigation Home,
+            //and the name will ne "Date"
+            
+            //if (filterItem.Name == FilterItems.EndDate().Name)
+            //{
+            //    if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+            //    {
+            //        filterItem.IsVisible = false;
+
+            //    }
+            //    else
+            //    {
+            //        filterItem.IsVisible = true;
+            //        filterItem.Label = "Date";
+
+            //    }
+
+            //}
+
+            if (filterItem.Name == FilterItems.EndDate().Name)
+            {
+                filterItem.Label = "Date";
+                
+            }
         
             // Product Filter is to be invisibled from Navigation Home
 
@@ -121,22 +153,23 @@ namespace Dashboard.Configuration.Filters
                 DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "false");
 
             /*For growth or MAT or YTD startdate will be invisible, Enddate will work*/
-            if (filterItem.Name == FilterItems.StartDate().Name)
-            {
-                if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
-                {
-                    filterItem.IsVisible = false;
-                }
-                else
-                    filterItem.IsVisible = true;
-            }
-            if (filterItem.Name == FilterItems.EndDate().Name)
-            {
-                if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
-                {
-                    filterItem.Label = "Date";
-                }
-            }
+            
+            //if (filterItem.Name == FilterItems.StartDate().Name)
+            //{
+            //    if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+            //    {
+            //        filterItem.IsVisible = false;
+            //    }
+            //    else
+            //        filterItem.IsVisible = true;
+            //}
+            //if (filterItem.Name == FilterItems.EndDate().Name)
+            //{
+            //    if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+            //    {
+            //        filterItem.Label = "Date";
+            //    }
+            //}
             
             return filterItem;
         }
