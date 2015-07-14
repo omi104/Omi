@@ -64,7 +64,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Companies - All Locations at Glance",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItemsForNavigations.TopCountCompanyAtaGlance()
+                    FilterItems.TopCountCompanyAtaGlance()
                     
                 },                
                 Widgets = new List<WidgetItem>()
@@ -83,7 +83,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Companies - Snapshot",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItemsForNavigations.TopCountCompanySnapshot()
+                    FilterItems.TopCountCompanySnapshot()
                 },
                 Widgets = new List<WidgetItem>()
                 {
@@ -103,7 +103,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Trend",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItemsForNavigations.TopCountCompanyTrend()
+                    FilterItems.TopCountCompanyTrend()
                 },
                 Widgets = new List<WidgetItem>()
                 {
@@ -161,7 +161,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Products - All Locations at Glance",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItemsForNavigations.TopCountProductAtaGlance()
+                    FilterItems.TopCountProductAtaGlance()
                 },
                 Widgets = new List<WidgetItem>()
                 {
@@ -179,7 +179,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Products - Snapshot",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItemsForNavigations.TopCountProductSnapshot()
+                    FilterItems.TopCountProductSnapshot()
                 },
 
                 Widgets = new List<WidgetItem>()
@@ -199,7 +199,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Trend",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItemsForNavigations.TopCountProductTrend()
+                    FilterItems.TopCountProductTrend()
                 },
                 Widgets = new List<WidgetItem>()
                 {

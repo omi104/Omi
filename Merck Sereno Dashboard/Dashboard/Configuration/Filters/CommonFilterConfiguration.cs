@@ -19,7 +19,7 @@ namespace Dashboard.Configuration.Filters
 		{
             HasName(filterItem.Name);
             HasLabel(filterItem.Label);
-            //Hide.If(p=>IsProductVisible(p,filterItem));
+            
             Reload.If(true);
             Layout.HasConfig(p=>IsVisible(p,filterItem))
                 .HasController<DropdownFilterLayoutController>();
@@ -33,16 +33,6 @@ namespace Dashboard.Configuration.Filters
                 HasParameterDependency.On(filterItem.HasParamDependency);
 		}
 
-        //private bool IsProductVisible(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
-        //{
-        //    if (filterItem.Name == FilterItems.Products().Name &&
-        //        (param.CurrentNavigationName() != NavigationItems.NavAllRegions().Name &&
-        //         param.CurrentNavigationName() != NavigationItems.NavKSATerritoryLevel().Name))
-        //    {
-        //        return true;
-        //    }
-        //    return false;
-        //}
 
         private bool IsReverse(IReadOnlyDictionary<string, string> param, FilterItem filterItem)
         {
@@ -107,23 +97,22 @@ namespace Dashboard.Configuration.Filters
                 else
                 {
                     filterItem.IsVisible = false;
-                    filterItem.ViewId = "28";
                 }
             }
 
             // In home navigation, load segment from 22(ViewId), else load from 7
-            if (filterItem.Name == FilterItems.Segment().Name)
-            {
-                if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
-                {
-                    filterItem.ViewId = "22";
-                }
-                else
-                {
-                    filterItem.ViewId = "7";
-                }
+            //if (filterItem.Name == FilterItems.Segment().Name)
+            //{
+            //    if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
+            //    {
+            //        filterItem.ViewId = "22";
+            //    }
+            //    else
+            //    {
+            //        filterItem.ViewId = "7";
+            //    }
 
-            }
+            //}
             
             
             if (param["@@" + ParameterList.TimePeriod + "_text"] == "MAT" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD")

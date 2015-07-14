@@ -23,7 +23,7 @@ namespace Dashboard.DataComponents.DataSources
 
         public virtual CubeData GetData()
         {
-            KPIConstrainedViewID();
+            ConstrainedViewId();
             if (string.IsNullOrWhiteSpace(ModuleName)) throw new ArgumentException("No view id is provided");
 
             int viewId;
@@ -51,12 +51,14 @@ namespace Dashboard.DataComponents.DataSources
             return data;
         }
 
-        private void KPIConstrainedViewID()
+        private void ConstrainedViewId()
         {
-            if (Parameters[ParameterList.KPI] == "Sales" && ModuleName == "10")
+            if (ModuleName == "6" && (Parameters.CurrentNavigationName() != NavigationItems.NavKSATerritoryLevel().Name && Parameters.CurrentNavigationName() != NavigationItems.NavAllRegions().Name))
             {
-                ModuleName = "11";
+                ModuleName = "30";
             }
+            if (ModuleName == "22" && Parameters.CurrentNavigationName() != NavigationItems.NavHome().Name)
+                ModuleName = "7";
         }
 
         protected virtual void SetProxy()
