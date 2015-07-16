@@ -459,6 +459,10 @@
     <Content Include="Content\Dashboard\HomeNavigation.css" />
     <Content Include="Content\FusionChartsSWF\HBullet.swf" />
     <Content Include="Content\FusionChartsSWF\HeatMap.swf" />
+    <Content Include="Content\Images\1.jpg" />
+    <Content Include="Content\Images\2.jpg" />
+    <Content Include="Content\Images\3.jpg" />
+    <Content Include="Content\Images\4.jpg" />
     <Content Include="Content\Images\addtofavbutton_mini.gif" />
     <Content Include="Content\Images\arrow_g.gif" />
     <Content Include="Content\Images\collapseAll.png" />
