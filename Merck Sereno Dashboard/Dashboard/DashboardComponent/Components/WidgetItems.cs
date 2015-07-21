@@ -129,7 +129,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "BottomCompanySnapshotTable",
                 ViewId = "17",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanySnapshot }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountCompanySnapshot, ParameterList.EndDate, }
             };
         }
 
@@ -149,7 +149,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CompanyExpCollapseTableWidget",
                 ViewId = "16",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanyAtAGlance,ParameterList.IsKSA }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountCompanyAtAGlance, ParameterList.EndDate,ParameterList.IsKSA }
             };
         }
         #endregion Company
@@ -161,7 +161,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "IntlProductsAllLocByProdExpCollapseWidget",
                 ViewId = "19",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd, ParameterList.EndDate, }
             };
         }
 
@@ -171,7 +171,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "IntlProductsAllProdByLocExpCollapseWidget",
                 ViewId = "25",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd, ParameterList.EndDate, }
             };
         }
 
@@ -201,7 +201,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "BottomIntlProdSnapshotTable",
                 ViewId = "20",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountIntlProdSnapshot }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountIntlProdSnapshot, ParameterList.EndDate, }
             };
         }
 
@@ -225,7 +225,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "ProductExpCollapseTableWidget",
                 ViewId = "20",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountProductSnapshot }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountProductSnapshot, ParameterList.EndDate, }
             };
         }
 
@@ -236,7 +236,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "ProductExpCollapseTableWidget",
                 ViewId = "21",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountProductTrend }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountProductTrend, ParameterList.EndDate, }
             };
         }
 

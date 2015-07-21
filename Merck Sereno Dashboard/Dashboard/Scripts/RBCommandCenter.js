@@ -33,7 +33,7 @@
             elementId = element.id;
         }
         RbHelper.highlightMenu(elementId, navigationLabel);
-        RbHelper.resizeBodyWidth(navigationName);
+        //RbHelper.resizeBodyWidth(navigationName);
         window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'IsKSA': isKsa });
         //if (navigationName == 'NavKSATerritoryLevel')
         //{

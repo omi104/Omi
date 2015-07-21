@@ -134,7 +134,7 @@ namespace Dashboard.DashboardComponent.Components
             return new NavigationItem()
             {
                 Name = "NavIntlProdAllIntlProdByLoc",
-                Label = "All Product By Location",
+                Label = "All Intl Product By Location",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountIntlProdAtaGlance()
@@ -152,7 +152,7 @@ namespace Dashboard.DashboardComponent.Components
             return new NavigationItem()
             {
                 Name = "NavIntlProdAllLocByIntlProd",
-                Label = "All Location By Product",
+                Label = "All Intl Location By Product",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountIntlProdAtaGlance()
