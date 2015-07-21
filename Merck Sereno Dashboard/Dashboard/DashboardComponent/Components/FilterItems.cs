@@ -19,7 +19,17 @@ namespace Dashboard.DashboardComponent.Components
                 ViewId = ""
             };
         }
-
+        public static FilterItem TopCountIntlProdAtaGlance()
+            {
+            return new FilterItem
+            {
+                Name = "TopCountIntlProdAtaGlance",
+                Label = "",
+                ControlId = "filter-TopCountIntlProdAtaGlance-control",
+                ModifyParam = ParameterList.TopCountIntPrd,
+                ViewId = ""
+            };
+        }
         public static FilterItem TopCountProductAtaGlance()
         {
             return new FilterItem
@@ -34,6 +44,19 @@ namespace Dashboard.DashboardComponent.Components
 
         #endregion
 
+        public static FilterItem MeasureType()
+        {
+            return new FilterItem
+            {
+                Name = "MeasureType",
+                Label = "Measure Type",
+                ControlId = "filter-MeasureType-control",
+                ModifyParam = ParameterList.TypeOfMeasure,
+                HasParamDependency = new List<string>() { },
+                ViewId = "-99"
+            };
+        }
+
         #region Snapshot TopCount
         public static FilterItem TopCountCompanySnapshot()
         {
@@ -43,6 +66,18 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "",
                 ControlId = "filter-TopCountCompanySnapshot-control",
                 ModifyParam = ParameterList.TopCountCompanySnapshot,
+                ViewId = ""
+            };
+        }
+
+        public static FilterItem TopCountIntlProdSnapshot()
+        {
+            return new FilterItem
+            {
+                Name = "TopCountIntlProdSnapshot",
+                Label = "",
+                ControlId = "filter-TopCountIntlProdSnapshot-control",
+                ModifyParam = ParameterList.TopCountIntlProdSnapshot,
                 ViewId = ""
             };
         }
@@ -74,6 +109,18 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        public static FilterItem TopCountIntlProdTrend()
+        {
+            return new FilterItem
+            {
+                Name = "TopCountIntlProdTrend",
+                Label = "",
+                ControlId = "filter-TopCountIntlProdTrend-control",
+                ModifyParam = ParameterList.TopCountIntlProdTrend,
+                ViewId = ""
+            };
+        }
+
         public static FilterItem TopCountProductTrend()
         {
             return new FilterItem
@@ -98,7 +145,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Region/Cluster",
                 ControlId = "filter-RegionOrCluster-control",
                 ModifyParam = ParameterList.RegionOrCluster,
-                HasParamDependency = new List<string>() { ParameterList.NavigationName,ParameterList.Is_KSA },
+                HasParamDependency = new List<string>() { ParameterList.NavigationName,ParameterList.IsKSA },
                 ViewId = "4"
             };
         }
@@ -111,7 +158,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Country",
                 ControlId = "filter-Country-control",
                 ModifyParam = ParameterList.Country,
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster },
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster,ParameterList.IsKSA},
                 ViewId = "5"
             };
         }

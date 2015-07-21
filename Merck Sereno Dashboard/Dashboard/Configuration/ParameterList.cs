@@ -33,7 +33,7 @@ namespace Dashboard.Configuration
         public const string Subproduct = "Subproduct";
         public const string SubProductFlag = "SubProductFlag";
         public const string PeriodTypeFlag = "PeriodTypeFlag";
-        public const string Is_KSA = "Is_KSA";
+        public const string IsKSA = "IsKSA";
         public const string Segment = "Segment";
         public const string Form = "Form";
         public const string KPI = "KPI";
@@ -45,10 +45,15 @@ namespace Dashboard.Configuration
         public const string EndDate = "EndDate";
         public const string TopCountCompanyAtAGlance = "TopCountCorporation";
         public const string TopCountProductAtAGlance = "TopCountProductAtAGlance";
-        public const string TopCountCompanySnapshot = "RB_ComSnapshotTopCount";
+        public const string TopCountCompanySnapshot = "ComSnapshotTopCount";
+        public const string TopCountIntlProdSnapshot = "TopCountIntlProdSnapshot";
         public const string TopCountProductSnapshot = "TopCountProductSnapshot";
-        public const string TopCountCompanyTrend = "TopCountCompanyTrend";
+        public const string TopCountCompanyTrend = "CorpTrendTopCount";
+        public const string TopCountIntlProdTrend = "TopCountIntlProdTrend";
         public const string TopCountProductTrend = "TopCountProductTrend";
+        public const string TopCountIntPrd = "TopCountIntPrd";
+        public const string TypeOfMeasure = "TypeOfMeasure";
+        public const string UncheckedItems = "UncheckedItems";
 
 
 

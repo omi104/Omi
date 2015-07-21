@@ -105,7 +105,7 @@ header
 .page-sidebar
 {
     background-color: #2c3e50;
-    width: 250px;
+    width: 260px;
     float: left;
     z-index: 2;
     -webkit-transition: all 0.5s ease;
@@ -462,7 +462,7 @@ header
 
                 .page-sidebar .side-nav .nav > li ul.sub > li a i.sideNav-arrow
                 {
-                    top: -2px;
+                    top: 5px;
                 }
 
             .page-sidebar .side-nav .nav > li ul.sub > li a:before
@@ -699,7 +699,7 @@ header
     {
         height: auto;
         float: left;
-        width: 100%;
+        width: 99%;
         position: relative;
     }
 

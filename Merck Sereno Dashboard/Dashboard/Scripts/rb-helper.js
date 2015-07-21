@@ -30,7 +30,7 @@
     }
     pub.Authorize_KSA_Success = function (data,parameter) {
             if (data == "Success") {
-                var element = $('#navigation3');
+                var element = $('#ksa-overview');
                 var item = element[0];
                 RBCommandCenter.navigationChanged(item, 'NavKSATerritoryLevel', 'KSA Territory Level');
             } else

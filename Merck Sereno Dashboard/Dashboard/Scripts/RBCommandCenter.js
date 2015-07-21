@@ -25,7 +25,7 @@
         CommandCenter.filterChanged(filterName, filterValue);       
     },
 
-    navigationChanged: function (element, navigationName, navigationLabel) {
+    navigationChanged: function (element, navigationName, navigationLabel, isKsa) {
         var elementId = null;
         if (element.id == "undefined" || element.id == null)
             elementId = element;
@@ -34,13 +34,14 @@
         }
         RbHelper.highlightMenu(elementId, navigationLabel);
         RbHelper.resizeBodyWidth(navigationName);
-
-        if (navigationName == 'NavKSATerritoryLevel') {
-            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'true'});
-        }
-        else
-        {
-            window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'Is_KSA': 'false' });
-        }
+        window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'IsKSA': isKsa });
+        //if (navigationName == 'NavKSATerritoryLevel')
+        //{
+        //    window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'IsKSA': isKsa });
+        //}
+        //else
+        //{
+        //    window.CommandCenter.navigationAndParametersChanged(navigationName, { 'CurrentNavigationId': elementId, 'Navigation_Label': navigationLabel, 'NavigationName': navigationName, 'IsKSA': 'false' });
+        //}
     }
 };

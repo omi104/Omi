@@ -11,6 +11,6 @@ namespace Dashboard.ViewModels
     {
         public Table Table { get; set; }
         public int TableWidth { get; set; }
-        //public SingleChartModel Chart { get; set; }
+        public SingleChartModel Chart { get; set; }
     }
 }

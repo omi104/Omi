@@ -20,15 +20,29 @@ namespace Dashboard.Configuration.Widgets
         {
             HasName(widgetItem.Name);
             View.HasConfig(p => p)
-                .HasController<CompanyTrendTableChartWidgetController>();
+                .HasController<TrendTableWidgetController>();
 
             View.DataFlow.AddSource<CubeDataSourceBase>()
                 .WithModule(widgetItem.ViewId)
-                .Transform().By<TableChartTransformer>();
-                //.HasProperty(t => t.ShowFullLength).WithValue(true)
-                //.HasProperty(t => t.NameColumHeaderText).WithValue(GetHeaderText)
-                //.HasProperty(t => t.UncheckedItems).WithValue(p => p[ParameterList.UncheckedItems])//UNChecked items could be a bug
-                //.HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p[ParameterList.AbsoluteThousandFilter])
+                .Transform().By<TableChartTransformer>()
+                .HasProperty(t => t.MeasureType).WithValue(p => p[ParameterList.TypeOfMeasure])
+                .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
+                .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
+                .HasProperty(t => t.NavigationName).WithValue(p => p[ParameterList.NavigationName])
+                .HasProperty(t => t.ParamName)
+                .WithValue(
+                    p =>
+                        widgetItem.Name == WidgetItems.Top10IntPrdTable().Name
+                            ? ParameterList.RegionUncheckedItems
+                            : ParameterList.KsaUncheckedItems)
+                .HasProperty(t => t.ShowFullLength).WithValue(true)
+                .HasProperty(t => t.NameColumHeaderText).WithValue(GetHeaderText)
+                .HasProperty(t => t.UncheckedItems)
+                .WithValue(p => p[ParameterList.UncheckedItems]) //UNChecked items could be a bug
+                .HasProperty(t => t.AbsoluteTousandValue).WithValue("Thousand");
+            
+            
+            
                 //.HasProperty(t => t.MeasureType).WithValue(p => p[ParameterList.RbMeasureType])
                 //.HasProperty(t => t.TopCountValue).WithValue(GetTopCount);
 
@@ -72,7 +86,7 @@ namespace Dashboard.Configuration.Widgets
                 return "Product";
             
             if (param.CurrentNavigationName() == NavigationItems.NavCompaniesTrend().Name)
-                return "Company";
+                return "Corporation";
             
             return "Name";
         }

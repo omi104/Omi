@@ -33,6 +33,11 @@ namespace Dashboard.Configuration
             HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavCompaniesSnapshot()));
             HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
 
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllIntlProdByLoc()));
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
+            HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavIntlProdSnapshot()));
+            HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavIntlProdTrend()));
+
             HasNavigation(new AllRegionNavigationConfiguration(NavigationItems.NavAllRegions()));
             HasNavigation(new KSANavigationConfiguration(NavigationItems.NavKSATerritoryLevel()));
         }
@@ -62,7 +67,7 @@ namespace Dashboard.Configuration
                  .Add(ParameterList.Subproduct).WithValue("")//[Product].[Hierarchy].[PRD].&[FEMIBION].&[FEMIBION]
                  .Add(ParameterList.SubProductFlag).WithValue("false")
                  .Add(ParameterList.PeriodTypeFlag).WithValue("false")
-                 .Add(ParameterList.Is_KSA).WithValue("false")//wrong boolean logic
+                 .Add(ParameterList.IsKSA).WithValue("false")//wrong boolean logic
                 .Add(ParameterList.Segment).WithValue("")
                 .Add(ParameterList.Form).WithValue("")
                 .Add(ParameterList.KPI).WithValue("")
@@ -77,8 +82,13 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.TopCountProductAtAGlance).WithValue("5")
                  .Add(ParameterList.TopCountCompanySnapshot).WithValue("5")
                  .Add(ParameterList.TopCountCompanyTrend).WithValue("5")
+                 .Add(ParameterList.TopCountIntPrd).WithValue("5")
+                 .Add(ParameterList.TopCountIntlProdSnapshot).WithValue("5")
+                 .Add(ParameterList.TopCountIntlProdTrend).WithValue("5")
+                 .Add(ParameterList.TypeOfMeasure).WithValue("")
 
                 .Add(ParameterList.RecordCount).WithValue("5")
+                .Add(ParameterList.UncheckedItems).WithValue("")
                 .Add(ParameterList.RegionUncheckedItems).WithValue("")
                 .Add(ParameterList.KsaUncheckedItems).WithValue("")
                 .Add(ParameterList.CurrentNavigationId).WithValue("navigation1")

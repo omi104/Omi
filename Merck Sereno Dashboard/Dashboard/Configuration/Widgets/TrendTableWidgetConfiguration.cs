@@ -27,7 +27,7 @@ namespace Dashboard.Configuration.Widgets
             View.DataFlow.AddSource<CubeDataSourceBase>()//DummyTableDataSource
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<TableChartTransformer>()
-                .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
+                .HasProperty(t => t.MeasureType).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                  .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.Top10IntPrdTable().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems])

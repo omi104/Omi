@@ -21,7 +21,7 @@ namespace Dashboard.Configuration.Navigations
                 .HasController<CompanyTrendNavigationLayoutController>();
 
             HasFilter(new TopCountFilterConfiguration(navigationItem.Filters[0]));
-            // HasFilter(new MeasureTypeFilterConfiguration(navigationItem.Filters[1]));
+            HasFilter(new MeasureTypeFilterConfiguration(navigationItem.Filters[1]));
             HasWidget(new CompanyTrendTableChartWidgetConfiguration(navigationItem.Widgets[0]));
 
             this.HasExportController<NavExportController>();

@@ -216,6 +216,7 @@
     <Compile Include="CommandTranslators\RbPo1LoadViewCommandTranslator.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Configuration\Filters\DatePickerFilterConfiguration.cs" />
+    <Compile Include="Configuration\Filters\MeasureTypeFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\TopCountFilterConfiguration.cs" />
     <Compile Include="Configuration\Navigations\AtAGlanceNavigationConfiguration.cs" />
@@ -235,6 +236,8 @@
     <Compile Include="Controllers\Filters\OnOffFilterController.cs" />
     <Compile Include="Controllers\Filters\OnOffFilterLayoutController.cs" />
     <Compile Include="Controllers\AuthorizeController.cs" />
+    <Compile Include="Controllers\Filters\RadioFilterController.cs" />
+    <Compile Include="Controllers\Filters\RadioFilterLayoutController.cs" />
     <Compile Include="Controllers\Layouts\AtAGlanceNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\CompanySnapshotNavigationLayoutController.cs" />
     <Compile Include="Controllers\Layouts\CompanyTrendNavigationLayoutController.cs" />
@@ -295,6 +298,7 @@
     <Compile Include="DataComponents\DataSources\ColorListDataSource.cs" />
     <Compile Include="DataComponents\DataSources\CubeDataSourceBase.cs" />
     <Compile Include="DataComponents\DataSources\DummyTableDataSource.cs" />
+    <Compile Include="DataComponents\DataSources\MeasureTypeDataLabelSource.cs" />
     <Compile Include="DataComponents\DataSources\PeriodTypeDataLabelSource.cs" />
     <Compile Include="DataComponents\DataSources\RecordCountSource.cs" />
     <Compile Include="DataComponents\DataSources\UserAdminDataSource.cs" />
@@ -463,6 +467,7 @@
     <Content Include="Content\Images\2.jpg" />
     <Content Include="Content\Images\3.jpg" />
     <Content Include="Content\Images\4.jpg" />
+    <Content Include="Content\Images\5.jpg" />
     <Content Include="Content\Images\addtofavbutton_mini.gif" />
     <Content Include="Content\Images\arrow_g.gif" />
     <Content Include="Content\Images\collapseAll.png" />
@@ -876,7 +881,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\jRespond.min.js" />
-    <Content Include="Scripts\LoadRadio.js" />
+    <Content Include="Scripts\CustomFilters\LoadRadioValues.js" />
     <Content Include="Scripts\md5.js" />
     <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="Scripts\npm.js" />
@@ -886,7 +891,7 @@
     <Content Include="Scripts\rb-helper.js" />
     <Content Include="Scripts\RBCommandCenter.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\SelectRadioValue.js" />
+    <Content Include="Scripts\CustomFilters\SelectRadioValue.js" />
     <Content Include="Scripts\SnapshotOperation.js" />
     <Content Include="Scripts\TableBuilder.js" />
     <Content Include="Scripts\TableChartInteractive.js" />
@@ -927,6 +932,7 @@
     <Content Include="Views\CompanyTrendTableChartWidget\Index.cshtml" />
     <Content Include="Views\CombiHomeChartWidget\Index.cshtml" />
     <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
+    <Content Include="Views\RadioFilterLayout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />

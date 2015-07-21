@@ -102,6 +102,7 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        #region Company
         public static WidgetItem TopCompanySnapShotTable()
         {
             return new WidgetItem()
@@ -138,7 +139,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CompanyTrendTableChartWidget",
                 ViewId = "18",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanyTrend }
+                HasParamDependency = new List<string>() {  ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod,ParameterList.TopCountCompanyTrend,ParameterList.EndDate,ParameterList.Segment,ParameterList.Form,ParameterList.TypeOfMeasure }
             };
         }
 
@@ -148,21 +149,76 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CompanyExpCollapseTableWidget",
                 ViewId = "16",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanyAtAGlance }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountCompanyAtAGlance,ParameterList.IsKSA }
             };
         }
+        #endregion Company
 
-
-        public static WidgetItem ProductsExpCollapseTableWidget()
+        #region International Product
+        public static WidgetItem IntlProductsAllLocByProdExpCollapseWidget()
         {
             return new WidgetItem()
             {
-                Name = "ProductExpCollapseTableWidget",
+                Name = "IntlProductsAllLocByProdExpCollapseWidget",
                 ViewId = "19",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod,ParameterList.TopCountProductAtAGlance }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd }
             };
         }
 
+        public static WidgetItem IntlProductsAllProdByLocExpCollapseWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "IntlProductsAllProdByLocExpCollapseWidget",
+                ViewId = "25",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd }
+            };
+        }
+
+        public static WidgetItem TopIntlProdSnapShotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "TopIntlProdSnapShotTable",
+                ViewId = "24",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+            };
+        }
+
+        public static WidgetItem IntlProdSnapshotChart()
+        {
+            return new WidgetItem()
+            {
+                Name = "IntlProdSnapshotChart",
+                ViewId = "20",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountIntlProdSnapshot }
+            };
+        }
+
+        public static WidgetItem BottomIntlProdSnapshotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "BottomIntlProdSnapshotTable",
+                ViewId = "20",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountIntlProdSnapshot }
+            };
+        }
+
+        public static WidgetItem IntlProdTrendTableChartWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "IntlProdTrendTableChartWidget",
+                ViewId = "21",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountIntlProdTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure }
+            };
+        }
+
+        #endregion
+
+
+        #region Product
         public static WidgetItem BottomProductSnapshotTable()
         {
             return new WidgetItem()
@@ -184,5 +240,6 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+        #endregion
     }
 }

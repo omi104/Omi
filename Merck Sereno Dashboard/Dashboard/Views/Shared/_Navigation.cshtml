@@ -17,30 +17,84 @@
                     <ul id="sideNav" class="nav">
                         <li><a href="#" id="navigation1" class="active" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavHome().Name','@NavigationItems.NavHome().Label');"><i class="fa fa-home"></i><span class="txt">Home</span></a>
                         </li>
-                        <li><a href="#" id="navigation2" class="" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavAllRegions().Name','@NavigationItems.NavAllRegions().Label');"><i class="fa fa-sitemap"></i><span class="txt">@NavigationItems.NavAllRegions().Label</span></a>
-                        </li>
-                        <li><a href="#" id="navigation3" class="" onclick="RbHelper.KSAClick('@HttpContext.Current.User.Identity.Name')"><i class="fa fa-university"></i><span class="txt">KSA Territory Level</span></a>
-                        </li>
 
                         <li class="hasSub">
-                            <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa fa-university"></i><span class="txt">Corporations</span></a>
+                            <a href="#" class="expand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa fa-university"></i><span class="txt">All Regions</span></a>
                             <ul class="sub">
                                 <li>
-                                    <a id="navigation15" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'NavCompaniesAllLocations','Companies - All Locations at Glance');"><span class="txt">All Locations at Glance</span></a>
+                                    <a href="#" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavAllRegions().Name','@NavigationItems.NavAllRegions().Label','false');"><i class="fa"></i><span class="txt">Overview</span></a></li>
+                                <li class="hasSub">
+                                    <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">Corporations</span></a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a id="navigation15" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCompaniesAllLocationsAtGlance().Name','@NavigationItems.NavCompaniesAllLocationsAtGlance().Label','false');"><span class="txt">All Locations at Glance</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation16" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCompaniesSnapshot().Name','@NavigationItems.NavCompaniesSnapshot().Label','false');"><span class="txt">Snapshot</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation17" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCompaniesTrend().Name','@NavigationItems.NavCompaniesTrend().Label','false');"><span class="txt">Trend</span></a>
+                                        </li>
+                                    </ul>
                                 </li>
-                                <li>
-                                    <a id="navigation16" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'NavCompaniesSnapshot','Companies - Snapshot');"><span class="txt">Snapshot</span></a>
-                                </li>
-                                <li>
-                                    <a id="navigation17" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'NavCompaniesTrend','Companies - Trend');"><span class="txt">Trend</span></a>
+                                <li class="hasSub">
+                                    <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">International Product</span></a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a id="navigation18" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdAllIntlProdByLoc().Name','@NavigationItems.NavIntlProdAllIntlProdByLoc().Label','false');"><span class="txt">@NavigationItems.NavIntlProdAllIntlProdByLoc().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation19" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdAllLocByIntlProd().Name','@NavigationItems.NavIntlProdAllLocByIntlProd().Label','false');"><span class="txt">@NavigationItems.NavIntlProdAllLocByIntlProd().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation20" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdSnapshot().Name','@NavigationItems.NavIntlProdSnapshot().Label','false');"><span class="txt">@NavigationItems.NavIntlProdSnapshot().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation21" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdTrend().Name','@NavigationItems.NavIntlProdTrend().Label','false');"><span class="txt">@NavigationItems.NavIntlProdTrend().Label</span></a>
+                                        </li>
+                                    </ul>
                                 </li>
                             </ul>
                         </li>
 
-
-
-
-
+                        <li class="hasSub">
+                            <a id="ksa-navigation" href="#" class="expand" onclick="RbHelper.KSAClick('@HttpContext.Current.User.Identity.Name')"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa fa-key"></i><span class="txt">KSA Territory Level</span></a>
+                            <ul class="sub">
+                                <li>
+                                    <a id="ksa-overview" href="#" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavKSATerritoryLevel().Name','@NavigationItems.NavKSATerritoryLevel().Label','true');"><i class="fa"></i><span class="txt">Overview</span></a></li>
+                                <li class="hasSub">
+                                    <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">Corporations</span></a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a id="navigation22" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCompaniesAllLocationsAtGlance().Name','@NavigationItems.NavCompaniesAllLocationsAtGlance().Label','true');"><span class="txt">All Locations at Glance</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation23" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCompaniesSnapshot().Name','@NavigationItems.NavCompaniesSnapshot().Label','true');"><span class="txt">Snapshot</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation24" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavCompaniesTrend().Name','@NavigationItems.NavCompaniesTrend().Label','true');"><span class="txt">Trend</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="hasSub">
+                                    <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">International Product</span></a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a id="navigation25" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdAllIntlProdByLoc().Name','@NavigationItems.NavIntlProdAllIntlProdByLoc().Label','true');"><span class="txt">@NavigationItems.NavIntlProdAllIntlProdByLoc().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation26" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdAllLocByIntlProd().Name','@NavigationItems.NavIntlProdAllLocByIntlProd().Label','true');"><span class="txt">@NavigationItems.NavIntlProdAllLocByIntlProd().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation27" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdSnapshot().Name','@NavigationItems.NavIntlProdSnapshot().Label','true');"><span class="txt">@NavigationItems.NavIntlProdSnapshot().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation28" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdTrend().Name','@NavigationItems.NavIntlProdTrend().Label','true');"><span class="txt">@NavigationItems.NavIntlProdTrend().Label</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="clearfix"></div>

@@ -112,6 +112,16 @@ div.homeBottomChartFooter
         width: 100%;
     }
 
+.image-holder-seas {
+    width: 12%;
+    float: left;
+}
+
+    .image-holder-seas img
+    {
+        height: 30%;
+        width: 100%;
+    }
 .homeBottomChartFooter
 {
     padding-top: 3px;

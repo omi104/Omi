@@ -59,9 +59,8 @@ namespace Dashboard.DashboardComponent.Components
         {
             return new NavigationItem()
             {
-                Id = "nav2",
                 Name = "NavCompaniesAllLocations",
-                Label = "Companies - All Locations at Glance",
+                Label = "All Locations at Glance",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountCompanyAtaGlance()
@@ -78,9 +77,8 @@ namespace Dashboard.DashboardComponent.Components
         {
             return new NavigationItem()
             {
-                Id = "nav3",
                 Name = "NavCompaniesSnapshot",
-                Label = "Companies - Snapshot",
+                Label = "Snapshot",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountCompanySnapshot()
@@ -98,16 +96,109 @@ namespace Dashboard.DashboardComponent.Components
         {
             return new NavigationItem()
             {
-                Id = "nav4",
                 Name = "NavCompaniesTrend",
                 Label = "Trend",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItems.TopCountCompanyTrend()
+                    FilterItems.TopCountCompanyTrend(),
+                    FilterItems.MeasureType()
+                    
                 },
                 Widgets = new List<WidgetItem>()
                 {
                      WidgetItems.CompanyTrendTableChartWidget(),
+                }
+            };
+        }
+        #endregion
+
+        #region International Product
+        public static NavigationItem NavIntlProduct()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavIntlProduct",
+                Label = "International Products",
+                ChildNavigations = new List<NavigationItem>()
+                {
+                    NavIntlProdAllIntlProdByLoc(),
+                    NavIntlProdAllLocByIntlProd(),
+                    NavIntlProdSnapshot(),
+                    NavIntlProdTrend()
+                }
+            };
+        }
+
+        public static NavigationItem NavIntlProdAllIntlProdByLoc()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavIntlProdAllIntlProdByLoc",
+                Label = "All Product By Location",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountIntlProdAtaGlance()
+                    
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.IntlProductsAllProdByLocExpCollapseWidget()
+                }
+            };
+        }
+
+        public static NavigationItem NavIntlProdAllLocByIntlProd()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavIntlProdAllLocByIntlProd",
+                Label = "All Location By Product",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountIntlProdAtaGlance()
+                    
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.IntlProductsAllLocByProdExpCollapseWidget()
+                }
+            };
+        }
+
+        public static NavigationItem NavIntlProdSnapshot()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavIntlProdSnapshot",
+                Label = "Snapshot",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountIntlProdSnapshot()
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.TopIntlProdSnapShotTable(),
+                     WidgetItems.IntlProdSnapshotChart(),
+                     WidgetItems.BottomIntlProdSnapshotTable()
+                }
+            };
+        }
+
+        public static NavigationItem NavIntlProdTrend()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavIntlProdTrend",
+                Label = "Trend",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountIntlProdTrend(),
+                    FilterItems.MeasureType()
+                    
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.IntlProdTrendTableChartWidget(),
                 }
             };
         }
@@ -165,7 +256,7 @@ namespace Dashboard.DashboardComponent.Components
                 },
                 Widgets = new List<WidgetItem>()
                 {
-                     WidgetItems.ProductsExpCollapseTableWidget()
+                     //WidgetItems.ProductsExpCollapseTableWidget()
                 }
             };
         }
@@ -208,8 +299,6 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
         #endregion
-
-        
 
     }
 }

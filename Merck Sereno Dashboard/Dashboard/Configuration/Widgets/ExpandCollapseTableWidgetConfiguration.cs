@@ -57,7 +57,7 @@ namespace Dashboard.Configuration.Widgets
         {
             if (widgetItem.Name == WidgetItems.CompanyExpCollapseTableWidget().Name)
                 return "Company";
-            if (widgetItem.Name == WidgetItems.ProductsExpCollapseTableWidget().Name)
+            if (widgetItem.Name == WidgetItems.IntlProductsAllLocByProdExpCollapseWidget().Name || widgetItem.Name == WidgetItems.IntlProductsAllProdByLocExpCollapseWidget().Name)
                 return "Product";
             
             return "Name";
