@@ -160,7 +160,9 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "IntlProductsAllLocByProdExpCollapseWidget",
-                ViewId = "19",
+                //ViewId = "19", sarah apu
+                //ViewId = "27", should be
+                ViewId = "25",
                 HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd, ParameterList.EndDate, }
             };
         }
@@ -170,7 +172,8 @@ namespace Dashboard.DashboardComponent.Components
             return new WidgetItem()
             {
                 Name = "IntlProductsAllProdByLocExpCollapseWidget",
-                ViewId = "25",
+                //ViewId = "25", sarah apu
+                ViewId = "19", //should be
                 HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.IsKSA, ParameterList.TopCountIntPrd, ParameterList.EndDate, }
             };
         }
