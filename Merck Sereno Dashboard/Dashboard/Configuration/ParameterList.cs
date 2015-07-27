@@ -53,7 +53,9 @@ namespace Dashboard.Configuration
         public const string TopCountProductTrend = "TopCountProductTrend";
         public const string TopCountIntPrd = "TopCountIntPrd";
         public const string TypeOfMeasure = "TypeOfMeasure";
-        public const string UncheckedItems = "UncheckedItems";
+        //public const string UncheckedItems = "UncheckedItems";
+        public const string CorporationUncheckedItems = "CorporationUncheckedItems";
+        public const string IntProductUncheckedItems = "IntProductUncheckedItems";
 
 
 
