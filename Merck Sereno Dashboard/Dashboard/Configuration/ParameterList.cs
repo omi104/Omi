@@ -56,7 +56,7 @@ namespace Dashboard.Configuration
         //public const string UncheckedItems = "UncheckedItems";
         public const string CorporationUncheckedItems = "CorporationUncheckedItems";
         public const string IntProductUncheckedItems = "IntProductUncheckedItems";
-
+        public const string UncheckedItems = "UncheckedItems"; 
 
 
         public const string RecordCount = "recordCount";
