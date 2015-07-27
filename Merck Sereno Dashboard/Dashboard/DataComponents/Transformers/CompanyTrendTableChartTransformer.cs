@@ -105,7 +105,7 @@ namespace Dashboard.DataComponents.Transformers
                 },
                 new CellMap<Row>()
                 {
-                    CellFactory = new TextCellFactory() {NameCollength = ShowFullLength?999:16,IsMakeTextShort = true,Classes = new List<string>() {"trend-company"}},
+                    CellFactory = new TextCellFactory() {NameCollength = ShowFullLength?999:16,IsMakeTextShort = false,Classes = new List<string>() {"trend-company"}},
                     RowCellDataProvider = new CustomRowCellDataProvider(),
                     Columns = new List<string>() {"1"}
                 }
