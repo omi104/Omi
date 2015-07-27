@@ -20,16 +20,15 @@ namespace Dashboard.Configuration.Widgets
         {
             HasName(widgetItem.Name);
             View.HasConfig(p => p)
-                .HasController<TrendTableWidgetController>();
+                .HasController<CompanyTrendTableWidgetController>();
 
             View.DataFlow.AddSource<CubeDataSourceBase>()
                 .WithModule(widgetItem.ViewId)
-                .Transform().By<TableChartTransformer>()
+                .Transform().By<CompanyTrendTableChartTransformer>()
                 .HasProperty(t => t.MeasureType).WithValue(p => p[ParameterList.TypeOfMeasure])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.NavigationName).WithValue(p => p[ParameterList.NavigationName])
-                .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.ParamName)
                 .WithValue(
                     p =>
