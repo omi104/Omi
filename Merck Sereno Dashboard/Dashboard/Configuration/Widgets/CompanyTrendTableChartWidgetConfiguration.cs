@@ -32,13 +32,14 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.ParamName)
                 .WithValue(
                     p =>
-                        widgetItem.Name == WidgetItems.Top10IntPrdTable().Name
-                            ? ParameterList.RegionUncheckedItems
-                            : ParameterList.KsaUncheckedItems)
+                        widgetItem.Name == WidgetItems.CompanyTrendTableChartWidget().Name
+                            ? ParameterList.CorporationUncheckedItems
+                            : ParameterList.IntProductUncheckedItems)
                 .HasProperty(t => t.ShowFullLength).WithValue(true)
                 .HasProperty(t => t.NameColumHeaderText).WithValue(GetHeaderText)
-                .HasProperty(t => t.UncheckedItems)
-                .WithValue(p => p[ParameterList.UncheckedItems]) //UNChecked items could be a bug
+                .HasProperty(t => t.UncheckedItems).WithValue(p =>  widgetItem.Name == WidgetItems.CompanyTrendTableChartWidget().Name
+                            ?p[ParameterList.CorporationUncheckedItems]
+                            : p[ParameterList.IntProductUncheckedItems]) //UNChecked items could be a bug
                 .HasProperty(t => t.AbsoluteTousandValue).WithValue("Thousand");
             
             

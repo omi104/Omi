@@ -27,8 +27,8 @@ namespace Dashboard.Helper.Factory
                     {
                         { "type", "checkbox" }, 
                         { "checked", "checked" }, 
-                        { "series-name", data } 
-                        //{ "onClick", "customTable.ChartUpdate('"+ParamName+"')" }
+                        { "series-name", data },
+                        { "onClick", "customTable.ChartUpdate('"+ParamName+"')" }
                     }
                 };
             if (!string.IsNullOrEmpty(UncheckedItem) && UncheckedItem.ToUpper().Contains(data.ToUpper()))

@@ -88,7 +88,9 @@ namespace Dashboard.Configuration
                  .Add(ParameterList.TypeOfMeasure).WithValue("")
 
                 .Add(ParameterList.RecordCount).WithValue("5")
-                .Add(ParameterList.UncheckedItems).WithValue("")
+                .Add(ParameterList.CorporationUncheckedItems).WithValue("")
+                .Add(ParameterList.IntProductUncheckedItems).WithValue("")
+                //.Add(ParameterList.UncheckedItems).WithValue("")
                 .Add(ParameterList.RegionUncheckedItems).WithValue("")
                 .Add(ParameterList.KsaUncheckedItems).WithValue("")
                 .Add(ParameterList.CurrentNavigationId).WithValue("navigation1")

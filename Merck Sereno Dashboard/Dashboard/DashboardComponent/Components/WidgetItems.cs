@@ -25,7 +25,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "AllRegionCombinationChart",
                 ViewId = "10",
-                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
+                HasParamDependency = new List<string>() { /*ParameterList.RegionUncheckedItems,*/ ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
             };
         }
 
@@ -35,7 +35,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "AllRegionTrendTableWidget",
                 ViewId = "10",
-                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
+                HasParamDependency = new List<string>() { /*ParameterList.RegionUncheckedItems,*/ ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
             };
         }
 
@@ -139,7 +139,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CompanyTrendTableChartWidget",
                 ViewId = "18",
-                HasParamDependency = new List<string>() {  ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod,ParameterList.TopCountCompanyTrend,ParameterList.EndDate,ParameterList.Segment,ParameterList.Form,ParameterList.TypeOfMeasure }
+                HasParamDependency = new List<string>() {  ParameterList.CorporationUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod,ParameterList.TopCountCompanyTrend,ParameterList.EndDate,ParameterList.Segment,ParameterList.Form,ParameterList.TypeOfMeasure }
             };
         }
 
@@ -214,7 +214,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "IntlProdTrendTableChartWidget",
                 ViewId = "21",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountIntlProdTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure }
+                HasParamDependency = new List<string>() {ParameterList.IntProductUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountIntlProdTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure }
             };
         }
 

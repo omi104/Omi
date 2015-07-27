@@ -91,7 +91,8 @@ namespace Dashboard.DataComponents.Transformers
                         {
                             Classes = new List<string>() {"checkBoxCol","trend-checkbox"},
                             TrendChartControlId = TrendChartControlId,
-                            UncheckedItem = UncheckedItems
+                            UncheckedItem = UncheckedItems,
+                            ParamName = ParamName
                         },
                     RowCellDataProvider = new CustomRowCellDataProvider(),
                     Columns = new List<string>() {"1"}
