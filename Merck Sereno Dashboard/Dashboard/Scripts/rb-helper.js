@@ -57,10 +57,10 @@
         });
     },
 
-    pub.HideMenu = function (e) {
-        if (!$('#sidebar').hasClass('collapse-sidebar'))
-            $('#toggle-menu-anchor').click();
-    };
+    //pub.HideMenu = function (e) {
+    //    if (!$('#sidebar').hasClass('collapse-sidebar'))
+    //        $('#toggle-menu-anchor').click();
+    //};
     pub.togglePanel = function (element) {
         if ($(element).hasClass('panel-minimize')) {
             $(element).removeClass('panel-minimize').addClass('panel-maximize');

@@ -1,10 +1,10 @@
 ﻿@using System.Xml
 @model Dashboard.ViewModels.TableChartConfig
-<div style="padding-bottom: 20px;">
+@*<div style="padding-bottom: 20px;">
     <div id="TrendChart">
         @Html.Raw(@Model.Chart.Chart)
     </div>
-</div>
+</div>*@
 
 <div class="trend-table-holder">
     @{
@@ -13,7 +13,7 @@
         writer.Flush();
     }
 </div>
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(document).ready(function () {
         //if ($(window).width() < 1025) {
         //    var tables = $('#navigation-layout').find('table');
@@ -27,5 +27,5 @@
         //    });
         //}
     });
-</script>
+</script>*@
 

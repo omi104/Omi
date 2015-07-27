@@ -28,11 +28,13 @@ namespace Dashboard.Configuration.Widgets
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<TableChartTransformer>()
                 .HasProperty(t => t.ShowFullLength).WithValue(true)
+                .HasProperty(t => t.NavigationName).WithValue(p => p.CurrentNavigationName())
                 .HasProperty(t => t.MeasureType).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                  .HasProperty(t => t.UncheckedItems).WithValue(p => widgetItem.Name == WidgetItems.Top10IntPrdTable().Name ? p[ParameterList.RegionUncheckedItems] : p[ParameterList.KsaUncheckedItems])
-                 .HasProperty(t => t.ParamName).WithValue(p => widgetItem.Name == WidgetItems.Top10IntPrdTable().Name ? ParameterList.RegionUncheckedItems : ParameterList.KsaUncheckedItems);
+                 .HasProperty(t => t.ParamName).WithValue(p => widgetItem.Name == WidgetItems.Top10IntPrdTable().Name ? ParameterList.RegionUncheckedItems : ParameterList.KsaUncheckedItems)
+                 .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"]);
 
             Export.HasConfig(GetExportConfig).HasController<TableExportController>()
             .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)

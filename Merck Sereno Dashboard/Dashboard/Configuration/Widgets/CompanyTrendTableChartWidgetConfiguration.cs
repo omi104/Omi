@@ -29,6 +29,7 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.PeriodType).WithValue(p => p["@@" + ParameterList.TimePeriod + "_text"])
                 .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.NavigationName).WithValue(p => p[ParameterList.NavigationName])
+                .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
                 .HasProperty(t => t.ParamName)
                 .WithValue(
                     p =>
