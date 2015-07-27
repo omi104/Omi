@@ -244,6 +244,7 @@
     <Compile Include="Controllers\SimpleTableWidgetController.cs" />
     <Compile Include="Controllers\Widgets\CombiHomeChartWidgetController.cs" />
     <Compile Include="Controllers\Widgets\CompanyTrendTableChartWidgetController.cs" />
+    <Compile Include="Controllers\Widgets\CompanyTrendTableWidgetController.cs" />
     <Compile Include="Controllers\Widgets\ExpandCollapseTableWidgetController.cs" />
     <Compile Include="Controllers\Widgets\SnapshotTableWidgetController.cs" />
     <Compile Include="DashboardComponent\Components\FilterItems.cs" />
@@ -306,6 +307,7 @@
     <Compile Include="DataComponents\Transformers\CombinationTrendChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CombinationChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CompanySnapshotChartDataTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\CompanyTrendTableChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToDictionaryTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTopRankingTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTrendTransformer.cs" />
@@ -933,6 +935,7 @@
     <Content Include="Views\CombiHomeChartWidget\Index.cshtml" />
     <Content Include="Views\SnapshotTableWidget\Index.cshtml" />
     <Content Include="Views\RadioFilterLayout\Index.cshtml" />
+    <Content Include="Views\CompanyTrendTableWidget\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\FusionMapsSWF\MV\" />
