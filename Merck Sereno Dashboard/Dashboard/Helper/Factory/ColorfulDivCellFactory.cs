@@ -27,14 +27,24 @@ namespace Dashboard.Helper.Factory
 
             var complexNode = new ComplexNode("td");
 
-            complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(RecordCount) : "") { Classes = new List<string>() { "rank-div" } });
+            //complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(RecordCount) : "") { Classes = new List<string>() { "rank-div" } });
                 string colorValue = "";
                 if (values[1].ToUpper().Contains("TOTAL"))
                 {
                     colorValue = ColorListDataSource.ColorOfTotal.Replace("#", "");
                 }
+                else if(UncheckedItem.Contains(values[1]))
+                {
+                    colorValue = "";
+                    complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(RecordCount) : "") { Classes = new List<string>() { "rank-div" } });
+
+                }
                 else
+                {
                     colorValue = _colorSource.GetNextColor();
+                    complexNode.ChildNodes.Add(new SimpleNode("span", values != null ? Convert.ToString(RecordCount) : "") { Classes = new List<string>() { "rank-div" } });
+                }
+                    
                 complexNode.ChildNodes.Add(new SimpleNode("span", string.Empty)
                 {
                     Classes = new List<string>() {"color-div"},
