@@ -13,7 +13,7 @@ namespace Dashboard.Helper.Factory
         private ColorListDataSource _colorSource;
         public string UncheckedItem { get; set; }
         public string KPI { get; set; }
-        public int RecordCount = 1;
+        public int RecordCount = 0;
 
         public ColorfulDivCellFactory()
         {
