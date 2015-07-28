@@ -7,3 +7,10 @@
         writer.Flush();
     }
 </div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var tableWidth = '@Model.TableWidth' + "px";
+        $("table.trend-table").css('width',tableWidth);
+    });
+</script>
