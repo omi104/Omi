@@ -34,7 +34,8 @@ namespace Dashboard.Configuration
             HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
 
             HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllIntlProdByLoc()));
-            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
+           // HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
+            HasNavigation(new IntProductsAllLocationByProductsConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
             HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavIntlProdSnapshot()));
             HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavIntlProdTrend()));
 

@@ -220,11 +220,13 @@
     <Compile Include="Configuration\Filters\OnOffFilterConfiguration.cs" />
     <Compile Include="Configuration\Filters\TopCountFilterConfiguration.cs" />
     <Compile Include="Configuration\Navigations\AtAGlanceNavigationConfiguration.cs" />
+    <Compile Include="Configuration\Navigations\IntProductsAllLocationByProductsConfiguration.cs" />
     <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\SnapshotNavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\TrendNavigationConfiguration.cs" />
     <Compile Include="Configuration\Widgets\CompanyTrendTableChartWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\ExpandCollapseTableWidgetConfiguration.cs" />
+    <Compile Include="Configuration\Widgets\IntProductsAllLocationByProductsWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotBottomTableWidgetConfiguration.cs" />
     <Compile Include="Configuration\Widgets\SnapshotChartWidgetConfiguration.cs" />
     <Compile Include="Controllers\Exports\TableExportController.cs" />
@@ -318,6 +320,7 @@
     <Compile Include="DataComponents\Transformers\ExportTableSplitTrasformerForPPT.cs" />
     <Compile Include="DataComponents\Transformers\HierarchyTableTransfomer.cs" />
     <Compile Include="DataComponents\Transformers\HoverDataTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\IntProductsAllLocationByProductsTransformer.cs" />
     <Compile Include="DataComponents\Transformers\MsBubbleChart.cs" />
     <Compile Include="DataComponents\Transformers\MSCombinationChart.cs" />
     <Compile Include="DataComponents\Transformers\MSMerckLineChart.cs" />
