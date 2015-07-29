@@ -22,7 +22,7 @@ namespace Dashboard.DataComponents.Transformers
             {
                 list.Add(new CellMap<Row> { CellFactory = new TextCellFactory() { Classes = new List<string>() { "snapshot-top-rank" } }, RowCellDataProvider = new CubeCellDataProvider(cubeColumns), Columns = new List<string> { cubeColumns[0].Name } });
                 list.Add(new CellMap<Row> { CellFactory = new TextCellFactory() { Classes = new List<string>() { "snapshot-top-company" } }, RowCellDataProvider = new CubeCellDataProvider(cubeColumns), Columns = new List<string> { cubeColumns[1].Name } });
-                list.Add(new CellMap<Row> { CellFactory = new TextCellFactory() { IsMakeTextShort = true, Classes = new List<string>() { "snapshot-top-brand" } }, RowCellDataProvider = new CubeCellDataProvider(cubeColumns), Columns = new List<string> { cubeColumns[2].Name } });
+                list.Add(new CellMap<Row> { CellFactory = new TextCellFactory() { IsMakeTextShort = false, Classes = new List<string>() { "snapshot-top-brand" } }, RowCellDataProvider = new CubeCellDataProvider(cubeColumns), Columns = new List<string> { cubeColumns[2].Name } });
             }
             else
             {

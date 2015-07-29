@@ -67,6 +67,7 @@ div.homeBottomChartFooter
     font-weight: bold;
     padding-top: 8px;
     padding-bottom: 8px;
+    border:solid
 }
 
 #top10CompaniesTable th:first-child
@@ -130,7 +131,7 @@ div.homeBottomChartFooter
     font-size: 10px;
     font-weight: normal;
     background-color: #fff;
-    border-top: 1px solid #000;
+    border-top: 1px solid black;
     color: #000;
     width: 99%;
 }
