@@ -27,7 +27,7 @@ namespace Dashboard.DataComponents.Transformers
             else
             {
                 list.Add(new CellMap<Row> { CellFactory = new ColorfulDivCellFactory() { Classes = new List<string>() { "snapshot-bottom-rank" } }, RowCellDataProvider = new CubeMultipleColumnDataProvider(cubeColumns), Columns = new List<string>() { cubeColumns[0].Name, cubeColumns[1].Name } });
-                list.Add(new CellMap<Row> { CellFactory = new TextCellFactory() { NameCollength = ShowFullLength ? 999 : 16, IsMakeTextShort = true, Classes = new List<string>() { "col-1", "snapshot-bottom-company" } }, RowCellDataProvider = new CubeCellDataProvider(cubeColumns), Columns = new List<string> { cubeColumns[1].Name } });
+                list.Add(new CellMap<Row> { CellFactory = new TextCellFactory() { NameCollength = ShowFullLength ? 999 : 16, IsMakeTextShort = false, Classes = new List<string>() { "col-1", "snapshot-bottom-company" } }, RowCellDataProvider = new CubeCellDataProvider(cubeColumns), Columns = new List<string> { cubeColumns[1].Name } });
             }
 
             if (cubeColumns.Count == 18 || cubeColumns.Count == 19)//toptable = 18, bottom table = 19

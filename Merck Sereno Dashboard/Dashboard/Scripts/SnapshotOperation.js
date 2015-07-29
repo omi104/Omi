@@ -85,7 +85,7 @@
                     console.log(errorThrown);
                 }
             });
-            window.document.title = "Reckitt Benckiser";
+            window.document.title = "Merck Serono";
         };
     pri.onHoverDataFetchSuccess = function (returnedData, parameters) {
         pri.IsHovering = false;

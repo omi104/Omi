@@ -39,6 +39,17 @@ namespace Dashboard.Helper.Factory
 
             if (data == "--")
                 data = "%PPG";
+            if (data.Contains('#'))
+            {
+                List<string> splitData = data.Split('#').ToList();
+                return new SimpleNode("td", splitData[0])
+                {
+                    Attributes = new Dictionary<string, string>()
+                    {
+                        {"title",splitData[1]},
+                    }
+                };
+            }
             if (IsMakeTextShort && data.Length > NameCollength)
             {
                 return new SimpleNode("td", data.Substring(0, NameCollength-1) + "...")
@@ -50,6 +61,7 @@ namespace Dashboard.Helper.Factory
                     }
                 };
             }
+            
             return new SimpleNode("td", data);
         }
     }
