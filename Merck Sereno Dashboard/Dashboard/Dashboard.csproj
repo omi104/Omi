@@ -222,6 +222,7 @@
     <Compile Include="Configuration\Navigations\AtAGlanceNavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\IntProductsAllLocationByProductsConfiguration.cs" />
     <Compile Include="Configuration\Navigations\KSANavigationConfiguration.cs" />
+    <Compile Include="Configuration\Navigations\ProductsAllLocationByProductsConfiguration.cs" />
     <Compile Include="Configuration\Navigations\SnapshotNavigationConfiguration.cs" />
     <Compile Include="Configuration\Navigations\TrendNavigationConfiguration.cs" />
     <Compile Include="Configuration\Widgets\CompanyTrendTableChartWidgetConfiguration.cs" />

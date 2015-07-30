@@ -26,7 +26,7 @@ namespace Dashboard.DashboardComponent.Components
                 Name = "TopCountIntlProdAtaGlance",
                 Label = "",
                 ControlId = "filter-TopCountIntlProdAtaGlance-control",
-                ModifyParam = ParameterList.TopCountIntPrd,
+                ModifyParam = ParameterList.TopCountIntlProdAtaGlance,
                 ViewId = ""
             };
         }

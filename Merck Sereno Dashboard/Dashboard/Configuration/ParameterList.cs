@@ -43,20 +43,34 @@ namespace Dashboard.Configuration
         public const string TimePeriod = "TimePeriod";
         public const string StartDate = "StartDate";
         public const string EndDate = "EndDate";
-        public const string TopCountCompanyAtAGlance = "TopCountCorporation";
-        public const string TopCountProductAtAGlance = "TopCountProductAtAGlance";
+
+        public const string TopCountCompanyAtAGlance = "TopCountCorporation";/// resolved
         public const string TopCountCompanySnapshot = "ComSnapshotTopCount";
-        public const string TopCountIntlProdSnapshot = "TopCountIntlProdSnapshot";
-        public const string TopCountProductSnapshot = "TopCountProductSnapshot";
         public const string TopCountCompanyTrend = "CorpTrendTopCount";
+
+        
+        public const string TopCountIntlProdAtaGlance = "TopCountIntlProdAtaGlance"; //resolved
+        public const string TopCountIntlProdSnapshot = "TopCountIntlProdSnapshot";
         public const string TopCountIntlProdTrend = "TopCountIntlProdTrend";
+
+        public const string TopCountProductAtAGlance = "TopCountProductAtAGlance";
+        public const string TopCountProductSnapshot = "TopCountProductSnapshot";
         public const string TopCountProductTrend = "TopCountProductTrend";
-        public const string TopCountIntPrd = "TopCountIntPrd";
+        
+        //public const string TopCountIntlProdSnapshot = "TopCountIntlProdSnapshot";
+        
+        
+        
+        
+        
+
+        //public const string TopCountPrd = "TopCountPRD";
         public const string TypeOfMeasure = "TypeOfMeasure";
         //public const string UncheckedItems = "UncheckedItems";
         public const string CorporationUncheckedItems = "CorporationUncheckedItems";
         public const string IntProductUncheckedItems = "IntProductUncheckedItems";
         //public const string UncheckedItems = "UncheckedItems"; 
+        public const string ProductUncheckedItems = "ProductUncheckedItems";
 
 
         public const string RecordCount = "recordCount";

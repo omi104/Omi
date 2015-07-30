@@ -23,6 +23,7 @@
                             <ul class="sub">
                                 <li>
                                     <a href="#" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavAllRegions().Name','@NavigationItems.NavAllRegions().Label','false');"><i class="fa"></i><span class="txt">Overview</span></a></li>
+
                                 <li class="hasSub">
                                     <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">Corporations</span></a>
                                     <ul class="sub">
@@ -37,6 +38,7 @@
                                         </li>
                                     </ul>
                                 </li>
+
                                 <li class="hasSub">
                                     <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">International Product</span></a>
                                     <ul class="sub">
@@ -59,22 +61,24 @@
                                     <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">Products</span></a>
                                     <ul class="sub">
                                         <li>
-                                            <a id="navigation18" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdAllIntlProdByLoc().Name','@NavigationItems.NavIntlProdAllIntlProdByLoc().Label','false');"><span class="txt">@NavigationItems.NavIntlProdAllIntlProdByLoc().Label</span></a>
+                                            <a id="navigation50" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProdAllProdByLoc().Name','@NavigationItems.NavProdAllProdByLoc().Label','false');"><span class="txt">@NavigationItems.NavProdAllProdByLoc().Label</span></a>
                                         </li>
                                         <li>
-                                            <a id="navigation19" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdAllLocByIntlProd().Name','@NavigationItems.NavIntlProdAllLocByIntlProd().Label','false');"><span class="txt">@NavigationItems.NavIntlProdAllLocByIntlProd().Label</span></a>
+                                            <a id="navigation53" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProdAllLocByProd().Name','@NavigationItems.NavProdAllLocByProd().Label','false');"><span class="txt">@NavigationItems.NavProdAllLocByProd().Label</span></a>
                                         </li>
                                         <li>
-                                            <a id="navigation20" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdSnapshot().Name','@NavigationItems.NavIntlProdSnapshot().Label','false');"><span class="txt">@NavigationItems.NavIntlProdSnapshot().Label</span></a>
+                                            <a id="navigation51" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProductsSnapshot().Name','@NavigationItems.NavProductsSnapshot().Label','false');"><span class="txt">@NavigationItems.NavProductsSnapshot().Label</span></a>
                                         </li>
                                         <li>
-                                            <a id="navigation21" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavIntlProdTrend().Name','@NavigationItems.NavIntlProdTrend().Label','false');"><span class="txt">@NavigationItems.NavIntlProdTrend().Label</span></a>
+                                            <a id="navigation52" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProductsTrend().Name','@NavigationItems.NavProductsTrend().Label','false');"><span class="txt">@NavigationItems.NavProductsTrend().Label</span></a>
                                         </li>
                                     </ul>
                                 </li>
 
                             </ul>
                         </li>
+
+
 
                         <li class="hasSub">
                             <a id="ksa-navigation" href="#" class="expand" onclick="RbHelper.KSAClick('@HttpContext.Current.User.Identity.Name')"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa fa-key"></i><span class="txt">KSA Territory Level</span></a>
@@ -112,6 +116,26 @@
                                         </li>
                                     </ul>
                                 </li>
+
+                                <li class="hasSub">
+                                    <a href="#" class="notExpand"><i class="fa fa-chevron-circle-right sideNav-arrow"></i><i class="fa"></i><span class="txt">Products</span></a>
+                                    <ul class="sub">
+                                        <li>
+                                            <a id="navigation60" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProdAllProdByLoc().Name','@NavigationItems.NavProdAllProdByLoc().Label','true');"><span class="txt">@NavigationItems.NavProdAllProdByLoc().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation63" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProdAllLocByProd().Name','@NavigationItems.NavProdAllLocByProd().Label','true');"><span class="txt">@NavigationItems.NavProdAllLocByProd().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation61" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProductsSnapshot().Name','@NavigationItems.NavProductsSnapshot().Label','true');"><span class="txt">@NavigationItems.NavProductsSnapshot().Label</span></a>
+                                        </li>
+                                        <li>
+                                            <a id="navigation62" href="javascript:void(0)" onclick="RBCommandCenter.navigationChanged(this,'@NavigationItems.NavProductsTrend().Name','@NavigationItems.NavProductsTrend().Label','true');"><span class="txt">@NavigationItems.NavProductsTrend().Label</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+
                             </ul>
                         </li>
                     </ul>

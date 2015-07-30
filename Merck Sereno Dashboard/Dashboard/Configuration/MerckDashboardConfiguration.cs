@@ -29,15 +29,21 @@ namespace Dashboard.Configuration
         {
             HasNavigation(new HomeNavigationConfiguration(NavigationItems.NavHome()));
 
-            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavCompaniesAllLocationsAtGlance()));
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavCompaniesAllLocationsAtGlance())); // corporation
             HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavCompaniesSnapshot()));
             HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
 
-            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllIntlProdByLoc()));
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllIntlProdByLoc())); // IntProducts
            // HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
             HasNavigation(new IntProductsAllLocationByProductsConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
             HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavIntlProdSnapshot()));
             HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavIntlProdTrend()));
+
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavProdAllProdByLoc())); // Products
+            // HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
+            HasNavigation(new IntProductsAllLocationByProductsConfiguration(NavigationItems.NavProdAllLocByProd()));
+            HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavProductsSnapshot()));
+            HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavProductsTrend()));
 
             HasNavigation(new AllRegionNavigationConfiguration(NavigationItems.NavAllRegions()));
             HasNavigation(new KSANavigationConfiguration(NavigationItems.NavKSATerritoryLevel()));
@@ -77,20 +83,35 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.StartDate).WithValue("")
                 .Add(ParameterList.EndDate).WithValue("")
                 //.Add("TopCountCorporation").WithValue("5")
-                .Add(ParameterList.TopCountProductSnapshot).WithValue("5")
-                .Add(ParameterList.TopCountCompanyAtAGlance).WithValue("5")
-                .Add(ParameterList.TopCountProductTrend).WithValue("5")
-                .Add(ParameterList.TopCountProductAtAGlance).WithValue("5")
-                 .Add(ParameterList.TopCountCompanySnapshot).WithValue("5")
+                
+
+
+                .Add(ParameterList.TopCountCompanyAtAGlance).WithValue("5") // resolved
+                .Add(ParameterList.TopCountCompanySnapshot).WithValue("5")
                  .Add(ParameterList.TopCountCompanyTrend).WithValue("5")
-                 .Add(ParameterList.TopCountIntPrd).WithValue("5")
+
+
+                 .Add(ParameterList.TopCountIntlProdAtaGlance).WithValue("5") // resolved
                  .Add(ParameterList.TopCountIntlProdSnapshot).WithValue("5")
                  .Add(ParameterList.TopCountIntlProdTrend).WithValue("5")
-                 .Add(ParameterList.TypeOfMeasure).WithValue("")
 
+
+                
+                .Add(ParameterList.TopCountProductAtAGlance).WithValue("5") //resolved
+                 .Add(ParameterList.TopCountProductSnapshot).WithValue("5")
+                 .Add(ParameterList.TopCountProductTrend).WithValue("5")
+                 
+                
+                 
+
+
+                 .Add(ParameterList.TypeOfMeasure).WithValue("")
                 .Add(ParameterList.RecordCount).WithValue("5")
-                .Add(ParameterList.CorporationUncheckedItems).WithValue("")
+
+                .Add(ParameterList.CorporationUncheckedItems).WithValue("") //resolved
                 .Add(ParameterList.IntProductUncheckedItems).WithValue("")
+                .Add(ParameterList.ProductUncheckedItems).WithValue("")
+
                 //.Add(ParameterList.UncheckedItems).WithValue("")
                 .Add(ParameterList.RegionUncheckedItems).WithValue("")
                 .Add(ParameterList.KsaUncheckedItems).WithValue("")

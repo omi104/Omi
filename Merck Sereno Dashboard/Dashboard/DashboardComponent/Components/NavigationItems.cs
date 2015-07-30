@@ -110,7 +110,7 @@ namespace Dashboard.DashboardComponent.Components
                 }
             };
         }
-        #endregion
+        #endregion //resolved
 
         #region International Product
         public static NavigationItem NavIntlProduct()
@@ -155,7 +155,7 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "All Intl Location By Product",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItems.TopCountIntlProdAtaGlance()
+                    //FilterItems.TopCountIntlProdAtaGlance()
                     
                 },
                 Widgets = new List<WidgetItem>()
@@ -204,6 +204,102 @@ namespace Dashboard.DashboardComponent.Components
         }
         #endregion
 
+
+        //#region  Products
+        //public static NavigationItem NavProduct()
+        //{
+        //    return new NavigationItem()
+        //    {
+        //        Name = "NavProduct",
+        //        Label = "Products",
+        //        ChildNavigations = new List<NavigationItem>()
+        //        {
+        //            NavProdAllProdByLoc(),
+        //            NavProdAllLocByProd(),
+        //            NavProdSnapshot(),
+        //            NavProductsTrend()
+        //        }
+        //    };
+        //}
+
+        //public static NavigationItem NavProdAllProdByLoc()
+        //{
+        //    return new NavigationItem()
+        //    {
+        //        Name = "NavProdAllProdByLoc",
+        //        Label = "All Product By Location",
+        //        Filters = new List<FilterItem>()
+        //        {
+        //            FilterItems.TopCountProductAtaGlance()
+                    
+        //        },
+        //        Widgets = new List<WidgetItem>()
+        //        {
+        //             WidgetItems.ProductsAllProdByLocExpCollapseWidget()
+        //        }
+        //    };
+        //}
+
+        //public static NavigationItem NavProdAllLocByProd()
+        //{
+        //    return new NavigationItem()
+        //    {
+        //        Name = "NavProdAllLocByIntlProd",
+        //        Label = "All Location By Product",
+        //        Filters = new List<FilterItem>()
+        //        {
+        //            //FilterItems.TopCountIntlProdAtaGlance()
+                    
+        //        },
+        //        Widgets = new List<WidgetItem>()
+        //        {
+        //             WidgetItems.ProductsAllLocByProdExpCollapseWidget()
+        //        }
+        //    };
+        //}
+
+        //public static NavigationItem NavProdSnapshot()
+        //{
+        //    return new NavigationItem()
+        //    {
+        //        Name = "NavProdSnapshot",
+        //        Label = "Snapshot",
+        //        Filters = new List<FilterItem>()
+        //        {
+        //            FilterItems.TopCountProductSnapshot()
+        //        },
+        //        Widgets = new List<WidgetItem>()
+        //        {
+        //             WidgetItems.TopProdSnapShotTable(),
+        //             WidgetItems.ProdSnapshotChart(),
+        //             WidgetItems.BottomProductSnapshotTable()
+        //        }
+        //    };
+        //}
+
+
+        //public static NavigationItem NavProductsTrend()
+        //{
+        //    return new NavigationItem()
+        //    {
+        //        Id = "nav4",
+        //        Name = "NavProductsTrend",
+        //        Label = "Trend",
+        //        Filters = new List<FilterItem>()
+        //        {
+        //            FilterItems.TopCountProductTrend(),
+        //            FilterItems.MeasureType()
+        //        },
+        //        Widgets = new List<WidgetItem>()
+        //        {
+        //             WidgetItems.ProductTrendTableChartWidget()
+        //        }
+        //    };
+        //}
+
+       
+        //#endregion
+
         public static NavigationItem NavKSATerritoryLevel()
         {
             return new NavigationItem()
@@ -226,7 +322,7 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
-
+        
         #region Products Navigation Items
         public static NavigationItem NavProducts()
         {
@@ -236,14 +332,14 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Products",
                 ChildNavigations = new List<NavigationItem>()
                 {
-                    NavProductsAllLocationsAtGlance(),
+                    NavProdAllProdByLoc(),
                     NavProductsSnapshot(),
                     NavProductsTrend()
                 }
             };
         }
 
-        public static NavigationItem NavProductsAllLocationsAtGlance()
+        public static NavigationItem NavProdAllProdByLoc()
         {
             return new NavigationItem()
             {
@@ -256,11 +352,31 @@ namespace Dashboard.DashboardComponent.Components
                 },
                 Widgets = new List<WidgetItem>()
                 {
-                     //WidgetItems.ProductsExpCollapseTableWidget()
+                     WidgetItems.ProductsAllProdByLocExpCollapseWidget()
                 }
             };
         }
 
+        //NavProdAllProdByLoc
+        public static NavigationItem NavProdAllLocByProd()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavProdAllLocByIntlProd",
+                Label = "All Location By Product",
+                Filters = new List<FilterItem>()
+                {
+                    //FilterItems.TopCountIntlProdAtaGlance()
+
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.ProductsAllLocByProdExpCollapseWidget()
+                }
+            };
+        }
+
+        
         public static NavigationItem NavProductsSnapshot()
         {
             return new NavigationItem()
@@ -276,7 +392,10 @@ namespace Dashboard.DashboardComponent.Components
                 Widgets = new List<WidgetItem>()
                 {
                      
+                     WidgetItems.TopProdSnapShotTable(),
+                     WidgetItems.ProdSnapshotChart(),
                      WidgetItems.BottomProductSnapshotTable()
+
                 }
             };
         }
@@ -290,7 +409,8 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "Trend",
                 Filters = new List<FilterItem>()
                 {
-                    FilterItems.TopCountProductTrend()
+                    FilterItems.TopCountProductTrend(),
+                    FilterItems.MeasureType()
                 },
                 Widgets = new List<WidgetItem>()
                 {
@@ -299,6 +419,7 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
         #endregion
+         
 
     }
 }
