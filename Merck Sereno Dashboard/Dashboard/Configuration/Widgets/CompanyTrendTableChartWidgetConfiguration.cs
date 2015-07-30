@@ -47,21 +47,25 @@ namespace Dashboard.Configuration.Widgets
                 //.HasProperty(t => t.MeasureType).WithValue(p => p[ParameterList.RbMeasureType])
                 //.HasProperty(t => t.TopCountValue).WithValue(GetTopCount);
 
-            //Export.HasController<TrendTableChartExportController>().HasConfig("CompanyTrend")
-            //      .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
-            //      .Transform().By<CubeDataToXTableTrendTransformer>()
-            //      .HasProperty(t => t.AbsoluteThousandValue).WithValue(p => p["absoluteThousandConversion"])
-            //      .Transform().By<ExportModelTransformer>()
-            //      .HasProperty(t => t.NavigationNameString).WithValue(p => p["Navigation_Label"])
-            //      .HasProperty(t => t.GeoMaptext).WithValue(p => p["RB_Geo_text"])
-            //     .HasProperty(t => t.TimePeriodText).WithValue(p => p["@@Period_text"])
-            //     .HasProperty(t => t.MeasureText).WithValue(p => p["@@Measure_text"])
-            //     .HasProperty(t => t.CategoryText).WithValue(p => p["@@MarketCategory_text"])
-            //     .HasProperty(t => t.SubCategoryText).WithValue(p => p["@@MarketSubCategory_text"])
-            //     .HasProperty(t => t.SegementText).WithValue(p => p["@@Segment_text"])
-            //     .HasProperty(t => t.ChannelText).WithValue(p => p["@@Channel_text"])
-            //     .HasProperty(t => t.SubChannelText).WithValue(p => p["@@SubChannel_text"])
-            //     .HasProperty(t => t.TopCountValue).WithValue(GetTopCount);
+            Export.HasController<TrendTableChartExportController>().HasConfig("CompanyTrend")
+                  .DataFlow.AddSource<CubeDataSourceBase>().WithModule(widgetItem.ViewId)
+                  .Transform().By<CubeDataToXTableTrendTransformer>()
+                  .HasProperty(t => t.PeriodType).WithValue(p => p["@@TimePeriod_text"])
+                  .HasProperty(t => t.KPI).WithValue(p => p["@@KPI_text"])
+                  .HasProperty(t => t.EndDate).WithValue(p => p["@@EndDate_text"])
+                //.HasProperty(t => t.AbsoluteThousandValue).WithValueWithValue("Thousand")
+                  .Transform().By<ExportModelTransformer>();
+                 // .HasProperty(t => t.NavigationNameString).WithValue(p => p["Navigation_Label"])
+                  //.HasProperty(t => t.GeoMaptext).WithValue(p => p["RB_Geo_text"])
+                 
+                 //.HasProperty(t => t.MeasureText).WithValue(p => p["@@UnitOrValue_text"])
+                 //.HasProperty(t => t.CategoryText).WithValue(p => p["@@MarketCategory_text"])
+                 //.HasProperty(t => t.SubCategoryText).WithValue(p => p["@@MarketSubCategory_text"])
+                // .HasProperty(t => t.Segment).WithValue(p => p["@@Segment_text"]);
+                 
+                 //.HasProperty(t => t.ChannelText).WithValue(p => p["@@Channel_text"])
+                 //.HasProperty(t => t.SubChannelText).WithValue(p => p["@@SubChannel_text"])
+                 //.HasProperty(t => t.TopCountValue).WithValue(GetTopCount);
 
             if (widgetItem.HasParamDependency != null && widgetItem.HasParamDependency.Count > 0)
             {

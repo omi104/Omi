@@ -793,6 +793,7 @@
     <Content Include="Content\ExportTemplate\CombinationBarChart.xlsx" />
     <Content Include="Content\ExportTemplate\MSLineChart.xlsx" />
     <Content Include="Content\ExportTemplate\SingleTableForPPT.xlsx" />
+    <Content Include="Content\ExportTemplate\Trend.xlsx" />
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
     <None Include="Properties\PublishProfiles\40RbPo1Dashboard.pubxml" />
     <None Include="Properties\PublishProfiles\Local RbPo1Dashboard.pubxml" />
