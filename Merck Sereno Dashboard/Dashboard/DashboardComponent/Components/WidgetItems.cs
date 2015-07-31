@@ -109,7 +109,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "TopCompanySnapShotTable",
                 ViewId = "23",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -119,7 +119,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CompanySnapshotChart",
                 ViewId = "17",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountCompanySnapshot }
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountCompanySnapshot, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -129,7 +129,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "BottomCompanySnapshotTable",
                 ViewId = "17",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountCompanySnapshot, ParameterList.EndDate, }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountCompanySnapshot, ParameterList.EndDate, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -139,7 +139,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "CompanyTrendTableChartWidget",
                 ViewId = "18",
-                HasParamDependency = new List<string>() {  ParameterList.CorporationUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod,ParameterList.TopCountCompanyTrend,ParameterList.EndDate,ParameterList.Segment,ParameterList.Form,ParameterList.TypeOfMeasure }
+                HasParamDependency = new List<string>() { ParameterList.CorporationUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountCompanyTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -184,7 +184,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "TopIntlProdSnapShotTable",
                 ViewId = "24",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -194,7 +194,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "IntlProdSnapshotChart",
                 ViewId = "20",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountIntlProdSnapshot }
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountIntlProdSnapshot, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -204,7 +204,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "BottomIntlProdSnapshotTable",
                 ViewId = "20",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountIntlProdSnapshot, ParameterList.EndDate, }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountIntlProdSnapshot, ParameterList.EndDate, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -214,7 +214,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "IntlProdTrendTableChartWidget",
                 ViewId = "21",
-                HasParamDependency = new List<string>() {ParameterList.ProductUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountIntlProdTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure }
+                HasParamDependency = new List<string>() { ParameterList.IntProductUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountIntlProdTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -228,7 +228,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "ProductExpCollapseTableWidget",
                 ViewId = "32",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountProductSnapshot, ParameterList.EndDate, }
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountProductSnapshot, ParameterList.EndDate, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -239,7 +239,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "ProductTrendTableChartWidget",
                 ViewId = "29",
-                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountProductTrend, ParameterList.EndDate, }
+                HasParamDependency = new List<string>() { ParameterList.ProductUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountProductTrend, ParameterList.EndDate, ParameterList.TypeOfMeasure, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -275,7 +275,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "TopProdSnapShotTable",
                 ViewId = "31",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form }
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.AbsoluteThousandFilter }
             };
         }
 
@@ -285,7 +285,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "ProdSnapshotChart",
                 ViewId = "32",
-                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountProductSnapshot }
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountProductSnapshot, ParameterList.AbsoluteThousandFilter }
             };
         }
 

@@ -117,6 +117,7 @@ namespace Dashboard.Configuration
                 .Add(ParameterList.KsaUncheckedItems).WithValue("")
                 .Add(ParameterList.CurrentNavigationId).WithValue("navigation1")
                 .Add(ParameterList.NavigationLabel).WithValue("Home")
+                .Add(ParameterList.AbsoluteThousandFilter).WithValue("Thousand")
                 .Add(ParameterList.IsIMSUser).WithValue("false");
         }
 

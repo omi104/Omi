@@ -71,6 +71,7 @@ namespace Dashboard.Configuration
         public const string IntProductUncheckedItems = "IntProductUncheckedItems";
         //public const string UncheckedItems = "UncheckedItems"; 
         public const string ProductUncheckedItems = "ProductUncheckedItems";
+        public const string AbsoluteThousandFilter = "absoluteThousandConversion";
 
 
         public const string RecordCount = "recordCount";

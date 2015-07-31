@@ -27,8 +27,8 @@ namespace Dashboard.Configuration.Widgets
                 .WithModule(widgetItem.ViewId)
                 .Transform().By<SnapshotTableTransformer>()
                 .HasProperty(t => t.IsTopTable).WithValue(true)
-                .HasProperty(t => t.MeasureValue).WithValue(p => p["@@" + ParameterList.UnitOrValue + "_text"]);
-                //.HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p[ParameterList.AbsoluteThousandFilter])
+                .HasProperty(t => t.MeasureValue).WithValue(p => p["@@" + ParameterList.UnitOrValue + "_text"])
+                .HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p[ParameterList.AbsoluteThousandFilter]);
                 //.HasProperty(t => t.ShowFullLength).WithValue(widgetItem.Name == WidgetItems.TopSubBrandSnapShotTable().Name || widgetItem.Name == WidgetItems.TopSKUSnapShotTable().Name);
 
             //Export.HasController<SnapshotTopTableExportController>()

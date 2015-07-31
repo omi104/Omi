@@ -30,8 +30,8 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.IsLowerTable).WithValue(true)
                 .HasProperty(t => t.NameColumHeaderText).WithValue(GetHeaderText)
                 .HasProperty(t => t.ShowFullLength).WithValue(true)
-                .HasProperty(t => t.MeasureValue).WithValue(p => p["@@UnitOrValue_text"]);
-                //.HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p["absoluteThousandConversion"]);
+                .HasProperty(t => t.MeasureValue).WithValue(p => p["@@UnitOrValue_text"])
+                .HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p["absoluteThousandConversion"]);
             
                 //.HasProperty(t => t.ShowFullLength).WithValue(widgetItem.Name == WidgetItems.BottomSubBrandSnapshotTable().Name || widgetItem.Name == WidgetItems.BottomSKUSnapshotTable().Name);
 

@@ -134,7 +134,7 @@ namespace Dashboard.DashboardComponent.Components
             return new NavigationItem()
             {
                 Name = "NavIntlProdAllIntlProdByLoc",
-                Label = "All Intl Product By Location",
+                Label = "All Intl Products By Location",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountIntlProdAtaGlance()
@@ -152,7 +152,7 @@ namespace Dashboard.DashboardComponent.Components
             return new NavigationItem()
             {
                 Name = "NavIntlProdAllLocByIntlProd",
-                Label = "All Intl Location By Product",
+                Label = "All Intl Locations By Intl Product",
                 Filters = new List<FilterItem>()
                 {
                     //FilterItems.TopCountIntlProdAtaGlance()
@@ -345,7 +345,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Id = "nav2",
                 Name = "NavProductsAllLocations",
-                Label = "Products - All Locations at Glance",
+                Label = "All Products by Location",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountProductAtaGlance()
@@ -363,7 +363,7 @@ namespace Dashboard.DashboardComponent.Components
             return new NavigationItem()
             {
                 Name = "NavProdAllLocByIntlProd",
-                Label = "All Location By Product",
+                Label = "All Locations By Product",
                 Filters = new List<FilterItem>()
                 {
                     //FilterItems.TopCountIntlProdAtaGlance()
@@ -383,7 +383,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Id = "nav3",
                 Name = "NavProductsSnapshot",
-                Label = "Products - Snapshot",
+                Label = "Snapshot",
                 Filters = new List<FilterItem>()
                 {
                     FilterItems.TopCountProductSnapshot()

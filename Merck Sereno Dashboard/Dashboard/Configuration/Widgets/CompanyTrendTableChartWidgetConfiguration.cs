@@ -16,9 +16,11 @@ namespace Dashboard.Configuration.Widgets
 {
     public class CompanyTrendTableChartWidgetConfiguration : WidgetConfiguration<TableChartConfig, object>
     {
+        WidgetItem widgetItem;
         public CompanyTrendTableChartWidgetConfiguration(WidgetItem widgetItem)
         {
             HasName(widgetItem.Name);
+            this.widgetItem = widgetItem;
             View.HasConfig(p => p)
                 .HasController<CompanyTrendTableWidgetController>();
 
@@ -30,17 +32,11 @@ namespace Dashboard.Configuration.Widgets
                 .HasProperty(t => t.Date).WithValue(p => p["@@" + ParameterList.EndDate + "_text"])
                 .HasProperty(t => t.NavigationName).WithValue(p => p[ParameterList.NavigationName])
                 .HasProperty(t => t.ParamName)
-                .WithValue(
-                    p =>
-                        widgetItem.Name == WidgetItems.CompanyTrendTableChartWidget().Name
-                            ? ParameterList.CorporationUncheckedItems
-                            : ParameterList.ProductUncheckedItems)
+                .WithValue(p => GetParamName())
                 .HasProperty(t => t.ShowFullLength).WithValue(true)
                 .HasProperty(t => t.NameColumHeaderText).WithValue(GetHeaderText)
-                .HasProperty(t => t.UncheckedItems).WithValue(p =>  widgetItem.Name == WidgetItems.CompanyTrendTableChartWidget().Name
-                            ?p[ParameterList.CorporationUncheckedItems]
-                            : p[ParameterList.ProductUncheckedItems]) //UNChecked items could be a bug
-                .HasProperty(t => t.AbsoluteTousandValue).WithValue("Thousand");
+                .HasProperty(t => t.UncheckedItems).WithValue(GetUncheckedItems) //UNChecked items could be a bug
+                .HasProperty(t => t.AbsoluteTousandValue).WithValue(p => p[ParameterList.AbsoluteThousandFilter]);
             
             
             
@@ -94,6 +90,36 @@ namespace Dashboard.Configuration.Widgets
                 return "Corporation";
             
             return "Name";
+        }
+
+        private string GetParamName()
+        {
+            
+           
+                 if(widgetItem.Name == WidgetItems.CompanyTrendTableChartWidget().Name)
+                        return ParameterList.CorporationUncheckedItems;
+                 if(widgetItem.Name == WidgetItems.IntlProdTrendTableChartWidget().Name)
+                        return ParameterList.IntProductUncheckedItems;
+                 if(widgetItem.Name ==  WidgetItems.ProductTrendTableChartWidget().Name)
+                        return ParameterList.ProductUncheckedItems;
+                
+                  return "ParamNames";
+                
+            
+
+        }
+
+        private string GetUncheckedItems(IReadOnlyDictionary<string, string> param)
+        {
+            if (widgetItem.Name == WidgetItems.CompanyTrendTableChartWidget().Name)
+                return param[ParameterList.CorporationUncheckedItems];
+            if (widgetItem.Name == WidgetItems.IntlProdTrendTableChartWidget().Name)
+                return param[ParameterList.IntProductUncheckedItems];
+            if (widgetItem.Name == WidgetItems.ProductTrendTableChartWidget().Name)
+                return param[ParameterList.ProductUncheckedItems];
+
+            return "UncheckedItems";
+
         }
     }
 }
