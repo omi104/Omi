@@ -35,10 +35,16 @@ namespace Dashboard.DataComponents.Transformers
                         new SimpleNode(name:"div",value:CompanyOrBrandHeader){Classes = new List<string>(){"expandCollAllText"},Styles = new Dictionary<string, string>(){{"text-align","left"}}},
                     },
                     Classes = new List<string>(){"Categories"},Styles = new Dictionary<string, string>(){{"text-align","left"}}},
-                    new SimpleNode(name:"th",value:tokens.First()+" Value Retail Sales"){Classes = new List<string>(){"Sales"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
-                    new SimpleNode(name:"th",value:"Share%"){Classes = new List<string>(){"Share"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
-                    new SimpleNode(name:"th",value:"Growth % VYA"){Classes = new List<string>(){"Growth"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
-                    new SimpleNode(name:"th",value:"Share Pts Chg"){Classes = new List<string>(){"SharePtsChg"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}
+                    //new SimpleNode(name:"th",value:tokens.First()+" Value Retail Sales"){Classes = new List<string>(){"Sales"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    //new SimpleNode(name:"th",value:"Share%"){Classes = new List<string>(){"Share"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    //new SimpleNode(name:"th",value:"Growth % VYA"){Classes = new List<string>(){"Growth"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    //new SimpleNode(name:"th",value:"Share Pts Chg"){Classes = new List<string>(){"SharePtsChg"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}
+                    new SimpleNode(name:"th",value:"Total "+tokens.First()+"(Fixed) Sales"){Classes = new List<string>(){"Sales"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    new SimpleNode(name:"th",value:"Merck "+tokens.First()+"(Fixed) Sales"){Classes = new List<string>(){"Sales"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    new SimpleNode(name:"th",value:"Total Contribution %"){Classes = new List<string>(){"Contribution"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    new SimpleNode(name:"th",value:"Merck Contribution %"){Classes = new List<string>(){"Contribution"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    new SimpleNode(name:"th",value:"Total Growth vs. PPYA*"){Classes = new List<string>(){"Growth"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},
+                    new SimpleNode(name:"th",value:"Merck Growth vs. PPYA*"){Classes = new List<string>(){"Growth"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}
                 }
             };
             header.Rows.Add(h1);

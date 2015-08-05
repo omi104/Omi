@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>07/30/2015 16:00:06</publishTime>
+      <publishTime>07/31/2015 17:31:53</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>07/24/2015 14:39:58</publishTime>
@@ -70,7 +70,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2015 10:16:34</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>07/30/2015 16:00:06</publishTime>
+      <publishTime>07/31/2015 17:31:53</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>07/24/2015 14:39:57</publishTime>
@@ -1744,7 +1744,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/29/2015 16:37:25</publishTime>
     </File>
     <File Include="Scripts/TableBuilder.js">
-      <publishTime>07/27/2015 17:58:44</publishTime>
+      <publishTime>07/31/2015 18:22:48</publishTime>
     </File>
     <File Include="Scripts/TableChartInteractive.js">
       <publishTime>07/24/2015 14:39:55</publishTime>
