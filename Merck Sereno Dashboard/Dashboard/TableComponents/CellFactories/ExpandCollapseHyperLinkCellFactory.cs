@@ -27,7 +27,8 @@ namespace Dashboard.TableComponents.CellFactories
 
             var imgNode = new SimpleNode("img", "");
             imgNode.Attributes.Add("src", "Content/Images/expand.gif");
-            imgNode.Attributes.Add("onClick", IsMoleculeAtAGlance?"CustomMultiTable.UpdateTableState(this, '1')":"CustomMultiTable.UpdateTableState(this, '2')");
+            imgNode.Attributes.Add("onClick","CustomMultiTable.UpdateTableState(this, '2')");
+
             //imgNode.Attributes.Add("onClick", "CustomMultiTable.UpdateTableState(this, '1')");
             imgNode.Styles.Add("margin-right", "2px");
             

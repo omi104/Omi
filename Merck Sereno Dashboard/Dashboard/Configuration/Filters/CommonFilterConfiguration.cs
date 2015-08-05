@@ -70,33 +70,9 @@ namespace Dashboard.Configuration.Filters
             }
 
             // KPI Filter is to be invisibled from Navigation Home
+           
 
-            if (filterItem.Name == FilterItems.KPI().Name)
-            {
-                if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
-                {
-                    filterItem.IsVisible = false;
-
-                }
-                else
-                {
-                    filterItem.IsVisible = true;
-
-                }
-                
-            }
-            
-            // startdate is needed to be invisibled from all navigations
-
-            if (filterItem.Name == FilterItems.StartDate().Name)
-            {
-                filterItem.IsVisible = false;
-            }
-
-            // enddate navigations are needed to be invisibled from navigation Home,
-            //and the name will ne "Date"
-            
-            //if (filterItem.Name == FilterItems.EndDate().Name)
+            //if (filterItem.Name == FilterItems.KPI().Name)
             //{
             //    if (param.CurrentNavigationName() == NavigationItems.NavHome().Name)
             //    {
@@ -106,17 +82,72 @@ namespace Dashboard.Configuration.Filters
             //    else
             //    {
             //        filterItem.IsVisible = true;
-            //        filterItem.Label = "Date";
 
             //    }
-
+                
             //}
+
+            // KPI is visible on Overview just...not anywhere except overview
+
+            if (filterItem.Name == FilterItems.KPI().Name)
+            {
+                if (param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
+                {
+                    filterItem.IsVisible = true;
+
+                }
+                else
+                {
+                    filterItem.IsVisible = false;
+
+                }
+
+            }
+
+
+            
+            // startdate is needed to be invisibled from all navigations,but visible in overview..means navallregion
+
+            if (filterItem.Name == FilterItems.StartDate().Name)
+            {
+                //filterItem.IsVisible = false;
+                if (param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
+                {
+                    filterItem.IsVisible = true;
+
+                }
+                else
+                {
+                    filterItem.IsVisible = false;
+
+                }
+            }
+
+            // enddate navigations are needed to be invisibled from navigation Home,
+            //and the name will ne "Date"
+            // but in overview..it will remain as Enddate
 
             if (filterItem.Name == FilterItems.EndDate().Name)
             {
-                filterItem.Label = "Date";
-                
+                if (param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
+                {
+                    //filterItem.IsVisible = true;
+                    filterItem.Label = "EndDate";
+
+                }
+                else
+                {
+                    filterItem.Label = "Date";
+
+                }
+
             }
+
+            //if (filterItem.Name == FilterItems.EndDate().Name)
+            //{
+            //    filterItem.Label = "Date";
+                
+            //}
         
             // Product Filter is to be invisibled from Navigation Home
 
