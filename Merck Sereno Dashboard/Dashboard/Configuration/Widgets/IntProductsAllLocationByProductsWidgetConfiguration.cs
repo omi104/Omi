@@ -25,7 +25,7 @@ namespace Dashboard.Configuration.Widgets
                 .Transform().By<IntProductsAllLocationByProductsTransformer>()
                 //.HasProperty(t => t._Measure).WithValue(p => p["@@Measure_text"])
                 .HasProperty(t => t._Measure).WithValue(p => p["@@UnitOrValue_text"])
-                .HasProperty(t => t._IsThousand).WithValue(true)
+                .HasProperty(t => t._IsThousand).WithValue(p => p[ParameterList.AbsoluteThousandFilter] == "Thousand")
                 .HasProperty(t=>t.CompanyOrBrandHeader).WithValue(GetHeader);
             HasParameterDependency.On(widgetItem.HasParamDependency);
 

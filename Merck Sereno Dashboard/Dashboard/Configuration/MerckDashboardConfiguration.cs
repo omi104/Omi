@@ -14,7 +14,7 @@ namespace Dashboard.Configuration
     {
         public MerckDashboardConfiguration()
         {
-            HasName("MerckSeronoDashboard");
+            HasName("Merck Serono Dashboard");
             HasTitle("Merck Serono CH Sales Performance Dashboard");
             HasDefaultNavigation(NavigationItems.NavHome().Name);
 

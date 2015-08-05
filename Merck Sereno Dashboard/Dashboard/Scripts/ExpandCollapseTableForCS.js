@@ -9,7 +9,7 @@ function toggleKeyReport(obj, lastCollapsibleLevel) {
     If table cell contains two images then first one's image source will be changed*/
     var image = $(obj); //.find('img:first');
     var imagePath = new String(image.attr('src'));
-    
+
     var rowClicked = $(obj).closest('tr');
     var id = rowClicked.attr('id');
     var level = rowClicked.attr('level');
@@ -27,12 +27,12 @@ function toggleKeyReport(obj, lastCollapsibleLevel) {
             });
         }
     }
-    //collapsing
+        //collapsing
     else {
         rows.css('display', 'none');
         imagePath = imagePath.replace('collapse', 'expand');
         if (level == lastCollapsibleLevel) {
-            rows.each(function() {
+            rows.each(function () {
                 $(this).find('img:first').click();
             });
         }
@@ -49,7 +49,7 @@ function CollapseAllReport(obj, lastCollapsibleLevel) {
     var level = rowClicked.attr('level');
     var table = $(obj).closest('table');
     var rows = table.find('tr.' + id);
-    
+
     if ((rowClicked.css('display') == rows.css('display')) && (rowClicked.css('display') == 'none')) return; // already hidden, so return
     rows.css('display', 'none');
     imagePath = imagePath.replace('collapse', 'expand');

@@ -19,7 +19,7 @@ namespace Dashboard.DataComponents.Transformers
                 if (col.Name == "TotalMarketSales")
                     headerRow.Cells.Add(new XCell() { Data = "Total Market Sales" });
                 else if (col.Name == "RBSales")
-                    headerRow.Cells.Add(new XCell() { Data = "Reckitt Benckiser Sales" });
+                    headerRow.Cells.Add(new XCell() { Data = "Merck Serono Sales" });
                 else
                     headerRow.Cells.Add(new XCell() { Data = col.Name });
             }

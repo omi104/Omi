@@ -150,7 +150,7 @@ namespace Dashboard.Controllers.Account
             string sendFrom = ConfigurationManager.AppSettings["PasswordResetMailFrom"];
             string sendTo = user.Email;
             string subject = ConfigurationManager.AppSettings["PasswordResetMailSubject"];
-            subject = subject.Replace("$project_name$", "Reckitt Benckiser Dashboard");
+            subject = subject.Replace("$project_name$", "Merck Serono Dashboard");
 
             string body = ConfigurationManager.AppSettings["PasswordResetMailBody"];
             body = body.Replace("$first_name$", user.FirstName);

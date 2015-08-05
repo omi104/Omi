@@ -84,12 +84,12 @@ namespace Dashboard.Controllers
             string sendFrom = ConfigurationManager.AppSettings["UserCreationMailFrom"];
             string sendTo = user.Email;
             string subject = ConfigurationManager.AppSettings["UserCreationMailSubject"];
-            subject = subject.Replace("$project_name$", "Reckitt Benckiser Dashboard");
+            subject = subject.Replace("$project_name$", "Merck Serono Dashboard");
 
             string body = ConfigurationManager.AppSettings["UserCreationMailBody"];
             body = body.Replace("$first_name$", user.FirstName);
             body = body.Replace("$last_name$", user.LastName);
-            body = body.Replace("$project_name$", "Reckitt Benckiser Dashboard");
+            body = body.Replace("$project_name$", "Merck Serono Dashboard");
             body = body.Replace("$PASSWORD$", "123456");
             body = body.Replace("$user_id$", user.UserName);
             body = body.Replace("$project_url$", url);
@@ -103,12 +103,12 @@ namespace Dashboard.Controllers
             string sendFrom = ConfigurationManager.AppSettings["UserEditedMailFrom"];
             string sendTo = user.Email;
             string subject = ConfigurationManager.AppSettings["UserEditedMailSubject"];
-            subject = subject.Replace("$project_name$", "Reckitt Benckiser Dashboard");
+            subject = subject.Replace("$project_name$", "Merck Serono Dashboard");
 
             string body = ConfigurationManager.AppSettings["UserEditedMailBody"];
             body = body.Replace("$first_name$", user.FirstName);
             body = body.Replace("$last_name$", user.LastName);
-            body = body.Replace("$project_name$", "Reckitt Benckiser Dashboard");
+            body = body.Replace("$project_name$", "Merck Serono Dashboard");
             body = body.Replace("$user_id$", user.UserName);
             body = body.Replace("$project_url$", url);
             body = body.Replace("$systemAdmin_mailId$", ConfigurationManager.AppSettings["systemAdminMailId"]);

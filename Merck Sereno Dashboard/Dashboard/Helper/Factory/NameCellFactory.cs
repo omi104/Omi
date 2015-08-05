@@ -45,6 +45,21 @@ namespace Dashboard.Helper.Factory
                 data.CellData = _textFormat.Format(data.CellData);
             
             SimpleNode node;
+
+
+            if (data.CellData.Contains('#'))
+            {
+                List<string> splitData2 = data.CellData.Split('#').ToList();
+                return new SimpleNode("td", splitData2[0])
+                {
+                    Attributes = new Dictionary<string, string>()
+                    {
+                        {"title",splitData2[1]},
+                    }
+                };
+            }
+
+
             var splitData = data.CellData.Split('#');
             if (IsMakeTextShort && IsSubbrandAtAGlance && splitData.Length>1)//Subbrand
             {
@@ -66,16 +81,16 @@ namespace Dashboard.Helper.Factory
                     }
                 };
             }
-            else if (IsMakeTextShort && !data.CellData.ToUpper().Contains("RECKITT") && data.CellData.Length > NameCollength)
-            {
-                node = new SimpleNode("td", data.CellData.Substring(0, NameCollength - 1) + "...")
-                {
-                    Attributes = new Dictionary<string, string>()
-                    {
-                        {"title",data.CellData},
-                    }
-                };
-            }
+            //else if (IsMakeTextShort && !data.CellData.ToUpper().Contains("RECKITT") && data.CellData.Length > NameCollength)
+            //{
+            //    node = new SimpleNode("td", data.CellData.Substring(0, NameCollength - 1) + "...")
+            //    {
+            //        Attributes = new Dictionary<string, string>()
+            //        {
+            //            {"title",data.CellData},
+            //        }
+            //    };
+            //}
             else
                 node = new SimpleNode("td", data.CellData);
 
