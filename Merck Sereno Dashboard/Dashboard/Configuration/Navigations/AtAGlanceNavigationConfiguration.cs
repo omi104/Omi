@@ -24,7 +24,8 @@ namespace Dashboard.Configuration.Navigations
             Layout.HasConfig(navigationItem).HasController<AtAGlanceNavigationLayoutController>();
             HasWidget(new ExpandCollapseTableWidgetConfiguration(navigationItem.Widgets[0]));
 
-            //this.HasExportController<NavExportController>();
+            this.HasExportController<NavExportController>();
+            
 
             ExtendedProperties.Add("ExportFileName").WithValue(navigationItem.Label + "_" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         }

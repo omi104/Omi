@@ -78,10 +78,10 @@ namespace Dashboard.DataComponents.Transformers
 
                 var qtrDict = new Dictionary<string, int>()
                         {
-                            {"QTR 1",1},
-                            {"QTR 2",2},
-                            {"QTR 3",3},
-                            {"QTR 4",4}
+                            {"QTR1",1},
+                            {"QTR2",2},
+                            {"QTR3",3},
+                            {"QTR4",4}
                         };
 
                 if (PeriodType == "MTH")
@@ -106,7 +106,8 @@ namespace Dashboard.DataComponents.Transformers
                     int prevYear = year - 1;
                     chart.Attributes.Add("xaxisname", "Long-Term (" + EndDate + "-" + EndDate.Split(' ')[0] + " " + EndDate.Split(' ')[1] + " " + prevYear + ")");
 
-                    int monthIndex = monthDict[EndDate.Split(' ')[0]];
+                    //int monthIndex = monthDict[EndDate.Split(' ')[1]];
+                    int monthIndex = qtrDict[EndDate.Split(' ')[0] + EndDate.Split(' ')[1]];
                     if (monthIndex > 3)
                         monthIndex = monthIndex - 3;
                     else

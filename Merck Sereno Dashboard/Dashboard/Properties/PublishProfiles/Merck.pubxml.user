@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>07/31/2015 17:31:53</publishTime>
+      <publishTime>08/05/2015 17:11:11</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>07/24/2015 14:39:58</publishTime>
@@ -70,7 +70,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2015 10:16:34</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>07/31/2015 17:31:53</publishTime>
+      <publishTime>08/05/2015 17:11:11</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>07/24/2015 14:39:57</publishTime>
@@ -1627,10 +1627,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:55</publishTime>
     </File>
     <File Include="Scripts/ExpandCollapseTable.js">
-      <publishTime>07/24/2015 14:39:55</publishTime>
+      <publishTime>08/05/2015 15:00:41</publishTime>
     </File>
     <File Include="Scripts/ExpandCollapseTableForCS.js">
-      <publishTime>07/24/2015 14:39:55</publishTime>
+      <publishTime>08/05/2015 15:00:59</publishTime>
     </File>
     <File Include="Scripts/fastclick.js">
       <publishTime>07/24/2015 14:39:55</publishTime>
@@ -1783,7 +1783,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="Views/ExpandCollapseTableWidget/Index.cshtml">
-      <publishTime>07/27/2015 17:27:04</publishTime>
+      <publishTime>08/05/2015 15:02:00</publishTime>
     </File>
     <File Include="Views/FilterLayout/Index.cshtml">
       <publishTime>07/24/2015 14:39:56</publishTime>
@@ -1855,7 +1855,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>07/30/2015 16:27:57</publishTime>
+      <publishTime>08/05/2015 17:31:35</publishTime>
     </File>
   </ItemGroup>
 </Project>

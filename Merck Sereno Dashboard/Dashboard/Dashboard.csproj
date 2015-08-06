@@ -312,8 +312,10 @@
     <Compile Include="DataComponents\Transformers\CompanySnapshotChartDataTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CompanyTrendTableChartTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToDictionaryTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\CubeDataToXTableExpandCollapseTableTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTopRankingTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableHomeTrendTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\CubeDataToXTableSnapshotTransformer.cs" />
     <Compile Include="DataComponents\Transformers\CubeDataToXTableTrendTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExpandCollapseTableTransformer.cs" />
     <Compile Include="DataComponents\Transformers\ExportModelTransformer.cs" />
@@ -321,6 +323,7 @@
     <Compile Include="DataComponents\Transformers\ExportTableSplitTrasformerForPPT.cs" />
     <Compile Include="DataComponents\Transformers\HierarchyTableTransfomer.cs" />
     <Compile Include="DataComponents\Transformers\HoverDataTransformer.cs" />
+    <Compile Include="DataComponents\Transformers\IndicatorImageExcelTransformer.cs" />
     <Compile Include="DataComponents\Transformers\IntProductsAllLocationByProductsTransformer.cs" />
     <Compile Include="DataComponents\Transformers\MsBubbleChart.cs" />
     <Compile Include="DataComponents\Transformers\MSCombinationChart.cs" />
@@ -794,6 +797,12 @@
     <Content Include="Content\ExportTemplate\MSLineChart.xlsx" />
     <Content Include="Content\ExportTemplate\SingleTableForPPT.xlsx" />
     <Content Include="Content\ExportTemplate\Trend.xlsx" />
+    <Content Include="Content\ExportTemplate\Home.xlsx" />
+    <Content Include="Content\ExportTemplate\AtAGlanceFourColumns.xlsx" />
+    <Content Include="Content\ExportTemplate\AtAGlanceSixColumns.xlsx" />
+    <Content Include="Content\ExportTemplate\Snapshot.xlsx" />
+    <Content Include="Content\ExportTemplate\AtAGlanceForPpt.xlsx" />
+    <Content Include="Content\ExportTemplate\HomeForPpt.xlsx" />
     <None Include="Properties\PublishProfiles\40 RbPo1Dashboard_Test.pubxml" />
     <None Include="Properties\PublishProfiles\40RbPo1Dashboard.pubxml" />
     <None Include="Properties\PublishProfiles\Local RbPo1Dashboard.pubxml" />

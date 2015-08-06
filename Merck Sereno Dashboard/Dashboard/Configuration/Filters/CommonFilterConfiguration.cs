@@ -184,21 +184,31 @@ namespace Dashboard.Configuration.Filters
                 DashboardContext.Current.DashboardInstance.SetParameterValue(ParameterList.PeriodTypeFlag, "false");
 
             /*For growth or MAT or YTD startdate will be invisible, Enddate will work*/
-            
-            //if (filterItem.Name == FilterItems.StartDate().Name)
+
+            if (filterItem.Name == FilterItems.StartDate().Name)
+            {
+                if (param["@@" + ParameterList.KPI + "_text"] == "Growth" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                {
+                    filterItem.IsVisible = false;
+                }
+                else
+                    filterItem.IsVisible = true;
+            }
+            if (filterItem.Name == FilterItems.EndDate().Name)
+            {
+                if (param["@@" + ParameterList.KPI + "_text"] == "Growth" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                {
+                    filterItem.Label = "Date";
+                }
+            }
+
+            // omi's code
+            //if(filterItem.Name == FilterItems.StartDate().Name)
             //{
-            //    if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+            //    if(param["@@" + ParameterList.KPI + "_text"] == "Growth")
             //    {
-            //        filterItem.IsVisible = false;
-            //    }
-            //    else
-            //        filterItem.IsVisible = true;
-            //}
-            //if (filterItem.Name == FilterItems.EndDate().Name)
-            //{
-            //    if (param["@@" + ParameterList.KPI + "_text"] == "GROWTH" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
-            //    {
-            //        filterItem.Label = "Date";
+
+
             //    }
             //}
             

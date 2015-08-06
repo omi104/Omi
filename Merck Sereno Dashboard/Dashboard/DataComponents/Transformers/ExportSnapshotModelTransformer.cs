@@ -11,16 +11,14 @@ namespace Dashboard.DataComponents.Transformers
     public class ExportSnapshotModelTransformer : ITransformer<XTable, ExportSnapshptModel>
     {
         public string NavigationNameString { get; set; }
-        public string GeoMaptext { get; set; }
-        public string TimePeriodText { get; set; }
         public string MeasureText { get; set; }
-
-        public string CategoryText { get; set; }
-        public string SubCategoryText { get; set; }
-        public string SegementText { get; set; }
-
-        public string ChannelText { get; set; }
-        public string SubChannelText { get; set; }
+        public string Region { get; set; }
+        public string Country { get; set; }
+        public string Segment { get; set; }
+        public string Forms { get; set; }
+        public string UnitOrValue { get; set; }
+        public string TimePeriodText { get; set; }
+        public string EndDate{ get; set; }
 
         public ExportSnapshptModel GetData()
         {
@@ -43,9 +41,9 @@ namespace Dashboard.DataComponents.Transformers
             var model = new ExportSnapshptModel
             {
                 DataTable = Input,
-                Header1 = NavigationNameString + " - " + GeoMaptext + " - " + TimePeriodText + " - " + MeasureText,
-                Header2 = "Category = " + CategoryText + " | " + "Subcategory = " + SubCategoryText + " | " + " Segment = " + SegementText,
-                Header3 = "Channel = " + ChannelText + " | " + "SubChannel = " + SubChannelText,
+                Header1 = NavigationNameString + " - " + Region + " - " + Country + "-" + Segment + " - " + UnitOrValue + " - " + TimePeriodText + " - " + MeasureText,
+                Header2 = "Test1",
+                Header3 = "EndDate"+EndDate+"  Test2",
                 EarliestPeriod = earliestPeriod,
                 PreviousPeriod = prevPeriod,
                 CurrentPeriod = currentPeriod,

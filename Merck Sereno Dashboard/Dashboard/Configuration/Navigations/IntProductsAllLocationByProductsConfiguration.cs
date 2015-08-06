@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Dashboard.Export;
 
 namespace Dashboard.Configuration.Navigations
 {
@@ -19,7 +20,8 @@ namespace Dashboard.Configuration.Navigations
             Layout.HasConfig(navigationItem).HasController<AtAGlanceNavigationLayoutController>();
             HasWidget(new IntProductsAllLocationByProductsWidgetConfiguration(navigationItem.Widgets[0]));
 
-            //this.HasExportController<NavExportController>();
+            this.HasExportController<NavExportController>();
+            
 
             ExtendedProperties.Add("ExportFileName").WithValue(navigationItem.Label + "_" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         }
