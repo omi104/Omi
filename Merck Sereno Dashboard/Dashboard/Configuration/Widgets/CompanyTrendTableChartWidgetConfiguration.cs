@@ -99,6 +99,8 @@ namespace Dashboard.Configuration.Widgets
                         return ParameterList.IntProductUncheckedItems;
                  if(widgetItem.Name ==  WidgetItems.ProductTrendTableChartWidget().Name)
                         return ParameterList.ProductUncheckedItems;
+                 if (widgetItem.Name == WidgetItems.SegmentTrendTableChartWidget().Name)
+                     return ParameterList.SegmentUncheckedItems;
                 
                   return "ParamNames";
                 
@@ -114,6 +116,8 @@ namespace Dashboard.Configuration.Widgets
                 return param[ParameterList.IntProductUncheckedItems];
             if (widgetItem.Name == WidgetItems.ProductTrendTableChartWidget().Name)
                 return param[ParameterList.ProductUncheckedItems];
+            if (widgetItem.Name == WidgetItems.SegmentTrendTableChartWidget().Name)
+                return param[ParameterList.SegmentUncheckedItems];
 
             return "UncheckedItems";
 

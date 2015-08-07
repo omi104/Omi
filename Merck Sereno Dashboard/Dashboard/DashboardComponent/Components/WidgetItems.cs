@@ -25,7 +25,7 @@ namespace Dashboard.DashboardComponent.Components
             {
                 Name = "AllRegionCombinationChart",
                 ViewId = "10",
-                HasParamDependency = new List<string>() { /*ParameterList.RegionUncheckedItems,*/ ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
+                HasParamDependency = new List<string>() { ParameterList.RegionUncheckedItems, ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.Subproduct, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.StartDate, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.KPI, ParameterList.SubProductFlag, ParameterList.PeriodTypeFlag }
             };
         }
 
@@ -153,6 +153,62 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
         #endregion Company
+
+
+
+
+        #region Segment
+        public static WidgetItem TopSegmentSnapShotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "TopSegmentSnapShotTable",
+                ViewId = "36",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.AbsoluteThousandFilter }
+            };
+        }
+
+        public static WidgetItem SegmentSnapshotChart()
+        {
+            return new WidgetItem()
+            {
+                Name = "SegmentSnapshotChart",
+                ViewId = "37",
+                HasParamDependency = new List<string>() { ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TopCountSegmentSnapshot, ParameterList.AbsoluteThousandFilter }
+            };
+        }
+
+        public static WidgetItem BottomSegmentSnapshotTable()
+        {
+            return new WidgetItem()
+            {
+                Name = "BottomSegmentSnapshotTable",
+                ViewId = "37",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountSegmentSnapshot, ParameterList.EndDate, ParameterList.AbsoluteThousandFilter }
+            };
+        }
+
+        public static WidgetItem SegmentTrendTableChartWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "SegmentTrendTableChartWidget",
+                ViewId = "35",
+                HasParamDependency = new List<string>() { ParameterList.SegmentUncheckedItems, ParameterList.Country, ParameterList.Product, ParameterList.UnitOrValue, ParameterList.TimePeriod, ParameterList.TopCountSegmentTrend, ParameterList.EndDate, ParameterList.Segment, ParameterList.Form, ParameterList.TypeOfMeasure, ParameterList.AbsoluteThousandFilter }
+            };
+        }
+
+        public static WidgetItem SegmentExpCollapseTableWidget()
+        {
+            return new WidgetItem()
+            {
+                Name = "SegmentExpCollapseTableWidget",
+                ViewId = "34",
+                HasParamDependency = new List<string>() { ParameterList.RegionOrCluster, ParameterList.Country, ParameterList.Product, ParameterList.KPI, ParameterList.TimePeriod, ParameterList.TopCountSegmentAtAGlance, ParameterList.EndDate, ParameterList.IsKSA }
+            };
+        }
+        #endregion Segment
+
 
         #region International Product
         public static WidgetItem IntlProductsAllLocByProdExpCollapseWidget()

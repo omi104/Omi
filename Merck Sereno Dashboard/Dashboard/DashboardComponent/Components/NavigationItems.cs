@@ -112,6 +112,85 @@ namespace Dashboard.DashboardComponent.Components
         }
         #endregion //resolved
 
+
+
+
+        #region Segment Navigation Items
+        public static NavigationItem NavSegment()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavSegment",
+                Label = "Segment",
+                ChildNavigations = new List<NavigationItem>()
+                {
+                    NavSegmentAllLocationsAtGlance(),
+                    NavSegmentSnapshot(),
+                    NavSegmentTrend()
+                }
+            };
+        }
+
+        public static NavigationItem NavSegmentAllLocationsAtGlance()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavSegmentAllLocations",
+                Label = "All Locations at Glance",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountSegmentAtaGlance()
+                    
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.SegmentExpCollapseTableWidget()
+                }
+            };
+        }
+
+        public static NavigationItem NavSegmentSnapshot()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavSegmentSnapshot",
+                Label = "Snapshot",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountSegmentSnapshot()
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.TopSegmentSnapShotTable(),
+                     WidgetItems.SegmentSnapshotChart(),
+                     WidgetItems.BottomSegmentSnapshotTable()
+                }
+            };
+        }
+
+        public static NavigationItem NavSegmentTrend()
+        {
+            return new NavigationItem()
+            {
+                Name = "NavSegmentTrend",
+                Label = "Trend",
+                Filters = new List<FilterItem>()
+                {
+                    FilterItems.TopCountSegmentTrend(),
+                    FilterItems.MeasureType()
+                    
+                },
+                Widgets = new List<WidgetItem>()
+                {
+                     WidgetItems.SegmentTrendTableChartWidget(),
+                }
+            };
+        }
+        #endregion //resolved
+
+
+
+
         #region International Product
         public static NavigationItem NavIntlProduct()
         {

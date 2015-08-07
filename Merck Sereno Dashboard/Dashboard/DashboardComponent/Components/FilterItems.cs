@@ -19,6 +19,19 @@ namespace Dashboard.DashboardComponent.Components
                 ViewId = ""
             };
         }
+
+        public static FilterItem TopCountSegmentAtaGlance()
+        {
+            return new FilterItem
+            {
+                Name = "TopCountSegmentAtaGlance",
+                Label = "",
+                ControlId = "filter-TopCountSegmentAtaGlance-control",
+                ModifyParam = ParameterList.TopCountSegmentAtAGlance,
+                ViewId = ""
+            };
+        }
+
         public static FilterItem TopCountIntlProdAtaGlance()
             {
             return new FilterItem
@@ -70,6 +83,19 @@ namespace Dashboard.DashboardComponent.Components
             };
         }
 
+
+        public static FilterItem TopCountSegmentSnapshot()
+        {
+            return new FilterItem
+            {
+                Name = "TopCountSegmentSnapshot",
+                Label = "",
+                ControlId = "filter-TopCountSegmentSnapshot-control",
+                ModifyParam = ParameterList.TopCountSegmentSnapshot,
+                ViewId = ""
+            };
+        }
+
         public static FilterItem TopCountIntlProdSnapshot()
         {
             return new FilterItem
@@ -105,6 +131,18 @@ namespace Dashboard.DashboardComponent.Components
                 Label = "",
                 ControlId = "filter-TopCountCompanyTrend-control",
                 ModifyParam = ParameterList.TopCountCompanyTrend,
+                ViewId = ""
+            };
+        }
+
+        public static FilterItem TopCountSegmentTrend()
+        {
+            return new FilterItem
+            {
+                Name = "TopCountSegmentTrend",
+                Label = "",
+                ControlId = "filter-TopCountSegmentTrend-control",
+                ModifyParam = ParameterList.TopCountSegmentTrend,
                 ViewId = ""
             };
         }

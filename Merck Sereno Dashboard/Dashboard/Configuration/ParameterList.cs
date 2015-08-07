@@ -48,6 +48,11 @@ namespace Dashboard.Configuration
         public const string TopCountCompanySnapshot = "ComSnapshotTopCount";
         public const string TopCountCompanyTrend = "CorpTrendTopCount";
 
+
+        public const string TopCountSegmentAtAGlance = "TopCountSegmentAtAGlance";/// resolved
+        public const string TopCountSegmentSnapshot = "TopCountSegmentSnapshot";
+        public const string TopCountSegmentTrend = "TopCountSegmentTrend";
+
         
         public const string TopCountIntlProdAtaGlance = "TopCountIntlProdAtaGlance"; //resolved
         public const string TopCountIntlProdSnapshot = "TopCountIntlProdSnapshot";
@@ -68,6 +73,7 @@ namespace Dashboard.Configuration
         public const string TypeOfMeasure = "TypeOfMeasure";
         //public const string UncheckedItems = "UncheckedItems";
         public const string CorporationUncheckedItems = "CorporationUncheckedItems";
+        public const string SegmentUncheckedItems = "SegmentUncheckedItems";
         public const string IntProductUncheckedItems = "IntProductUncheckedItems";
         //public const string UncheckedItems = "UncheckedItems"; 
         public const string ProductUncheckedItems = "ProductUncheckedItems";

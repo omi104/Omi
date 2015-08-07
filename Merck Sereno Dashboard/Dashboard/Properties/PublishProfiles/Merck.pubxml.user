@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>08/05/2015 17:11:11</publishTime>
+      <publishTime>08/06/2015 17:31:30</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>07/24/2015 14:39:58</publishTime>
@@ -70,7 +70,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2015 10:16:34</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>08/05/2015 17:11:11</publishTime>
+      <publishTime>08/06/2015 17:31:30</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>07/24/2015 14:39:57</publishTime>
@@ -565,13 +565,13 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:53</publishTime>
     </File>
     <File Include="Content/ExportTemplate/AtAGlanceForPpt.xlsx">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>08/06/2015 14:25:25</publishTime>
     </File>
     <File Include="Content/ExportTemplate/AtAGlanceFourColumns.xlsx">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>08/06/2015 11:40:24</publishTime>
     </File>
     <File Include="Content/ExportTemplate/AtAGlanceSixColumns.xlsx">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>08/06/2015 11:40:24</publishTime>
     </File>
     <File Include="Content/ExportTemplate/BubbleChart.xlsx">
       <publishTime>07/24/2015 14:39:53</publishTime>
@@ -586,10 +586,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>06/05/2015 17:27:54</publishTime>
     </File>
     <File Include="Content/ExportTemplate/Home.xlsx">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>08/06/2015 09:15:53</publishTime>
     </File>
     <File Include="Content/ExportTemplate/HomeForPpt.xlsx">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>08/06/2015 14:25:25</publishTime>
     </File>
     <File Include="Content/ExportTemplate/MSLineChart.xlsx">
       <publishTime>07/24/2015 14:39:53</publishTime>
@@ -604,7 +604,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:53</publishTime>
     </File>
     <File Include="Content/ExportTemplate/Snapshot.xlsx">
-      <publishTime>06/05/2015 17:27:54</publishTime>
+      <publishTime>08/06/2015 13:47:27</publishTime>
     </File>
     <File Include="Content/ExportTemplate/Trend.xlsx">
       <publishTime>06/30/2015 10:22:30</publishTime>

@@ -33,6 +33,10 @@ namespace Dashboard.Configuration
             HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavCompaniesSnapshot()));
             HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavCompaniesTrend()));
 
+            HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavSegmentAllLocationsAtGlance())); // corporation
+            HasNavigation(new SnapshotNavigationConfiguration(NavigationItems.NavSegmentSnapshot()));
+            HasNavigation(new TrendNavigationConfiguration(NavigationItems.NavSegmentTrend()));
+
             HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllIntlProdByLoc())); // IntProducts
            // HasNavigation(new AtAGlanceNavigationConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
             HasNavigation(new IntProductsAllLocationByProductsConfiguration(NavigationItems.NavIntlProdAllLocByIntlProd()));
@@ -91,6 +95,11 @@ namespace Dashboard.Configuration
                  .Add(ParameterList.TopCountCompanyTrend).WithValue("5")
 
 
+                 .Add(ParameterList.TopCountSegmentAtAGlance).WithValue("5") // resolved
+                .Add(ParameterList.TopCountSegmentSnapshot).WithValue("5")
+                 .Add(ParameterList.TopCountSegmentTrend).WithValue("5")
+
+
                  .Add(ParameterList.TopCountIntlProdAtaGlance).WithValue("5") // resolved
                  .Add(ParameterList.TopCountIntlProdSnapshot).WithValue("5")
                  .Add(ParameterList.TopCountIntlProdTrend).WithValue("5")
@@ -108,7 +117,8 @@ namespace Dashboard.Configuration
                  .Add(ParameterList.TypeOfMeasure).WithValue("")
                 .Add(ParameterList.RecordCount).WithValue("5")
 
-                .Add(ParameterList.CorporationUncheckedItems).WithValue("") //resolved
+                .Add(ParameterList.CorporationUncheckedItems).WithValue("")
+                .Add(ParameterList.SegmentUncheckedItems).WithValue("")//resolved
                 .Add(ParameterList.IntProductUncheckedItems).WithValue("")
                 .Add(ParameterList.ProductUncheckedItems).WithValue("")
 
