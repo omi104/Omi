@@ -58,7 +58,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="bin/Dashboard.dll">
-      <publishTime>08/06/2015 17:31:30</publishTime>
+      <publishTime>08/07/2015 18:16:46</publishTime>
     </File>
     <File Include="bin/Dashboard.Export.dll">
       <publishTime>07/24/2015 14:39:58</publishTime>
@@ -70,7 +70,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/28/2015 10:16:34</publishTime>
     </File>
     <File Include="bin/Dashboard.pdb">
-      <publishTime>08/06/2015 17:31:30</publishTime>
+      <publishTime>08/07/2015 18:16:46</publishTime>
     </File>
     <File Include="bin/DashboardFramework.Configuration.dll">
       <publishTime>07/24/2015 14:39:57</publishTime>
@@ -565,7 +565,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:53</publishTime>
     </File>
     <File Include="Content/ExportTemplate/AtAGlanceForPpt.xlsx">
-      <publishTime>08/06/2015 14:25:25</publishTime>
+      <publishTime>08/07/2015 15:09:25</publishTime>
     </File>
     <File Include="Content/ExportTemplate/AtAGlanceFourColumns.xlsx">
       <publishTime>08/06/2015 11:40:24</publishTime>
@@ -1825,7 +1825,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/24/2015 14:39:56</publishTime>
     </File>
     <File Include="Views/Shared/_Navigation.cshtml">
-      <publishTime>07/30/2015 14:19:24</publishTime>
+      <publishTime>08/07/2015 13:09:46</publishTime>
     </File>
     <File Include="Views/SimpleTableWidget/Index.cshtml">
       <publishTime>07/24/2015 14:39:56</publishTime>

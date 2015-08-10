@@ -55,7 +55,17 @@ namespace Dashboard.DataComponents.Transformers
 
             var cellMaps = new List<ICellMap<Row>>
             {
-                new CubeCellMap() {Columns = new List<string>(){"CorporationRank"},CellFactory = new TextCellFactory(nodeName:"td"){Classes = new List<string>(){"Rank_Col"},Styles = new Dictionary<string, string>(){{"text-align","center"}}},RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
+                new CubeCellMap() 
+                {
+                    Columns = new List<string>(){"CorporationRank"},
+                    CellFactory = new TextCellFactory(nodeName:"td")
+                    {
+                        Classes = new List<string>(){"Rank_Col"},
+                        Styles = new Dictionary<string, string>(){{"text-align","center"}}
+                    },
+                    RowCellDataProvider = new CubeCellDataProvider(Input.Columns)
+                },
+
                 new CubeCellMap() {Columns = new List<string>(){"Company"},CellFactory = new TextCellFactory(nodeName:"td"){Classes = new List<string>(){"Rank_Company"}}, RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
                 new CubeCellMap() {Columns = new List<string>(){"SALES"},CellFactory = new CustomNumberCellFactory(colId:3,nodeName:"td"){NumberFormatString = "#,##0,",Suffix = "k",Classes = new List<string>(){"Rank_Sales"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}, RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
                 new CubeCellMap() {Columns = new List<string>(){"MS%"},CellFactory = new CustomNumberCellFactory(colId:4,nodeName:"td"){NumberFormatString = "##0.0",Suffix = "%",Classes = new List<string>(){"Rank_MS"},Styles = new Dictionary<string, string>(){{"text-align","center"}}}, RowCellDataProvider = new CubeCellDataProvider(Input.Columns)},
