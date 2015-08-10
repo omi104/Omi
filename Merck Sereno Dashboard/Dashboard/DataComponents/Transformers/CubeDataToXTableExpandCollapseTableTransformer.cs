@@ -19,7 +19,7 @@ namespace Dashboard.DataComponents.Transformers
             var headerRow = new XRow() { Cells = new List<XCell>() };
             foreach (var col in Input.Columns)
             {
-                if (col.Name == "IS_MERCK" || col.Name == "GeoLevel")
+                if (col.Name == "IS_Merck" || col.Name == "GeoLevel")
                 {
                     SkipColumns.Add(col.Position);
                     continue;
@@ -66,28 +66,28 @@ namespace Dashboard.DataComponents.Transformers
                 if (NameColumnValue == "Market/Region")
                 {
                     if (r.Level == 1 || r.Level == 2 || r.Level == 3)
-                        row.Cells.Add(new XCell() { Data = "PINK" });
+                        row.Cells.Add(new XCell() { Data = "GREEN" });
                     else
                         row.Cells.Add(new XCell() { Data = "NONE" });
                 }
                 else if (NameColumnValue == "Market/Company")
                 {
                     if (r.Level == 1 || r.Level == 2)
-                        row.Cells.Add(new XCell() { Data = "PINK" });
+                        row.Cells.Add(new XCell() { Data = "GREEN" });
                     else
                         row.Cells.Add(new XCell() { Data = "NONE" });
                 }
                 else if (NameColumnValue == "Market/Brand")
                 {
                     if (r.Level == 1 || r.Level == 2)
-                        row.Cells.Add(new XCell() { Data = "PINK" });
+                        row.Cells.Add(new XCell() { Data = "GREEN" });
                     else
                         row.Cells.Add(new XCell() { Data = "NONE" });
                 }
                 else if (NameColumnValue == "Locations by Market")
                 {
                     if (r.Level == 1 && (r.Values.Last() == "1" || r.Values.Last() == "2" || r.Values.Last() == "3"))
-                        row.Cells.Add(new XCell() { Data = "PINK" });
+                        row.Cells.Add(new XCell() { Data = "GREEN" });
                     else
                         row.Cells.Add(new XCell() { Data = "NONE" });
                 }

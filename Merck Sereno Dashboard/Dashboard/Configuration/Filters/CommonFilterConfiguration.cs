@@ -127,21 +127,21 @@ namespace Dashboard.Configuration.Filters
             //and the name will ne "Date"
             // but in overview..it will remain as Enddate
 
-            if (filterItem.Name == FilterItems.EndDate().Name)
-            {
-                if (param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
-                {
-                    //filterItem.IsVisible = true;
-                    filterItem.Label = "EndDate";
+            //if (filterItem.Name == FilterItems.EndDate().Name)
+            //{
+            //    if (param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
+            //    {
+            //        //filterItem.IsVisible = true;
+            //        filterItem.Label = "EndDate";
 
-                }
-                else
-                {
-                    filterItem.Label = "Date";
+            //    }
+            //    else
+            //    {
+            //        filterItem.Label = "Date";
 
-                }
+            //    }
 
-            }
+            //}
 
             //if (filterItem.Name == FilterItems.EndDate().Name)
             //{
@@ -187,30 +187,57 @@ namespace Dashboard.Configuration.Filters
 
             if (filterItem.Name == FilterItems.StartDate().Name)
             {
-                if (param["@@" + ParameterList.KPI + "_text"] == "Growth" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+
+                if(param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
                 {
-                    filterItem.IsVisible = false;
+                    if (param["@@" + ParameterList.KPI + "_text"] == "Growth" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                    {
+                        filterItem.IsVisible = false;
+                    }
+                    else
+                        filterItem.IsVisible = true;
+
                 }
                 else
-                    filterItem.IsVisible = true;
+                {
+                    filterItem.IsVisible = false;
+
+                }
+
+
+                
             }
             if (filterItem.Name == FilterItems.EndDate().Name)
             {
-                if (param["@@" + ParameterList.KPI + "_text"] == "Growth" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                if (param.CurrentNavigationName() == NavigationItems.NavAllRegions().Name)
+                {
+                    if (param["@@" + ParameterList.KPI + "_text"] == "Growth" || param["@@" + ParameterList.TimePeriod + "_text"] == "YTD" || param["@@" + ParameterList.TimePeriod + "_text"] == "MAT")
+                    {
+                        filterItem.Label = "Date";
+                    }
+                    else
+                    {
+                        filterItem.Label = "EndDate";
+                    }
+
+                }
+                else
                 {
                     filterItem.Label = "Date";
+
+                }
+                
+            }
+
+            if(filterItem.Name == FilterItems.Segment().Name)
+            {
+                if(param.CurrentNavigationName() == NavigationItems.NavSegmentAllLocationsAtGlance().Name || param.CurrentNavigationName() == NavigationItems.NavSegmentSnapshot().Name || param.CurrentNavigationName() == NavigationItems.NavSegmentTrend().Name)
+                {
+                    filterItem.IsVisible = false;
                 }
             }
 
-            // omi's code
-            //if(filterItem.Name == FilterItems.StartDate().Name)
-            //{
-            //    if(param["@@" + ParameterList.KPI + "_text"] == "Growth")
-            //    {
-
-
-            //    }
-            //}
+            
             
             return filterItem;
         }
